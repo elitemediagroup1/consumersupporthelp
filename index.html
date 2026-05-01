@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Consumer Support Help – Get Help, File Claims, Move Forward</title>
+  <meta name="description" content="Consumer Support Help helps individuals explore eligibility, file claims, and connect with support for rideshare incidents, SSDI, and product-related injuries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0b1220; --panel:#ffffff; --mut:#f6f8fb; --text:#0f172a;
+      --brand:#2dd4bf; --brand-700:#14b8a6; --bd:#e4e8f1;
+      --ink:#0f172a; --sub:#475569;
+      --hero:url('https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1600&auto=format&fit=crop');
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: #e5e7eb;
+    }
+    a { color: inherit; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid #0e1629;
+      background: #0b1220;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo img { height: 150px; width: auto; }
+    .brand-name {
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: .4px;
+      color: #fff;
+    }
+    .nav {
+      margin-left: auto;
+      display: flex;
+      gap: 16px;
+    }
+    .nav a {
+      color: #a9b4c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav a:hover { color: #ffffff; }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(11,18,32,.88), rgba(11,18,32,.88)), var(--hero) center/cover no-repeat;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 18px;
+    }
+    .hero .inner {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 34px;
+      align-items: center;
+    }
+    @media (max-width:980px) {
+      .hero .inner { grid-template-columns: 1fr; }
+    }
+    .h-kicker {
+      font-size: 13px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #a0f0e4;
+    }
+    .h-title {
+      font-family: Montserrat, sans-serif;
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 10px 0 8px;
+    }
+    .h-sub { color: #d2d9e6; margin: 0 0 18px; }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: var(--brand);
+      color: #07302c;
+      box-shadow: 0 8px 18px rgba(20,184,166,.25);
+    }
+    .btn.primary:hover { background: var(--brand-700); }
+    .btn.muted {
+      background: transparent;
+      border: 1px solid #2a364e;
+      color: #d8e0ef;
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    @media (max-width:880px) {
+      .benefits { grid-template-columns: 1fr; }
+    }
+    .chip {
+      background: #0f1627;
+      border: 1px solid #19233a;
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: #c9d3e4;
+    }
+
+    .section { background: #f5f7fb; }
+    .section .container { padding: 40px 18px; }
+    .title {
+      color: var(--ink);
+      font-family: Montserrat, sans-serif;
+      font-size: 26px;
+      margin: 0 0 12px;
+    }
+    .sub { color: var(--sub); margin: 0 0 22px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width:980px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:680px) { .cards { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--bd);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      background: #eef7f6;
+      border: 1px solid #d5efec;
+      color: #0b4a44;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-weight: 700;
+      width: max-content;
+    }
+    .card h3 {
+      margin: 6px 0 6px;
+      color: var(--ink);
+    }
+    .card p { margin: 0 0 8px; color: var(--sub); }
+    .card .btn { align-self: flex-start; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width:980px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+    .step {
+      background: var(--panel);
+      border: 1px solid var(--bd);
+      border-radius: 14px;
+      padding: 16px;
+      color: var(--ink);
+    }
+    .step b { display: block; margin-bottom: 6px; }
+
+    .footer {
+      background: #0b1220;
+      border-top: 3px solid #14b8a6;
+      padding: 24px 16px 36px;
+    }
+    .footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .chip {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .copyr {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #9ca3af;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <div id="header"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container inner">
+      <div>
+        <div class="h-kicker">Support • Confidential • Action</div>
+        <h1 class="h-title">Your path to help and justice starts here.</h1>
+        <p class="h-sub">We help you understand eligibility, document your claim, and connect with support. No fees unless funds are claimed.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="rideshare.html">Start Rideshare Claim</a>
+          <a class="btn muted" href="#programs">Explore Programs</a>
+        </div>
+        <div class="benefits">
+          <div class="chip">✓ Private & Confidential</div>
+          <div class="chip">✓ Fast, Mobile-Friendly Intake</div>
+          <div class="chip">✓ No Fees Unless Funds Are Claimed</div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <span class="pill">Featured</span>
+          <h3 style="margin-top:0">Rideshare Misconduct & Assault</h3>
+          <p>If you or a loved one experienced assault or improper sexual behavior in a ridesharing vehicle, you may be entitled to compensation.</p>
+          <a class="btn primary" href="rideshare.html">Begin Secure Intake</a>
+          <p style="margin:10px 0 0;color:#64748b;font-size:13px">Your information is kept private and shared only as necessary to evaluate your claim.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="section" id="programs">
+    <div class="container">
+      <h2 class="title">Programs & Case Areas</h2>
+      <p class="sub">Choose a topic to learn more and start a confidential intake.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="pill">Now accepting</span>
+          <h3>Rideshare Assault & Misconduct</h3>
+          <p>For passengers or drivers impacted by assault, harassment, or related conduct in rideshare vehicles.</p>
+          <a class="btn primary" href="rideshare.html">Start Rideshare Claim</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Support</span>
+          <h3>SSDI Assistance</h3>
+          <p>Guidance for Social Security Disability Insurance evaluations and documentation.</p>
+          <a class="btn primary" href="ssdi.html">Start SSDI Evaluation</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Medication</span>
+          <h3>Depo-Provera</h3>
+          <p>Explore potential adverse effects and eligibility for compensation reviews.</p>
+          <a class="btn muted" href="#">Coming soon</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Product</span>
+          <h3>Roundup</h3>
+          <p>Information about exposure-related claims and how to prepare your case details.</p>
+          <a class="btn muted" href="#">Coming soon</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Exposure</span>
+          <h3>Paraquat</h3>
+          <p>Learn about risks, timelines, and what you’ll need to document for a review.</p>
+          <a class="btn muted" href="#">Coming soon</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">More</span>
+          <h3>Additional Programs</h3>
+          <p>We regularly add case areas. Check back soon or contact us with questions.</p>
+          <a class="btn muted" href="#">Coming soon</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" style="background:#eef2f8">
+    <div class="container">
+      <h2 class="title">How It Works</h2>
+      <div class="steps">
+        <div class="step"><b>1) Private Intake</b> Complete a short, secure form. Your information stays confidential.</div>
+        <div class="step"><b>2) Quick Review</b> We review eligibility and next steps, and connect you with support.</div>
+        <div class="step"><b>3) Move Forward</b> If eligible, we help you take action. No fees unless funds are claimed.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
+
+  <script>
+    function includeHTML(id, url) {
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+        })
+        .catch(err => console.error("Include failed:", err));
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
