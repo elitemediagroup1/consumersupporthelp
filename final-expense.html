@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Final Expense Coverage — Consumer Support Help</title>
+  <meta name="description" content="See if you qualify for up to $40,000 in final expense coverage. Quick eligibility check, then talk to a licensed agent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .fe-hero{background:var(--bg-cool);padding:56px 0 36px;text-align:center;}
+    .fe-hero h1{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:clamp(1.9rem,3.4vw,2.8rem);margin:0 0 .35em;line-height:1.15;}
+    .fe-hero .lede{color:var(--body);max-width:680px;margin:0 auto;font-size:1.05rem;}
+    .fe-hero .fineprint{display:block;margin-top:14px;color:var(--muted);font-size:.78rem;font-weight:400;letter-spacing:.01em;}
+    .fe-quiz-wrap{max-width:680px;margin:-30px auto 0;padding:0 20px;position:relative;z-index:2;}
+    .fe-quiz{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:32px 28px;}
+    .fe-progress{height:6px;background:var(--bg-soft);border-radius:99px;overflow:hidden;margin-bottom:22px;}
+    .fe-progress > span{display:block;height:100%;background:var(--gold);width:0%;transition:width .35s ease;}
+    .fe-step{display:none;}
+    .fe-step.active{display:block;animation:feFade .25s ease;}
+    @keyframes feFade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+    .fe-step h2{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:1.35rem;margin:0 0 6px;line-height:1.3;}
+    .fe-step .qhint{color:var(--muted);font-size:.92rem;margin:0 0 18px;}
+    .fe-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .fe-options.three{grid-template-columns:repeat(3,1fr);}
+    .fe-opt{appearance:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-weight:600;padding:14px 16px;border-radius:var(--radius);cursor:pointer;transition:all .15s ease;text-align:center;}
+    .fe-opt:hover{border-color:var(--gold);background:var(--bg-soft);}
+    .fe-step .row{display:flex;gap:10px;align-items:center;margin-top:12px;}
+    .fe-back{background:none;border:none;color:var(--muted);font:inherit;cursor:pointer;padding:6px 4px;font-size:.9rem;}
+    .fe-back:hover{color:var(--ink);text-decoration:underline;}
+    .fe-result{display:none;text-align:center;}
+    .fe-result.active{display:block;animation:feFade .3s ease;}
+    .fe-result h2{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:1.6rem;margin:0 0 8px;}
+    .fe-result p{color:var(--body);}
+    .fe-call-btn{display:inline-block;background:var(--gold);color:#fff !important;font-weight:700;font-size:1.15rem;padding:16px 28px;border-radius:var(--radius);text-decoration:none;margin-top:12px;box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;}
+    .fe-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .fe-call-num{display:block;font-size:1.45rem;letter-spacing:.02em;margin-top:6px;font-family:'Lora',Georgia,serif;}
+    .fe-timer{margin-top:16px;color:var(--muted);font-size:.92rem;}
+    .fe-timer strong{color:var(--ink);font-variant-numeric:tabular-nums;}
+    .fe-fallback-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
+    .fe-fallback-card{display:block;border:1px solid var(--line);border-radius:var(--radius);padding:14px;text-decoration:none;color:var(--ink);background:#fff;transition:border-color .15s ease,transform .15s ease;}
+    .fe-fallback-card:hover{border-color:var(--gold);transform:translateY(-1px);}
+    .fe-fallback-card strong{display:block;font-family:'Lora',Georgia,serif;font-size:1.05rem;margin-bottom:3px;}
+    .fe-fallback-card span{color:var(--muted);font-size:.88rem;}
+    .fe-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+    .fe-benefit{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;text-align:left;}
+    .fe-benefit .ico{width:38px;height:38px;border-radius:8px;background:var(--bg-cool);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:10px;}
+    .fe-benefit h3{font-family:'Lora',Georgia,serif;color:var(--ink);font-size:1.08rem;margin:0 0 4px;}
+    .fe-benefit p{color:var(--body);margin:0;font-size:.95rem;}
+    .fe-faq{max-width:780px;margin:0 auto;}
+    .fe-faq details{border-bottom:1px solid var(--line);padding:14px 0;}
+    .fe-faq details:first-child{border-top:1px solid var(--line);}
+    .fe-faq summary{font-family:'Lora',Georgia,serif;color:var(--ink);font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:1.05rem;}
+    .fe-faq summary::after{content:"+";color:var(--gold);font-size:1.4rem;line-height:1;}
+    .fe-faq details[open] summary::after{content:"−";}
+    .fe-faq details p{color:var(--body);margin:8px 0 0;}
+    .fe-disclaimer{max-width:980px;margin:0 auto;color:var(--muted);font-size:.82rem;line-height:1.55;}
+    @media (max-width:640px){
+      .fe-options{grid-template-columns:1fr;}
+      .fe-options.three{grid-template-columns:1fr;}
+      .fe-benefits{grid-template-columns:1fr;}
+      .fe-fallback-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header"></div>
+
+  <section class="fe-hero">
+    <div class="container">
+      <span class="kicker">Final Expense Coverage</span>
+      <h1>See If You Qualify for Up to $40,000<br/>in Final Expense Coverage</h1>
+      <p class="lede">Affordable peace of mind for your family. Answer a few quick questions to check your eligibility — takes less than 60 seconds.</p>
+      <span class="fineprint">*Coverage amounts vary based on age, health, and plan selected. This is an insurance product, not free coverage; premiums apply.</span>
+    </div>
+  </section>
+
+  <div class="fe-quiz-wrap">
+    <div class="fe-quiz" id="feQuiz">
+      <div class="fe-progress" aria-hidden="true"><span id="feProgress"></span></div>
+
+      <div class="fe-step active" data-step="1">
+        <h2>What is your age?</h2>
+        <p class="qhint">Final expense plans are designed for adults age 50–80.</p>
+        <div class="fe-options three">
+          <button class="fe-opt" data-answer="under50">Under 50</button>
+          <button class="fe-opt" data-answer="50-80">50 – 80</button>
+          <button class="fe-opt" data-answer="over80">Over 80</button>
+        </div>
+      </div>
+
+      <div class="fe-step" data-step="2">
+        <h2>Are you currently looking for a final expense or life insurance policy?</h2>
+        <p class="qhint">We only connect people who are actively shopping for coverage.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes</button>
+          <button class="fe-opt" data-answer="no">No</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-step" data-step="3">
+        <h2>Do you already have a final expense or life insurance policy?</h2>
+        <p class="qhint">If you already have coverage, you may not need a new policy.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes, I have one</button>
+          <button class="fe-opt" data-answer="no">No, I don't</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-step" data-step="4">
+        <h2>Are you the decision maker on this policy?</h2>
+        <p class="qhint">You'll need to be the person able to start and pay for the plan.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes</button>
+          <button class="fe-opt" data-answer="no">No</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-step" data-step="5">
+        <h2>Would you be willing to start a policy within the next 30 days if you qualify?</h2>
+        <p class="qhint">Coverage starts faster when you're ready to move forward.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes</button>
+          <button class="fe-opt" data-answer="no">Not right now</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-step" data-step="6">
+        <h2>Do you have an active checking or savings account?</h2>
+        <p class="qhint">Premiums are paid by automatic bank draft.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes</button>
+          <button class="fe-opt" data-answer="no">No</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-step" data-step="7">
+        <h2>Will you have your bank routing and account number available when you speak with an agent?</h2>
+        <p class="qhint">You won't enter it here — you'll provide it directly to the licensed agent on the call.</p>
+        <div class="fe-options">
+          <button class="fe-opt" data-answer="yes">Yes</button>
+          <button class="fe-opt" data-answer="no">No</button>
+        </div>
+        <div class="row"><button class="fe-back" type="button">← Back</button></div>
+      </div>
+
+      <div class="fe-result" id="feQualified">
+        <h2>Great news — you pre-qualify!</h2>
+        <p>Based on your answers, you may be eligible for up to <strong>$40,000</strong> in final expense coverage. Tap below to speak with a licensed agent now and lock in your rate.</p>
+        <a href="tel:TEL_PLACEHOLDER" class="fe-call-btn" id="feCallBtn">
+          Call Now to Apply
+          <span class="fe-call-num">(XXX) XXX-XXXX</span>
+        </a>
+        <p class="fe-timer">This pre-qualification expires in <strong id="feCountdown">05:00</strong></p>
+      </div>
+
+      <div class="fe-result" id="feDisqualified">
+        <h2 id="feDqHeading">Final expense may not be the right fit right now</h2>
+        <p id="feDqBody">Based on your answers, a final expense policy may not be a match today — but we have other resources that might be a better fit.</p>
+        <div class="fe-fallback-grid" id="feFallback">
+          <a href="/aca.html" class="fe-fallback-card"><strong>Health Coverage (ACA)</strong><span>Compare marketplace health plans — subsidies may apply.</span></a>
+          <a href="/ssdi.html" class="fe-fallback-card"><strong>SSDI Benefits</strong><span>See if you qualify for Social Security Disability income.</span></a>
+          <a href="/debt-settlement.html" class="fe-fallback-card"><strong>Debt Settlement</strong><span>Resolve unsecured debt for less than what you owe.</span></a>
+          <a href="/mass-torts.html" class="fe-fallback-card"><strong>Mass Tort Claims</strong><span>See if you qualify for compensation for harmful products.</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head" style="text-align:center;max-width:720px;margin:0 auto 28px;">
+        <span class="kicker">Why Final Expense</span>
+        <h2 style="font-family:'Lora',Georgia,serif;color:var(--ink);font-size:clamp(1.5rem,2.4vw,2rem);margin:.2em 0;">A simple plan that protects the people you love.</h2>
+        <span class="accent-rule"></span>
+      </div>
+      <div class="fe-benefits">
+        <div class="fe-benefit">
+          <div class="ico">$</div>
+          <h3>Up to $40,000 in coverage</h3>
+          <p>Help cover funeral costs, medical bills, and other end-of-life expenses so your family isn't left with the bill.</p>
+        </div>
+        <div class="fe-benefit">
+          <div class="ico">✓</div>
+          <h3>No medical exam plans available</h3>
+          <p>Many applicants qualify based on a few simple health questions — no doctor visit required.</p>
+        </div>
+        <div class="fe-benefit">
+          <div class="ico">★</div>
+          <h3>Locked-in rates</h3>
+          <p>Premiums never increase and your benefit never decreases for as long as you keep the policy active.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head" style="text-align:center;max-width:720px;margin:0 auto 22px;">
+        <span class="kicker">FAQ</span>
+        <h2 style="font-family:'Lora',Georgia,serif;color:var(--ink);font-size:clamp(1.4rem,2.2vw,1.8rem);margin:.2em 0;">Common questions about final expense coverage</h2>
+      </div>
+      <div class="fe-faq">
+        <details>
+          <summary>What is final expense insurance?</summary>
+          <p>Final expense insurance is a type of whole life insurance designed to cover funeral, burial, and end-of-life expenses. Coverage amounts are typically smaller than traditional life insurance, which keeps premiums affordable.</p>
+        </details>
+        <details>
+          <summary>Who qualifies?</summary>
+          <p>Most plans are available to U.S. residents between ages 50 and 80 who can answer a few basic health questions. Even people with common health conditions can often qualify.</p>
+        </details>
+        <details>
+          <summary>Is this free coverage?</summary>
+          <p>No. Final expense is an insurance product with monthly premiums. The amount depends on your age, health, and the coverage level you select. There is no cost to check eligibility or speak with an agent.</p>
+        </details>
+        <details>
+          <summary>Why do I need a checking or savings account?</summary>
+          <p>Premiums are paid by automatic bank draft, which keeps the policy in good standing and prevents missed payments.</p>
+        </details>
+        <details>
+          <summary>What happens after I call?</summary>
+          <p>A licensed agent will verify your information, review available plans, answer your questions, and — if you choose to move forward — help you start coverage the same day.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="fe-disclaimer">
+        Disclaimer: Consumer Support Help is a referral source that provides information and access to licensed insurance agents. We are not an insurance company. The helpline is free to call, but the insurance products you may purchase have premiums and other costs associated with them. Coverage amounts up to $40,000 are subject to underwriting, age, health, and plan selection — not all applicants will qualify for the maximum. Neither Consumer Support Help nor the insurance plans available are endorsed by the U.S. Government or the federal Medicare program. By submitting your responses you confirm the information you provide is accurate.
+      </p>
+    </div>
+  </section>
+
+  <div class="site-footer"></div>
+
+  <script src="/assets/script.js"></script>
+  <script>
+    (function(){
+      var quiz = document.getElementById('feQuiz');
+      if(!quiz) return;
+      var steps = quiz.querySelectorAll('.fe-step');
+      var totalSteps = steps.length;
+      var progressEl = document.getElementById('feProgress');
+      var qualifiedEl = document.getElementById('feQualified');
+      var disqualifiedEl = document.getElementById('feDisqualified');
+      var dqHeading = document.getElementById('feDqHeading');
+      var dqBody = document.getElementById('feDqBody');
+      var history = [];
+      var answers = {};
+      function updateProgress(stepIdx){
+        var pct = Math.min(100, Math.round((stepIdx / totalSteps) * 100));
+        progressEl.style.width = pct + '%';
+      }
+      function showStep(num){
+        steps.forEach(function(s){ s.classList.remove('active'); });
+        qualifiedEl.classList.remove('active');
+        disqualifiedEl.classList.remove('active');
+        var target = quiz.querySelector('.fe-step[data-step="' + num + '"]');
+        if(target){ target.classList.add('active'); updateProgress(num - 1); }
+      }
+      function disqualify(reason){
+        steps.forEach(function(s){ s.classList.remove('active'); });
+        progressEl.style.width = '100%';
+        var msgs = {
+          'under50': { h: 'Final expense may not be the right fit yet', b: 'Final expense plans are designed for adults age 50 and up. In the meantime, here are other programs that may help you today:' },
+          'over80':  { h: 'We may not be able to help with final expense', b: 'Coverage is generally available up to age 80. We have other resources that may be a better fit:' },
+          'noShopping': { h: 'No problem, come back when you are ready', b: 'Since you are not currently shopping for coverage, here are other resources you might find useful:' },
+          'hasPolicy':  { h: 'You are already covered', b: 'It looks like you already have a final expense or life insurance policy. Here are other ways we can help:' },
+          'notDecisionMaker': { h: 'The decision maker should apply', b: 'The person who will own and pay for the policy needs to be the one to apply. In the meantime, here are other resources:' },
+          'notReady':  { h: 'Final expense works best when you are ready to start', b: 'When you are ready to begin a policy, come back and check eligibility. For now, here are other resources:' },
+          'noBank':    { h: 'A bank account is required', b: 'Final expense premiums are paid by automatic bank draft, so an active checking or savings account is needed. Here are other resources that may help:' },
+          'noRouting': { h: 'You will need your bank info to apply', b: 'Have your routing and account number ready before calling. In the meantime, here are other resources:' }
+        };
+        var msg = msgs[reason] || { h: 'Final expense may not be the right fit', b: 'Here are other resources that may help:' };
+        dqHeading.textContent = msg.h;
+        dqBody.textContent = msg.b;
+        disqualifiedEl.classList.add('active');
+      }
+      function qualify(){
+        steps.forEach(function(s){ s.classList.remove('active'); });
+        progressEl.style.width = '100%';
+        qualifiedEl.classList.add('active');
+        startCountdown();
+      }
+      function recordAndAdvance(stepNum, answer){
+        history.push(stepNum);
+        answers[stepNum] = answer;
+        if(stepNum === 1 && answer === 'under50') return disqualify('under50');
+        if(stepNum === 1 && answer === 'over80')  return disqualify('over80');
+        if(stepNum === 2 && answer === 'no')      return disqualify('noShopping');
+        if(stepNum === 3 && answer === 'yes')     return disqualify('hasPolicy');
+        if(stepNum === 4 && answer === 'no')      return disqualify('notDecisionMaker');
+        if(stepNum === 5 && answer === 'no')      return disqualify('notReady');
+        if(stepNum === 6 && answer === 'no')      return disqualify('noBank');
+        if(stepNum === 7 && answer === 'no')      return disqualify('noRouting');
+        if(stepNum >= totalSteps) return qualify();
+        showStep(stepNum + 1);
+      }
+      quiz.querySelectorAll('.fe-opt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var stepEl = btn.closest('.fe-step');
+          var stepNum = parseInt(stepEl.getAttribute('data-step'), 10);
+          var answer = btn.getAttribute('data-answer');
+          recordAndAdvance(stepNum, answer);
+        });
+      });
+      quiz.querySelectorAll('.fe-back').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(history.length === 0) return;
+          var prev = history.pop();
+          delete answers[prev];
+          showStep(prev);
+        });
+      });
+      function startCountdown(){
+        var el = document.getElementById('feCountdown');
+        if(!el) return;
+        var total = 5 * 60;
+        var iv = setInterval(function(){
+          total--;
+          if(total < 0){ clearInterval(iv); el.textContent = 'expired'; return; }
+          var m = Math.floor(total / 60);
+          var s = total % 60;
+          el.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+        }, 1000);
+      }
+      updateProgress(0);
+    })();
+  </script>
+</body>
+</html>
