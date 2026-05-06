@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto Insurance Help — Consumer Support Help</title>
+<meta name="description" content="Find affordable auto insurance coverage. Speak with a licensed agent now to compare liability, collision, comprehensive, and full-coverage options for your vehicle." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/style.css" />
+<style>
+  .auto-hero{background:linear-gradient(180deg,#f5f7f9 0%,#eef3f5 100%);padding:64px 0 48px}
+  .auto-hero .kicker{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.78rem;margin-bottom:14px}
+  .auto-hero h1{font-family:'Lora',Georgia,serif;font-weight:600;color:var(--ink);font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 16px}
+  .auto-hero .lede{color:var(--body);font-size:1.1rem;max-width:680px;margin:0 0 22px}
+  .auto-hero .fineprint{color:var(--muted);font-size:.82rem;max-width:680px;margin:0 0 26px;font-weight:400}
+  .auto-hero .ctarow{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .auto-hero .phone-display{color:var(--ink);font-weight:600;font-size:1rem}
+  .coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .coverage-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
+  .coverage-card h3{font-family:'Lora',Georgia,serif;font-size:1.2rem;color:var(--ink);margin:0 0 8px;font-weight:600}
+  .coverage-card p{color:var(--body);margin:0;font-size:.96rem;line-height:1.55}
+  .coverage-card .icon{width:38px;height:38px;border-radius:8px;background:#f5f7f9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--gold);font-weight:700;font-family:'Lora',serif}
+  .why-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:8px}
+  .why-row .item h3{font-family:'Lora',Georgia,serif;font-size:1.1rem;color:var(--ink);margin:0 0 6px;font-weight:600}
+  .why-row .item p{color:var(--body);font-size:.95rem;margin:0}
+  .faq-block details{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq-block details summary{font-weight:600;color:var(--ink);cursor:pointer;list-style:none;font-size:1rem}
+  .faq-block details summary::after{content:'+';float:right;color:var(--gold);font-size:1.3rem;line-height:1}
+  .faq-block details[open] summary::after{content:'\2212'}
+  .faq-block details p{color:var(--body);margin:10px 0 0;font-size:.96rem;line-height:1.6}
+  .cta-band{background:var(--ink);color:#fff;padding:54px 0;text-align:center}
+  .cta-band h2{font-family:'Lora',Georgia,serif;font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 10px;font-weight:600}
+  .cta-band p{color:#cfd6da;margin:0 0 22px;max-width:640px;margin-left:auto;margin-right:auto}
+  .cta-band .phone-display{color:#fff;font-weight:600;display:block;margin-top:10px;font-size:1.05rem}
+  .disclaimer{background:#f5f7f9;padding:36px 0;color:var(--muted);font-size:.82rem;line-height:1.6}
+  .disclaimer p{margin:0 0 10px}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="auto-hero">
+  <div class="container">
+    <div class="kicker">Auto Insurance</div>
+    <h1>Affordable auto insurance coverage that protects you and your family.</h1>
+    <p class="lede">Compare liability, collision, comprehensive and full-coverage options from licensed agents. Get the right policy for your vehicle, your budget and the way you actually drive — in one quick phone call.</p>
+    <p class="fineprint">Rates and coverage vary based on your state, vehicle, driving record and chosen limits. This is not a free policy and premiums apply. Coverage availability is subject to underwriting approval.</p>
+    <div class="ctarow">
+      <a href="tel:TEL_PLACEHOLDER" class="btn btn-primary">Call Now to Speak With an Agent</a>
+      <span class="phone-display">(XXX) XXX-XXXX</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="kicker" style="color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.78rem;margin-bottom:10px">What's Covered</div>
+    <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:var(--ink);font-size:clamp(1.6rem,2.6vw,2rem);margin:0 0 8px">Personalized policies, comprehensive coverage</h2>
+    <p style="color:var(--body);max-width:680px;margin:0 0 28px">Stay safe on the road with auto insurance built around you. Our agents help compare options across major carriers so you can drive with confidence.</p>
+    <div class="coverage-grid">
+      <div class="coverage-card"><div class="icon">L</div><h3>Liability</h3><p>Covers bodily injury and property damage you cause to others. Required by law in most states.</p></div>
+      <div class="coverage-card"><div class="icon">C</div><h3>Collision</h3><p>Pays to repair or replace your vehicle after an accident, regardless of who was at fault.</p></div>
+      <div class="coverage-card"><div class="icon">+</div><h3>Comprehensive</h3><p>Protects against theft, vandalism, weather damage, fire, falling objects and animal collisions.</p></div>
+      <div class="coverage-card"><div class="icon">P</div><h3>Personal Injury / Medical</h3><p>Helps cover medical bills for you and your passengers after a covered accident.</p></div>
+      <div class="coverage-card"><div class="icon">U</div><h3>Uninsured Motorist</h3><p>Steps in when the at-fault driver has no insurance — or not enough to cover your costs.</p></div>
+      <div class="coverage-card"><div class="icon">R</div><h3>Roadside &amp; Rental</h3><p>Optional add-ons for towing, lockouts, jump-starts and a rental car while yours is being repaired.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="kicker" style="color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.78rem;margin-bottom:10px">Why Call Us</div>
+    <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:var(--ink);font-size:clamp(1.6rem,2.6vw,2rem);margin:0 0 24px">A simple way to find the coverage you need</h2>
+    <div class="why-row">
+      <div class="item"><h3>Licensed agents</h3><p>Speak with a real person who can walk through coverage options and answer your questions on the spot.</p></div>
+      <div class="item"><h3>Multiple carriers</h3><p>Agents compare offers from top-rated insurers so you don't have to call around or fill out a dozen forms.</p></div>
+      <div class="item"><h3>Tailored to your driving</h3><p>Whether you commute, drive for work, or just need a basic policy, you'll get coverage that fits how you actually use your car.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:820px">
+    <div class="kicker" style="color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.78rem;margin-bottom:10px">Frequently Asked</div>
+    <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:var(--ink);font-size:clamp(1.6rem,2.6vw,2rem);margin:0 0 18px">Auto insurance, answered</h2>
+    <div class="faq-block">
+      <details><summary>Do I have to have auto insurance?</summary><p>Almost every state requires drivers to carry at least liability coverage. Penalties for driving uninsured can include fines, license suspension and out-of-pocket liability if you cause a crash.</p></details>
+      <details><summary>What's the difference between liability and full coverage?</summary><p>Liability only covers damage you cause to others. "Full coverage" usually means liability plus collision and comprehensive, which protect your own vehicle.</p></details>
+      <details><summary>How are my rates determined?</summary><p>Insurers consider your driving record, vehicle make and model, location, mileage, credit profile in most states, age, and the coverage limits and deductibles you choose.</p></details>
+      <details><summary>Can I lower my premium?</summary><p>Often, yes. Bundling with home or renters, raising your deductible, taking a defensive driving course, or switching carriers can all reduce your monthly cost. An agent can help compare options.</p></details>
+      <details><summary>Is this a free policy?</summary><p>No. Auto insurance is a paid product. Premiums vary based on coverage and personal factors. We help you find competitive options — the policy itself is purchased through a licensed insurer.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to find the right auto policy?</h2>
+    <p>Call now to speak with a licensed agent and compare coverage in minutes — no online forms, no waiting.</p>
+    <a href="tel:TEL_PLACEHOLDER" class="btn btn-primary">Call Now</a>
+    <span class="phone-display">(XXX) XXX-XXXX</span>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="container">
+    <p><strong>Disclaimer:</strong> Consumer Support Help is not an insurance company. We connect consumers with licensed insurance agents and brokers who represent one or more insurance carriers. Coverage, rates and availability vary by state, carrier and individual underwriting factors including driving history, vehicle and credit profile where permitted by law.</p>
+    <p>This page is for informational purposes only and does not constitute a quote, binder or offer of insurance. No coverage is in force until a policy is issued and the first premium is paid. All trademarks belong to their respective owners.</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="/assets/script.js"></script>
+</body>
+</html>
