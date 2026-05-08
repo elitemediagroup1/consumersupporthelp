@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ACA Health Insurance Help — Consumer Support Help</title>
+  <meta name="description" content="See if you qualify for an ACA health insurance plan. Take a quick eligibility quiz and connect with a licensed agent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .aca-hero{
+      background:linear-gradient(135deg,var(--teal-900),var(--teal-800));
+      color:#fff;
+      padding:64px 0 56px;
+    }
+    .aca-hero .container{max-width:760px;margin:0 auto;text-align:center;padding:0 20px;}
+    .aca-hero .kicker{
+      display:inline-block;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--teal-400);
+      margin-bottom:14px;
+    }
+    .aca-hero h1{
+      font-family:"Lora",Georgia,serif;
+      font-size:clamp(28px,4.2vw,44px);
+      line-height:1.15;
+      margin:0 0 16px;
+      color:#fff;
+    }
+    .aca-hero .lede{
+      font-size:17px;
+      line-height:1.55;
+      color:rgba(255,255,255,.88);
+      max-width:600px;
+      margin:0 auto;
+    }
+    .aca-quiz-section{padding:48px 0 72px;background:var(--bg);}
+    .aca-quiz-card{
+      max-width:640px;
+      margin:-40px auto 0;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-md);
+      padding:32px 28px;
+      position:relative;
+    }
+    .aca-progress{
+      height:6px;
+      background:var(--bg-soft);
+      border-radius:999px;
+      overflow:hidden;
+      margin-bottom:24px;
+    }
+    .aca-progress-bar{
+      height:100%;
+      width:33%;
+      background:var(--teal-700);
+      transition:width .3s ease;
+    }
+    .aca-step-label{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--teal-700);
+      margin-bottom:10px;
+    }
+    .aca-question{
+      font-family:"Lora",Georgia,serif;
+      font-size:24px;
+      line-height:1.3;
+      color:var(--ink);
+      margin:0 0 24px;
+    }
+    .aca-options{display:flex;flex-direction:column;gap:12px;}
+    .aca-option{
+      display:block;
+      width:100%;
+      padding:16px 20px;
+      background:#fff;
+      border:2px solid var(--teal-700);
+      color:var(--teal-700);
+      font-family:inherit;
+      font-size:16px;
+      font-weight:700;
+      border-radius:var(--radius);
+      cursor:pointer;
+      transition:all .15s ease;
+      text-align:center;
+    }
+    .aca-option:hover{background:var(--teal-700);color:#fff;}
+    .aca-back{
+      margin-top:18px;
+      background:none;
+      border:0;
+      color:var(--muted);
+      font-family:inherit;
+      font-size:14px;
+      cursor:pointer;
+      padding:6px 0;
+    }
+    .aca-back:hover{color:var(--ink);text-decoration:underline;}
+    .aca-back[hidden]{display:none;}
+
+    .aca-result{text-align:center;}
+    .aca-result h2{
+      font-family:"Lora",Georgia,serif;
+      font-size:28px;
+      line-height:1.25;
+      margin:0 0 12px;
+      color:var(--ink);
+    }
+    .aca-result p{
+      font-size:16px;
+      line-height:1.55;
+      color:var(--body);
+      margin:0 0 20px;
+    }
+    .aca-call-btn{
+      display:inline-block;
+      background:var(--green-700);
+      color:#fff;
+      padding:18px 32px;
+      font-size:18px;
+      font-weight:700;
+      border-radius:var(--radius);
+      text-decoration:none;
+      box-shadow:var(--shadow-sm);
+      transition:transform .12s ease,box-shadow .12s ease;
+    }
+    .aca-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+    .aca-tap-line{
+      display:inline-block;
+      background:var(--gold);
+      color:var(--ink);
+      padding:8px 16px;
+      font-weight:700;
+      font-size:14px;
+      border-radius:var(--radius);
+      margin-bottom:14px;
+    }
+    .aca-medicare-cta{
+      display:inline-block;
+      background:var(--teal-700);
+      color:#fff;
+      padding:14px 26px;
+      font-size:16px;
+      font-weight:700;
+      border-radius:var(--radius);
+      text-decoration:none;
+      transition:background .15s ease;
+    }
+    .aca-medicare-cta:hover{background:var(--teal-800);}
+
+    .aca-info{padding:64px 0;background:#fff;}
+    .aca-info .container{max-width:1000px;margin:0 auto;padding:0 20px;}
+    .aca-info h2{
+      font-family:"Lora",Georgia,serif;
+      font-size:30px;
+      text-align:center;
+      margin:0 0 32px;
+      color:var(--ink);
+    }
+    .aca-info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+    .aca-info-card{
+      background:var(--bg-soft);
+      border-radius:var(--radius-lg);
+      padding:24px;
+    }
+    .aca-info-card h3{
+      font-size:18px;
+      font-weight:700;
+      color:var(--teal-800);
+      margin:0 0 8px;
+    }
+    .aca-info-card p{
+      font-size:15px;
+      line-height:1.55;
+      color:var(--body);
+      margin:0;
+    }
+
+    .aca-disclaimer{
+      padding:32px 20px;
+      background:var(--bg-cool);
+      text-align:center;
+      font-size:13px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+    .aca-disclaimer .container{max-width:800px;margin:0 auto;}
+
+    @media (max-width:640px){
+      .aca-quiz-card{margin:-30px 16px 0;padding:24px 18px;}
+      .aca-question{font-size:20px;}
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="aca-hero">
+    <div class="container">
+      <span class="kicker">Affordable Care Act</span>
+      <h1>Discover Affordable Health Insurance Options Today</h1>
+      <p class="lede">Navigating the health insurance market can feel overwhelming. Take our quick eligibility quiz and we will help you find a plan that fits your lifestyle and budget.</p>
+    </div>
+  </section>
+
+  <section class="aca-quiz-section">
+    <div class="aca-quiz-card" id="acaQuiz">
+      <div class="aca-progress" aria-hidden="true">
+        <div class="aca-progress-bar" id="acaProgress"></div>
+      </div>
+
+      <div id="acaStepWrap">
+        <div class="aca-step-label" id="acaStepLabel">Question 1 of 3</div>
+        <h2 class="aca-question" id="acaQuestion">Are you under 65 years old?</h2>
+        <div class="aca-options">
+          <button type="button" class="aca-option" data-answer="yes">Yes</button>
+          <button type="button" class="aca-option" data-answer="no">No</button>
+        </div>
+        <button type="button" class="aca-back" id="acaBack" hidden>&larr; Back</button>
+      </div>
+
+      <div id="acaQualified" class="aca-result" hidden>
+        <span class="aca-tap-line">Tap the Button Below to Call Us Now</span>
+        <h2>You may qualify. Talk to a licensed agent.</h2>
+        <p>Based on your answers, you could be a great fit for an ACA plan. A licensed agent can walk you through your options in just a few minutes.</p>
+        <a href="tel:+18000000000" class="aca-call-btn" id="acaCallBtn">Call now: (800) 000-0000</a>
+      </div>
+
+      <div id="acaDisqualified" class="aca-result" hidden>
+        <h2 id="acaDqHeading">Medicare may be a better fit for you.</h2>
+        <p id="acaDqBody">Based on your answers, an ACA plan may not be the best match. If you are 65 or older, or already enrolled in coverage, our Medicare resources can help you compare options and benefits.</p>
+        <a href="/medicare.html" class="aca-medicare-cta">Explore Medicare options &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="aca-info">
+    <div class="container">
+      <h2>About the Affordable Care Act</h2>
+      <div class="aca-info-grid">
+        <div class="aca-info-card">
+          <h3>What is the ACA?</h3>
+          <p>The Affordable Care Act, also known as Obamacare, is a federal law designed to make health coverage more accessible and affordable for individuals and families.</p>
+        </div>
+        <div class="aca-info-card">
+          <h3>Who can enroll?</h3>
+          <p>Most U.S. residents under 65 who are not covered by Medicare, Medicaid, or another qualifying plan may be eligible to enroll in an ACA marketplace plan.</p>
+        </div>
+        <div class="aca-info-card">
+          <h3>How we help</h3>
+          <p>We connect you with licensed agents who can answer your questions, compare available plans, and guide you through the enrollment process at no cost to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="aca-disclaimer">
+    <div class="container">
+      <p>Consumer Support Help is a free informational resource. We are not affiliated with the U.S. government, Medicare, or Medicaid. Plan availability, eligibility, and benefits vary by state and personal circumstances. Calls may be routed to a licensed insurance agent who can discuss available coverage.</p>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/script.js" defer></script>
+  <script>
+    (function(){
+      var QUESTIONS = [
+        { q: "Are you under 65 years old?", qualifyAnswer: "yes" },
+        { q: "Are you currently enrolled in Medicare, Medicaid, or another health insurance plan through the ACA?", qualifyAnswer: "no" },
+        { q: "Is your household income under $50,000 per year?", qualifyAnswer: "yes" }
+      ];
+      var state = { step: 0, answers: [], dq: false };
+
+      var elStepWrap = document.getElementById('acaStepWrap');
+      var elQuestion = document.getElementById('acaQuestion');
+      var elStepLabel = document.getElementById('acaStepLabel');
+      var elProgress = document.getElementById('acaProgress');
+      var elBack = document.getElementById('acaBack');
+      var elQualified = document.getElementById('acaQualified');
+      var elDisqualified = document.getElementById('acaDisqualified');
+      var elDqHeading = document.getElementById('acaDqHeading');
+      var elDqBody = document.getElementById('acaDqBody');
+
+      function renderStep(){
+        var item = QUESTIONS[state.step];
+        elQuestion.textContent = item.q;
+        elStepLabel.textContent = "Question " + (state.step + 1) + " of " + QUESTIONS.length;
+        elProgress.style.width = (((state.step) / QUESTIONS.length) * 100) + "%";
+        elBack.hidden = state.step === 0;
+        elStepWrap.hidden = false;
+        elQualified.hidden = true;
+        elDisqualified.hidden = true;
+      }
+
+      function showQualified(){
+        elProgress.style.width = "100%";
+        elStepWrap.hidden = true;
+        elQualified.hidden = false;
+        elDisqualified.hidden = true;
+      }
+
+      function showDisqualified(reason){
+        elProgress.style.width = "100%";
+        elStepWrap.hidden = true;
+        elQualified.hidden = true;
+        elDisqualified.hidden = false;
+        if (reason === "age") {
+          elDqHeading.textContent = "Medicare may be a better fit for you.";
+          elDqBody.textContent = "Since you are 65 or older, Medicare is likely the right path for you. Our Medicare resources can help you compare plans and find coverage that fits your needs.";
+        } else if (reason === "enrolled") {
+          elDqHeading.textContent = "You may already have coverage that works.";
+          elDqBody.textContent = "It looks like you are already enrolled in a health plan. If you are on Medicare or Medicaid, our Medicare guide can help you review your benefits and explore supplement options.";
+        } else {
+          elDqHeading.textContent = "An ACA plan may not be the best fit.";
+          elDqBody.textContent = "Based on your household income, you may want to explore other options. Our Medicare resources include guidance on cost comparisons and coverage paths that may suit you better.";
+        }
+      }
+
+      document.querySelectorAll('.aca-option').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var answer = btn.getAttribute('data-answer');
+          state.answers[state.step] = answer;
+          var item = QUESTIONS[state.step];
+          if (answer !== item.qualifyAnswer) {
+            var reason = state.step === 0 ? "age" : (state.step === 1 ? "enrolled" : "income");
+            showDisqualified(reason);
+            return;
+          }
+          state.step += 1;
+          if (state.step >= QUESTIONS.length) {
+            showQualified();
+          } else {
+            renderStep();
+          }
+        });
+      });
+
+      elBack.addEventListener('click', function(){
+        if (state.step > 0) {
+          state.step -= 1;
+          renderStep();
+        }
+      });
+
+      renderStep();
+    })();
+  </script>
+</body>
+</html>
