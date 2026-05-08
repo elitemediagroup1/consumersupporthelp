@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home Insurance Quote — Consumer Support Help</title>
+  <meta name="description" content="See if you qualify for better home insurance rates. Quick eligibility check, then talk to a licensed agent — chat with Lucy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .fe-hero{background:linear-gradient(135deg,var(--teal-900),var(--teal-800));color:#fff;padding:64px 20px 90px}
+    .fe-hero .container{max-width:760px;margin:0 auto;text-align:center;padding:0 16px}
+    .fe-hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-400);margin-bottom:14px}
+    .fe-hero h1{font-family:"Lora",Georgia,serif;font-size:clamp(32px,4.2vw,46px);line-height:1.15;margin:0 0 14px;color:#fff}
+    .fe-hero .lede{font-size:18px;line-height:1.55;color:rgba(255,255,255,.88);max-width:600px;margin:0 auto}
+    /* Chat-style quiz (shared with aca.html / final-expense.html) */
+    .chat-section{padding:0 20px 60px;background:var(--bg)}
+    .chat-wrap{max-width:560px;margin:-30px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden}
+    .chat-header{padding:14px 18px;background:var(--bg-soft);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+    .chat-header .avatar{width:40px;height:40px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+    .chat-header .who{display:flex;flex-direction:column;line-height:1.2}
+    .chat-header .name{font-weight:700;color:var(--ink);font-size:15px}
+    .chat-header .status{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+    .chat-header .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulseDot 1.6s infinite}
+    @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+    .chat-body{padding:18px;min-height:280px;max-height:520px;overflow-y:auto;background:#fff;display:flex;flex-direction:column;gap:10px}
+    .chat-row{display:flex;align-items:flex-end;gap:8px;animation:fadeUp .25s ease}
+    .chat-row.them{justify-content:flex-start}
+    .chat-row.you{justify-content:flex-end}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .chat-avatar{width:28px;height:28px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}
+    .chat-avatar.you{background:var(--bg-cool);color:var(--muted)}
+    .chat-row.you .chat-avatar{order:2}
+    .chat-bubble{max-width:78%;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.45;word-wrap:break-word}
+    .chat-row.them .chat-bubble{background:var(--bg-soft);color:var(--ink);border-bottom-left-radius:4px}
+    .chat-row.you .chat-bubble{background:var(--teal-700);color:#fff;border-bottom-right-radius:4px;font-weight:600}
+    .chat-typing{display:inline-flex;gap:4px;align-items:center;padding:4px 0}
+    .chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.6;animation:typingBounce 1.2s infinite}
+    .chat-typing span:nth-child(2){animation-delay:.15s}
+    .chat-typing span:nth-child(3){animation-delay:.3s}
+    @keyframes typingBounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-3px);opacity:1}}
+    .chat-actions{padding:14px 18px;background:#fff;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    .chat-opt{background:var(--teal-700);color:#fff;border:0;padding:10px 18px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s ease,transform .12s ease}
+    .chat-opt:hover{background:var(--teal-800);transform:translateY(-1px)}
+    .chat-cta-row{padding:18px;background:var(--bg-soft);border-top:1px solid var(--line);text-align:center}
+    .chat-call-btn{display:inline-block;background:var(--green-700);color:#fff;padding:14px 28px;font-size:18px;font-weight:700;border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow-sm)}
+                         .chat-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .chat-call-num{display:block;font-size:13px;font-weight:600;opacity:.9;margin-top:4px}
+    .fe-fallback-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;background:var(--bg-soft);border-top:1px solid var(--line)}
+    .fe-fallback-card{display:block;padding:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:border-color .15s ease,transform .12s ease}
+    .fe-fallback-card:hover{border-color:var(--teal-700);transform:translateY(-1px)}
+    .fe-fallback-card strong{display:block;color:var(--teal-800);font-size:15px;margin-bottom:4px}
+    .fe-fallback-card span{display:block;font-size:13px;color:var(--muted);line-height:1.4}
+    .fe-info{padding:60px 20px;background:#fff}
+    .fe-info .container{max-width:1000px;margin:0 auto;padding:0 16px}
+    .fe-info h2{font-family:"Lora",Georgia,serif;font-size:32px;text-align:center;margin:0 0 32px;color:var(--ink)}
+    .fe-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .fe-info-card{background:var(--bg-soft);border-radius:var(--radius-lg);padding:24px}
+    .fe-info-card h3{font-size:18px;font-weight:700;color:var(--teal-800);margin:0 0 8px}
+    .fe-info-card p{font-size:15px;line-height:1.55;color:var(--body);margin:0}
+    .fe-disclaimer{padding:32px 20px;background:var(--bg-cool);text-align:center;font-size:13px;line-height:1.55;color:var(--muted)}
+    .fe-disclaimer .container{max-width:800px;margin:0 auto}
+    @media (max-width:640px){
+      .chat-wrap{margin:-20px 12px 0}
+      .chat-bubble{font-size:14px}
+      .fe-fallback-grid{grid-template-columns:1fr}
+    }
+    </style>
+  </head>
+  <body>
+    <div class="site-header"></div>div>
+    <section class="fe-hero">
+      <div class="container">
+        <span class="kicker">Home Insurance</span>span>
+        <h1>Looking to Lower Your Home Insurance Premium?</h1>
+      <p class="lede">Chat with Lucy for a quick eligibility check — takes less than a minute, then we'll connect you with a licensed insurance agent to compare rates.</p>p>
+      </div>div>
+    </section>section>
+  <section class="chat-section">
+  <div class="chat-wrap" id="hiChat">
+  <div class="chat-header">
+  <div class="avatar">L</div>div>
+  <div class="who">
+  <span class="name">Lucy</span>span>
+  <span class="status"><span class="dot"></span>span>Online now</span>span>
+  </div>div>
+  </div>div>
+  <div class="chat-body" id="chatBody"></div>div>
+  <div class="chat-actions" id="chatActions"></div>div>
+  </div>div>
+  </section>section>
+  <section class="fe-info">
+  <div class="container">
+  <h2>About Home Insurance</h2>
+  <div class="fe-info-grid">
+  <div class="fe-info-card"><h3>Why shop your rate?</h3><p>Home insurance premiums can vary by hundreds of dollars between carriers. Comparing quotes regularly helps make sure you're not overpaying for the same coverage.</p></div>div>
+  <div class="fe-info-card"><h3>Who can qualify?</h3><p>Most homeowners with a single-family house, condo, or townhome in good condition can qualify. Bundling with auto, having a newer roof, and a clean claims history may help unlock better rates.</p></div>div>
+  <div class="fe-info-card"><h3>How we help</h3><p>We connect you with licensed agents who can review your current policy, explain coverage options, and shop multiple carriers to find a rate that fits your budget.</p></div>div>
+  </div>div>
+  </div>div>
+  </section>section>
+  <section class="fe-disclaimer">
+  <div class="container">Consumer Support Help is a free informational resource. We are not an insurance carrier and do not issue policies. Savings are not guaranteed and may vary based on individual circumstances. We do not offer every plan available in your area. Please contact licensed providers for complete information.</div>div>
+  </section>section>
+  <div class="site-footer"></div>div>
+  <script src="/assets/script.js" defer></script>
+  <script>
+    (function(){
+      var body=document.getElementById('chatBody');
+      var actions=document.getElementById('chatActions');
+      var INTRO=[
+        "Hi 👋",
+        "I'm Lucy from Consumer Support Help.",
+        "I can help you see if you qualify for better home insurance rates. Mind if I ask you a few quick questions?"
+        ];
+      var STEPS=[
+        {q:"First — do you own your home?",options:[
+          {label:"Yes, I own it",value:"own",qualifying:true},
+          {label:"No, I rent",value:"rent",qualifying:false,dqReason:"renter"}
+          ]},
+        {q:"Is your home a single-family house, condo, or townhome?",options:[
+          {label:"Yes",value:"yes",qualifying:true},
+          {label:"No (mobile/manufactured/other)",value:"no",qualifying:false,dqReason:"propertytype"}
+          ]},
+        {q:"Is the home in good condition? (no major roof, structural, fire, or water damage)",options:[
+          {label:"Yes, good condition",value:"yes",qualifying:true},
+          {label:"No, has damage",value:"no",qualifying:false,dqReason:"condition"}
+          ]},
+        {q:"Do you currently have home insurance?",options:[
+          {label:"Yes, I have a policy",value:"yes",qualifying:true},
+          {label:"No, I don't",value:"no",qualifying:true}
+          ]},
+        {q:"Are you currently shopping for a new home insurance quote?",options:[
+          {label:"Yes",value:"yes",qualifying:true},
+          {label:"Not right now",value:"no",qualifying:false,dqReason:"notshopping"}
+          ]},
+        {q:"Have you had any home insurance claims in the last 3 years?",options:[
+          {label:"No claims",value:"none",qualifying:true},
+          {label:"1 claim",value:"one",qualifying:true},
+          {label:"2 or more",value:"many",qualifying:false,dqReason:"claims"}
+          ]},
+        {q:"Are you the decision maker on this policy?",options:[
+          {label:"Yes",value:"yes",qualifying:true},
+          {label:"No",value:"no",qualifying:false,dqReason:"notdm"}
+          ]}
+        ];
+      var state={step:0};
+      function addThem(text){
+        var typing=document.createElement('div');
+        typing.className='chat-row them';
+        typing.innerHTML='<div class="chat-avatar">L</div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
+        body.appendChild(typing);
+        body.scrollTop=body.scrollHeight;
+        setTimeout(function(){
+          typing.querySelector('.chat-bubble').innerHTML='';
+          typing.querySelector('.chat-bubble').textContent=text;
+          body.scrollTop=body.scrollHeight;
+        },700);
+        return new Promise(function(res){setTimeout(res,1050)});
+      }
+      function addThemHTML(html){
+        var row=document.createElement('div');
+        row.className='chat-row them';
+        row.innerHTML='<div class="chat-avatar">L</div><div class="chat-bubble"></div>';
+        row.querySelector('.chat-bubble').innerHTML=html;
+        body.appendChild(row);
+        body.scrollTop=body.scrollHeight;
+      }
+      function addYou(text){
+        var row=document.createElement('div');
+        row.className='chat-row you';
+        row.innerHTML='<div class="chat-avatar you">You</div>';
+        var bubble=document.createElement('div');
+        bubble.className='chat-bubble';
+        bubble.textContent=text;
+        row.appendChild(bubble);
+        body.appendChild(row);
+        body.scrollTop=body.scrollHeight;
+      }
+      function clearActions(){actions.innerHTML='';}
+      function showOptions(opts,onPick){
+        clearActions();
+        opts.forEach(function(o){
+          var btn=document.createElement('button');
+          btn.type='button';
+          btn.className='chat-opt';
+          btn.textContent=o.label;
+          btn.addEventListener('click',function(){
+            addYou(o.label);
+            clearActions();
+            onPick(o);
+          });
+          actions.appendChild(btn);
+        });
+      }
+      function startQuiz(){state.step=0;askStep();}
+      function askStep(){
+        var s=STEPS[state.step];
+        addThem(s.q).then(function(){
+          showOptions(s.options,function(picked){
+            if(!picked.qualifying){showDisqualified(picked.dqReason);return;}
+            state.step++;
+            if(state.step>=STEPS.length){showQualified();}else{askStep();}
+          });
+        });
+      }
+      function showQualified(){
+        addThem("Great news — based on your answers you may qualify for better home insurance rates.").then(function(){
+          return addThem("Tap below to speak with a licensed insurance agent now and compare quotes.");
+        }).then(function(){
+          actions.innerHTML='';
+          var ctaWrap=document.createElement('div');
+          ctaWrap.className='chat-cta-row';
+          ctaWrap.innerHTML='<a href="tel:+18000000000" class="chat-call-btn">📞 Call Now to Get Quotes<span class="chat-call-num">(800) 000-0000</span></a>';
+          actions.parentNode.replaceChild(ctaWrap,actions);
+    });
+      }
+      function showDisqualified(reason){
+        var msg,follow;
+        if(reason==="renter"){
+          msg="Got it — home insurance is for homeowners. You may want to look at renters insurance instead.";
+          follow="Here are a few other Consumer Support Help resources that may be a better fit.";
+        }else if(reason==="propertytype"){
+          msg="Thanks for letting me know. Mobile and manufactured homes need specialty coverage that's a bit different.";
+          follow="We may still have other resources that could help — see options below.";
+        }else if(reason==="condition"){
+          msg="Got it. Most carriers want to see a home in good condition before quoting a new policy.";
+          follow="If repairs are made later, come back any time. Meanwhile, here are some other resources.";
+        }else if(reason==="notshopping"){
+          msg="No problem at all.";
+          follow="If your situation changes, come back any time. In the meantime, here are a few other resources.";
+        }else if(reason==="claims"){
+          msg="Thanks for letting me know. Multiple recent claims can make it harder to find competitive rates.";
+          follow="Here are a few other Consumer Support Help resources that may be useful.";
+        }else if(reason==="notdm"){
+          msg="Got it.";
+          follow="Since you're not the decision maker, an agent would need to speak with the homeowner directly. Other resources below.";
+        }else{
+          msg="Thanks for the info.";
+          follow="Home insurance may not be the best match today, but here are some other Consumer Support Help resources.";
+        }
+        addThem(msg).then(function(){
+          return addThem(follow);
+        }).then(function(){
+          actions.innerHTML='';
+          var fbWrap=document.createElement('div');
+          fbWrap.className='fe-fallback-grid';
+          fbWrap.innerHTML=
+            '<a href="/aca.html" class="fe-fallback-card"><strong>Health Coverage (ACA)</strong><span>Compare marketplace health plans.</span></a>'+
+            '<a href="/final-expense.html" class="fe-fallback-card"><strong>Final Expense</strong><span>Up to $40,000 in coverage.</span></a>'+
+            '<a href="/ssdi.html" class="fe-fallback-card"><strong>SSDI Benefits</strong><span>See if you qualify for disability benefits.</span></a>'+
+            '<a href="/debt-settlement.html" class="fe-fallback-card"><strong>Debt Settlement</strong><span>Resolve unsecured debt.</span></a>';
+          actions.parentNode.replaceChild(fbWrap,actions);
+        });
+      }
+      var introIdx=0;
+      function nextIntro(){
+        if(introIdx>=INTRO.length){startQuiz();return;}
+        addThem(INTRO[introIdx]).then(function(){introIdx++;nextIntro();});
+      }
+      var startBtn=document.createElement('button');
+      startBtn.type='button';
+      startBtn.className='chat-opt';
+      startBtn.textContent="Let's go";
+      startBtn.addEventListener('click',function(){clearActions();nextIntro();});
+      actions.appendChild(startBtn);
+      addThemHTML('<strong>Lucy</strong> wants to chat with you 💬');
+      setTimeout(function(){addThem("Tap below when you're ready to get started.");},400);
+    })();
+  </script>
+  </body>
+</html>html>
+  </script></p></p></h2></h1>
+  </body>
+  </style></title>
+  </head>
