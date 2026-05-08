@@ -1,192 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SSDI Evaluation – Consumer Support Help</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#0b1220;
-      --grad1:#0b1220cc;
-      --grad2:#0b1220cc;
-      --panel:#fffffff2;
-      --text:#0f172a;
-      --accent:#2dd4bf;
-      --accent-700:#14b8a6;
-      --border:rgba(15,23,42,.18);
-      --hero:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop');
-    }
-    *{box-sizing:border-box;}
-    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;color:#e2e8f0;background:var(--bg);margin:0;}
-    .hero{
-      background:linear-gradient(180deg,var(--grad1),var(--grad2)),var(--hero) center/cover no-repeat;
-      min-height:100vh;
-      padding:60px 18px;
-    }
-    .container{
-      max-width:640px;
-      margin:0 auto;
-      background:var(--panel);
-      color:var(--text);
-      border-radius:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      padding:30px 24px;
-    }
-    h1,h2{font-family:Montserrat,sans-serif;margin-top:0;}
-    h1{font-size:26px;color:#0f172a;margin-bottom:10px;}
-    h2{font-size:22px;color:#0f172a;margin-bottom:12px;}
-    p{color:#334155;font-size:15px;line-height:1.5;}
-    label{font-weight:600;font-size:14px;display:block;margin-top:14px;color:#0f172a;}
-    input,select{
-      width:100%;
-      padding:10px 12px;
-      border:1px solid #cbd5e1;
-      border-radius:10px;
-      font-size:15px;
-      background:#fff;
-    }
-    input:focus,select:focus{border-color:#99f6e4;box-shadow:0 0 0 3px #ccfbf1;outline:none;}
-    button{
-      margin-top:20px;
-      width:100%;
-      border:none;
-      border-radius:10px;
-      padding:12px 18px;
-      font-weight:700;
-      font-size:16px;
-      background:var(--accent);
-      color:#062a27;
-      cursor:pointer;
-      transition:background .15s,transform .1s;
-      box-shadow:0 6px 14px rgba(20,184,166,.28);
-    }
-    button:hover{background:var(--accent-700);transform:translateY(-1px);}
-    button:disabled{opacity:.6;cursor:not-allowed;}
-    .cta{text-align:center;margin-top:24px;}
-    .cta a{
-      display:inline-block;
-      background:var(--accent);
-      color:#062a27;
-      font-weight:700;
-      padding:12px 20px;
-      border-radius:10px;
-      text-decoration:none;
-      box-shadow:0 6px 14px rgba(20,184,166,.28);
-    }
-    .cta a:hover{background:var(--accent-700);}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SSDI Evaluation — Consumer Support Help</title>
+<meta name="description" content="See if you may qualify for Social Security Disability Insurance (SSDI) benefits. Quick eligibility check, then talk to an advocate." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="/assets/style.css" />
+<style>
+.fe-hero{background:linear-gradient(135deg,var(--teal-900),var(--teal-800));color:#fff;padding:64px 0 56px;}
+.fe-hero .container{max-width:760px;margin:0 auto;text-align:center;padding:0 20px;}
+.fe-hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-400);margin-bottom:14px;}
+.fe-hero h1{font-family:"Lora",Georgia,serif;font-size:clamp(28px,4.2vw,44px);line-height:1.15;margin:0 0 16px;color:#fff;}
+.fe-hero .lede{font-size:17px;line-height:1.55;color:rgba(255,255,255,.88);max-width:600px;margin:0 auto;}
+
+.chat-section{padding:48px 0 64px;background:var(--bg);}
+.chat-wrap{max-width:560px;margin:-30px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;}
+.chat-header{padding:14px 18px;background:var(--bg-soft);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;}
+.chat-header .avatar{width:36px;height:36px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
+.chat-header .who{display:flex;flex-direction:column;line-height:1.2;}
+.chat-header .name{font-weight:700;color:var(--ink);font-size:15px;}
+.chat-header .status{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.chat-header .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulseDot 1.6s infinite;}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}70%{box-shadow:0 0 0 6px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+
+.chat-body{padding:20px 16px 12px;min-height:280px;max-height:520px;overflow-y:auto;background:#fff;display:flex;flex-direction:column;gap:8px;}
+.chat-row{display:flex;align-items:flex-end;gap:8px;animation:fadeUp .25s ease;}
+.chat-row.them{justify-content:flex-start;}
+.chat-row.you{justify-content:flex-end;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.chat-avatar{width:28px;height:28px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;}
+.chat-avatar.you{background:var(--bg-cool);color:var(--muted);}
+.chat-row.you .chat-avatar{order:2;}
+.chat-bubble{max-width:78%;padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.45;word-wrap:break-word;}
+.chat-row.them .chat-bubble{background:var(--bg-soft);color:var(--ink);border-bottom-left-radius:6px;}
+.chat-row.you .chat-bubble{background:var(--teal-700);color:#fff;border-bottom-right-radius:6px;font-weight:600;}
+.chat-typing{display:inline-flex;gap:3px;align-items:center;padding:12px 14px;}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.6;animation:typingBounce 1.2s infinite;}
+.chat-typing span:nth-child(2){animation-delay:.15s;}
+.chat-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typingBounce{0%,80%,100%{transform:translateY(0);opacity:.4;}40%{transform:translateY(-4px);opacity:1;}}
+
+.chat-actions{padding:12px 16px 18px;background:#fff;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.chat-opt{background:var(--teal-700);color:#fff;border:0;padding:10px 22px;border-radius:999px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s ease,transform .12s ease;}
+.chat-opt:hover{background:var(--teal-800);transform:translateY(-1px);}
+.chat-cta-row{padding:16px;background:var(--bg-soft);border-top:1px solid var(--line);text-align:center;}
+.chat-call-btn{display:inline-block;background:var(--green-700);color:#fff;padding:14px 28px;font-size:16px;font-weight:700;border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow-sm);}
+.chat-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.chat-call-num{display:block;font-size:13px;font-weight:600;opacity:.9;margin-top:2px;}
+
+.fe-fallback-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;background:var(--bg-soft);border-top:1px solid var(--line);}
+.fe-fallback-card{display:block;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:border-color .15s ease,transform .12s ease;}
+.fe-fallback-card:hover{border-color:var(--teal-700);transform:translateY(-1px);}
+.fe-fallback-card strong{display:block;color:var(--teal-800);font-size:14px;margin-bottom:2px;}
+.fe-fallback-card span{display:block;font-size:12px;color:var(--muted);line-height:1.4;}
+
+.fe-info{padding:64px 0;background:#fff;}
+.fe-info .container{max-width:1000px;margin:0 auto;padding:0 20px;}
+.fe-info h2{font-family:"Lora",Georgia,serif;font-size:30px;text-align:center;margin:0 0 32px;color:var(--ink);}
+.fe-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.fe-info-card{background:var(--bg-soft);border-radius:var(--radius-lg);padding:24px;}
+.fe-info-card h3{font-size:18px;font-weight:700;color:var(--teal-800);margin:0 0 8px;}
+.fe-info-card p{font-size:15px;line-height:1.55;color:var(--body);margin:0;}
+
+.fe-deepdive{padding:64px 0;background:var(--bg-soft);}
+.fe-deepdive .container{max-width:880px;margin:0 auto;padding:0 20px;}
+.fe-deepdive h2{font-family:"Lora",Georgia,serif;font-size:28px;color:var(--ink);margin:0 0 16px;text-align:center;}
+.fe-deepdive p{font-size:16px;line-height:1.65;color:var(--body);margin:0 0 16px;}
+.fe-deepdive h3{font-family:"Lora",Georgia,serif;font-size:20px;color:var(--teal-800);margin:28px 0 10px;}
+.fe-deepdive ul{padding-left:20px;margin:0 0 16px;}
+.fe-deepdive ul li{font-size:16px;line-height:1.6;color:var(--body);margin-bottom:6px;}
+
+.fe-disclaimer{padding:32px 20px;background:var(--bg-cool);text-align:center;font-size:13px;line-height:1.55;color:var(--muted);}
+.fe-disclaimer .container{max-width:800px;margin:0 auto;}
+
+@media (max-width:640px){
+.chat-wrap{margin:-20px 12px 0;}
+.chat-bubble{font-size:14px;}
+.fe-fallback-grid{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
+<div id="site-header"></div>
 
-  <!-- Shared Header -->
-  <div id="header"></div>
+<section class="fe-hero">
+<div class="container">
+<span class="kicker">SSDI Benefits Evaluation</span>
+<h1>See If You May Qualify for Social Security Disability Benefits</h1>
+<p class="lede">If a medical condition is keeping you from working, you may be entitled to monthly SSDI payments. Chat with Lucy for a quick eligibility check — takes less than 60 seconds.</p>
+</div>
+</section>
 
-  <div class="hero">
-    <div class="container">
-      <h1>Do you feel that you qualify to receive SSDI Benefits?</h1>
-      <p>If so, fill out your info below and request a call.</p>
+<section class="chat-section">
+<div class="chat-wrap" id="ssdiChat">
+<div class="chat-header">
+<div class="avatar">L</div>
+<div class="who">
+<span class="name">Lucy</span>
+<span class="status"><span class="dot"></span>Online now</span>
+</div>
+</div>
+<div class="chat-body" id="chatBody"></div>
+<div class="chat-actions" id="chatActions"></div>
+</div>
+</section>
 
-      <form id="contactForm">
-        <input type="hidden" name="formType" value="ssdi" />
+<section class="fe-info">
+<div class="container">
+<h2>About SSDI Benefits</h2>
+<div class="fe-info-grid">
+<div class="fe-info-card">
+<h3>What is SSDI?</h3>
+<p>Social Security Disability Insurance (SSDI) is a federal program that pays monthly benefits to people who can no longer work due to a serious medical condition expected to last at least 12 months or result in death.</p>
+</div>
+<div class="fe-info-card">
+<h3>Who can qualify?</h3>
+<p>You generally need a qualifying disability and enough work history paying into Social Security. Most approved applicants are between 50 and 66 and have worked at least five of the last ten years.</p>
+</div>
+<div class="fe-info-card">
+<h3>How we help</h3>
+<p>We connect you with experienced SSDI advocates who can review your case, help you gather medical evidence, and guide you through the application or appeal process at no upfront cost.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required />
+<section class="fe-deepdive">
+<div class="container">
+<h2>Understanding Social Security Disability Insurance</h2>
+<p>Millions of Americans live with conditions that prevent them from holding down full-time work. SSDI was created to provide a financial safety net for workers who paid into Social Security during their careers and later become unable to earn a living because of a medical impairment. Unlike Supplemental Security Income (SSI), which is need-based, SSDI is an earned benefit tied to your work history.</p>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
+<h3>Common qualifying conditions</h3>
+<p>The Social Security Administration maintains a "Blue Book" of impairments that may qualify for benefits. Some of the most frequently approved conditions include:</p>
+<ul>
+<li>Musculoskeletal disorders such as severe back injuries, degenerative disc disease, and arthritis</li>
+<li>Cardiovascular conditions like chronic heart failure or recurrent arrhythmias</li>
+<li>Mental health disorders including major depression, PTSD, bipolar disorder, and anxiety</li>
+<li>Neurological disorders such as multiple sclerosis, epilepsy, Parkinson's disease, and stroke</li>
+<li>Cancer and other serious illnesses with significant treatment side effects</li>
+<li>Immune system disorders such as lupus, HIV/AIDS, and rheumatoid arthritis</li>
+</ul>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required />
+<h3>How much does SSDI pay?</h3>
+<p>Monthly SSDI payments are based on your average lifetime earnings before your disability began. As of 2025, the average monthly SSDI benefit is roughly $1,580, with a maximum benefit close to $4,018 for high earners. Approved beneficiaries also become eligible for Medicare after 24 months of receiving SSDI.</p>
 
-        <label style="margin-top:18px; display:flex; align-items:flex-start; gap:8px; font-weight:500;">
-          <input type="checkbox" id="consent" required style="margin-top:4px;">
-          <span style="font-size:14px; color:#334155; line-height:1.4;">
-            By checking this box, you agree to our
-            <a href="privacy.html" target="_blank" style="color:#0f766e;">Privacy Policy</a> and
-            <a href="terms.html" target="_blank" style="color:#0f766e;">Terms &amp; Conditions</a>,
-            and consent to be contacted by phone, text, and email regarding your SSDI evaluation.
-          </span>
-        </label>
+<h3>Why so many applications get denied</h3>
+<p>The SSA denies the majority of initial SSDI applications, often because of incomplete medical records, missed deadlines, or technical errors in the paperwork. Having an experienced advocate review your file before you submit — or while you appeal — can significantly improve your chances of approval. Most advocates work on contingency, meaning you pay nothing unless your claim is approved.</p>
 
-        <button type="submit">Request a Call</button>
-      </form>
-    </div>
-  </div>
+<h3>The application process at a glance</h3>
+<ul>
+<li><strong>Initial application:</strong> Submit your medical and work history to the SSA.</li>
+<li><strong>Reconsideration:</strong> If denied, request a second look within 60 days.</li>
+<li><strong>Hearing:</strong> Present your case to an Administrative Law Judge.</li>
+<li><strong>Appeals Council &amp; federal court:</strong> Further options if needed.</li>
+</ul>
+<p>Even if you have already been denied, it is not the end of the road. A trained SSDI advocate can review your denial letter, identify what went wrong, and help you build a stronger case on appeal.</p>
+</div>
+</section>
 
-  <!-- Shared Footer -->
-  <div id="footer"></div>
+<div class="fe-disclaimer">
+<div class="container">
+<p>Consumer Support Help is a free informational resource. We are not a law firm, government agency, or affiliated with the Social Security Administration. Eligibility for SSDI benefits is determined solely by the SSA. Calls may be routed to a third-party SSDI advocate or attorney who can review your situation.</p>
+</div>
+</div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.getElementById('contactForm');
+<div id="site-footer"></div>
 
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+<script src="/assets/script.js" defer></script>
+<script>
+(function(){
+var body = document.getElementById('chatBody');
+var actions = document.getElementById('chatActions');
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      let phone = document.getElementById('phone').value.trim();
-      const consentGiven = document.getElementById('consent').checked;
+var INTRO = [
+"Hi 👋",
+"I'm Lucy from Consumer Support Help.",
+"I can help you see if you may qualify for SSDI benefits. Mind if I ask you a few quick questions?"
+];
 
-      if (!consentGiven) {
-        alert("You must agree to the privacy policy and terms to continue.");
-        return;
-      }
+var STEPS = [
+{ q: "First, what is your age?", options: [
+{ label: "Under 18", value: "under18", qualifying: false, dqReason: "young" },
+{ label: "18 – 64", value: "18-64", qualifying: true },
+{ label: "65 or older", value: "65plus", qualifying: false, dqReason: "old" }
+]},
+{ q: "Do you currently have a medical condition that prevents you from working?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nocondition" }
+]},
+{ q: "Has your condition lasted (or is it expected to last) at least 12 months?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "shortterm" }
+]},
+{ q: "Are you currently under the care of a doctor for your condition?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nodoctor" }
+]},
+{ q: "Have you worked at least 5 of the last 10 years?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nowork" }
+]},
+{ q: "Are you currently receiving SSDI benefits?", options: [
+{ label: "No, not yet", value: "no", qualifying: true },
+{ label: "Yes, already receiving", value: "yes", qualifying: false, dqReason: "alreadyreceiving" }
+]},
+{ q: "Have you already applied for SSDI?", options: [
+{ label: "Not yet", value: "notyet", qualifying: true },
+{ label: "Yes, and was denied", value: "denied", qualifying: true },
+{ label: "Yes, still pending", value: "pending", qualifying: true }
+]}
+];
 
-      // Remove all non-digit characters
-      phone = phone.replace(/\D/g, '');
-      
-      // If 10 digits (US number without '1'), prepend '1'
-      if (phone.length === 10) {
-        phone = '1' + phone;
-      } 
-      
-      // Validate the final 11-digit US format (starts with '1')
-      if (!(phone.length === 11 && phone.startsWith('1'))) {
-        alert("Please enter a valid US phone number.");
-        return;
-      }
+var state = { step: -1 };
 
-      // 💥 NEW LINE: Add the '+' prefix for E.164 compliance 
-      phone = '+' + phone; 
-      // Example: 19175551234 becomes +19175551234
+function addThem(text, cb){
+var typing = document.createElement('div');
+typing.className = 'chat-row them';
+typing.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
+body.appendChild(typing);
+body.scrollTop = body.scrollHeight;
+setTimeout(function(){
+typing.querySelector('.chat-bubble').innerHTML = '';
+typing.querySelector('.chat-bubble').textContent = text;
+body.scrollTop = body.scrollHeight;
+if (cb) setTimeout(cb, 350);
+}, 700);
+}
 
-      // ✅ Send as URL-encoded data, NOT FormData
-      const contactData = new URLSearchParams();
-      contactData.append('formType', 'ssdi');
-      contactData.append('step', 'contact');
-      contactData.append('leadId', 'lead-' + Date.now());
-      contactData.append('name', name);
-      contactData.append('email', email);
-      contactData.append('phone', phone); // Now sends the +1... format
-      contactData.append('consent', 'yes');
+function addThemHTML(html, cb){
+var row = document.createElement('div');
+row.className = 'chat-row them';
+row.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"></div>';
+row.querySelector('.chat-bubble').innerHTML = html;
+body.appendChild(row);
+body.scrollTop = body.scrollHeight;
+if (cb) setTimeout(cb, 350);
+}
 
-      fetch("https://script.google.com/macros/s/AKfycbxTeT-UznZKWb2fxR0w8oasR1D99OC79JWfOUL7VQC9LiAI2P25Xqfecc66qr6iBZC00w/exec", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: contactData.toString()
-      })
-      .then(response => response.text())
-      .then(responseText => {
-        if (responseText.includes("Success")) {
-          alert("Thank you! We'll contact you shortly.");
-          contactForm.reset();
-        } else {
-          alert("Submission failed: " + responseText);
-        }
-      })
-      .catch(err => {
-        alert("Network error. Please try again.");
-        console.error(err);
-      });
-    });
-  });
+function addYou(text){
+var row = document.createElement('div');
+row.className = 'chat-row you';
+row.innerHTML = '<div class="chat-avatar you">You</div>';
+var bubble = document.createElement('div');
+bubble.className = 'chat-bubble';
+bubble.textContent = text;
+row.appendChild(bubble);
+body.appendChild(row);
+body.scrollTop = body.scrollHeight;
+}
+
+function clearActions(){ actions.innerHTML = ''; }
+
+function showOptions(opts, onPick){
+clearActions();
+opts.forEach(function(o){
+var btn = document.createElement('button');
+btn.type = 'button';
+btn.className = 'chat-opt';
+btn.textContent = o.label;
+btn.addEventListener('click', function(){
+addYou(o.label);
+clearActions();
+onPick(o);
+});
+actions.appendChild(btn);
+});
+}
+
+function startQuiz(){
+state.step = 0;
+askStep();
+}
+
+function askStep(){
+var s = STEPS[state.step];
+addThem(s.q, function(){
+showOptions(s.options, function(picked){
+if (!picked.qualifying){
+showDisqualified(picked.dqReason);
+return;
+}
+state.step++;
+if (state.step >= STEPS.length){
+showQualified();
+} else {
+askStep();
+}
+});
+});
+}
+
+function showQualified(){
+addThem("Great news — based on your answers, you may qualify for Social Security Disability benefits. 🎉", function(){
+addThem("Tap below to speak with an SSDI advocate now for a free case review.", function(){
+actions.innerHTML = '';
+var ctaWrap = document.createElement('div');
+ctaWrap.className = 'chat-cta-row';
+ctaWrap.innerHTML = '<a href="tel:+18000000000" class="chat-call-btn">📞 Call Now for Your Free Review<span class="chat-call-num">(800) 000-0000</span></a>';
+actions.parentNode.replaceChild(ctaWrap, actions);
+});
+});
+}
+
+function showDisqualified(reason){
+var msg, follow;
+if (reason === "young"){
+msg = "Got it — SSDI generally requires you to be at least 18 with a work history.";
+follow = "Other Consumer Support Help resources may be a better fit for you. Take a look below.";
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SSDI Evaluation — Consumer Support Help</title>
+<meta name="description" content="See if you may qualify for Social Security Disability Insurance (SSDI) benefits. Quick eligibility check, then talk to an advocate." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="/assets/style.css" />
+<style>
+.fe-hero{background:linear-gradient(135deg,var(--teal-900),var(--teal-800));color:#fff;padding:64px 0 56px;}
+.fe-hero .container{max-width:760px;margin:0 auto;text-align:center;padding:0 20px;}
+.fe-hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-400);margin-bottom:14px;}
+.fe-hero h1{font-family:"Lora",Georgia,serif;font-size:clamp(28px,4.2vw,44px);line-height:1.15;margin:0 0 16px;color:#fff;}
+.fe-hero .lede{font-size:17px;line-height:1.55;color:rgba(255,255,255,.88);max-width:600px;margin:0 auto;}
+
+.chat-section{padding:48px 0 64px;background:var(--bg);}
+.chat-wrap{max-width:560px;margin:-30px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;}
+.chat-header{padding:14px 18px;background:var(--bg-soft);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;}
+.chat-header .avatar{width:36px;height:36px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
+.chat-header .who{display:flex;flex-direction:column;line-height:1.2;}
+.chat-header .name{font-weight:700;color:var(--ink);font-size:15px;}
+.chat-header .status{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.chat-header .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulseDot 1.6s infinite;}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}70%{box-shadow:0 0 0 6px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+
+.chat-body{padding:20px 16px 12px;min-height:280px;max-height:520px;overflow-y:auto;background:#fff;display:flex;flex-direction:column;gap:8px;}
+.chat-row{display:flex;align-items:flex-end;gap:8px;animation:fadeUp .25s ease;}
+.chat-row.them{justify-content:flex-start;}
+.chat-row.you{justify-content:flex-end;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.chat-avatar{width:28px;height:28px;border-radius:50%;background:var(--teal-700);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;}
+.chat-avatar.you{background:var(--bg-cool);color:var(--muted);}
+.chat-row.you .chat-avatar{order:2;}
+.chat-bubble{max-width:78%;padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.45;word-wrap:break-word;}
+.chat-row.them .chat-bubble{background:var(--bg-soft);color:var(--ink);border-bottom-left-radius:6px;}
+.chat-row.you .chat-bubble{background:var(--teal-700);color:#fff;border-bottom-right-radius:6px;font-weight:600;}
+.chat-typing{display:inline-flex;gap:3px;align-items:center;padding:12px 14px;}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.6;animation:typingBounce 1.2s infinite;}
+.chat-typing span:nth-child(2){animation-delay:.15s;}
+.chat-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typingBounce{0%,80%,100%{transform:translateY(0);opacity:.4;}40%{transform:translateY(-4px);opacity:1;}}
+
+.chat-actions{padding:12px 16px 18px;background:#fff;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.chat-opt{background:var(--teal-700);color:#fff;border:0;padding:10px 22px;border-radius:999px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s ease,transform .12s ease;}
+.chat-opt:hover{background:var(--teal-800);transform:translateY(-1px);}
+.chat-cta-row{padding:16px;background:var(--bg-soft);border-top:1px solid var(--line);text-align:center;}
+.chat-call-btn{display:inline-block;background:var(--green-700);color:#fff;padding:14px 28px;font-size:16px;font-weight:700;border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow-sm);}
+.chat-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.chat-call-num{display:block;font-size:13px;font-weight:600;opacity:.9;margin-top:2px;}
+
+.fe-fallback-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;background:var(--bg-soft);border-top:1px solid var(--line);}
+.fe-fallback-card{display:block;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:border-color .15s ease,transform .12s ease;}
+.fe-fallback-card:hover{border-color:var(--teal-700);transform:translateY(-1px);}
+.fe-fallback-card strong{display:block;color:var(--teal-800);font-size:14px;margin-bottom:2px;}
+.fe-fallback-card span{display:block;font-size:12px;color:var(--muted);line-height:1.4;}
+
+.fe-info{padding:64px 0;background:#fff;}
+.fe-info .container{max-width:1000px;margin:0 auto;padding:0 20px;}
+.fe-info h2{font-family:"Lora",Georgia,serif;font-size:30px;text-align:center;margin:0 0 32px;color:var(--ink);}
+.fe-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.fe-info-card{background:var(--bg-soft);border-radius:var(--radius-lg);padding:24px;}
+.fe-info-card h3{font-size:18px;font-weight:700;color:var(--teal-800);margin:0 0 8px;}
+.fe-info-card p{font-size:15px;line-height:1.55;color:var(--body);margin:0;}
+
+.fe-deepdive{padding:64px 0;background:var(--bg-soft);}
+.fe-deepdive .container{max-width:880px;margin:0 auto;padding:0 20px;}
+.fe-deepdive h2{font-family:"Lora",Georgia,serif;font-size:28px;color:var(--ink);margin:0 0 16px;text-align:center;}
+.fe-deepdive p{font-size:16px;line-height:1.65;color:var(--body);margin:0 0 16px;}
+.fe-deepdive h3{font-family:"Lora",Georgia,serif;font-size:20px;color:var(--teal-800);margin:28px 0 10px;}
+.fe-deepdive ul{padding-left:20px;margin:0 0 16px;}
+.fe-deepdive ul li{font-size:16px;line-height:1.6;color:var(--body);margin-bottom:6px;}
+
+.fe-disclaimer{padding:32px 20px;background:var(--bg-cool);text-align:center;font-size:13px;line-height:1.55;color:var(--muted);}
+.fe-disclaimer .container{max-width:800px;margin:0 auto;}
+
+@media (max-width:640px){
+.chat-wrap{margin:-20px 12px 0;}
+.chat-bubble{font-size:14px;}
+.fe-fallback-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="fe-hero">
+<div class="container">
+<span class="kicker">SSDI Benefits Evaluation</span>
+<h1>See If You May Qualify for Social Security Disability Benefits</h1>
+<p class="lede">If a medical condition is keeping you from working, you may be entitled to monthly SSDI payments. Chat with Lucy for a quick eligibility check — takes less than 60 seconds.</p>
+</div>
+</section>
+
+<section class="chat-section">
+<div class="chat-wrap" id="ssdiChat">
+<div class="chat-header">
+<div class="avatar">L</div>
+<div class="who">
+<span class="name">Lucy</span>
+<span class="status"><span class="dot"></span>Online now</span>
+</div>
+</div>
+<div class="chat-body" id="chatBody"></div>
+<div class="chat-actions" id="chatActions"></div>
+</div>
+</section>
+
+<section class="fe-info">
+<div class="container">
+<h2>About SSDI Benefits</h2>
+<div class="fe-info-grid">
+<div class="fe-info-card">
+<h3>What is SSDI?</h3>
+<p>Social Security Disability Insurance (SSDI) is a federal program that pays monthly benefits to people who can no longer work due to a serious medical condition expected to last at least 12 months or result in death.</p>
+</div>
+<div class="fe-info-card">
+<h3>Who can qualify?</h3>
+<p>You generally need a qualifying disability and enough work history paying into Social Security. Most approved applicants are between 50 and 66 and have worked at least five of the last ten years.</p>
+</div>
+<div class="fe-info-card">
+<h3>How we help</h3>
+<p>We connect you with experienced SSDI advocates who can review your case, help you gather medical evidence, and guide you through the application or appeal process at no upfront cost.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="fe-deepdive">
+<div class="container">
+<h2>Understanding Social Security Disability Insurance</h2>
+<p>Millions of Americans live with conditions that prevent them from holding down full-time work. SSDI was created to provide a financial safety net for workers who paid into Social Security during their careers and later become unable to earn a living because of a medical impairment. Unlike Supplemental Security Income (SSI), which is need-based, SSDI is an earned benefit tied to your work history.</p>
+
+<h3>Common qualifying conditions</h3>
+<p>The Social Security Administration maintains a "Blue Book" of impairments that may qualify for benefits. Some of the most frequently approved conditions include:</p>
+<ul>
+<li>Musculoskeletal disorders such as severe back injuries, degenerative disc disease, and arthritis</li>
+<li>Cardiovascular conditions like chronic heart failure or recurrent arrhythmias</li>
+<li>Mental health disorders including major depression, PTSD, bipolar disorder, and anxiety</li>
+<li>Neurological disorders such as multiple sclerosis, epilepsy, Parkinson's disease, and stroke</li>
+<li>Cancer and other serious illnesses with significant treatment side effects</li>
+<li>Immune system disorders such as lupus, HIV/AIDS, and rheumatoid arthritis</li>
+</ul>
+
+<h3>How much does SSDI pay?</h3>
+<p>Monthly SSDI payments are based on your average lifetime earnings before your disability began. As of 2025, the average monthly SSDI benefit is roughly $1,580, with a maximum benefit close to $4,018 for high earners. Approved beneficiaries also become eligible for Medicare after 24 months of receiving SSDI.</p>
+
+<h3>Why so many applications get denied</h3>
+<p>The SSA denies the majority of initial SSDI applications, often because of incomplete medical records, missed deadlines, or technical errors in the paperwork. Having an experienced advocate review your file before you submit — or while you appeal — can significantly improve your chances of approval. Most advocates work on contingency, meaning you pay nothing unless your claim is approved.</p>
+
+<h3>The application process at a glance</h3>
+<ul>
+<li><strong>Initial application:</strong> Submit your medical and work history to the SSA.</li>
+<li><strong>Reconsideration:</strong> If denied, request a second look within 60 days.</li>
+<li><strong>Hearing:</strong> Present your case to an Administrative Law Judge.</li>
+<li><strong>Appeals Council &amp; federal court:</strong> Further options if needed.</li>
+</ul>
+<p>Even if you have already been denied, it is not the end of the road. A trained SSDI advocate can review your denial letter, identify what went wrong, and help you build a stronger case on appeal.</p>
+</div>
+</section>
+
+<div class="fe-disclaimer">
+<div class="container">
+<p>Consumer Support Help is a free informational resource. We are not a law firm, government agency, or affiliated with the Social Security Administration. Eligibility for SSDI benefits is determined solely by the SSA. Calls may be routed to a third-party SSDI advocate or attorney who can review your situation.</p>
+</div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="/assets/script.js" defer></script>
+<script>
+(function(){
+var body = document.getElementById('chatBody');
+var actions = document.getElementById('chatActions');
+
+var INTRO = [
+"Hi 👋",
+"I'm Lucy from Consumer Support Help.",
+"I can help you see if you may qualify for SSDI benefits. Mind if I ask you a few quick questions?"
+];
+
+var STEPS = [
+{ q: "First, what is your age?", options: [
+{ label: "Under 18", value: "under18", qualifying: false, dqReason: "young" },
+{ label: "18 – 64", value: "18-64", qualifying: true },
+{ label: "65 or older", value: "65plus", qualifying: false, dqReason: "old" }
+]},
+{ q: "Do you currently have a medical condition that prevents you from working?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nocondition" }
+]},
+{ q: "Has your condition lasted (or is it expected to last) at least 12 months?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "shortterm" }
+]},
+{ q: "Are you currently under the care of a doctor for your condition?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nodoctor" }
+]},
+{ q: "Have you worked at least 5 of the last 10 years?", options: [
+{ label: "Yes", value: "yes", qualifying: true },
+{ label: "No", value: "no", qualifying: false, dqReason: "nowork" }
+]},
+{ q: "Are you currently receiving SSDI benefits?", options: [
+{ label: "No, not yet", value: "no", qualifying: true },
+{ label: "Yes, already receiving", value: "yes", qualifying: false, dqReason: "alreadyreceiving" }
+]},
+{ q: "Have you already applied for SSDI?", options: [
+{ label: "Not yet", value: "notyet", qualifying: true },
+{ label: "Yes, and was denied", value: "denied", qualifying: true },
+{ label: "Yes, still pending", value: "pending", qualifying: true }
+]}
+];
+
+var state = { step: -1 };
+
+function addThem(text, cb){
+var typing = document.createElement('div');
+typing.className = 'chat-row them';
+typing.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
+body.appendChild(typing);
+body.scrollTop = body.scrollHeight;
+setTimeout(function(){
+typing.querySelector('.chat-bubble').innerHTML = '';
+typing.querySelector('.chat-bubble').textContent = text;
+body.scrollTop = body.scrollHeight;
+if (cb) setTimeout(cb, 350);
+}, 700);
+}
+
+function addThemHTML(html, cb){
+var row = document.createElement('div');
+row.className = 'chat-row them';
+row.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"></div>';
+row.querySelector('.chat-bubble').innerHTML = html;
+body.appendChild(row);
+body.scrollTop = body.scrollHeight;
+if (cb) setTimeout(cb, 350);
+}
+
+function addYou(text){
+var row = document.createElement('div');
+row.className = 'chat-row you';
+row.innerHTML = '<div class="chat-avatar you">You</div>';
+var bubble = document.createElement('div');
+bubble.className = 'chat-bubble';
+bubble.textContent = text;
+row.appendChild(bubble);
+body.appendChild(row);
+body.scrollTop = body.scrollHeight;
+}
+
+function clearActions(){ actions.innerHTML = ''; }
+
+function showOptions(opts, onPick){
+clearActions();
+opts.forEach(function(o){
+var btn = document.createElement('button');
+btn.type = 'button';
+btn.className = 'chat-opt';
+btn.textContent = o.label;
+btn.addEventListener('click', function(){
+addYou(o.label);
+clearActions();
+onPick(o);
+});
+actions.appendChild(btn);
+});
+}
+
+function startQuiz(){
+state.step = 0;
+askStep();
+}
+
+function askStep(){
+var s = STEPS[state.step];
+addThem(s.q, function(){
+showOptions(s.options, function(picked){
+if (!picked.qualifying){
+showDisqualified(picked.dqReason);
+return;
+}
+state.step++;
+if (state.step >= STEPS.length){
+showQualified();
+} else {
+askStep();
+}
+});
+});
+}
+
+function showQualified(){
+addThem("Great news — based on your answers, you may qualify for Social Security Disability benefits. 🎉", function(){
+addThem("Tap below to speak with an SSDI advocate now for a free case review.", function(){
+actions.innerHTML = '';
+var ctaWrap = document.createElement('div');
+ctaWrap.className = 'chat-cta-row';
+ctaWrap.innerHTML = '<a href="tel:+18000000000" class="chat-call-btn">📞 Call Now for Your Free Review<span class="chat-call-num">(800) 000-0000</span></a>';
+actions.parentNode.replaceChild(ctaWrap, actions);
+});
+});
+}
+
+function showDisqualified(reason){
+var msg, follow;
+if (reason === "young"){
+msg = "Got it — SSDI generally requires you to be at least 18 with a work history.";
+follow = "Other Consumer Support Help resources may be a better fit for you. Take a look below.";
+} else if (reason === "old"){
+msg = "Thanks for letting me know. At 65 or older you may already be eligible for Social Security retirement benefits instead of SSDI.";
+follow = "We may still have other resources that could help — see options below.";
+} else if (reason === "nocondition"){
+msg = "No problem — SSDI is specifically for people who can't work due to a medical condition.";
+follow = "If your situation changes, come back any time. In the meantime, here are a few other resources you might find useful.";
+} else if (reason === "shortterm"){
+msg = "Got it. SSDI requires a condition expected to last at least 12 months or be terminal.";
+follow = "Short-term disability through your employer or state may be a better fit. Here are some other resources below.";
+} else if (reason === "nodoctor"){
+msg = "Thanks. Medical records from a treating doctor are essential evidence for an SSDI claim.";
+follow = "Once you're under regular care, come back and we can take another look. Meanwhile, here are some other resources.";
+} else if (reason === "nowork"){
+msg = "Got it. SSDI is based on work credits earned by paying into Social Security.";
+follow = "You may want to look into Supplemental Security Income (SSI) or other assistance programs. Here are a few other resources.";
+} else if (reason === "alreadyreceiving"){
+msg = "That's great — sounds like you're already getting the benefits you're entitled to.";
+follow = "Here are some other Consumer Support Help resources you might find useful.";
+} else {
+msg = "Thanks for the info.";
+follow = "SSDI may not be the best match today, but here are some other Consumer Support Help resources.";
+}
+addThem(msg, function(){
+addThem(follow, function(){
+actions.innerHTML = '';
+var fbWrap = document.createElement('div');
+fbWrap.className = 'fe-fallback-grid';
+fbWrap.innerHTML = ''
++ '<a href="/aca.html" class="fe-fallback-card"><strong>Health Coverage (ACA)</strong><span>Compare marketplace health plans.</span></a>'
++ '<a href="/final-expense.html" class="fe-fallback-card"><strong>Final Expense Coverage</strong><span>Affordable burial &amp; life protection.</span></a>'
++ '<a href="/medicare.html" class="fe-fallback-card"><strong>Medicare Plans</strong><span>Compare coverage if you are 65+.</span></a>'
++ '<a href="/debt-settlement.html" class="fe-fallback-card"><strong>Debt Settlement</strong><span>Resolve unsecured debt for less.</span></a>';
+actions.parentNode.replaceChild(fbWrap, actions);
+});
+});
+}
+
+var introIdx = 0;
+function nextIntro(){
+if (introIdx >= INTRO.length){ startQuiz(); return; }
+addThem(INTRO[introIdx++], nextIntro);
+}
+
+var startBtn = document.createElement('button');
+startBtn.type = 'button';
+startBtn.className = 'chat-opt';
+startBtn.textContent = "Let's go";
+startBtn.addEventListener('click', function(){
+clearActions();
+nextIntro();
+});
+actions.appendChild(startBtn);
+
+addThemHTML('<strong>Lucy</strong> wants to chat with you 💬', function(){
+addThem("Tap below when you're ready to get started.");
+});
+})();
 </script>
-
 </body>
 </html>
