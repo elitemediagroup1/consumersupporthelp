@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Medicare Plan Help — Consumer Support Help</title>
+    <meta name="description" content="Talk to a licensed Medicare agent about Medicare Advantage, Part D, and Medicare Supplement plans. Compare benefits in your area in minutes — call now.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>
+      /* Hero (shared brand pattern) */
+      .fe-hero{background:linear-gradient(135deg,var(--teal-900),var(--teal-800));color:#fff;padding:64px 20px 90px}
+      .fe-hero .container{max-width:880px;margin:0 auto;text-align:center;padding:0 16px}
+      .fe-hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-400);margin-bottom:14px}
+      .fe-hero h1{font-family:"Lora",Georgia,serif;font-size:clamp(32px,4.4vw,50px);line-height:1.12;margin:0 0 16px;color:#fff}
+      .fe-hero .lede{font-size:19px;line-height:1.55;color:rgba(255,255,255,.9);max-width:640px;margin:0 auto 28px}
+
+      /* Click-to-call CTA card */
+      .cta-section{padding:0 20px;margin-top:-46px}
+      .cta-card{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:28px 24px;text-align:center}
+      .cta-card .eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-700);margin-bottom:6px}
+      .cta-card h2{font-family:"Lora",Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 8px;color:var(--ink)}
+      .cta-card p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.55}
+      .cta-call{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:linear-gradient(135deg,var(--teal-700),var(--teal-800));color:#fff;border-radius:14px;padding:16px 28px;font-weight:700;text-decoration:none;font-size:18px;box-shadow:0 8px 22px rgba(34,197,94,.18);transition:transform .15s ease, box-shadow .15s ease}
+      .cta-call:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(34,197,94,.24)}
+      .cta-call .num{font-size:26px;letter-spacing:.5px}
+      .cta-call .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+      .cta-hours{margin-top:12px;font-size:13px;color:var(--muted)}
+      .tty{font-size:12px;color:var(--muted);margin-top:6px}
+
+      /* Trust strip */
+      .trust-strip{max-width:880px;margin:24px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+      .trust-strip div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;text-align:center;color:#fff;font-size:13px}
+      .trust-strip strong{display:block;font-size:15px;margin-bottom:2px}
+
+      /* Generic content section */
+      .fe-info{padding:64px 20px;background:var(--bg)}
+      .fe-info .container{max-width:1080px;margin:0 auto}
+      .fe-info h2{font-family:"Lora",Georgia,serif;font-size:32px;line-height:1.2;margin:0 0 12px;color:var(--ink);text-align:center}
+      .fe-info .section-lede{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 36px;font-size:17px;line-height:1.6}
+
+      .parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:24px}
+      .part-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-sm);transition:transform .15s ease, box-shadow .15s ease}
+      .part-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+      .part-card .pill{display:inline-block;background:var(--teal-50);color:var(--teal-800);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+      .part-card h3{font-family:"Lora",Georgia,serif;font-size:20px;margin:0 0 8px;color:var(--ink)}
+      .part-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+
+      /* Benefits list */
+      .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:24px}
+      .benefit{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+      .benefit .check{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:flex;align-items:center;justify-content:center;font-weight:800}
+      .benefit strong{display:block;color:var(--ink);margin-bottom:2px}
+      .benefit span{color:var(--muted);font-size:14px;line-height:1.5}
+
+      /* Enrollment timeline */
+      .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+      .timeline-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
+      .timeline-item .when{font-weight:700;color:var(--teal-800);font-size:14px;letter-spacing:.04em;margin-bottom:4px}
+      .timeline-item h4{margin:0 0 6px;font-family:"Lora",Georgia,serif;font-size:18px;color:var(--ink)}
+      .timeline-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+
+      /* Steps */
+      .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+      .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;text-align:center}
+      .step .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--teal-700);color:#fff;font-weight:800;margin-bottom:10px}
+      .step h4{margin:0 0 6px;font-family:"Lora",Georgia,serif;font-size:18px}
+      .step p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+
+      /* FAQ */
+      .faq{max-width:780px;margin:24px auto 0}
+      .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px;transition:box-shadow .15s ease}
+      .faq details[open]{box-shadow:var(--shadow-sm)}
+      .faq summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+      .faq summary::-webkit-details-marker{display:none}
+      .faq summary::after{content:"+";font-size:22px;color:var(--teal-700);transition:transform .15s ease}
+      .faq details[open] summary::after{content:"−"}
+      .faq p{margin:10px 0 0;color:var(--muted);line-height:1.6;font-size:15px}
+
+      /* Bottom CTA band */
+      .cta-band{background:linear-gradient(135deg,var(--teal-800),var(--teal-900));color:#fff;text-align:center;padding:56px 20px}
+      .cta-band h2{font-family:"Lora",Georgia,serif;font-size:30px;margin:0 0 10px;color:#fff}
+      .cta-band p{margin:0 0 22px;color:rgba(255,255,255,.88);max-width:620px;margin-left:auto;margin-right:auto;font-size:17px;line-height:1.55}
+      .cta-band .cta-call{background:#fff;color:var(--teal-900)}
+      .cta-band .cta-call .label{color:var(--teal-700)}
+
+      /* Disclaimer */
+      .fe-disclaimer{background:var(--bg-soft);padding:30px 20px;color:var(--muted);font-size:13px;line-height:1.6;text-align:center}
+      .fe-disclaimer .container{max-width:880px;margin:0 auto}
+      .fe-disclaimer p{margin:0 0 8px}
+      .fe-disclaimer p:last-child{margin:0}
+
+      @media (max-width:640px){
+        .trust-strip{grid-template-columns:1fr}
+        .fe-hero{padding:48px 18px 80px}
+        .cta-card{padding:22px 18px}
+        .cta-call .num{font-size:22px}
+      }
+    </style>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <section class="fe-hero">
+      <div class="container">
+        <span class="kicker">Medicare Help</span>
+        <h1>Get the Most From Your Medicare — Without the Headache</h1>
+        <p class="lede">Talk to a licensed Medicare agent about Medicare Advantage, Part D, and Medicare Supplement plans available in your ZIP code. Compare benefits, premiums, and provider networks side by side — at no cost to you.</p>
+        <div class="trust-strip">
+          <div><strong>$0</strong> to speak with an agent</div>
+          <div><strong>Multiple carriers</strong> compared in one call</div>
+          <div><strong>Licensed</strong> in your state</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-card">
+        <div class="eyebrow">Ready when you are</div>
+        <h2>Call a Licensed Medicare Agent Now</h2>
+        <p>Our team can review your current plan, look up your doctors and prescriptions, and walk you through the options available where you live.</p>
+        <a href="tel:+10000000000" class="cta-call" aria-label="Call a licensed Medicare agent">
+          <span class="label">📞 Tap to Call</span>
+          <span class="num">(XXX) XXX-XXXX</span>
+        </a>
+        <div class="cta-hours">Mon–Fri 8am–8pm · Sat 9am–5pm (local time)</div>
+        <div class="tty">TTY users dial 711</div>
+      </div>
+    </section>
+
+    <section class="fe-info">
+      <div class="container">
+        <h2>Medicare, Made Simple</h2>
+        <p class="section-lede">Medicare has four main parts. Knowing what each one covers makes it easier to pick a plan that fits your health needs and budget.</p>
+        <div class="parts-grid">
+          <div class="part-card">
+            <span class="pill">Part A</span>
+            <h3>Hospital Insurance</h3>
+            <p>Helps cover inpatient hospital stays, skilled nursing facility care, hospice, and some home health services. Most people pay no premium for Part A.</p>
+          </div>
+          <div class="part-card">
+            <span class="pill">Part B</span>
+            <h3>Medical Insurance</h3>
+            <p>Covers doctor visits, outpatient care, preventive screenings, lab work, and durable medical equipment. Part B has a monthly premium set each year.</p>
+          </div>
+          <div class="part-card">
+            <span class="pill">Part C</span>
+            <h3>Medicare Advantage</h3>
+            <p>An all-in-one alternative to Original Medicare offered by private carriers. Often bundles Part A, Part B, Part D, and extras like dental, vision, hearing, or fitness.</p>
+          </div>
+          <div class="part-card">
+            <span class="pill">Part D</span>
+            <h3>Prescription Drug Coverage</h3>
+            <p>Helps pay for the prescriptions you take at home. Plan formularies, copays, and pharmacy networks vary, so it pays to compare against the medications you actually take.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fe-info" style="background:#fff">
+      <div class="container">
+        <h2>Benefits You May Be Missing</h2>
+        <p class="section-lede">Many Medicare Advantage plans now include extras beyond what Original Medicare offers. Depending on where you live, you may qualify for:</p>
+        <div class="benefits-grid">
+          <div class="benefit"><span class="check">✓</span><div><strong>Dental, vision &amp; hearing</strong><span>Routine cleanings, eye exams, frames, and hearing aid allowances on many plans.</span></div></div>
+          <div class="benefit"><span class="check">✓</span><div><strong>Prescription drug coverage</strong><span>Built-in Part D on most Medicare Advantage plans, with $0 copays on many common generics.</span></div></div>
+          <div class="benefit"><span class="check">✓</span><div><strong>Over-the-counter allowance</strong><span>A monthly or quarterly card for items like vitamins, pain relievers, and first-aid supplies.</span></div></div>
+          <div class="benefit"><span class="check">✓</span><div><strong>Fitness memberships</strong><span>Access to gym networks like SilverSneakers® at no extra cost on many plans.</span></div></div>
+          <div class="benefit"><span class="check">✓</span><div><strong>Telehealth visits</strong><span>Speak with a doctor from home — often with a $0 copay.</span></div></div>
+          <div class="benefit"><span class="check">✓</span><div><strong>Transportation &amp; meals</strong><span>Some plans include rides to medical appointments and post-hospital meal benefits.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fe-info">
+      <div class="container">
+        <h2>When Can You Enroll?</h2>
+        <p class="section-lede">Medicare uses specific enrollment windows. Missing one can mean a late penalty or waiting months for coverage — an agent can confirm which window applies to you.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="when">Initial Enrollment</div>
+            <h4>Around your 65th birthday</h4>
+            <p>A 7-month window: the 3 months before, the month of, and the 3 months after the month you turn 65.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Annual Enrollment</div>
+            <h4>Oct 15 – Dec 7</h4>
+            <p>Switch, drop, or join Medicare Advantage and Part D plans for coverage starting January 1.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Medicare Advantage Open Enrollment</div>
+            <h4>Jan 1 – Mar 31</h4>
+            <p>Already on Medicare Advantage? You can switch to a different MA plan or back to Original Medicare once during this window.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="when">Special Enrollment</div>
+            <h4>Life events</h4>
+            <p>Moving, losing employer coverage, or qualifying for Extra Help can open a Special Enrollment Period outside the usual dates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fe-info" style="background:#fff">
+      <div class="container">
+        <h2>How Comparing Plans With Us Works</h2>
+        <p class="section-lede">No quizzes, no forms — just a quick conversation with a real licensed agent who knows the plans in your area.</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h4>Tap to call</h4><p>One click connects you to a licensed Medicare agent — no waiting, no callbacks required.</p></div>
+          <div class="step"><div class="num">2</div><h4>Share the basics</h4><p>Your ZIP code, doctors, and prescriptions are usually all an agent needs to start a comparison.</p></div>
+          <div class="step"><div class="num">3</div><h4>Compare side by side</h4><p>Review premiums, copays, drug coverage, and extras across multiple carriers in one call.</p></div>
+          <div class="step"><div class="num">4</div><h4>Enroll if it's a fit</h4><p>If a plan looks better than what you have, your agent can help you enroll — or you can think it over. No pressure.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fe-info">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Is there any cost to talk with an agent?</summary>
+            <p>No. Speaking with a licensed agent through Consumer Support Help is completely free. Agents are typically compensated by the insurance carriers they represent, not by you.</p>
+          </details>
+          <details>
+            <summary>Do I have to switch plans if I call?</summary>
+            <p>Not at all. Many people call just to confirm their current plan still fits, or to understand what else is available. You're never obligated to enroll.</p>
+          </details>
+          <details>
+            <summary>Will the agent know which plans cover my doctors and prescriptions?</summary>
+            <p>Yes. With your ZIP code, doctor names, and a list of medications, your agent can check which plans include your providers in-network and which formularies cover your prescriptions.</p>
+          </details>
+          <details>
+            <summary>What's the difference between Medicare Advantage and Medicare Supplement?</summary>
+            <p>Medicare Advantage (Part C) replaces Original Medicare and usually bundles drug coverage and extras. Medicare Supplement (Medigap) works alongside Original Medicare to help pay your share of costs like deductibles and coinsurance, but doesn't include Part D. An agent can walk you through the trade-offs.</p>
+          </details>
+          <details>
+            <summary>Do you offer every plan in my area?</summary>
+            <p>We do not offer every plan available in your area. Any information we provide is limited to the plans we represent in your region. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
+          </details>
+          <details>
+            <summary>What if I'm under 65 but on Medicare due to disability?</summary>
+            <p>You may still qualify for Medicare Advantage and Part D plans in many areas. An agent can confirm what's available based on your situation and ZIP code.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Talk to a Licensed Medicare Agent Today</h2>
+      <p>One short call could save you money, expand your benefits, or simply confirm you're already on the right plan. There's no cost and no obligation.</p>
+      <a href="tel:+10000000000" class="cta-call" aria-label="Call a licensed Medicare agent">
+        <span class="label">📞 Tap to Call</span>
+        <span class="num">(XXX) XXX-XXXX</span>
+      </a>
+      <div class="cta-hours" style="color:rgba(255,255,255,.8);margin-top:12px">Mon–Fri 8am–8pm · Sat 9am–5pm · TTY 711</div>
+    </section>
+
+    <section class="fe-disclaimer">
+      <div class="container">
+        <p>Consumer Support Help is a free informational resource and is not affiliated with or endorsed by the U.S. government, the federal Medicare program, or any state Medicare agency. We connect consumers with licensed insurance agents who represent Medicare Advantage Organizations and stand-alone Prescription Drug Plans.</p>
+        <p>We do not offer every plan available in your area. Currently we represent a limited number of organizations in each region. Please contact Medicare.gov, 1-800-MEDICARE (TTY 1-877-486-2048) 24 hours a day / 7 days a week, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
+        <p>Enrollment in any plan depends on contract renewal. Benefits, premiums, formulary, pharmacy network, provider network, premium and/or copayments/coinsurance may change on January 1 of each year.</p>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="/assets/script.js" defer></script>
+  </body>
+</html>
