@@ -576,3 +576,28 @@ p{margin:0 0 1em;}
     .category-strip{margin-top:-70px;}
     .signup form{flex-direction:column;}
 }
+
+/* ========== Site footer (Elite Media Group LLC) ========== */
+.site-footer{background:#0e2c36;color:#cfe6e8;padding:48px 24px 24px;font-size:14px;line-height:1.6;}
+.site-footer .footer-main{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:32px;}
+.site-footer .footer-col h4{color:#ffffff;font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px;font-weight:700;}
+.site-footer .footer-col ul{list-style:none;padding:0;margin:0;}
+.site-footer .footer-col li{margin:0 0 8px;}
+.site-footer .footer-col a{color:#cfe6e8;text-decoration:none;transition:color .15s ease;}
+.site-footer .footer-col a:hover{color:#ffffff;text-decoration:underline;}
+.site-footer .footer-brand .brand-mark{font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#ffffff;margin-bottom:12px;}
+.site-footer .footer-brand .brand-mark em{color:#7fc8c8;font-style:italic;font-weight:400;}
+.site-footer .footer-tag{margin:0 0 14px;color:#a8c7cb;}
+.site-footer .footer-contact{margin:0;color:#cfe6e8;}
+.site-footer .footer-contact a{color:#7fc8c8;}
+.site-footer .footer-legal{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:#8aa9af;}
+.site-footer .footer-legal p{margin:0 0 8px;}
+.site-footer .footer-legal a{color:#7fc8c8;}
+@media (max-width:960px){.site-footer .footer-main{grid-template-columns:1fr 1fr;gap:28px;}}
+@media (max-width:560px){.site-footer .footer-main{grid-template-columns:1fr;gap:24px;}}
+
+/* ========== Site header phone CTA ========== */
+.site-header .nav-cta-li{margin-left:auto;}
+.site-header .nav-cta{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:#1f8a8a;color:#ffffff !important;font-weight:600;font-size:14px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;}
+.site-header .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(31,138,138,.3);}
+@media (max-width:880px){.site-header .nav-cta{padding:6px 10px;font-size:13px;}}
