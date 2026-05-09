@@ -1,318 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Consumer Support Network – Confidential Claim Intake</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b1220; --grad1:#0b1220cc; --grad2:#0b1220cc;
-    --panel:#fffffff2; --text:#0f172a; --accent:#2dd4bf; --accent-700:#14b8a6;
-    --border:rgba(15,23,42,.18);
-    --hero:url('https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1600&auto=format&fit=crop');
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0}
-  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;color:#e2e8f0;background:var(--bg)}
-
-  /* Header (styles apply to shared header.html) */
-  .topbar{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #0e1629;background:#0b1220;position:sticky;top:0;z-index:20}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#e5e7eb}
-  .logo img{height:34px;width:auto;display:block}
-  .brand-name{font-family:Montserrat, sans-serif;font-weight:700;font-size:18px;letter-spacing:.4px}
-  .nav{margin-left:auto;display:flex;gap:14px}
-  .nav a{color:#a9b4c7;text-decoration:none;font-weight:600}
-  .nav a:hover{color:#e5e7eb}
-
-  /* Hero + layout */
-  .hero{background: linear-gradient(180deg,var(--grad1),var(--grad2)), var(--hero) center/cover no-repeat;}
-  .container{
-    max-width:1200px;margin:0 auto;padding:28px 18px 40px;
-    display:grid;grid-template-columns:1.1fr .95fr;gap:34px;align-items:start;
-  }
-  @media (max-width:980px){.container{grid-template-columns:1fr;padding:22px 14px 34px}}
-
-  .heading{margin:0}
-  .heading .kicker{font-size:14px;letter-spacing:.16em;font-weight:800;color:#a0f0e4;text-transform:uppercase}
-  .heading h1{margin:.2rem 0 10px;font-size:32px;line-height:1.2;color:#eaf2ff}
-  .heading p{margin:0 0 12px;color:#d2d9e6}
-  .copy p{color:#c9d3e4;margin:0 0 14px}
-  .copy b{color:#eef4ff}
-
-  .card{
-    backdrop-filter: blur(4px);
-    background: var(--panel);
-    border:1px solid var(--border);
-    border-radius:16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    padding:20px;
-    color:var(--text);
-  }
-  .grid{display:grid;gap:12px}
-  .cols-2{grid-template-columns:1fr 1fr}
-  .cols-3{grid-template-columns:1fr 1fr 1fr}
-  @media (max-width:720px){.cols-2,.cols-3{grid-template-columns:1fr}}
-
-  label{font-size:13px;font-weight:600;color:#0f172a}
-  input,select,textarea{
-    width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:14px;background:#fff;outline:none;
-    transition:box-shadow .12s,border-color .12s
-  }
-  input:focus,select:focus,textarea:focus{border-color:#99f6e4;box-shadow:0 0 0 3px #ccfbf1}
-  .actions{display:flex;justify-content:flex-end;margin-top:6px}
-  .btn{
-    border:none;border-radius:10px;padding:12px 18px;font-weight:800;background:var(--accent);color:#062a27;cursor:pointer;
-    transition:transform .06s,background .12s, box-shadow .12s; box-shadow:0 6px 14px rgba(20,184,166,.28)
-  }
-  .btn:hover{background:var(--accent-700);transform:translateY(-1px)}
-  .btn[disabled]{opacity:.6;cursor:not-allowed}
-
-  /* Consent block */
-  .consent-wrap{border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc}
-  .consent-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;cursor:pointer}
-  .consent-head span{font-size:12px;font-weight:700;color:#0f172a}
-  .chev{font-size:16px;color:#64748b}
-  .consent-body{padding:0 12px 12px;display:block}
-  .consent-text{font-size:12px;color:#334155;line-height:1.5;margin-top:8px}
-  @media(max-width:720px){.consent-body[hidden]{display:none}}
-
-  /* Footer (styles apply to shared footer.html) */
-  .footer{background:#0b1220;border-top:3px solid #15b8a6;padding:22px 16px 34px;color:#cbd5e1}
-  .footer .inner{max-width:1200px;margin:0 auto}
-  .links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
-  .chip{background:#111827;color:#e5e7eb;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-  .copyr{margin-top:12px;font-size:13px;color:#9ca3af;text-align:center}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rideshare Claims — Consumer Support Help</title>
+  <meta name="description" content="Rideshare Claims information is coming soon to Consumer Support Help." />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .cs-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:80px 20px;background:linear-gradient(180deg,#f6fbfb 0%,#ffffff 100%);}
+    .cs-card{max-width:680px;width:100%;text-align:center;background:#ffffff;border:1px solid #e6eef0;border-radius:18px;padding:56px 40px;box-shadow:0 10px 30px rgba(20,60,80,0.06);}
+    .cs-kicker{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#1f8a8a;background:#e6f6f6;padding:6px 12px;border-radius:999px;margin-bottom:18px;font-weight:600;}
+    .cs-card h1{font-size:42px;line-height:1.15;margin:0 0 14px;color:#0f2a36;}
+    .cs-card p{font-size:17px;line-height:1.6;color:#3d5662;margin:0 0 24px;}
+    .cs-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+    .cs-btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15px;transition:transform .15s ease, box-shadow .15s ease;}
+    .cs-btn-primary{background:#1f8a8a;color:#ffffff;box-shadow:0 6px 16px rgba(31,138,138,.25);}
+    .cs-btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(31,138,138,.3);}
+    .cs-btn-ghost{background:transparent;color:#1f8a8a;border:1.5px solid #1f8a8a;}
+    .cs-btn-ghost:hover{background:#f0fafa;}
+    @media(max-width:560px){.cs-card{padding:40px 22px;}.cs-card h1{font-size:32px;}}
+  </style>
 </head>
 <body>
+  <div id="site-header"></div>
 
-  <!-- Shared Header -->
-  <div id="header"></div>
-
-  <!-- Hero + content -->
-  <div class="hero">
-    <div class="container">
-      <!-- Left copy -->
-      <section>
-        <div class="heading">
-          <div class="kicker">Support • Confidential • Action</div>
-          <h1>Were you sexually assaulted in an UBER?</h1>
-          <p>You may be entitled to a financial settlement.</p>
-        </div>
-        <div class="copy">
-          <p>If you were abused in an UBER you may qualify to join the case, but there may be a limited time to file a claim. Enter your details and get the justice you deserve!</p>
-          <p><b>Confidentiality</b></p>
-          <p>Claims of inappropriate behavior require care and confidentiality. We always keep personal details private, sharing only necessary information to help you file your claim, so that you can maintain your privacy and confidentiality.</p>
-          <p><b>Compensation</b></p>
-          <p>We are committed to assisting survivors in reporting their claims, seeking help, and pursuing lawsuits to obtain compensation.</p>
-          <p><b>Drivers and Passengers Affected</b></p>
-          <p>According to the latest rideshare sexual assault data, there were 4,158 incidents, including 360 rape reports over a three-year period. Our experienced support team is here for you throughout this process.</p>
-          <p><b>There are no fees unless funds are claimed.</b></p>
-          <p><b>Complete the form to begin.</b></p>
-        </div>
-      </section>
-
-      <!-- Right form -->
-      <section class="card">
-        <form id="claim-form"
-              action="https://script.google.com/macros/s/AKfycbwUwe8TxrCVLCQj_o_i9QUGxJ4SfTWBNV-k-dODRp5f9Jd8rMSvKHZIigp1V1vbjkjx/exec"
-              method="POST"
-              target="gapps_iframe"
-              onsubmit="return onSubmitDisable();"
-              aria-describedby="successMsg">
-
-          <!-- Route type for backend -->
-          <input type="hidden" name="formType" value="rideshare">
-
-          <!-- Honeypot to deter bots -->
-          <input type="text" name="website" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" tabindex="-1" aria-hidden="true">
-
-          <div class="grid cols-2">
-            <div><label for="first_name">First Name</label><input id="first_name" name="first_name" required></div>
-            <div><label for="last_name">Last Name</label><input id="last_name" name="last_name" required></div>
-          </div>
-
-          <div class="grid cols-2">
-            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
-            <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-          </div>
-
-          <div class="grid cols-2">
-            <div><label for="dob">Date of Birth</label><input id="dob" name="dob" placeholder="mm/dd/yyyy"></div>
-            <div><label for="gender">Gender</label>
-              <select id="gender" name="gender">
-                <option value="">Select</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid">
-            <label for="address">Street Address</label>
-            <input id="address" name="address">
-          </div>
-
-          <div class="grid cols-3">
-            <div><label for="city">City</label><input id="city" name="city"></div>
-            <div><label for="zip">Zip</label><input id="zip" name="zip"></div>
-            <div>
-              <label for="state">Select State</label>
-              <select id="state" name="state">
-                <option value="">State</option>
-                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
-                <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
-                <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
-                <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-                <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
-                <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
-                <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
-                <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-                <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
-                <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Victim question -->
-          <div class="grid">
-            <label for="victim_question">Were you (or a loved one) a victim of assault or improper sexual behavior as a passenger or driver in a ridesharing vehicle?</label>
-            <select id="victim_question" name="victim_question" required>
-              <option value="">Select</option>
-              <option>Yes, in a Lyft as a driver</option>
-              <option>Yes, in a Lyft as a passenger</option>
-              <option>Yes, in a taxi or other ridesharing service as a driver</option>
-              <option>Yes, in a taxi or other ridesharing service as a passenger</option>
-              <option>Yes, in an Uber as a driver</option>
-              <option>Yes, in an Uber as a passenger</option>
-            </select>
-          </div>
-
-          <!-- Incident when -->
-          <div class="grid">
-            <label for="incident_when">When did the unwanted conduct or assault occur?</label>
-            <select id="incident_when" name="incident_when" required>
-              <option value="">Select</option>
-              <option>1-5 years ago</option>
-              <option>Less than 1 year ago</option>
-              <option>More than 5 years ago</option>
-              <option>No abuse/ assault occurred</option>
-            </select>
-          </div>
-
-          <!-- Conduct type -->
-          <div class="grid">
-            <label for="conduct_type">What form of unwanted conduct did you experience?</label>
-            <select id="conduct_type" name="conduct_type" required>
-              <option value="">Select</option>
-              <option>Forced oral sex (oral contact with sexual organs or anus)</option>
-              <option>Forced sexual intercourse (any form/type of penetration)</option>
-              <option>Inappropriate/ unwanted  touching of non-sexual body parts</option>
-              <option>Inappropriate/ unwanted touching/kissing of sexual body parts (breasts, buttocks, genitals, inner thighs)</option>
-              <option>Indecent exposure</option>
-              <option>Kidnapping or false imprisonment (driven off route or locked doors) with clear sexual or extreme physical threats</option>
-              <option>Masturbation</option>
-              <option>No injury</option>
-              <option>Other injury not listed above</option>
-              <option>Verbal assault</option>
-            </select>
-          </div>
-
-          <!-- Attorney -->
-          <div class="grid">
-            <label for="attorney">Are you currently working with an attorney on this case?</label>
-            <select id="attorney" name="attorney">
-              <option value="">Select</option>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-
-          <!-- Consent -->
-          <div class="grid">
-            <div class="consent-wrap">
-              <div class="consent-head" onclick="toggleConsent()">
-                <label class="inline" style="display:flex;align-items:center;gap:8px;margin:0">
-                  <input type="checkbox" id="consent" name="consent" required>
-                  <span>I agree to the consent and disclosures</span>
-                </label>
-                <span class="chev" id="chev">▾</span>
-              </div>
-              <div class="consent-body" id="consentBody">
-                <div class="consent-text">
-                  By submitting "Yes", you provide your electronic signature and agree to be called and/or contacted at the number provided above by <b>Consumer Support Network</b> about our services, which may include auto dialers, pre-recorded voice, SMS, RVM even if your telephone number is currently listed on any State, Federal or corporate Do Not Call registry. Your consent is not required to purchase any goods or services. You also agree to our <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a> (including arbitration), <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>, No Legal Advice and Cookie Policy. Message and data rates may apply. Message frequency varies.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="actions">
-            <button id="submitBtn" class="btn" type="submit">GET STARTED</button>
-          </div>
-          <div id="successMsg" style="margin-top:10px;color:#166534;font-weight:700" aria-live="polite"></div>
-        </form>
-      </section>
+  <main class="cs-wrap">
+    <div class="cs-card">
+      <span class="cs-kicker">Mass Torts</span>
+      <h1>Coming Soon</h1>
+      <p>We're putting together helpful, easy-to-read information about Rideshare Claims so you can understand your options. Check back shortly — this page will be live soon.</p>
+      <div class="cs-actions">
+        <a class="cs-btn cs-btn-primary" href="/">Back to Home</a>
+        <a class="cs-btn cs-btn-ghost" href="/index.html#contact">Contact Us</a>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Shared Footer -->
-  <div id="footer"></div>
-
-  <!-- Hidden iframe keeps page in place and triggers thank-you after Apps Script responds -->
-  <iframe name="gapps_iframe" id="gapps_iframe" style="display:none"></iframe>
-
-  <!-- Scripts -->
-  <script>
-    // Load shared header/footer
-    function includeHTML(id, url) {
-      fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById(id).innerHTML = html;
-          if (url.includes('footer')) {
-            const yr = document.getElementById('yr');
-            if (yr) yr.textContent = new Date().getFullYear();
-          }
-        })
-        .catch(err => console.error("Include failed:", err));
-    }
-    includeHTML("header", "header.html");
-    includeHTML("footer", "footer.html");
-
-    // Consent toggle on small screens
-    function toggleConsent(){
-      const body = document.getElementById('consentBody');
-      const chev = document.getElementById('chev');
-      const isHidden = body.hasAttribute('hidden');
-      if(isHidden){ body.removeAttribute('hidden'); chev.textContent='▾'; }
-      else { body.setAttribute('hidden',''); chev.textContent='▸'; }
-    }
-
-    // Prevent double submit; show success after iframe load
-    let formPosted = false;
-    (function(){
-      const iframe = document.getElementById('gapps_iframe');
-      iframe.addEventListener('load', function(){
-        if(!formPosted) return; // ignore initial load
-        const msg = document.getElementById('successMsg');
-        if (msg) msg.textContent = "Thank you! Your claim has been submitted.";
-        const form = document.getElementById('claim-form');
-        if (form) form.reset();
-        const btn = document.getElementById('submitBtn');
-        if (btn) btn.disabled = false;
-        formPosted = false;
-      });
-    })();
-
-    function onSubmitDisable(){
-      const btn = document.getElementById('submitBtn');
-      if (btn) btn.disabled = true;
-      formPosted = true;
-      return true; // allow native POST
-    }
-  </script>
+  <div id="site-footer"></div>
+  <script src="/assets/script.js"></script>
 </body>
 </html>
