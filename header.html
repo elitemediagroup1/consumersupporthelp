@@ -1,22 +1,22 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="bar">
-    <a href="/index.html" class="brand" aria-label="Consumer Support Help home">
+    <a href="/" class="brand" aria-label="Consumer Support Help — back to homepage">
       <span class="brand-mark">Consumer<em>Support</em></span>
     </a>
 
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span>
     </button>
 
-    <ul class="nav" role="menubar">
+    <ul class="nav" id="primary-nav" role="menubar" aria-label="Primary">
       <li role="none">
         <button type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Insurances <span class="caret"></span></button>
-        <ul class="dropdown" role="menu">
-          <li><a href="/auto.html">Auto</a></li>
-          <li><a href="/aca.html">ACA</a></li>
-          <li><a href="/medicare.html">Medicare</a></li>
-          <li><a href="/home.html">Home</a></li>
-          <li><a href="/final-expense.html">Final Expense</a></li>
+        <ul class="dropdown" role="menu" aria-label="Insurance options">
+          <li><a href="/auto-insurance.html">Auto Insurance</a></li>
+          <li><a href="/aca.html">ACA Health Insurance</a></li>
+          <li><a href="/medicare.html">Medicare Coverage</a></li>
+          <li><a href="/home-insurance.html">Home Insurance</a></li>
+          <li><a href="/final-expense.html">Final Expense Insurance</a></li>
         </ul>
       </li>
 
@@ -25,23 +25,29 @@
       </li>
 
       <li role="none">
-        <a href="/ssdi.html" class="nav-link" role="menuitem">SSDI</a>
+        <a href="/ssdi.html" class="nav-link" role="menuitem">SSDI Benefits</a>
       </li>
 
       <li role="none">
         <button type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Mass Torts <span class="caret"></span></button>
-        <ul class="dropdown" role="menu">
-          <li><a href="/talcum.html">Talcum</a></li>
-          <li><a href="/depo-provera.html">Depo-Provera</a></li>
-          <li><a href="/dupixent.html">Dupixent</a></li>
-          <li><a href="/semaglutide.html">Semaglutide</a></li>
-          <li><a href="/roblox.html">Roblox</a></li>
-          <li><a href="/rideshare.html">Rideshare</a></li>
+        <ul class="dropdown" role="menu" aria-label="Mass tort claims">
+          <li><a href="/talcum.html">Talcum Powder Claims</a></li>
+          <li><a href="/depo-provera.html">Depo-Provera Claims</a></li>
+          <li><a href="/dupixent.html">Dupixent Claims</a></li>
+          <li><a href="/semaglutide.html">Semaglutide Claims</a></li>
+          <li><a href="/roblox.html">Roblox Claims</a></li>
+          <li><a href="/rideshare.html">Rideshare Claims</a></li>
         </ul>
       </li>
 
       <li role="none">
         <a href="/debt-settlement.html" class="nav-link" role="menuitem">Debt Settlement</a>
+      </li>
+
+      <li role="none" class="nav-cta-li">
+        <a href="tel:+18000000000" class="nav-cta" role="menuitem" aria-label="Call Consumer Support Help at 8 0 0 0 0 0 0 0 0 0">
+          <span aria-hidden="true">📞</span> (800) 000-0000
+        </a>
       </li>
     </ul>
   </div>
