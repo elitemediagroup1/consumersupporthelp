@@ -84,6 +84,8 @@
 .fe-local-state a{color:var(--teal-700);text-decoration:none;font-size:14px;}
 .fe-local-state a:hover{text-decoration:underline;}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -146,6 +148,16 @@
 </div>
 </div>
 
+
+<section style="margin:2rem 0">
+  <h2 style="font-size:1.3rem;font-weight:500;margin-bottom:0.5rem;color:inherit">
+    Find pest control help near you
+  </h2>
+  <p style="font-size:0.95rem;color:#666;margin-bottom:1rem">
+    Click your state to see local pest control resources and licensed exterminator quotes in your area.
+  </p>
+  <div id="pest-coverage-map"></div>
+</section>
 
 <section class="fe-local">
   <div class="container">
@@ -380,5 +392,6 @@ addThem("Tap below when you\u2019re ready to get started.");
     gtag('js', new Date());
     gtag('config', 'G-M3FTEYNNQ0');
   </script>
+<script src="/assets/pest-map.js" defer></script>
 </body>
   </html>
