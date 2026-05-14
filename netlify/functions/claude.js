@@ -24,7 +24,9 @@ exports.handler = async (event) => {
   };
 
   try {
-    const { message, city } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const message = body.message;
+    const city = body.city || 'not specified';
 
     if (!message || message.length < 3) {
       return {
@@ -36,10 +38,10 @@ exports.handler = async (event) => {
 
     const apiKey = process.env.ANTHROPIC_API_KEY;
 
-    const systemPrompt = 'You are a helpful pest control advisor for consumersupporthelp.com. Help homeowners identify pests and next steps. Keep responses under 80 words. Start with Based on your description. Identify the likely pest. Give one actionable next step. Mention getting a professional quote. Never guarantee outcomes. Never name companies. Do not name diseases. Be calm. City: ' + (city || 'not specified');
+    const systemPrompt = 'You are a helpful pest control advisor for consumersupporthelp.com. Help homeowners identify pests and next steps. Keep responses under 80 words. Start with Based on your description. Identify the likely pest. Give one actionable next step. Mention getting a professional quote. Never guarantee outcomes. Never name companies. Do not name diseases. Be calm and helpful. City context: ' + city;
 
     const requestBody = JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-haiku-4-5-20251001',
       max_tokens: 150,
       system: systemPrompt,
       messages: [{ role: 'user', content: message }]
@@ -76,7 +78,7 @@ exports.handler = async (event) => {
     });
 
     if (!result.content || !result.content[0]) {
-      console.error('Unexpected response:', JSON.stringify(result));
+      console.error('API response:', JSON.stringify(result));
       return {
         statusCode: 502,
         headers,
