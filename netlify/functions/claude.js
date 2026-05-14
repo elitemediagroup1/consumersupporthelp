@@ -1,3 +1,5 @@
+const https = require('https');
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return {
@@ -22,7 +24,7 @@ exports.handler = async (event) => {
   };
 
   try {
-    const { message, city, service } = JSON.parse(event.body);
+    const { message, city } = JSON.parse(event.body);
 
     if (!message || message.length < 3) {
       return {
@@ -34,31 +36,63 @@ exports.handler = async (event) => {
 
     const apiKey = process.env.ANTHROPIC_API_KEY;
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 150,
-        system: 'You are a helpful pest control advisor for consumersupporthelp.com. Help homeowners identify pests and understand next steps. Keep responses under 80 words. Start with Based on your description. Identify the likely pest. Give one actionable next step. Mention getting a professional quote at the end. Never guarantee outcomes. Never name specific companies. Do not mention disease names. Be calm and helpful. City context: ' + (city || 'not specified'),
-        messages: [{ role: 'user', content: message }]
-      })
+    const systemPrompt = 'You are a helpful pest control advisor for consumersupporthelp.com. Help homeowners identify pests and next steps. Keep responses under 80 words. Start with Based on your description. Identify the likely pest. Give one actionable next step. Mention getting a professional quote. Never guarantee outcomes. Never name companies. Do not name diseases. Be calm. City: ' + (city || 'not specified');
+
+    const requestBody = JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 150,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: message }]
     });
 
-    const data = await response.json();
+    const result = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.anthropic.com',
+        path: '/v1/messages',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'Content-Length': Buffer.byteLength(requestBody)
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', (chunk) => { data += chunk; });
+        res.on('end', () => {
+          try {
+            resolve(JSON.parse(data));
+          } catch(e) {
+            reject(new Error('Parse error'));
+          }
+        });
+      });
+
+      req.on('error', reject);
+      req.write(requestBody);
+      req.end();
+    });
+
+    if (!result.content || !result.content[0]) {
+      console.error('Unexpected response:', JSON.stringify(result));
+      return {
+        statusCode: 502,
+        headers,
+        body: JSON.stringify({ error: 'Unexpected API response' })
+      };
+    }
 
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        response: data.content[0].text
+        response: result.content[0].text
       })
     };
   } catch (error) {
+    console.error('Function error:', error.message);
     return {
       statusCode: 500,
       headers,
