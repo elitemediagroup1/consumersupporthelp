@@ -39,6 +39,15 @@
     'New Jersey': { url: '/pest-control/new-jersey/', cities: [
       {name:'Newark',url:'/pest-control/new-jersey/newark/'},
       {name:'Trenton',url:'/pest-control/new-jersey/trenton/'}
+    ]},
+    'Arizona': { url: '/pest-control/arizona/', cities: [
+      {name:'Phoenix',url:'/pest-control/arizona/phoenix/'},
+      {name:'Mesa',url:'/pest-control/arizona/mesa/'},
+      {name:'Chandler',url:'/pest-control/arizona/chandler/'},
+      {name:'Gilbert',url:'/pest-control/arizona/gilbert/'},
+      {name:'Glendale',url:'/pest-control/arizona/glendale/'},
+      {name:'Scottsdale',url:'/pest-control/arizona/scottsdale/'},
+      {name:'Tempe',url:'/pest-control/arizona/tempe/'}
     ]}
   };
   var nameMap = {
