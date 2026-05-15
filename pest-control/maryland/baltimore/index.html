@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -45,10 +45,17 @@
 .cities-list li a:hover{background:#ece6da;}
 .differentiator{background:#fff5e8;border-left:4px solid #c87a2a;padding:18px 22px;border-radius:8px;margin:20px 0;}
 .intro p{font-size:1.05rem;line-height:1.65;margin:0 0 14px;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Baltimore?","acceptedAnswer":{"@type":"Answer","text":"Baltimore pest control costs $125-325 for a standard one-time treatment. Bed bug heat treatment averages $850-2,300 for a typical Baltimore row home or apartment. Termite treatment runs $500-2,100. Like Philadelphia, Baltimore's dense row home neighborhoods mean infestations spread quickly between attached properties, making early treatment essential."}},{"@type":"Question","name":"Why does Baltimore rank in the top 15 for bed bugs?","acceptedAnswer":{"@type":"Answer","text":"Baltimore consistently ranks in Orkin's national top 15 for bed bug infestations. Baltimore's large stock of older row homes, high rental density in neighborhoods like Charles Village, Hampden, and East Baltimore, and active tourism and business travel through BWI Airport all contribute to elevated bed bug activity. Multi-unit attached housing is particularly vulnerable."}},{"@type":"Question","name":"Does Maryland require pest control companies to be licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes. All pest control companies in Maryland must be licensed by the Maryland Department of Agriculture (MDA). Commercial pesticide applicators must hold a valid MDA license in the appropriate pest control category. Verify any company's license at mda.maryland.gov before hiring."}},{"@type":"Question","name":"What pests are most common in Baltimore homes?","acceptedAnswer":{"@type":"Answer","text":"Baltimore homeowners most frequently encounter bed bugs in older apartment buildings and row homes, mice and rats particularly in East Baltimore and older neighborhoods near the waterfront, German cockroaches in multi-unit properties, termites throughout Baltimore County and the city proper, and mosquitoes near the Patapsco River and Chesapeake Bay tributaries in summer."}},{"@type":"Question","name":"What is the best time for pest control in Baltimore?","acceptedAnswer":{"@type":"Answer","text":"Spring (April-June) is termite swarm season and mosquito prevention season for Baltimore. Summer (June-August) is peak mosquito and bed bug season. Fall (September-November) is the critical window for rodent exclusion before mice seek winter shelter in Baltimore's older row homes. Year-round quarterly pest control is recommended given Baltimore's diverse and persistent pest pressure."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Baltimore","url":"https://consumersupporthelp.com/pest-control/maryland/baltimore/","description":"Free quotes from licensed pest control professionals serving Baltimore, Maryland. Bed bugs, rodents, cockroaches, termites, and mosquitoes.","areaServed":{"@type":"City","name":"Baltimore","containedIn":{"@type":"State","name":"Maryland"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Consumer Support Help","url":"https://consumersupporthelp.com/","parentOrganization":{"@type":"Organization","name":"Elite Media Group LLC"}}</script>
+  <script src="/assets/pest-advisor.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -65,6 +72,40 @@
   <div class="trust-bar">
     <div class="container">Connecting Baltimore homeowners with licensed, insured pest control professionals since 2020</div>
   </div>
+
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Baltimore, Maryland"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+    <div class="container">
+      <h2>Ready to talk to a licensed Baltimore exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get Free Pest Control Quotes in Baltimore</h3>
+      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+        <label for="zip">Baltimore ZIP Code</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+        <label for="pest">Pest Type</label>
+        <select id="pest" name="pest" required>
+          <option value="">Choose a pest</option><option>Bed Bugs</option><option>Termites</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Mosquitoes</option><option>Ants</option><option>General Pest Control</option><option>Other / Not Sure</option>
+        </select>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency" required>
+          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
+        </select>
+        <button type="submit">Get My Free Pest Control Quote</button>
+        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+      </form>
+    </div>
+  </section>
 
   <section class="section intro">
     <div class="container">
@@ -165,31 +206,7 @@
     </div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2 style="text-align:center;">Get Free Pest Control Quotes in Baltimore</h2>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Baltimore ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option><option>Bed Bugs</option><option>Termites</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Mosquitoes</option><option>Ants</option><option>General Pest Control</option><option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Pest Control Quote</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
-
-  <section class="section">
+<section class="section">
     <div class="container">
       <h2>Why get multiple quotes through us?</h2>
       <div class="differentiator">
