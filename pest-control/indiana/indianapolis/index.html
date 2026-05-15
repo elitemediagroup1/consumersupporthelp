@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -45,6 +45,12 @@
 .cities-list li a:hover{background:#ece6da;}
 .differentiator{background:#fff5e8;border-left:4px solid #c87a2a;padding:18px 22px;border-radius:8px;margin:20px 0;}
 .intro p{font-size:1.05rem;line-height:1.65;margin:0 0 14px;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Indianapolis?","acceptedAnswer":{"@type":"Answer","text":"General pest control in Indianapolis runs $100 to $275 per treatment, and quarterly maintenance plans average $30 to $55 per month. Bed bug treatment ranges $750 to $2,000 depending on whether the pro uses heat or chemical methods, and termite work runs $400 to $1,800. Most licensed Indianapolis exterminators offer free in-home inspections, so plan to compare two or three written quotes before committing."}},{"@type":"Question","name":"Why is Indianapolis ranked #5 for bed bugs?","acceptedAnswer":{"@type":"Answer","text":"Orkin's 2025 list places Indianapolis at #5 nationwide. Convention traffic at the Indiana Convention Center, hotel turnover, multi-family rentals, and college student housing around Butler and IUPUI all contribute. Bed bugs spread through luggage, used furniture, and shared laundry, and Indianapolis's mix of older apartments and dorms gives them plenty of opportunity to move between units."}},{"@type":"Question","name":"Does Indiana require pest control technicians to be licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Office of the Indiana State Chemist (OISC) — housed at Purdue University — licenses every commercial pesticide applicator and pest control business in the state. Technicians must be certified in their applicable category, and businesses must carry liability insurance. Verify any Indianapolis exterminator's OISC credential before signing."}},{"@type":"Question","name":"Are termites a big problem in Indianapolis?","acceptedAnswer":{"@type":"Answer","text":"Yes. Subterranean termites are active across central Indiana, and Indianapolis sits squarely in the moderate-to-heavy infestation zone. Older wood-frame homes in neighborhoods like Irvington, Meridian-Kessler, and Broad Ripple are most at risk. A termite inspection every one to two years — and a treatment plan that includes either liquid barrier or in-ground bait stations — is standard practice for Indianapolis homeowners."}},{"@type":"Question","name":"When is the best time for pest control in Indianapolis?","acceptedAnswer":{"@type":"Answer","text":"Early spring (March–May) is ideal for preventative pest control in Indianapolis because overwintering insects become active and termite swarms appear after the first warm rains. Mosquito treatments are most effective from April through October. Bed bugs and German cockroaches breed indoors year-round, so don't wait — treat as soon as you see signs."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Indianapolis","url":"https://consumersupporthelp.com/pest-control/indiana/indianapolis/","description":"Free quotes from licensed, insured pest control professionals serving Indianapolis, Indiana. Bed bugs, termites, rodents, cockroaches, and ants.","areaServed":{"@type":"City","name":"Indianapolis","containedIn":{"@type":"State","name":"Indiana"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
@@ -68,6 +74,50 @@
     <div class="container">Connecting Indianapolis homeowners with licensed, insured pest control professionals since 2020</div>
   </div>
 
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Indianapolis, Indiana"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+    <div class="container">
+      <h2>Ready to talk to a licensed Indianapolis exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get Free Pest Control Quotes in Indianapolis</h3>
+      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+        <label for="zip">Indianapolis ZIP Code</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+        <label for="pest">Pest Type</label>
+        <select id="pest" name="pest" required>
+          <option value="">Choose a pest</option>
+          <option>Bed Bugs</option>
+          <option>Termites</option>
+          <option>Rodents (Mice / Rats)</option>
+          <option>Cockroaches</option>
+          <option>Ants</option>
+          <option>General Pest Control</option>
+          <option>Other / Not Sure</option>
+        </select>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency" required>
+          <option value="">Select urgency</option>
+          <option>Emergency — same day</option>
+          <option>Within a week</option>
+          <option>Just getting quotes</option>
+        </select>
+        <button type="submit">Get My Free Quotes</button>
+        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="section intro">
     <div class="container">
       <h2>The two pest stories most Indy homeowners run into</h2>
@@ -84,9 +134,6 @@
       <p>The misconception worth correcting: a single termite swarmer inside doesn't always mean an active colony in your home, but it's never something to dismiss. Indianapolis sees swarmers in April and May after warm rains, and the colony may be in a stump or an adjacent property — only an inspection will tell you. Ignored, an active subterranean termite colony in this clay-heavy soil can do thousands of dollars in structural damage before any visible sign appears.</p>
     </div>
   </section>
-
-  <div data-pest-advisor data-city="Indianapolis, Indiana"></div>
-
   <section class="section">
     <div class="container">
       <h2>Pests we cover in Indianapolis</h2>
@@ -169,41 +216,7 @@
     </div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2 style="text-align:center;">Get Free Pest Control Quotes in Indianapolis</h2>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Indianapolis ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option>
-          <option>Bed Bugs</option>
-          <option>Termites</option>
-          <option>Rodents (Mice / Rats)</option>
-          <option>Cockroaches</option>
-          <option>Ants</option>
-          <option>General Pest Control</option>
-          <option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option>
-          <option>Emergency — same day</option>
-          <option>Within a week</option>
-          <option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Quotes</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
-
-  <section class="section">
+<section class="section">
     <div class="container">
       <h2>Why get multiple quotes through us?</h2>
       <div class="differentiator">
