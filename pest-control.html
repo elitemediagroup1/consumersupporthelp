@@ -83,6 +83,17 @@
 .fe-local-state li{margin:0 0 6px;}
 .fe-local-state a{color:var(--teal-700);text-decoration:none;font-size:14px;}
 .fe-local-state a:hover{text-decoration:underline;}
+
+/* ===== Pest control hub redesign (Task 2) ===== */
+.pc-hero{text-align:center;padding:3rem 1rem 2rem;}
+.pc-hero .container{max-width:780px;margin:0 auto;}
+.pc-hero .kicker{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-700);margin-bottom:12px;}
+.pc-hero h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:0.75rem;color:var(--ink,#1a1a1a);font-family:"Lora",Georgia,serif;line-height:1.2;}
+.pc-hero p{font-size:1.05rem;color:var(--muted,#666);margin-bottom:2rem;}
+.pc-pest-selector{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:640px;margin:0 auto 2.5rem;}
+.pc-pest-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:#fff;border:1.5px solid var(--line,#e0e0e0);border-radius:999px;font-size:15px;color:var(--ink,#1a1a1a);text-decoration:none;transition:all .15s;cursor:pointer;}
+.pc-pest-btn:hover,.pc-pest-btn.active{border-color:#1D9E75;background:#f0faf6;color:#0F6E56;}
+
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" defer></script>
@@ -91,13 +102,23 @@
 <div id="site-header"></div>
 
 <main>
+<section class="pc-hero">
+  <div class="container">
+    <span class="kicker">Pest Control</span>
+    <h1>What pest problem are you dealing with?</h1>
+    <p>Tell us what you're seeing and we'll connect you with a licensed local exterminator in your area — free.</p>
 
-<section class="fe-hero">
-<div class="container">
-<span class="kicker">Pest Control</span>
-<h1>Get Free Pest Control Quotes From Trusted Local Exterminators</h1>
-<p class="lede">Roaches, rodents, termites, bed bugs — whatever the pest, we can match you with a licensed local pro for fast, effective treatment.</p>
-</div>
+    <div class="pc-pest-selector">
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="bed-bugs">🛏️ Bed Bugs</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="termites">🪵 Termites</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="rodents">🐭 Rodents</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="cockroaches">🪳 Cockroaches</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="ants">🐜 Ants</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="wasps">🐝 Wasps</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="scorpions">🦂 Scorpions</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="not-sure">❓ Not Sure</a>
+    </div>
+  </div>
 </section>
 
 <section class="chat-section">
@@ -149,13 +170,9 @@
 </div>
 
 
-<section style="margin:2rem 0">
-  <h2 style="font-size:1.3rem;font-weight:500;margin-bottom:0.5rem;color:inherit">
-    Find pest control help near you
-  </h2>
-  <p style="font-size:0.95rem;color:#666;margin-bottom:1rem">
-    Click your state to see local pest control resources and licensed exterminator quotes in your area.
-  </p>
+<section id="find-your-area" style="padding:2rem 0">
+  <h2 style="text-align:center;font-size:1.3rem;margin-bottom:0.5rem">Select your state or city</h2>
+  <p style="text-align:center;font-size:0.95rem;color:#666;margin-bottom:1.5rem">Click your state on the map below to find licensed pest control specialists near you.</p>
   <div id="pest-coverage-map"></div>
 </section>
 
