@@ -45,6 +45,13 @@
 .cities-list li a:hover{background:#ece6da;}
 .differentiator{background:#fff5e8;border-left:4px solid #c87a2a;padding:18px 22px;border-radius:8px;margin:20px 0;}
 .intro p{font-size:1.05rem;line-height:1.65;margin:0 0 14px;}
+
+/* ===== City page identifier section (Task 3) ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.2rem;color:#0F6E56;margin-bottom:0.4rem;}
+.pc-identifier-header p{font-size:0.9rem;color:#555;margin:0;}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Chicago?","acceptedAnswer":{"@type":"Answer","text":"General pest control in Chicago typically runs $150 to $350 per treatment, with quarterly maintenance plans averaging $40 to $70 per month. Specialty treatments cost more: bed bug heat treatment ranges $1,000 to $2,500 for a typical two-bedroom apartment, and termite treatment runs $600 to $2,500 depending on the size of the structure and whether you choose liquid barrier or bait stations. Most licensed Chicago exterminators offer free in-home inspections so you can compare written quotes before committing."}},{"@type":"Question","name":"Why is Chicago ranked #1 for bed bugs?","acceptedAnswer":{"@type":"Answer","text":"Orkin has named Chicago the #1 bed bug city in America for five years running. The combination of dense rental housing, high tourism through O'Hare and McCormick Place, university dorms, and a large transient population means bed bugs spread quickly across the metro. Cook County also has tenant-protection laws that require landlords to treat infestations, which means more reported cases get logged than in cities where renters keep quiet. Acting fast — within days, not weeks — is the single most important factor in a successful Chicago bed bug treatment."}},{"@type":"Question","name":"Does Chicago require pest control companies to be licensed?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Illinois Department of Public Health licenses all structural pest control technicians and businesses under the Structural Pest Control Act. Companies must carry general liability insurance and employ certified applicators for any restricted-use pesticide. Always verify your Chicago exterminator's IDPH license number before signing a contract — you can look it up directly on the IDPH website."}},{"@type":"Question","name":"What pests are most common in Chicago apartments?","acceptedAnswer":{"@type":"Answer","text":"German cockroaches, bed bugs, mice, and pharaoh ants are the four most common Chicago apartment pests. Roaches and ants thrive in shared kitchens and trash chutes, while mice exploit the gaps in older Chicago row-house construction. Bed bugs travel between units through wall voids and shared laundry rooms, which is why building-wide treatment is often more effective than unit-by-unit work in three-flats and high-rises."}},{"@type":"Question","name":"What is the best time of year to get pest control in Chicago?","acceptedAnswer":{"@type":"Answer","text":"Early spring (March through May) is the ideal time for preventative pest control in Chicago because overwintering insects become active and rodents are looking for new nesting sites. Termite swarms typically appear in April and May after the first warm rains. That said, bed bugs and German roaches breed year-round indoors, so don't wait for a season — treat as soon as you see signs."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Chicago","url":"https://consumersupporthelp.com/pest-control/illinois/chicago/","description":"Free quotes from licensed, insured pest control professionals serving Chicago, Illinois. Bed bugs, termites, rodents, cockroaches, and ants.","areaServed":{"@type":"City","name":"Chicago","containedIn":{"@type":"State","name":"Illinois"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
@@ -68,6 +75,50 @@
     <div class="container">Connecting Chicago homeowners with licensed, insured pest control professionals since 2020</div>
   </div>
 
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Chicago, Illinois"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+    <div class="container">
+      <h2>Ready to talk to a licensed Chicago exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h2 style="text-align:center;">Get Free Pest Control Quotes in Chicago</h2>
+      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+        <label for="zip">Chicago ZIP Code</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+        <label for="pest">Pest Type</label>
+        <select id="pest" name="pest" required>
+          <option value="">Choose a pest</option>
+          <option>Bed Bugs</option>
+          <option>Termites</option>
+          <option>Rodents (Mice / Rats)</option>
+          <option>Cockroaches</option>
+          <option>Ants</option>
+          <option>General Pest Control</option>
+          <option>Other / Not Sure</option>
+        </select>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency" required>
+          <option value="">Select urgency</option>
+          <option>Emergency — same day</option>
+          <option>Within a week</option>
+          <option>Just getting quotes</option>
+        </select>
+        <button type="submit">Get My Free Quotes</button>
+        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="section intro">
     <div class="container">
       <h2>The pest reality of older Chicago housing</h2>
@@ -85,7 +136,6 @@
     </div>
   </section>
 
-  <div data-pest-advisor data-city="Chicago, Illinois"></div>
 
   <section class="section">
     <div class="container">
@@ -168,39 +218,6 @@
     </div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2 style="text-align:center;">Get Free Pest Control Quotes in Chicago</h2>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Chicago ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option>
-          <option>Bed Bugs</option>
-          <option>Termites</option>
-          <option>Rodents (Mice / Rats)</option>
-          <option>Cockroaches</option>
-          <option>Ants</option>
-          <option>General Pest Control</option>
-          <option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option>
-          <option>Emergency — same day</option>
-          <option>Within a week</option>
-          <option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Quotes</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
 
   <section class="section">
     <div class="container">
