@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -49,10 +49,17 @@
 .neighborhood-list li{background:#f6f3ee;border:1px solid #e5dfd4;border-radius:6px;padding:8px 12px;font-size:.95rem;color:#0f4f4a;}
 .zip-block{background:#faf7f1;border:1px solid #e5dfd4;border-radius:8px;padding:14px 18px;font-size:.95rem;line-height:1.6;color:#3a3a3a;}
 .zip-block strong{color:#0f4f4a;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Newark?","acceptedAnswer":{"@type":"Answer","text":"Newark pest control costs $175-425 for a standard one-time treatment — among the higher ranges in New Jersey due to proximity to the New York metro market and higher operating costs. Bed bug heat treatment averages $950-2,600 for a typical Newark apartment or home. Newark's dense multi-family housing means infestations spread quickly between units, making early professional treatment essential."}},{"@type":"Question","name":"What pests are most common in Newark homes?","acceptedAnswer":{"@type":"Answer","text":"Newark homeowners and renters most frequently encounter bed bugs in older apartment buildings especially in the North Ward and East Ward, German and American cockroaches in multi-unit buildings particularly near commercial corridors, mice and rats throughout the city with elevated pressure near Penn Station and the Ironbound restaurant district, and eastern subterranean termites in Essex County properties with soil-to-wood contact."}},{"@type":"Question","name":"Are Newark landlords required to address pest infestations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under New Jersey's State Sanitary Code and the City of Newark's housing code, landlords are legally responsible for maintaining rental units free from pest infestations. Newark tenants who discover pest problems should notify landlords in writing immediately and keep documentation. If landlords fail to respond, tenants can report to Newark's Department of Health and Community Wellness or the New Jersey Department of Community Affairs."}},{"@type":"Question","name":"Does New Jersey require pest control licensing in Newark?","acceptedAnswer":{"@type":"Answer","text":"Yes. All pest control companies operating in Newark and Essex County must be licensed by the New Jersey Department of Environmental Protection (NJDEP). Verify any company's NJDEP Pesticide Applicator License before allowing treatment. Working with unlicensed operators puts your family at risk and may void any treatment warranty."}},{"@type":"Question","name":"What is the best time for pest control in Newark?","acceptedAnswer":{"@type":"Answer","text":"Newark's urban environment means pest pressure exists year-round, but spring (April-June) and fall (September-November) are the highest-activity windows. Spring brings termite swarm season and increasing cockroach activity as temperatures rise. Fall drives rodent intrusion as mice seek winter shelter. Bed bug activity peaks in summer with travel season. Year-round quarterly pest control plans are strongly recommended for Newark multi-unit buildings."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Newark","url":"https://consumersupporthelp.com/pest-control/new-jersey/newark/","description":"Free quotes from licensed, insured pest control professionals serving Newark, New Jersey. Bed bugs, cockroaches, rodents, termites, and more.","areaServed":{"@type":"City","name":"Newark","containedIn":{"@type":"State","name":"New Jersey"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Consumer Support Help","url":"https://consumersupporthelp.com/","parentOrganization":{"@type":"Organization","name":"Elite Media Group LLC"}}</script>
+  <script src="/assets/pest-advisor.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -70,6 +77,50 @@
 <div class="trust-bar">
 <div class="container">Connecting Essex County renters and homeowners with licensed New Jersey pest pros who understand dense urban buildings</div>
 </div>
+
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Newark, New Jersey"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+<div class="container">
+<h2>Ready to talk to a licensed Newark exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get My Free Pest Control Quote in Newark</h3>
+<form class="lead-form" action="/thank-you.html" method="post" novalidate>
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required autocomplete="name" />
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" required autocomplete="tel" />
+<label for="zip">Newark ZIP Code</label>
+<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+<label for="pest">Pest Type</label>
+<select id="pest" name="pest" required>
+<option value="">Choose a pest</option>
+<option>Bed Bugs</option>
+<option>Termites</option>
+<option>Rodents (Mice / Rats)</option>
+<option>Cockroaches</option>
+<option>Ants</option>
+<option>General Pest Control</option>
+<option>Other / Not Sure</option>
+</select>
+<label for="urgency">Urgency</label>
+<select id="urgency" name="urgency" required>
+<option value="">Select urgency</option>
+<option>Emergency — same day</option>
+<option>Within a week</option>
+<option>Just getting quotes</option>
+</select>
+<button type="submit">Get My Free Pest Control Quote</button>
+<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+</form>
+</div>
+</section>
 
 <section class="section intro">
 <div class="container">
@@ -186,40 +237,6 @@
 <div class="step"><span class="num">2</span><h3>We Match You With Licensed Local Exterminators</h3><p>We screen every pro for active NJDEP Pesticide Applicator licensing and current liability insurance.</p></div>
 <div class="step"><span class="num">3</span><h3>Compare Quotes and Choose</h3><p>Review estimates, ask the right follow-up questions, and pick the local pro who's the right fit for your building and situation.</p></div>
 </div>
-</div>
-</section>
-
-<section class="lead-form-wrap" id="lead-form">
-<div class="container">
-<h2 style="text-align:center;">Get My Free Pest Control Quote in Newark</h2>
-<form class="lead-form" action="/thank-you.html" method="post" novalidate>
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required autocomplete="name" />
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required autocomplete="tel" />
-<label for="zip">Newark ZIP Code</label>
-<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-<label for="pest">Pest Type</label>
-<select id="pest" name="pest" required>
-<option value="">Choose a pest</option>
-<option>Bed Bugs</option>
-<option>Termites</option>
-<option>Rodents (Mice / Rats)</option>
-<option>Cockroaches</option>
-<option>Ants</option>
-<option>General Pest Control</option>
-<option>Other / Not Sure</option>
-</select>
-<label for="urgency">Urgency</label>
-<select id="urgency" name="urgency" required>
-<option value="">Select urgency</option>
-<option>Emergency — same day</option>
-<option>Within a week</option>
-<option>Just getting quotes</option>
-</select>
-<button type="submit">Get My Free Pest Control Quote</button>
-<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-</form>
 </div>
 </section>
 
