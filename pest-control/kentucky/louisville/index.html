@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -45,10 +45,17 @@
 .cities-list li a:hover{background:#ece6da;}
 .differentiator{background:#fff5e8;border-left:4px solid #c87a2a;padding:18px 22px;border-radius:8px;margin:20px 0;}
 .intro p{font-size:1.05rem;line-height:1.65;margin:0 0 14px;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Louisville?","acceptedAnswer":{"@type":"Answer","text":"Louisville pest control costs $100-265 for a standard one-time treatment. Bed bug heat treatment averages $700-1,900 for a Louisville home or apartment. Termite treatment runs $400-1,700. Louisville's location in the Ohio River valley creates significant termite pressure throughout Jefferson County, making annual termite inspections an important investment for homeowners."}},{"@type":"Question","name":"What pests are most common in Louisville homes?","acceptedAnswer":{"@type":"Answer","text":"Louisville homeowners most frequently encounter eastern subterranean termites throughout Jefferson County, bed bugs in apartment complexes especially near the University of Louisville and NuLu, carpenter ants in older Highlands and Crescent Hill homes, mosquitoes in summer near the Ohio River and Beargrass Creek, and mice entering homes in fall and winter."}},{"@type":"Question","name":"Does Kentucky require pest control licensing in Louisville?","acceptedAnswer":{"@type":"Answer","text":"Yes. All pest control companies operating in Louisville must be licensed by the Kentucky Department of Agriculture (KDA). Technicians must hold a Commercial Pesticide Applicator License. Verify any company's KDA license before hiring. Jefferson County Metro Government also has local regulations regarding pesticide application near waterways."}},{"@type":"Question","name":"Is Louisville a high termite risk area?","acceptedAnswer":{"@type":"Answer","text":"Yes. Louisville sits along the Ohio River valley in USDA Termite Zone 2 — moderate to heavy activity. Eastern subterranean termites are found throughout Jefferson County. Louisville's older housing stock, particularly in the Highlands, Crescent Hill, and St. Matthews areas, and the river valley humidity make termite damage a significant and ongoing risk for homeowners. Annual inspections are strongly recommended."}},{"@type":"Question","name":"What is the best time for pest control in Louisville?","acceptedAnswer":{"@type":"Answer","text":"Spring (April-June) is the most critical window for termite treatment in Louisville — swarm season peaks in April and May in Jefferson County. Summer (June-August) is peak mosquito season near the Ohio River. Fall (September-November) is the key window for rodent exclusion. Louisville's warm Ohio River valley climate means pest pressure continues later into fall than northern cities, with quarterly prevention plans recommended."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Louisville","url":"https://consumersupporthelp.com/pest-control/kentucky/louisville/","description":"Free quotes from licensed pest control professionals serving Louisville, Kentucky. Termites, bed bugs, ants, mosquitoes, and cockroaches.","areaServed":{"@type":"City","name":"Louisville","containedIn":{"@type":"State","name":"Kentucky"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Consumer Support Help","url":"https://consumersupporthelp.com/","parentOrganization":{"@type":"Organization","name":"Elite Media Group LLC"}}</script>
+  <script src="/assets/pest-advisor.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -65,6 +72,40 @@
   <div class="trust-bar">
     <div class="container">Connecting Louisville homeowners with licensed, insured pest control professionals since 2020</div>
   </div>
+
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Louisville, Kentucky"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+    <div class="container">
+      <h2>Ready to talk to a licensed Louisville exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get Free Pest Control Quotes in Louisville</h3>
+      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+        <label for="zip">Louisville ZIP Code</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+        <label for="pest">Pest Type</label>
+        <select id="pest" name="pest" required>
+          <option value="">Choose a pest</option><option>Termites</option><option>Bed Bugs</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Ants</option><option>Mosquitoes</option><option>General Pest Control</option><option>Other / Not Sure</option>
+        </select>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency" required>
+          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
+        </select>
+        <button type="submit">Get My Free Pest Control Quote</button>
+        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+      </form>
+    </div>
+  </section>
 
   <section class="section intro">
     <div class="container">
@@ -165,31 +206,7 @@
     </div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2 style="text-align:center;">Get Free Pest Control Quotes in Louisville</h2>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Louisville ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option><option>Termites</option><option>Bed Bugs</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Ants</option><option>Mosquitoes</option><option>General Pest Control</option><option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Pest Control Quote</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
-
-  <section class="section">
+<section class="section">
     <div class="container">
       <h2>Why get multiple quotes through us?</h2>
       <div class="differentiator">
