@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -45,10 +45,17 @@
 .cities-list li a:hover{background:#ece6da;}
 .differentiator{background:#fff5e8;border-left:4px solid #c87a2a;padding:18px 22px;border-radius:8px;margin:20px 0;}
 .intro p{font-size:1.05rem;line-height:1.65;margin:0 0 14px;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Pittsburgh?","acceptedAnswer":{"@type":"Answer","text":"Pittsburgh pest control costs $150-350 for a standard one-time treatment. Bed bug heat treatment averages $900-2,300 for a typical Pittsburgh home or apartment. Termite treatment runs $500-2,200. Pittsburgh's older housing stock — much of it built before 1960 — and the humidity from three rivers create persistent pest pressure, particularly for termites and carpenter ants in older wood structures."}},{"@type":"Question","name":"What pests are most common in Pittsburgh homes?","acceptedAnswer":{"@type":"Answer","text":"Pittsburgh homeowners most frequently encounter bed bugs in older apartment buildings especially in Oakland and Lawrenceville, mice and rats entering homes through older foundation gaps particularly in South Side and North Side row homes, stink bugs invading in fall throughout Allegheny County, carpenter ants in homes with moisture problems, and termites in properties with soil-to-wood contact."}},{"@type":"Question","name":"Does Pennsylvania require pest control licensing in Pittsburgh?","acceptedAnswer":{"@type":"Answer","text":"Yes. All pest control companies operating in Pittsburgh and Allegheny County must be licensed by the Pennsylvania Department of Agriculture (PDA). Technicians must hold a valid Pesticide Applicator License. You can verify any company's license on the PDA website. Always confirm licensing and liability insurance before allowing any treatment."}},{"@type":"Question","name":"Why is Pittsburgh a high bed bug risk city?","acceptedAnswer":{"@type":"Answer","text":"Pittsburgh ranks in Orkin's national top 15 for bed bug infestations. Pittsburgh's large stock of pre-1960 housing, high rental density in student neighborhoods like Oakland near the University of Pittsburgh and Carnegie Mellon, and active tourism and sports event traffic all contribute to elevated bed bug activity. Multi-unit older buildings are particularly vulnerable."}},{"@type":"Question","name":"What is the best time for pest control in Pittsburgh?","acceptedAnswer":{"@type":"Answer","text":"Fall (September-October) is Pittsburgh's most critical pest control window — stink bugs begin invading homes in large numbers and mice start entering through gaps as temperatures drop. Spring (April-June) is termite swarm season and carpenter ant season in Allegheny County. Summer (June-August) is peak bed bug season with increased travel. Year-round quarterly plans are recommended for Pittsburgh homes given the city's four-season pest pressure."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Pittsburgh","url":"https://consumersupporthelp.com/pest-control/pennsylvania/pittsburgh/","description":"Free quotes from licensed pest control professionals serving Pittsburgh, Pennsylvania. Bed bugs, termites, rodents, carpenter ants, and stink bugs.","areaServed":{"@type":"City","name":"Pittsburgh","containedIn":{"@type":"State","name":"Pennsylvania"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Consumer Support Help","url":"https://consumersupporthelp.com/","parentOrganization":{"@type":"Organization","name":"Elite Media Group LLC"}}</script>
+  <script src="/assets/pest-advisor.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -65,6 +72,40 @@
   <div class="trust-bar">
     <div class="container">Connecting Pittsburgh homeowners with licensed, insured pest control professionals since 2020</div>
   </div>
+
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Pittsburgh, Pennsylvania"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+    <div class="container">
+      <h2>Ready to talk to a licensed Pittsburgh exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get Free Pest Control Quotes in Pittsburgh</h3>
+      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+        <label for="zip">Pittsburgh ZIP Code</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+        <label for="pest">Pest Type</label>
+        <select id="pest" name="pest" required>
+          <option value="">Choose a pest</option><option>Bed Bugs</option><option>Termites</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Ants</option><option>Stink Bugs</option><option>General Pest Control</option><option>Other / Not Sure</option>
+        </select>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency" required>
+          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
+        </select>
+        <button type="submit">Get My Free Pest Control Quote</button>
+        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+      </form>
+    </div>
+  </section>
 
   <section class="section intro">
     <div class="container">
@@ -165,31 +206,7 @@
     </div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2 style="text-align:center;">Get Free Pest Control Quotes in Pittsburgh</h2>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Pittsburgh ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option><option>Bed Bugs</option><option>Termites</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Ants</option><option>Stink Bugs</option><option>General Pest Control</option><option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Pest Control Quote</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
-
-  <section class="section">
+<section class="section">
     <div class="container">
       <h2>Why get multiple quotes through us?</h2>
       <div class="differentiator">
