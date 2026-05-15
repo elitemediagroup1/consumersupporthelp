@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
 .pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
-.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;}
+.pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
 .pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
 .pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
@@ -49,10 +49,17 @@
 .neighborhood-list li{background:#f6f3ee;border:1px solid #e5dfd4;border-radius:6px;padding:8px 12px;font-size:.95rem;color:#0f4f4a;}
 .zip-block{background:#faf7f1;border:1px solid #e5dfd4;border-radius:8px;padding:14px 18px;font-size:.95rem;line-height:1.6;color:#3a3a3a;}
 .zip-block strong{color:#0f4f4a;}
+
+/* ===== City page identifier section ===== */
+.pc-identifier-section{background:#f0faf6;border-radius:12px;padding:1.5rem;margin:1.5rem 0;border:1px solid #c8ead9;}
+.pc-identifier-header{margin-bottom:1rem;}
+.pc-identifier-header h2{font-size:1.5rem;color:#0a3d2c;margin-bottom:0.5rem;}
+.pc-identifier-header p{font-size:1rem;color:#444;margin:0;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pest control cost in Hartford?","acceptedAnswer":{"@type":"Answer","text":"Hartford area pest control costs $150-400 for a standard one-time treatment. Bed bug heat treatment averages $950-2,500 for a typical Hartford home or apartment. Termite treatment runs $550-2,200. Connecticut's higher cost of living means pest control pricing is above the national average, though the Hartford market is somewhat more affordable than Fairfield County markets like Stamford and Greenwich."}},{"@type":"Question","name":"Why did Hartford jump 48 spots in bed bug rankings in one year?","acceptedAnswer":{"@type":"Answer","text":"Hartford made the biggest single-year leap in Orkin's 2025 Top 50 Bed Bug Cities list, jumping 48 spots to debut at #35 nationally. This rapid rise signals a significant increase in bed bug activity across the Hartford metro. The city's older rental housing stock, large student population near Trinity College and University of Hartford, and travel through Bradley International Airport all contribute to elevated and growing bed bug pressure. Hartford homeowners and renters should treat any suspected bed bug activity as urgent."}},{"@type":"Question","name":"Does Connecticut require pest control licensing?","acceptedAnswer":{"@type":"Answer","text":"Yes. All pest control companies in Connecticut must be licensed by the Connecticut Department of Energy and Environmental Protection (DEEP). Commercial pesticide applicators must hold a valid DEEP certificate in the appropriate category. You can verify any company's Connecticut license at ct.gov/deep before allowing treatment on your property."}},{"@type":"Question","name":"What pests are most common in Hartford homes?","acceptedAnswer":{"@type":"Answer","text":"Hartford homeowners most frequently encounter bed bugs in older apartment buildings and multi-family rental properties — particularly near Trinity College and in older neighborhoods like Frog Hollow and Barry Square. Mice and rats are common in older properties throughout Hartford County. Carpenter ants are a significant issue in West Hartford and suburban areas with mature tree canopy and older wood-frame homes. Eastern subterranean termites are present throughout Hartford County."}},{"@type":"Question","name":"What is the best time for pest control in Hartford?","acceptedAnswer":{"@type":"Answer","text":"Fall (September-October) is Hartford's most critical pest control window — mice begin entering homes as temperatures drop and bed bug activity remains elevated from summer travel season. Spring (April-June) is termite swarm season and carpenter ant season in Hartford County. Given Hartford's dramatic rise in bed bug activity, year-round awareness and annual professional inspections are strongly recommended for Hartford area homeowners and renters."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Consumer Support Help — Pest Control Hartford","url":"https://consumersupporthelp.com/pest-control/connecticut/hartford/","description":"Free quotes from licensed, insured pest control professionals serving Hartford, Connecticut. Bed bugs, rodents, carpenter ants, termites, and more.","areaServed":{"@type":"City","name":"Hartford","containedIn":{"@type":"State","name":"Connecticut"}},"serviceType":"Pest Control Lead Generation","hasOfferCatalog":{"@type":"OfferCatalog","name":"Pest Control Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bed Bug Treatment"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Termite Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rodent Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cockroach Extermination"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ant Control"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"General Pest Control"}}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Consumer Support Help","url":"https://consumersupporthelp.com/","parentOrganization":{"@type":"Organization","name":"Elite Media Group LLC"}}</script>
+  <script src="/assets/pest-advisor.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
@@ -70,6 +77,50 @@
 <div class="trust-bar">
 <div class="container">Connecting Greater Hartford homeowners and renters with licensed Connecticut exterminators who actually pick up the phone</div>
 </div>
+
+  <section class="pc-identifier-section">
+    <div class="pc-identifier-header">
+      <h2>Not sure exactly what pest you're dealing with?</h2>
+      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+    </div>
+    <div data-pest-advisor data-city="Hartford, Connecticut"></div>
+  </section>
+
+  <section class="lead-form-wrap" id="lead-form">
+<div class="container">
+<h2>Ready to talk to a licensed Hartford exterminator?</h2>
+      <p>Getting quotes is free and takes about 2 minutes.</p>
+      <h3 style="text-align:center;">Get My Free Pest Control Quote in Hartford</h3>
+<form class="lead-form" action="/thank-you.html" method="post" novalidate>
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required autocomplete="name" />
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" required autocomplete="tel" />
+<label for="zip">Hartford ZIP Code</label>
+<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
+<label for="pest">Pest Type</label>
+<select id="pest" name="pest" required>
+<option value="">Choose a pest</option>
+<option>Bed Bugs</option>
+<option>Termites</option>
+<option>Rodents (Mice / Rats)</option>
+<option>Cockroaches</option>
+<option>Ants</option>
+<option>General Pest Control</option>
+<option>Other / Not Sure</option>
+</select>
+<label for="urgency">Urgency</label>
+<select id="urgency" name="urgency" required>
+<option value="">Select urgency</option>
+<option>Emergency — same day</option>
+<option>Within a week</option>
+<option>Just getting quotes</option>
+</select>
+<button type="submit">Get My Free Pest Control Quote</button>
+<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+</form>
+</div>
+</section>
 
 <section class="section intro">
 <div class="container">
@@ -186,40 +237,6 @@
 <div class="step"><span class="num">2</span><h3>We Match You With Licensed Local Exterminators</h3><p>We screen every pro for active Connecticut DEEP certification and current liability insurance.</p></div>
 <div class="step"><span class="num">3</span><h3>Compare Quotes and Choose</h3><p>Review estimates, ask the right follow-up questions, and pick the local pro who actually shows up when they say they will.</p></div>
 </div>
-</div>
-</section>
-
-<section class="lead-form-wrap" id="lead-form">
-<div class="container">
-<h2 style="text-align:center;">Get My Free Pest Control Quote in Hartford</h2>
-<form class="lead-form" action="/thank-you.html" method="post" novalidate>
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required autocomplete="name" />
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required autocomplete="tel" />
-<label for="zip">Hartford ZIP Code</label>
-<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-<label for="pest">Pest Type</label>
-<select id="pest" name="pest" required>
-<option value="">Choose a pest</option>
-<option>Bed Bugs</option>
-<option>Termites</option>
-<option>Rodents (Mice / Rats)</option>
-<option>Cockroaches</option>
-<option>Ants</option>
-<option>General Pest Control</option>
-<option>Other / Not Sure</option>
-</select>
-<label for="urgency">Urgency</label>
-<select id="urgency" name="urgency" required>
-<option value="">Select urgency</option>
-<option>Emergency — same day</option>
-<option>Within a week</option>
-<option>Just getting quotes</option>
-</select>
-<button type="submit">Get My Free Pest Control Quote</button>
-<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-</form>
 </div>
 </section>
 
