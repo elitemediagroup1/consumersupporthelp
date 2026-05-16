@@ -1,5 +1,5 @@
 /* =====================================================
-   Consumer Support Help — Design System
+   Consumer Support Help â Design System
    Inspired by helpadvisor.com
    ===================================================== */
 
@@ -329,7 +329,7 @@ p{margin:0 0 1em;}
 .btn-outline:hover{background:#fff;color:var(--ink);}
 .btn-ink{background:var(--teal-800);color:#fff;}
 .btn-ink:hover{background:var(--teal-700);color:#fff;}
-.btn::after{content:"›";font-weight:700;}
+.btn::after{content:"âº";font-weight:700;}
 
 /* =====================================================
    Card grids
@@ -402,7 +402,7 @@ p{margin:0 0 1em;}
     color:var(--teal-700);
     align-self:flex-start;
 }
-.article a.read-more::after{content:" ›";}
+.article a.read-more::after{content:" âº";}
 
 /* =====================================================
    Email signup
@@ -634,3 +634,44 @@ p{margin:0 0 1em;}
 }
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu{display:block;}
+
+/* ============================================================
+   Pest Control City Page Styles (moved from inline)
+   Adds .pest-hero, hero pill, trust bar, pc-identifier,
+   pest cards, FAQ, AI-intent, neighborhoods, organic close.
+   Section + container rules already exist globally above.
+   ============================================================ */
+.pest-hero{background:linear-gradient(135deg,#0F6E56 0%,#1D9E75 100%);color:#fff;padding:80px 0 60px;text-align:center;}
+.pest-hero h1{color:#fff;font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;margin:0 0 16px;font-family:'Lora',Georgia,serif;font-weight:700;}
+.pest-hero .lede-kicker,
+.pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
+.pest-hero .lede{font-size:1.15rem;max-width:720px;margin:0 auto;opacity:.95;}
+.trust-bar{background:#f6f3ee;padding:18px 0;font-weight:600;color:#0F6E56;text-align:center;font-size:.95rem;}
+.section.differentiator{background:#f6f3ee;}
+.section h2{font-family:'Lora',Georgia,serif;font-size:1.85rem;color:#0F6E56;margin:0 0 22px;}
+.section p{font-size:1.05rem;line-height:1.7;color:#2a2a2a;}
+.section ul{font-size:1.05rem;line-height:1.7;}
+.pc-identifier-section{padding:50px 0;background:#fff;}
+.pc-identifier-header{text-align:center;max-width:680px;margin:0 auto 24px;}
+.pc-identifier-header h2{font-family:'Lora',Georgia,serif;font-size:1.6rem;color:#0F6E56;margin:0 0 8px;}
+.lead-form-wrap{background:#0F6E56;color:#fff;padding:48px 0;}
+.lead-form-wrap h2{color:#fff;text-align:center;}
+.pest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.pest-card{background:#fff;border:1px solid #e5dfd4;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+.pest-card h3{margin:0 0 10px;color:#0F6E56;font-size:1.2rem;}
+.pest-card .pest-cost{margin:4px 0 0;font-size:.95rem;color:#666;font-style:italic;}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+.step{background:#fff;border:1px solid #e5dfd4;border-radius:12px;padding:20px;text-align:center;}
+.step-num{display:inline-block;background:#1D9E75;color:#fff;width:36px;height:36px;border-radius:50%;line-height:36px;font-weight:700;margin-bottom:10px;}
+.faq{background:#fff;border:1px solid #e5dfd4;border-radius:12px;padding:20px;margin-bottom:14px;}
+.faq h3{margin:0 0 10px;color:#0F6E56;font-size:1.1rem;}
+.faq p{margin:0;}
+.ai-q{background:#fff;border:1px solid #e5dfd4;border-radius:12px;padding:20px;margin-bottom:14px;}
+.ai-q h3{margin:0 0 10px;color:#0F6E56;font-size:1.1rem;}
+.ai-q p{margin:0;}
+.neighborhoods-list,.cities-list{column-count:2;list-style:disc inside;font-size:1.02rem;line-height:1.7;}
+.neighborhoods-list,.cities-list{column-count:1;}
+.organic-close{background:#0F6E56;color:#fff;padding:48px 0;text-align:center;}
+.organic-close h2{color:#fff;}
+.organic-close p{color:#fff;font-size:1.1rem;max-width:720px;margin:0 auto;}
+@media (max-width:640px){.neighborhoods-list,.cities-list{column-count:1;}}
