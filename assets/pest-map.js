@@ -55,7 +55,24 @@
       {name:'San Antonio',url:'/pest-control/texas/san-antonio/'},
       {name:'Austin',url:'/pest-control/texas/austin/'},
       {name:'Fort Worth',url:'/pest-control/texas/fort-worth/'}
-    ]}
+    ]},
+    'Nevada': {
+      url: '/pest-control/nevada/',
+      cities: [
+        {name:'Las Vegas', url:'/pest-control/nevada/las-vegas/'},
+        {name:'Henderson', url:'/pest-control/nevada/henderson/'},
+        {name:'North Las Vegas', url:'/pest-control/nevada/north-las-vegas/'}
+      ]
+    },
+    'Tennessee': {
+      url: '/pest-control/tennessee/',
+      cities: [
+        {name:'Nashville', url:'/pest-control/tennessee/nashville/'},
+        {name:'Memphis', url:'/pest-control/tennessee/memphis/'},
+        {name:'Knoxville', url:'/pest-control/tennessee/knoxville/'},
+        {name:'Chattanooga', url:'/pest-control/tennessee/chattanooga/'}
+      ]
+    }
   };
   var nameMap = {
     '01':'Alabama','02':'Alaska','04':'Arizona','05':'Arkansas',
