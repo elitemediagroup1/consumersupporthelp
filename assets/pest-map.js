@@ -48,6 +48,13 @@
       {name:'Glendale',url:'/pest-control/arizona/glendale/'},
       {name:'Scottsdale',url:'/pest-control/arizona/scottsdale/'},
       {name:'Tempe',url:'/pest-control/arizona/tempe/'}
+    ]},
+    'Texas': { url: '/pest-control/texas/', cities: [
+      {name:'Houston',url:'/pest-control/texas/houston/'},
+      {name:'Dallas',url:'/pest-control/texas/dallas/'},
+      {name:'San Antonio',url:'/pest-control/texas/san-antonio/'},
+      {name:'Austin',url:'/pest-control/texas/austin/'},
+      {name:'Fort Worth',url:'/pest-control/texas/fort-worth/'}
     ]}
   };
   var nameMap = {
@@ -88,7 +95,7 @@
     container.appendChild(mapDiv);
     var legend = document.createElement('div');
     legend.style.cssText = 'display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;font-size:12px;color:#666;justify-content:center';
-    legend.innerHTML = '<span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:#1D9E75;display:inline-block"></span>Live — click to explore</span><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:' + baseColor + ';display:inline-block;border:1px solid #ccc"></span>Coming soon</span>';
+    legend.innerHTML = '<span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:#1D9E75;display:inline-block"></span>Live â click to explore</span><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:' + baseColor + ';display:inline-block;border:1px solid #ccc"></span>Coming soon</span>';
     container.appendChild(legend);
     var panel = document.createElement('div');
     panel.style.cssText = 'display:none;margin-top:16px;background:#f8f8f6;border-radius:10px;border:1px solid #e0e0e0;padding:16px 20px';
@@ -124,9 +131,9 @@
             tooltip.style.display = 'block';
             if (isLive) {
               var c = coverage[name];
-              tooltip.innerHTML = '<strong>' + name + '</strong><br><span style="color:#1D9E75;font-size:12px">' + c.cities.length + ' cit' + (c.cities.length !== 1 ? 'ies' : 'y') + ' covered — click to explore</span>';
+              tooltip.innerHTML = '<strong>' + name + '</strong><br><span style="color:#1D9E75;font-size:12px">' + c.cities.length + ' cit' + (c.cities.length !== 1 ? 'ies' : 'y') + ' covered â click to explore</span>';
             } else {
-              tooltip.innerHTML = '<span style="color:#999;font-size:12px">' + name + ' — coming soon</span>';
+              tooltip.innerHTML = '<span style="color:#999;font-size:12px">' + name + ' â coming soon</span>';
             }
             var rect = container.getBoundingClientRect();
             tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
