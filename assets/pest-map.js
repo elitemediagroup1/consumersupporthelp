@@ -96,6 +96,17 @@
         {name:'Savannah', url:'/pest-control/georgia/savannah/'},
         {name:'Augusta', url:'/pest-control/georgia/augusta/'}
       ]
+    },
+    'Florida': {
+      url: '/pest-control/florida/',
+      cities: [
+        {name:'Jacksonville', url:'/pest-control/florida/jacksonville/'},
+        {name:'Orlando', url:'/pest-control/florida/orlando/'},
+        {name:'Tampa', url:'/pest-control/florida/tampa/'},
+        {name:'Miami', url:'/pest-control/florida/miami/'},
+        {name:'Fort Lauderdale', url:'/pest-control/florida/fort-lauderdale/'},
+        {name:'West Palm Beach', url:'/pest-control/florida/west-palm-beach/'}
+      ]
     }
   };
   var nameMap = {
@@ -136,7 +147,7 @@
     container.appendChild(mapDiv);
     var legend = document.createElement('div');
     legend.style.cssText = 'display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;font-size:12px;color:#666;justify-content:center';
-    legend.innerHTML = '<span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:#1D9E75;display:inline-block"></span>Live â click to explore</span><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:' + baseColor + ';display:inline-block;border:1px solid #ccc"></span>Coming soon</span>';
+    legend.innerHTML = '<span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:#1D9E75;display:inline-block"></span>Live Ã¢ÂÂ click to explore</span><span style="display:flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:' + baseColor + ';display:inline-block;border:1px solid #ccc"></span>Coming soon</span>';
     container.appendChild(legend);
     var panel = document.createElement('div');
     panel.style.cssText = 'display:none;margin-top:16px;background:#f8f8f6;border-radius:10px;border:1px solid #e0e0e0;padding:16px 20px';
@@ -172,9 +183,9 @@
             tooltip.style.display = 'block';
             if (isLive) {
               var c = coverage[name];
-              tooltip.innerHTML = '<strong>' + name + '</strong><br><span style="color:#1D9E75;font-size:12px">' + c.cities.length + ' cit' + (c.cities.length !== 1 ? 'ies' : 'y') + ' covered â click to explore</span>';
+              tooltip.innerHTML = '<strong>' + name + '</strong><br><span style="color:#1D9E75;font-size:12px">' + c.cities.length + ' cit' + (c.cities.length !== 1 ? 'ies' : 'y') + ' covered Ã¢ÂÂ click to explore</span>';
             } else {
-              tooltip.innerHTML = '<span style="color:#999;font-size:12px">' + name + ' â coming soon</span>';
+              tooltip.innerHTML = '<span style="color:#999;font-size:12px">' + name + ' Ã¢ÂÂ coming soon</span>';
             }
             var rect = container.getBoundingClientRect();
             tooltip.style.left = (event.clientX - rect.left + 12) + 'px';
