@@ -1,4 +1,9 @@
-(function() {
+(,
+    'Washington': { url: '/pest-control/washington/', cities: [
+      {name:'Seattle',url:'/pest-control/washington/seattle/'},
+      {name:'Spokane',url:'/pest-control/washington/spokane/'},
+      {name:'Vancouver',url:'/pest-control/washington/vancouver/'}
+    ]}function() {
   var coverage = {
     'Illinois': { url: '/pest-control/illinois/', cities: [
       {name:'Chicago',url:'/pest-control/illinois/chicago/'}
@@ -29,7 +34,11 @@
     'Kentucky': { url: '/pest-control/kentucky/', cities: [
       {name:'Louisville',url:'/pest-control/kentucky/louisville/'}
     ]},
-    'Virginia': { url: '/pest-control/virginia/', cities: [] },
+    'Virginia': { url: '/pest-control/virginia/', cities: [
+      {name:'Richmond',url:'/pest-control/virginia/richmond/'},
+      {name:'Virginia Beach',url:'/pest-control/virginia/virginia-beach/'},
+      {name:'Norfolk',url:'/pest-control/virginia/norfolk/'}
+    ]},
     'Minnesota': { url: '/pest-control/minnesota/', cities: [
       {name:'Minneapolis',url:'/pest-control/minnesota/minneapolis/'}
     ]},
