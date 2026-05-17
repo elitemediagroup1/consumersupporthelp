@@ -65,6 +65,26 @@
       {name:'Austin',url:'/pest-control/texas/austin/'},
       {name:'Fort Worth',url:'/pest-control/texas/fort-worth/'}
     ]},
+    'Iowa': { url: '/pest-control/iowa/', cities: [
+      {name:'Des Moines',url:'/pest-control/iowa/des-moines/'},
+      {name:'Cedar Rapids',url:'/pest-control/iowa/cedar-rapids/'}
+    ]},
+    'Nebraska': { url: '/pest-control/nebraska/', cities: [
+      {name:'Omaha',url:'/pest-control/nebraska/omaha/'},
+      {name:'Lincoln',url:'/pest-control/nebraska/lincoln/'}
+    ]},
+    'Missouri': { url: '/pest-control/missouri/', cities: [
+      {name:'Kansas City',url:'/pest-control/missouri/kansas-city/'},
+      {name:'St Louis',url:'/pest-control/missouri/st-louis/'}
+    ]},
+    'Kansas': { url: '/pest-control/kansas/', cities: [
+      {name:'Wichita',url:'/pest-control/kansas/wichita/'},
+      {name:'Overland Park',url:'/pest-control/kansas/overland-park/'}
+    ]},
+    'Oklahoma': { url: '/pest-control/oklahoma/', cities: [
+      {name:'Oklahoma City',url:'/pest-control/oklahoma/oklahoma-city/'},
+      {name:'Tulsa',url:'/pest-control/oklahoma/tulsa/'}
+    ]},
     'Nevada': {
       url: '/pest-control/nevada/',
       cities: [
