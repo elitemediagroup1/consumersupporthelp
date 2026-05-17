@@ -85,6 +85,18 @@
       {name:'Oklahoma City',url:'/pest-control/oklahoma/oklahoma-city/'},
       {name:'Tulsa',url:'/pest-control/oklahoma/tulsa/'}
     ]},
+    'Delaware': { url: '/pest-control/delaware/', cities: [
+      {name:'Wilmington',url:'/pest-control/delaware/wilmington/'},
+      {name:'Dover',url:'/pest-control/delaware/dover/'}
+    ]},
+    'Massachusetts': { url: '/pest-control/massachusetts/', cities: [
+      {name:'Boston',url:'/pest-control/massachusetts/boston/'},
+      {name:'Worcester',url:'/pest-control/massachusetts/worcester/'}
+    ]},
+    'South Carolina': { url: '/pest-control/south-carolina/', cities: [
+      {name:'Columbia',url:'/pest-control/south-carolina/columbia/'},
+      {name:'Charleston',url:'/pest-control/south-carolina/charleston/'}
+    ]},
     'Nevada': {
       url: '/pest-control/nevada/',
       cities: [
