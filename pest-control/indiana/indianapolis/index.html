@@ -77,46 +77,37 @@
   <section class="pc-identifier-section">
     <div class="pc-identifier-header">
       <h2>Not sure exactly what pest you're dealing with?</h2>
-      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+      <p>Use the quick identifier below — it asks a few questions about what you're seeing and recommends the right type of treatment.</p>
     </div>
     <div data-pest-advisor data-city="Indianapolis, Indiana"></div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2>Ready to talk to a licensed Indianapolis exterminator?</h2>
-      <p>Getting quotes is free and takes about 2 minutes.</p>
-      <h3 style="text-align:center;">Get Free Pest Control Quotes in Indianapolis</h3>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Indianapolis ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option>
-          <option>Bed Bugs</option>
-          <option>Termites</option>
-          <option>Rodents (Mice / Rats)</option>
-          <option>Cockroaches</option>
-          <option>Ants</option>
-          <option>General Pest Control</option>
-          <option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option>
-          <option>Emergency — same day</option>
-          <option>Within a week</option>
-          <option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Quotes</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
+  <section class="section lead-form-wrap" id="lead-form">
+  <div class="container">
+    <h2>Connect with a licensed local exterminator</h2>
+    <p>Fill in your info below â then call directly. No waiting for a callback.</p>
+    <form id="pc-lead-form" novalidate>
+  <input type="text" id="field-name" name="name" placeholder="Your full name" required autocomplete="name" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <input type="tel" id="field-phone" name="phone" placeholder="Your phone number" required autocomplete="tel" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <input type="text" id="field-zip" name="zip" placeholder="ZIP code" required maxlength="5" pattern="[0-9]{5}" autocomplete="postal-code" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;box-sizing:border-box">
+    <input type="text" id="field-state" name="state" placeholder="State (TX)" required maxlength="2" autocomplete="address-level1" style="width:90px;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;text-transform:uppercase;box-sizing:border-box">
+  </div>
+  <div id="form-error" style="display:none;color:#E24B4A;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#FFF5F5;border-radius:8px;border:1px solid #FFCCCC">Please fill in all fields before continuing.</div>
+  <button type="submit" id="pc-submit-btn" style="width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;touch-action:manipulation;-webkit-appearance:none">Get My Free Pest Control Quote â</button>
+</form>
+<div id="call-now-panel" style="display:none;margin-top:16px;background:#f0faf6;border-radius:12px;border:1.5px solid #1D9E75;padding:20px 24px;text-align:center">
+  <p style="font-size:16px;font-weight:600;color:#0F6E56;margin:0 0 6px">â You're all set â call now to speak with a licensed local specialist</p>
+  <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.5">Real specialists available now. Tell them your pest problem and ZIP code and they will match you with a local licensed exterminator in your area.</p>
+  <a href="tel:+18882094812" id="call-now-btn" style="display:block;padding:18px;background:#1D9E75;color:#fff;border-radius:8px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.5px">ð Call Now: (888) 209-4812</a>
+  <p style="font-size:12px;color:#666;margin:14px 0 0;line-height:1.5">MonâFri 8amâ8pm Â· Sat 9amâ5pm local time</p>
+  <p style="font-size:11px;color:#999;margin:8px 0 0">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+</div>
+<script>
+(function(){var f=document.getElementById('pc-lead-form');var p=document.getElementById('call-now-panel');var e=document.getElementById('form-error');var s=document.getElementById('field-state');var ph=document.getElementById('field-phone');if(s){s.addEventListener('input',function(){this.value=this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);});}if(ph){ph.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,10);if(d.length>=7){this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}else if(d.length>=4){this.value='('+d.slice(0,3)+') '+d.slice(3);}else if(d.length>0){this.value='('+d;}});}if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var n=document.getElementById('field-name').value.trim();var pn=document.getElementById('field-phone').value.replace(/\D/g,'');var z=document.getElementById('field-zip').value.trim();var st=document.getElementById('field-state').value.trim();if(!n||pn.length<10||z.length<5||st.length<2){e.style.display='block';e.textContent=!n?'Please enter your name.':pn.length<10?'Please enter a valid phone number.':z.length<5?'Please enter a valid ZIP code.':'Please enter your state code.';return;}e.style.display='none';f.style.display='none';p.style.display='block';p.scrollIntoView({behavior:'smooth',block:'center'});if(typeof gtag!=='undefined'){gtag('event','lead_form_complete',{event_category:'pest_control',event_label:st+'_'+z,event_value:1});fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'firstname',value:n},{objectTypeId:'0-1',name:'phone',value:document.getElementById('field-phone').value},{objectTypeId:'0-1',name:'zip',value:z},{objectTypeId:'0-1',name:'state',value:st}],context:{pageUri:window.location.href,pageName:document.title}})}).catch(function(err){console.log('HubSpot submission error:',err);});}});}})();
+</script>
+  </div>
+</section>
 
   <section class="section intro">
     <div class="container">
@@ -135,48 +126,55 @@
     </div>
   </section>
   <section class="section">
+  <div class="container">
+    <h2>Indianapolis Neighborhoods We Serve</h2>
+    <p>We connect homeowners to licensed exterminators across Indianapolis and the surrounding metro — including Broad Ripple, Fountain Square, Mass Ave, Irvington, Meridian-Kessler, Butler-Tarkington, Bates-Hendricks, Garfield Park, Warren Township, Beech Grove, Lawrence, Speedway, Carmel, Fishers, Greenwood, and Avon. Service typically extends across ZIP codes 46201–46260, 46268, 46278, and 46280.</p>
+  </div>
+</section>
+
+<section class="section">
     <div class="container">
       <h2>Pests we cover in Indianapolis</h2>
       <p>Every pest has different treatment protocols and price points. Here's what licensed Indianapolis exterminators charge for the most common infestations:</p>
       <div class="pest-grid">
         <article class="pest-card">
           <h3>Bed Bugs</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $750–$2,000</p>
+          <p class="pest-cost">From $750-2,000</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>Heat treatment is the most common approach because Indy's hotel-corridor cases often involve luggage harborage that chemical alone misses.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Termites</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $400–$1,800</p>
+          <p class="pest-cost">From $400-1,800</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>Subterranean termites are the dominant Indiana threat — Marion County clay soil holds moisture that supports active colonies year-round.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Rodents (Mice &amp; Rats)</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $150–$500</p>
+          <p class="pest-cost">From $150-500</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>Older neighborhoods near downtown and Broad Ripple have the highest rodent pressure; exclusion work is what makes treatment stick.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Cockroaches</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $135–$375</p>
+          <p class="pest-cost">From $135-375</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
           <p>German roaches show up most often in older multi-unit buildings and travel between units through shared plumbing.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Ants</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $120–$320</p>
+          <p class="pest-cost">From $120-320</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
           <p>Carpenter ants in damp basement framing and odorous house ants in kitchens are the two most common local calls.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>General Pest Control</h3>
-          <p class="pest-cost"><strong>Indianapolis cost range:</strong> $100–$275</p>
+          <p class="pest-cost">From $100-275</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Routine</p>
           <p>Quarterly plans built around spring termite checks and summer mosquito control typically run $100–$275 per visit.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
@@ -205,7 +203,15 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section differentiator">
+  <div class="container">
+    <h2>Why getting matched here is different</h2>
+    <p>We connect you with a small set of licensed local exterminators who actually want your business â no spam calls from a giant lead network, no marketing follow-up from companies that never serve your zip code. We pass your information to qualified pros, and that's it.</p>
+    <p>We never sell, share, or resell your contact information. The form above connects you to one licensed local provider â not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC operates this site as a privacy-respecting referral service for homeowners.</p>
+  </div>
+</section>
+
+<section class="section">
     <div class="container">
       <h2>How it works</h2>
       <div class="steps">
@@ -273,27 +279,32 @@
   </section>
 
   <section class="section">
-    <div class="container">
-      <h2>Common questions we hear</h2>
+  <div class="container">
+    <h2>Common questions we hear from Indianapolis homeowners</h2>
+        <div class="ai-q">
+          <h3>Why are German cockroaches such a persistent problem in Indianapolis?</h3>
+          <p>German cockroaches dominate Indianapolis's residential and commercial pest pressure for a few specific reasons: they breed extraordinarily fast (a single female can produce hundreds of offspring in a year), they're widely resistant to over-the-counter sprays, and they thrive in the kitchen and bathroom environments of dense multifamily housing. Older apartment complexes and rental homes are particularly affected because they travel between units through shared plumbing and electrical chases. Effective control requires a professional approach: gel baits placed in harborage areas (behind refrigerators, under sinks, inside cabinet hinges), insect growth regulators that disrupt reproduction, and exclusion around plumbing penetrations. Multifamily buildings often need coordinated treatment across affected units to break the cycle.</p>
+        </div>
+        <div class="ai-q">
+          <h3>How worried should I be about bed bugs in Indianapolis rentals?</h3>
+          <p>Indianapolis sees substantial bed bug activity — driven partly by a dense rental market with frequent turnover, partly by older multifamily construction with travel paths between units. If you see bites in lines or clusters, small brown stains on sheets, or pepper-like specks along mattress seams or behind the headboard, document the evidence and notify your landlord in writing immediately. Don't use over-the-counter sprays — bed bugs are widely pyrethroid-resistant, and DIY treatment typically scatters them deeper into walls and to adjacent units, making professional elimination harder. Indiana landlord-tenant law sets specific responsibilities for pest issues in rentals — a licensed Indianapolis exterminator will use heat treatment or targeted application with follow-up inspections to confirm elimination.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why do older Indianapolis neighborhoods have so many rodent issues?</h3>
+          <p>Many of Indianapolis's established neighborhoods — Broad Ripple, Irvington, Meridian-Kessler, Fountain Square, the older sections of Warren Township — have housing stock that's 50 to 100+ years old, with stone or block foundations, original-construction basements and crawl spaces, and decades of settling that opens up rodent entry points. Norway rats and house mice get in through gaps around utility penetrations, deteriorated weather stripping, and foundation cracks. Effective control combines exclusion (sealing every gap larger than a quarter-inch), trapping (snap traps and tamper-resistant bait stations), and habitat reduction. Properties near alleys or with adjacent vacant lots see higher pressure and usually need ongoing quarterly service to stay ahead of neighborhood reservoirs.</p>
+        </div>
+  </div>
+</section>
 
-      <details class="faq-item">
-        <summary>Could I have brought bed bugs home from a hotel near the Indianapolis convention center?</summary>
-        <p>Yes — downtown Indianapolis hotels are one of the most active bed bug vectors in the metro because of the constant convention and event turnover. After any downtown stay, inspect your luggage on a hard surface like a bathtub before unpacking, dry any soft items on high heat for at least 45 minutes, and watch the bedroom for rust dots or bite patterns for two weeks. If you spot signs, call a licensed local exterminator the same day rather than waiting.</p>
-      </details>
+  <section class="organic-close">
+  <div class="container">
+    <h2>Ready to get matched?</h2>
+    <p>When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Indianapolis's specific pest challenges — the German cockroach pressure that dominates older multifamily housing, the bed bug activity in the rental market, and the rodent issues common in older Indy neighborhoods.</p>
+    <p style="margin-top:18px;"><a href="#lead-form" class="pest-cta">Get My Free Indianapolis Pest Quote →</a></p>
+  </div>
+</section>
 
-      <details class="faq-item">
-        <summary>How do I know if my Indianapolis home has termites in the soil around it?</summary>
-        <p>Walk the foundation perimeter inside and out and look for pencil-thick mud tubes, soft or hollow-sounding wood at the sill plate, and any small piles of discarded wings near windows in spring. Sticking doors and windows can also signal frame distortion from termite activity. The most reliable answer comes from a professional inspection — most licensed local pros offer them free, and an annual one is the cheapest insurance you can buy in this clay-heavy soil.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What pest control should I do before summer mosquito season hits near White River?</summary>
-        <p>Start in late April or early May. Walk your property and eliminate standing water in any container, clogged gutter, plant saucer, or low spot — a mosquito only needs about a tablespoon to breed. Schedule a perimeter treatment with a licensed local pro for May and book monthly through August if you're close to the river, Fall Creek, or any pond. Adding outdoor dunks for any water you can't eliminate (rain barrels, ornamental ponds) cuts breeding significantly.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section">
+<section class="section">
     <div class="container">
       <h2>Cities &amp; Regions We Serve</h2>
       <p>Looking for pest control outside Indianapolis? We connect homeowners with licensed exterminators across Indiana and the surrounding region.</p>
