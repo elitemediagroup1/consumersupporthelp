@@ -81,45 +81,36 @@
   <section class="pc-identifier-section">
     <div class="pc-identifier-header">
       <h2>Not sure exactly what pest you're dealing with?</h2>
-      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+      <p>Use the quick identifier below — it asks a few questions about what you're seeing and recommends the right type of treatment.</p>
     </div>
     <div data-pest-advisor data-city="Cincinnati, Ohio"></div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-<div class="container">
-<h2>Ready to talk to a licensed Cincinnati exterminator?</h2>
-      <p>Getting quotes is free and takes about 2 minutes.</p>
-      <h3 style="text-align:center;">Get My Free Pest Control Quote in Cincinnati</h3>
-<form class="lead-form" action="/thank-you.html" method="post" novalidate>
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required autocomplete="name" />
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required autocomplete="tel" />
-<label for="zip">Cincinnati ZIP Code</label>
-<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-<label for="pest">Pest Type</label>
-<select id="pest" name="pest" required>
-<option value="">Choose a pest</option>
-<option>Bed Bugs</option>
-<option>Termites</option>
-<option>Rodents (Mice / Rats)</option>
-<option>Cockroaches</option>
-<option>Ants</option>
-<option>General Pest Control</option>
-<option>Other / Not Sure</option>
-</select>
-<label for="urgency">Urgency</label>
-<select id="urgency" name="urgency" required>
-<option value="">Select urgency</option>
-<option>Emergency — same day</option>
-<option>Within a week</option>
-<option>Just getting quotes</option>
-</select>
-<button type="submit">Get My Free Pest Control Quote</button>
-<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+  <section class="section lead-form-wrap" id="lead-form">
+  <div class="container">
+    <h2>Connect with a licensed local exterminator</h2>
+    <p>Fill in your info below â then call directly. No waiting for a callback.</p>
+    <form id="pc-lead-form" novalidate>
+  <input type="text" id="field-name" name="name" placeholder="Your full name" required autocomplete="name" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <input type="tel" id="field-phone" name="phone" placeholder="Your phone number" required autocomplete="tel" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <input type="text" id="field-zip" name="zip" placeholder="ZIP code" required maxlength="5" pattern="[0-9]{5}" autocomplete="postal-code" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;box-sizing:border-box">
+    <input type="text" id="field-state" name="state" placeholder="State (TX)" required maxlength="2" autocomplete="address-level1" style="width:90px;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;text-transform:uppercase;box-sizing:border-box">
+  </div>
+  <div id="form-error" style="display:none;color:#E24B4A;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#FFF5F5;border-radius:8px;border:1px solid #FFCCCC">Please fill in all fields before continuing.</div>
+  <button type="submit" id="pc-submit-btn" style="width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;touch-action:manipulation;-webkit-appearance:none">Get My Free Pest Control Quote â</button>
 </form>
+<div id="call-now-panel" style="display:none;margin-top:16px;background:#f0faf6;border-radius:12px;border:1.5px solid #1D9E75;padding:20px 24px;text-align:center">
+  <p style="font-size:16px;font-weight:600;color:#0F6E56;margin:0 0 6px">â You're all set â call now to speak with a licensed local specialist</p>
+  <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.5">Real specialists available now. Tell them your pest problem and ZIP code and they will match you with a local licensed exterminator in your area.</p>
+  <a href="tel:+18882094812" id="call-now-btn" style="display:block;padding:18px;background:#1D9E75;color:#fff;border-radius:8px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.5px">ð Call Now: (888) 209-4812</a>
+  <p style="font-size:12px;color:#666;margin:14px 0 0;line-height:1.5">MonâFri 8amâ8pm Â· Sat 9amâ5pm local time</p>
+  <p style="font-size:11px;color:#999;margin:8px 0 0">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
 </div>
+<script>
+(function(){var f=document.getElementById('pc-lead-form');var p=document.getElementById('call-now-panel');var e=document.getElementById('form-error');var s=document.getElementById('field-state');var ph=document.getElementById('field-phone');if(s){s.addEventListener('input',function(){this.value=this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);});}if(ph){ph.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,10);if(d.length>=7){this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}else if(d.length>=4){this.value='('+d.slice(0,3)+') '+d.slice(3);}else if(d.length>0){this.value='('+d;}});}if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var n=document.getElementById('field-name').value.trim();var pn=document.getElementById('field-phone').value.replace(/\D/g,'');var z=document.getElementById('field-zip').value.trim();var st=document.getElementById('field-state').value.trim();if(!n||pn.length<10||z.length<5||st.length<2){e.style.display='block';e.textContent=!n?'Please enter your name.':pn.length<10?'Please enter a valid phone number.':z.length<5?'Please enter a valid ZIP code.':'Please enter your state code.';return;}e.style.display='none';f.style.display='none';p.style.display='block';p.scrollIntoView({behavior:'smooth',block:'center'});if(typeof gtag!=='undefined'){gtag('event','lead_form_complete',{event_category:'pest_control',event_label:st+'_'+z,event_value:1});fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'firstname',value:n},{objectTypeId:'0-1',name:'phone',value:document.getElementById('field-phone').value},{objectTypeId:'0-1',name:'zip',value:z},{objectTypeId:'0-1',name:'state',value:st}],context:{pageUri:window.location.href,pageName:document.title}})}).catch(function(err){console.log('HubSpot submission error:',err);});}});}})();
+</script>
+  </div>
 </section>
 
 <section class="section intro">
@@ -159,42 +150,42 @@
 <div class="pest-grid">
 <article class="pest-card">
 <h3>Termites</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $400–$1,800</p>
+<p class="pest-cost">From $400-1,800</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Liquid termiticide around the foundation or a bait station system; both require follow-up monitoring across months.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Cockroaches</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $175–$475</p>
+<p class="pest-cost">From $175-475</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>German cockroach work typically uses a multi-visit gel bait protocol; American roaches often involve drain and basement work.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Ants</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $150–$425</p>
+<p class="pest-cost">From $150-425</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
 <p>Carpenter ant treatment works best when the parent colony is located inside damp wood, not just the trail.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Mosquitoes</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $125–$450</p>
+<p class="pest-cost">From $125-450</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
 <p>Seasonal yard treatments near river corridors are most effective when paired with eliminating standing water.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Rodents (Mice / Rats)</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $150–$475</p>
+<p class="pest-cost">From $150-475</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Fall exclusion work — sealing foundation gaps and utility penetrations — is the single most cost-effective step.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>General Pest Control</h3>
-<p class="pest-cost"><strong>Cincinnati cost range:</strong> $100–$275</p>
+<p class="pest-cost">From $100-275</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Routine</p>
 <p>The Ohio River valley climate supports year-round monitoring, particularly for termite-prone older homes.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
@@ -227,6 +218,14 @@
 </ul>
 </div>
 </div>
+</section>
+
+<section class="section differentiator">
+  <div class="container">
+    <h2>Why getting matched here is different</h2>
+    <p>We connect you with a small set of licensed local exterminators who actually want your business â no spam calls from a giant lead network, no marketing follow-up from companies that never serve your zip code. We pass your information to qualified pros, and that's it.</p>
+    <p>We never sell, share, or resell your contact information. The form above connects you to one licensed local provider â not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC operates this site as a privacy-respecting referral service for homeowners.</p>
+  </div>
 </section>
 
 <section class="section">
@@ -297,31 +296,35 @@
 </section>
 
 <section class="section">
-<div class="container">
-<h2>Common questions we hear</h2>
-
-<details class="faq-item">
-<summary>How bad is the termite problem in Cincinnati and when should I get an inspection?</summary>
-<p>Cincinnati sits in a moderate-to-heavy termite zone with eastern subterranean termites active across more of the year than in northern Ohio. For any home older than about 30 years, an annual professional inspection is the practical baseline — typically scheduled in early spring just ahead of swarm season in April and May. If you find mud tubes, swarming wings indoors, or hollow-sounding wood, schedule sooner rather than later; gradual termite damage compounds quickly once a colony is established.</p>
-</details>
-
-<details class="faq-item">
-<summary>I live in Over-the-Rhine — does the renovation activity in my neighborhood increase my pest risk?</summary>
-<p>Yes, it does, particularly for cockroaches and rodents. Active renovation in dense 19th-century buildings regularly disturbs established harborages and displaces populations into adjacent units. The result is that new construction or rehab can briefly spike activity in nearby properties. If you live in or near a building under renovation, keep food sealed, seal cracks under sinks and around utility penetrations, and consider a preventive treatment if you've seen any signs of activity.</p>
-</details>
-
-<details class="faq-item">
-<summary>Does Cincinnati's location on the Ohio River make pest problems worse than in other Ohio cities?</summary>
-<p>For termites and moisture-driven pests, yes. The Ohio River valley climate is meaningfully milder than northern Ohio cities like Cleveland or Akron, which keeps eastern subterranean termites active later into fall and supports stronger summer mosquito pressure near river corridors. Carpenter ants also press harder in shaded older neighborhoods with damp basements. Bed bugs and rodents track more with travel patterns and housing age, but termites and moisture pests are the genuinely valley-driven pressures here.</p>
-</details>
-
-</div>
+  <div class="container">
+    <h2>Common questions we hear from Cincinnati homeowners</h2>
+        <div class="ai-q">
+          <h3>Should I be worried about termites in my older Cincinnati hillside home?</h3>
+          <p>Yes — Cincinnati's older hillside neighborhoods see meaningful termite pressure for a few interconnected reasons: the topography concentrates moisture near foundations, many homes were built decades ago with stone foundations and direct wood-to-soil contact, and the climate gives subterranean termite colonies a long active season. Eastern subterranean termites enter through mud tubes built along foundation walls, gaps where utilities penetrate concrete, and any wood touching soil. Warning signs include mud tubes on foundation exterior, hollow-sounding wood, discarded wings near windowsills in spring, and bubbling or cracked paint on baseboards. Annual termite inspections are strongly recommended for older Cincinnati homes — catching activity early means a single barrier or bait treatment; missing it for years can mean structural repairs running into five figures.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why do older Cincinnati neighborhoods have so many rodent issues?</h3>
+          <p>Cincinnati's older housing stock — especially in neighborhoods like Over-the-Rhine, Northside, Walnut Hills, Price Hill, and similar established areas — sees chronic rodent pressure because of decades-old foundations that have settled and opened up entry points, the dense rowhouse and apartment construction that gives rodents travel routes between properties, and the food-waste streams of restaurant corridors. Norway rats and house mice get in through gaps around utility penetrations, foundation cracks, and where the rim joist meets the wood frame. Effective control means working at three levels: exclusion, sanitation, and active control with tamper-resistant bait stations and trapping. Chronic-pressure properties usually need quarterly service.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why am I seeing German cockroaches in my Cincinnati apartment?</h3>
+          <p>German cockroaches dominate Cincinnati's multifamily and dense urban pest pressure for specific reasons: they breed extraordinarily fast, are widely resistant to over-the-counter sprays, and travel between apartments through shared plumbing chases and wall voids. Older Cincinnati apartment stock with decades-old plumbing, tight kitchens, and original plaster walls offers ideal harborage. They hide behind appliances, inside cabinet hinges, and around dishwashers. A licensed Cincinnati exterminator typically uses gel baits placed strategically in harborage areas, insect growth regulators that disrupt reproduction, and exclusion around plumbing penetrations. Multifamily buildings often need coordinated treatment across affected units to fully break the cycle.</p>
+        </div>
+  </div>
 </section>
 
 <section class="section" style="background:#faf7f1;">
 <div class="container">
 <p style="font-size:1.05rem;line-height:1.65;">When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Cincinnati's specific pest challenges — the housing types, the seasonal patterns, and the neighborhoods where these problems tend to concentrate.</p>
 </div>
+</section>
+
+<section class="organic-close">
+  <div class="container">
+    <h2>Ready to get matched?</h2>
+    <p>When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Cincinnati's specific pest challenges — termite pressure across older hillside neighborhoods, the rodent activity that comes with dense older housing, and German cockroach issues common in the urban core.</p>
+    <p style="margin-top:18px;"><a href="#lead-form" class="pest-cta">Get My Free Cincinnati Pest Quote →</a></p>
+  </div>
 </section>
 
 <section class="section">
