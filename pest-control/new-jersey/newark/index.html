@@ -81,45 +81,36 @@
   <section class="pc-identifier-section">
     <div class="pc-identifier-header">
       <h2>Not sure exactly what pest you're dealing with?</h2>
-      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+      <p>Use the quick identifier below — it asks a few questions about what you're seeing and recommends the right type of treatment.</p>
     </div>
     <div data-pest-advisor data-city="Newark, New Jersey"></div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-<div class="container">
-<h2>Ready to talk to a licensed Newark exterminator?</h2>
-      <p>Getting quotes is free and takes about 2 minutes.</p>
-      <h3 style="text-align:center;">Get My Free Pest Control Quote in Newark</h3>
-<form class="lead-form" action="/thank-you.html" method="post" novalidate>
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required autocomplete="name" />
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required autocomplete="tel" />
-<label for="zip">Newark ZIP Code</label>
-<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-<label for="pest">Pest Type</label>
-<select id="pest" name="pest" required>
-<option value="">Choose a pest</option>
-<option>Bed Bugs</option>
-<option>Termites</option>
-<option>Rodents (Mice / Rats)</option>
-<option>Cockroaches</option>
-<option>Ants</option>
-<option>General Pest Control</option>
-<option>Other / Not Sure</option>
-</select>
-<label for="urgency">Urgency</label>
-<select id="urgency" name="urgency" required>
-<option value="">Select urgency</option>
-<option>Emergency — same day</option>
-<option>Within a week</option>
-<option>Just getting quotes</option>
-</select>
-<button type="submit">Get My Free Pest Control Quote</button>
-<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+  <section class="section lead-form-wrap" id="lead-form">
+  <div class="container">
+    <h2>Connect with a licensed local exterminator</h2>
+    <p>Fill in your info below â then call directly. No waiting for a callback.</p>
+    <form id="pc-lead-form" novalidate>
+  <input type="text" id="field-name" name="name" placeholder="Your full name" required autocomplete="name" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <input type="tel" id="field-phone" name="phone" placeholder="Your phone number" required autocomplete="tel" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <input type="text" id="field-zip" name="zip" placeholder="ZIP code" required maxlength="5" pattern="[0-9]{5}" autocomplete="postal-code" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;box-sizing:border-box">
+    <input type="text" id="field-state" name="state" placeholder="State (TX)" required maxlength="2" autocomplete="address-level1" style="width:90px;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;text-transform:uppercase;box-sizing:border-box">
+  </div>
+  <div id="form-error" style="display:none;color:#E24B4A;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#FFF5F5;border-radius:8px;border:1px solid #FFCCCC">Please fill in all fields before continuing.</div>
+  <button type="submit" id="pc-submit-btn" style="width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;touch-action:manipulation;-webkit-appearance:none">Get My Free Pest Control Quote â</button>
 </form>
+<div id="call-now-panel" style="display:none;margin-top:16px;background:#f0faf6;border-radius:12px;border:1.5px solid #1D9E75;padding:20px 24px;text-align:center">
+  <p style="font-size:16px;font-weight:600;color:#0F6E56;margin:0 0 6px">â You're all set â call now to speak with a licensed local specialist</p>
+  <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.5">Real specialists available now. Tell them your pest problem and ZIP code and they will match you with a local licensed exterminator in your area.</p>
+  <a href="tel:+18882094812" id="call-now-btn" style="display:block;padding:18px;background:#1D9E75;color:#fff;border-radius:8px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.5px">ð Call Now: (888) 209-4812</a>
+  <p style="font-size:12px;color:#666;margin:14px 0 0;line-height:1.5">MonâFri 8amâ8pm Â· Sat 9amâ5pm local time</p>
+  <p style="font-size:11px;color:#999;margin:8px 0 0">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
 </div>
+<script>
+(function(){var f=document.getElementById('pc-lead-form');var p=document.getElementById('call-now-panel');var e=document.getElementById('form-error');var s=document.getElementById('field-state');var ph=document.getElementById('field-phone');if(s){s.addEventListener('input',function(){this.value=this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);});}if(ph){ph.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,10);if(d.length>=7){this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}else if(d.length>=4){this.value='('+d.slice(0,3)+') '+d.slice(3);}else if(d.length>0){this.value='('+d;}});}if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var n=document.getElementById('field-name').value.trim();var pn=document.getElementById('field-phone').value.replace(/\D/g,'');var z=document.getElementById('field-zip').value.trim();var st=document.getElementById('field-state').value.trim();if(!n||pn.length<10||z.length<5||st.length<2){e.style.display='block';e.textContent=!n?'Please enter your name.':pn.length<10?'Please enter a valid phone number.':z.length<5?'Please enter a valid ZIP code.':'Please enter your state code.';return;}e.style.display='none';f.style.display='none';p.style.display='block';p.scrollIntoView({behavior:'smooth',block:'center'});if(typeof gtag!=='undefined'){gtag('event','lead_form_complete',{event_category:'pest_control',event_label:st+'_'+z,event_value:1});fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'firstname',value:n},{objectTypeId:'0-1',name:'phone',value:document.getElementById('field-phone').value},{objectTypeId:'0-1',name:'zip',value:z},{objectTypeId:'0-1',name:'state',value:st}],context:{pageUri:window.location.href,pageName:document.title}})}).catch(function(err){console.log('HubSpot submission error:',err);});}});}})();
+</script>
+  </div>
 </section>
 
 <section class="section intro">
@@ -159,42 +150,42 @@
 <div class="pest-grid">
 <article class="pest-card">
 <h3>Bed Bugs</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $950–$2,600</p>
+<p class="pest-cost">From $950-2,600</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>In multi-unit buildings, treatment usually needs to include inspection of adjacent units to prevent quick reinfestation.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Cockroaches</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $200–$525</p>
+<p class="pest-cost">From $200-525</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>German cockroach work usually needs a multi-visit gel bait protocol; American roaches often involve drain and basement work.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Rodents (Mice / Rats)</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $200–$550</p>
+<p class="pest-cost">From $200-550</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Rat work near downtown and the Ironbound is often building-wide; sealing exterior entry points is critical.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Termites</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $600–$2,400</p>
+<p class="pest-cost">From $600-2,400</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Eastern subterranean termites are real risk in older Essex County properties; annual inspection is well worth the cost.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Ants</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $175–$425</p>
+<p class="pest-cost">From $175-425</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
 <p>Pavement ants and odorous house ants are routine; carpenter ants show up in older suburban homes around East Orange and Maplewood.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>General Pest Control</h3>
-<p class="pest-cost"><strong>Newark cost range:</strong> $175–$425</p>
+<p class="pest-cost">From $175-425</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Routine</p>
 <p>Pricing here tends to run on the higher end of NJ averages given proximity to the New York metro market.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
@@ -227,6 +218,14 @@
 </ul>
 </div>
 </div>
+</section>
+
+<section class="section differentiator">
+  <div class="container">
+    <h2>Why getting matched here is different</h2>
+    <p>We connect you with a small set of licensed local exterminators who actually want your business â no spam calls from a giant lead network, no marketing follow-up from companies that never serve your zip code. We pass your information to qualified pros, and that's it.</p>
+    <p>We never sell, share, or resell your contact information. The form above connects you to one licensed local provider â not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC operates this site as a privacy-respecting referral service for homeowners.</p>
+  </div>
 </section>
 
 <section class="section">
@@ -297,31 +296,35 @@
 </section>
 
 <section class="section">
-<div class="container">
-<h2>Common questions we hear</h2>
-
-<details class="faq-item">
-<summary>I live near the Ironbound in Newark — does the restaurant district increase my pest risk?</summary>
-<p>It increases the cockroach risk, in particular. The density of restaurants and food businesses along Ferry Street creates a steady, year-round food supply that supports established German and American cockroach populations in adjacent residential blocks. None of that means your apartment will inevitably have roaches — it does mean that proactive sealing, prompt sanitation, and an annual preventive treatment are smart investments if you live in the area.</p>
-</details>
-
-<details class="faq-item">
-<summary>My Newark apartment building has had roaches before — how do I keep them from coming back?</summary>
-<p>The single biggest factor is whether the building treats building-wide or unit-by-unit. If treatment has only ever been done in your unit, the neighboring units will eventually push activity back to you. Ask your landlord, in writing, about a building-wide preventive plan. In your own unit, keep food sealed, clean grease behind appliances, seal gaps around pipes and outlets, and report any sign of activity immediately so adjacent units can be inspected.</p>
-</details>
-
-<details class="faq-item">
-<summary>How do I find a licensed exterminator in Newark and what should I ask before hiring?</summary>
-<p>Every pest control company operating in Newark must hold an active NJDEP Pesticide Applicator License. Ask for the license number and verify it through NJDEP. Beyond licensing, ask about the treatment method specific to your pest (gel bait vs. crack-and-crevice vs. heat), the re-treatment policy if activity persists, how the company handles multi-unit buildings, and whether they're insured. A reputable local pro will answer all of those without hesitation.</p>
-</details>
-
-</div>
+  <div class="container">
+    <h2>Common questions we hear from Newark homeowners</h2>
+        <div class="ai-q">
+          <h3>How common are bed bugs in Newark apartments?</h3>
+          <p>Newark's dense apartment market sees consistently high bed bug pressure, driven by tenant turnover, frequent commuter and travel exposure, and older multifamily housing stock with travel paths between units. If you see bites in lines or clusters, small brown stains on sheets, or pepper-like specks along mattress seams or behind the headboard, document everything and notify your landlord in writing immediately. Don't try over-the-counter sprays — bed bugs are widely resistant and DIY treatment scatters them deeper into walls and to adjacent units. New Jersey has specific landlord-tenant requirements around pest issues in multifamily housing — keep records of every notification. A licensed Newark exterminator typically uses heat treatment or targeted application combined with follow-up inspections to confirm elimination.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why are rodents such a problem in Newark neighborhoods near the port?</h3>
+          <p>Newark's proximity to Port Newark and the dense commercial corridors that surround it produces substantial rodent pressure — Norway rats thrive in warehouse districts, rail corridors, and the food-waste streams of restaurant and grocery activity. Residential neighborhoods near the port, near the airport, or along the commercial corridors see elevated activity. Effective control means working at three levels: exclusion (sealing every gap larger than a quarter-inch around foundations, utility penetrations, and the rim joist), sanitation (sealed trash, no pet food outside), and active control through tamper-resistant bait stations and trapping along known runways. Chronic-pressure properties usually need quarterly service to stay ahead of neighborhood reservoirs.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why do older Newark apartments have so many cockroach issues?</h3>
+          <p>German cockroaches dominate Newark's multifamily pest pressure for specific reasons: they breed extraordinarily fast, are widely resistant to over-the-counter sprays, and travel between apartments through shared plumbing chases and wall voids. Older Newark construction with decades-old plumbing, tight kitchens, and shared HVAC offers ideal harborage. They hide behind appliances, inside cabinet hinges, around dishwashers, and in warm electronics. A licensed Newark exterminator typically uses gel baits placed strategically in harborage areas, insect growth regulators that disrupt reproduction, and exclusion around plumbing penetrations. Multifamily buildings often need coordinated treatment across affected units to fully break the cycle.</p>
+        </div>
+  </div>
 </section>
 
 <section class="section" style="background:#faf7f1;">
 <div class="container">
 <p style="font-size:1.05rem;line-height:1.65;">When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Newark's specific pest challenges — the housing types, the seasonal patterns, and the neighborhoods where these problems tend to concentrate.</p>
 </div>
+</section>
+
+<section class="organic-close">
+  <div class="container">
+    <h2>Ready to get matched?</h2>
+    <p>When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Newark's specific pest challenges — bed bug pressure across the dense apartment market, rodent activity that concentrates near the port corridor, and German cockroach issues common in older urban construction.</p>
+    <p style="margin-top:18px;"><a href="#lead-form" class="pest-cta">Get My Free Newark Pest Quote →</a></p>
+  </div>
 </section>
 
 <section class="section">
