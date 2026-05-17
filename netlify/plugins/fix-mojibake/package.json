@@ -1,0 +1,6 @@
+{
+  "name": "netlify-plugin-fix-mojibake",
+  "version": "1.0.0",
+  "description": "Auto-fix mojibake on every Netlify deploy",
+  "main": "index.js"
+}
