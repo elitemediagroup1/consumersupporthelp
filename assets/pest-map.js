@@ -72,6 +72,21 @@
         {name:'Knoxville', url:'/pest-control/tennessee/knoxville/'},
         {name:'Chattanooga', url:'/pest-control/tennessee/chattanooga/'}
       ]
+    },
+    'North Carolina': {
+      url: '/pest-control/north-carolina/',
+      cities: [
+        {name:'Charlotte', url:'/pest-control/north-carolina/charlotte/'},
+        {name:'Raleigh', url:'/pest-control/north-carolina/raleigh/'}
+      ]
+    },
+    'Georgia': {
+      url: '/pest-control/georgia/',
+      cities: [
+        {name:'Atlanta', url:'/pest-control/georgia/atlanta/'},
+        {name:'Savannah', url:'/pest-control/georgia/savannah/'},
+        {name:'Augusta', url:'/pest-control/georgia/augusta/'}
+      ]
     }
   };
   var nameMap = {
