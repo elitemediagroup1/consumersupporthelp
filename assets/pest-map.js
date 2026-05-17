@@ -8,7 +8,7 @@
     'Illinois': { url: '/pest-control/illinois/', cities: [
       {name:'Chicago',url:'/pest-control/illinois/chicago/'}
     ]},
-    'Ohio': { url: '/pest-control/ohio/', cities: [h
+    'Ohio': { url: '/pest-control/ohio/', cities: [
       {name:'Cleveland',url:'/pest-control/ohio/cleveland/'},
       {name:'Columbus',url:'/pest-control/ohio/columbus/'},
       {name:'Cincinnati',url:'/pest-control/ohio/cincinnati/'},
