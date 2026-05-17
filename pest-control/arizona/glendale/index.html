@@ -13,10 +13,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/style.css" />
 <style>
-.pest-hero{background:linear-gradient(180deg,#0f4f4a 0%,#0c3d39 100%);color:#fff;padding:56px 0 40px;}
 .pest-hero h1{font-family:'Lora',serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px;color:#fff;}
-.pest-hero .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
-.pest-hero .lede{font-size:1.1rem;opacity:.92;max-width:720px;}
 .trust-bar{background:#f6f3ee;border-top:1px solid #e5dfd4;border-bottom:1px solid #e5dfd4;padding:14px 0;text-align:center;font-weight:600;color:#0f4f4a;}
 .section{padding:48px 0;}
 .section h2{font-family:'Lora',serif;font-size:1.8rem;margin:0 0 18px;color:#0f4f4a;}
@@ -81,46 +78,36 @@
 <section class="pc-identifier-section">
 <div class="pc-identifier-header">
 <h2>Not sure exactly what pest you're dealing with?</h2>
-<p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+<p>Use the quick identifier below — it asks a few questions about what you're seeing and recommends the right type of treatment.</p>
 </div>
 <div data-pest-advisor data-city="Glendale, Arizona"></div>
 </section>
 
-<section class="lead-form-wrap" id="lead-form">
-<div class="container">
-<h2>Ready to talk to a licensed Glendale exterminator?</h2>
-<p>Getting quotes is free and takes about 2 minutes.</p>
-<h3 style="text-align:center;">Get My Free Pest Control Quote in Glendale</h3>
-<form class="lead-form" action="/thank-you.html" method="post" novalidate>
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required autocomplete="name" />
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required autocomplete="tel" />
-<label for="zip">Glendale ZIP Code</label>
-<input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-<label for="pest">Pest Type</label>
-<select id="pest" name="pest" required>
-<option value="">Choose a pest</option>
-<option>Scorpions</option>
-<option>Termites</option>
-<option>Cockroaches</option>
-<option>Rodents (Mice / Rats / Roof Rats)</option>
-<option>Spiders (Black Widow / Brown Widow)</option>
-<option>Bed Bugs</option>
-<option>General Pest Control</option>
-<option>Other / Not Sure</option>
-</select>
-<label for="urgency">Urgency</label>
-<select id="urgency" name="urgency" required>
-<option value="">Select urgency</option>
-<option>Emergency — same day</option>
-<option>Within a week</option>
-<option>Just getting quotes</option>
-</select>
-<button type="submit">Get My Free Pest Control Quote</button>
-<p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+<section class="section lead-form-wrap" id="lead-form">
+  <div class="container">
+    <h2>Connect with a licensed local exterminator</h2>
+    <p>Fill in your info below â then call directly. No waiting for a callback.</p>
+    <form id="pc-lead-form" novalidate>
+  <input type="text" id="field-name" name="name" placeholder="Your full name" required autocomplete="name" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <input type="tel" id="field-phone" name="phone" placeholder="Your phone number" required autocomplete="tel" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <input type="text" id="field-zip" name="zip" placeholder="ZIP code" required maxlength="5" pattern="[0-9]{5}" autocomplete="postal-code" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;box-sizing:border-box">
+    <input type="text" id="field-state" name="state" placeholder="State (TX)" required maxlength="2" autocomplete="address-level1" style="width:90px;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;text-transform:uppercase;box-sizing:border-box">
+  </div>
+  <div id="form-error" style="display:none;color:#E24B4A;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#FFF5F5;border-radius:8px;border:1px solid #FFCCCC">Please fill in all fields before continuing.</div>
+  <button type="submit" id="pc-submit-btn" style="width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;touch-action:manipulation;-webkit-appearance:none">Get My Free Pest Control Quote â</button>
 </form>
+<div id="call-now-panel" style="display:none;margin-top:16px;background:#f0faf6;border-radius:12px;border:1.5px solid #1D9E75;padding:20px 24px;text-align:center">
+  <p style="font-size:16px;font-weight:600;color:#0F6E56;margin:0 0 6px">â You're all set â call now to speak with a licensed local specialist</p>
+  <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.5">Real specialists available now. Tell them your pest problem and ZIP code and they will match you with a local licensed exterminator in your area.</p>
+  <a href="tel:+18882094812" id="call-now-btn" style="display:block;padding:18px;background:#1D9E75;color:#fff;border-radius:8px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.5px">ð Call Now: (888) 209-4812</a>
+  <p style="font-size:12px;color:#666;margin:14px 0 0;line-height:1.5">MonâFri 8amâ8pm Â· Sat 9amâ5pm local time</p>
+  <p style="font-size:11px;color:#999;margin:8px 0 0">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
 </div>
+<script>
+(function(){var f=document.getElementById('pc-lead-form');var p=document.getElementById('call-now-panel');var e=document.getElementById('form-error');var s=document.getElementById('field-state');var ph=document.getElementById('field-phone');if(s){s.addEventListener('input',function(){this.value=this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);});}if(ph){ph.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,10);if(d.length>=7){this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}else if(d.length>=4){this.value='('+d.slice(0,3)+') '+d.slice(3);}else if(d.length>0){this.value='('+d;}});}if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var n=document.getElementById('field-name').value.trim();var pn=document.getElementById('field-phone').value.replace(/\D/g,'');var z=document.getElementById('field-zip').value.trim();var st=document.getElementById('field-state').value.trim();if(!n||pn.length<10||z.length<5||st.length<2){e.style.display='block';e.textContent=!n?'Please enter your name.':pn.length<10?'Please enter a valid phone number.':z.length<5?'Please enter a valid ZIP code.':'Please enter your state code.';return;}e.style.display='none';f.style.display='none';p.style.display='block';p.scrollIntoView({behavior:'smooth',block:'center'});if(typeof gtag!=='undefined'){gtag('event','lead_form_complete',{event_category:'pest_control',event_label:st+'_'+z,event_value:1});fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'firstname',value:n},{objectTypeId:'0-1',name:'phone',value:document.getElementById('field-phone').value},{objectTypeId:'0-1',name:'zip',value:z},{objectTypeId:'0-1',name:'state',value:st}],context:{pageUri:window.location.href,pageName:document.title}})}).catch(function(err){console.log('HubSpot submission error:',err);});}});}})();
+</script>
+  </div>
 </section>
 
 <section class="section intro">
@@ -174,48 +161,56 @@
 <div class="pest-grid">
 <article class="pest-card">
 <h3>Scorpions</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $100–$250 initial / $75–$150 quarterly</p>
+<p class="pest-cost">From $100-250</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Historic Glendale homes with mature landscaping provide abundant scorpion harborage. Arrowhead Ranch sees consistent year-round activity.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Termites</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $500–$2,400</p>
+<p class="pest-cost">From $500-2,400</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Year-round subterranean termite activity. Older homes built in the 1950s-1960s have had decades of potential exposure.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Cockroaches</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $100–$225</p>
+<p class="pest-cost">From $100-225</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
 <p>American cockroaches enter homes during monsoon season through drains and foundation gaps — older neighborhoods see more persistent activity.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Rodents (Roof Rats / Mice)</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $150–$450</p>
+<p class="pest-cost">From $150-450</p>
 <p class="pest-urgency"><strong>Urgency:</strong> High</p>
 <p>Roof rats are widespread in Glendale, particularly in neighborhoods with citrus trees and mature canopy.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>Spiders (Black Widow)</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $125–$300</p>
+<p class="pest-cost">From $125-300</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
 <p>Black widow spiders are common in block walls and pool equipment throughout Glendale.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 <article class="pest-card">
 <h3>General Pest Control</h3>
-<p class="pest-cost"><strong>Glendale cost range:</strong> $75–$200</p>
+<p class="pest-cost">From $75-200</p>
 <p class="pest-urgency"><strong>Urgency:</strong> Routine</p>
 <p>Quarterly prevention is the most cost-effective approach given Glendale's consistent year-round pest pressure.</p>
 <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
 </article>
 </div>
 </div>
+</section>
+
+<section class="section differentiator">
+  <div class="container">
+    <h2>Why getting matched here is different</h2>
+    <p>We connect you with a small set of licensed local exterminators who actually want your business â no spam calls from a giant lead network, no marketing follow-up from companies that never serve your zip code. We pass your information to qualified pros, and that's it.</p>
+    <p>We never sell, share, or resell your contact information. The form above connects you to one licensed local provider â not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC operates this site as a privacy-respecting referral service for homeowners.</p>
+  </div>
 </section>
 
 <section class="section">
@@ -307,6 +302,32 @@
 <p style="text-align:center;font-size:1.05rem;">When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Glendale's specific pest challenges — the desert housing conditions, the seasonal patterns, and the neighborhoods where scorpion and cockroach pressure tends to concentrate. <a href="#lead-form" class="pest-cta" style="display:inline-block;margin-top:8px;">Get My Free Pest Control Quote</a></p>
 </div>
 </section>
+<section class="section">
+  <div class="container">
+    <h2>Common questions we hear from Glendale homeowners</h2>
+        <div class="ai-q">
+          <h3>Why do older Glendale homes have so many pest problems?</h3>
+          <p>Historic downtown Glendale and the older neighborhoods built before the West Valley boom have a few specific vulnerabilities: aging foundations with hairline cracks that allow termite and scorpion entry, original-construction weep screens that have degraded over decades, older crawl spaces that hold moisture, and mature landscaping that bridges yard pest pressure directly to the home. Treatment for an older Glendale home typically involves a full exterior perimeter, sealing the specific entry points an inspection identifies, and addressing the moisture and harborage issues unique to older construction. A licensed local exterminator who works in historic Glendale will know these patterns and treat accordingly.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Are scorpions common in Glendale neighborhoods near Luke Air Force Base?</h3>
+          <p>Yes — the western edge of Glendale sits very close to undisturbed desert habitat, and bark scorpions are well established throughout that area. Newer subdivisions built along the desert edge near Luke AFB tend to see the heaviest pressure because the surrounding habitat is still largely intact and scorpions migrate in regularly. Bark scorpions are the most dangerous scorpion in the U.S., climb well, and can squeeze through credit-card-thin cracks. Quarterly perimeter barrier service plus sealing weep screens, garage door seals, and utility entry points is the standard local approach. Check your property at night with a UV flashlight — most homeowners are surprised at the actual population.</p>
+        </div>
+        <div class="ai-q">
+          <h3>I see way more cockroaches in Glendale during monsoon season — why?</h3>
+          <p>Monsoon storms push American cockroaches (the large palmetto bug-style roaches) out of storm drains, sewers, and irrigation systems and into homes seeking dry harborage. German cockroaches, which infest kitchens and reproduce rapidly, multiply faster in the humidity that accompanies monsoon weather. The West Valley sees this surge especially strongly because of the dense storm-drain infrastructure and irrigation network. Treatment combines exterior perimeter spraying, drain treatments, sealing plumbing entry points, and interior gel baits. If you're seeing roaches every night during monsoon season, a one-time service usually isn't enough — quarterly through the rainy season is the local standard.</p>
+        </div>
+  </div>
+</section>
+
+<section class="organic-close">
+  <div class="container">
+    <h2>Ready to get matched?</h2>
+    <p>When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Glendale's specific pest challenges — pest entry points common to historic downtown homes, the desert scorpion pressure near Luke Air Force Base, and the monsoon-season cockroach surges that hit West Valley housing stock especially hard.</p>
+    <p style="margin-top:18px;"><a href="#lead-form" class="pest-cta">Get My Free Glendale Pest Quote →</a></p>
+  </div>
+</section>
+
 <section class="section">
 <div class="container">
 <h2>Cities &amp; Regions We Serve</h2>
