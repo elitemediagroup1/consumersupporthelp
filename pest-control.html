@@ -106,7 +106,7 @@
   <div class="container">
     <span class="kicker">Pest Control</span>
     <h1>What pest problem are you dealing with?</h1>
-    <p>Tell us what you're seeing and we'll connect you with a licensed local exterminator in your area â free.</p>
+    <p>Tell us what you're seeing and we'll connect you with a licensed local exterminator in your area — free.</p>
 
     <div class="pc-pest-selector">
       <a href="#find-your-area" class="pc-pest-btn" data-pest="bed-bugs">ðï¸ Bed Bugs</a>
@@ -116,7 +116,7 @@
       <a href="#find-your-area" class="pc-pest-btn" data-pest="ants">ð Ants</a>
       <a href="#find-your-area" class="pc-pest-btn" data-pest="wasps">ð Wasps</a>
       <a href="#find-your-area" class="pc-pest-btn" data-pest="scorpions">ð¦ Scorpions</a>
-      <a href="#find-your-area" class="pc-pest-btn" data-pest="not-sure">â Not Sure</a>
+      <a href="#find-your-area" class="pc-pest-btn" data-pest="not-sure">❓ Not Sure</a>
     </div>
   </div>
 </section>
@@ -153,7 +153,7 @@
 <p>A pest infestation is more than a nuisance. Left unchecked, pests like termites and rodents can cause thousands of dollars in structural damage, while roaches and bed bugs can trigger allergies and disrupt sleep. The good news is that modern pest control is far more targeted, family-friendly, and pet-safe than treatments from even a decade ago.</p>
 <h3>Common household pests</h3>
 <p>In the U.S., the most frequently treated pests fall into a handful of categories:</p>
-<ul><li>Roaches â German, American, and Oriental species thrive in kitchens and bathrooms</li><li>Ants â odorous house ants, carpenter ants, and fire ants are among the top offenders</li><li>Rodents â house mice, Norway rats, and roof rats are common in attics, garages, and basements</li><li>Termites â subterranean and drywood termites cause an estimated $5 billion in U.S. damage each year</li><li>Bed bugs â fast-spreading hitchhikers found in bedrooms, hotels, and used furniture</li><li>Mosquitoes, fleas, ticks, and spiders â seasonal threats with serious health implications</li></ul>
+<ul><li>Roaches — German, American, and Oriental species thrive in kitchens and bathrooms</li><li>Ants — odorous house ants, carpenter ants, and fire ants are among the top offenders</li><li>Rodents — house mice, Norway rats, and roof rats are common in attics, garages, and basements</li><li>Termites — subterranean and drywood termites cause an estimated $5 billion in U.S. damage each year</li><li>Bed bugs — fast-spreading hitchhikers found in bedrooms, hotels, and used furniture</li><li>Mosquitoes, fleas, ticks, and spiders — seasonal threats with serious health implications</li></ul>
 <h3>Treatment options</h3>
 <p>Modern pest control uses Integrated Pest Management (IPM), which combines targeted chemical treatments, baits, traps, exclusion (sealing entry points), and habitat modification. IPM is designed to be effective while minimizing pesticide exposure for kids and pets.</p>
 <h3>How much does it cost?</h3>
@@ -387,7 +387,7 @@ var STEPS = [
 ]},
 { q: "Are you open to ongoing service if it solves the issue?", options: [
 { label:"Yes", value:"yes", qualifying:true },
-{ label:"Maybe â depends on price", value:"maybe", qualifying:true },
+{ label:"Maybe — depends on price", value:"maybe", qualifying:true },
 { label:"No, one-time only", value:"no", qualifying:true }
 ]}
 ];
@@ -463,7 +463,7 @@ else { askStep(); }
 }
 
 function showQualified(){
-addThem("Great â a local pest control pro can help with that. ð", function(){
+addThem("Great — a local pest control pro can help with that. ð", function(){
 addThem("Tap below to get a free quote from a licensed exterminator in your area.", function(){
 actions.innerHTML = "";
 var ctaWrap = document.createElement("div");
@@ -476,7 +476,7 @@ actions.parentNode.replaceChild(ctaWrap, actions);
 
 function showDisqualified(reason){
 var msg, follow;
-if (reason === "renter"){ msg = "Got it. Pest control usually needs the homeowner approval."; follow = "Reach out to your landlord or property manager â they are typically responsible for pest treatment in rentals."; }
+if (reason === "renter"){ msg = "Got it. Pest control usually needs the homeowner approval."; follow = "Reach out to your landlord or property manager — they are typically responsible for pest treatment in rentals."; }
 else { msg = "Thanks for the info."; follow = "Here are some other Consumer Support Help resources you might find useful."; }
 addThem(msg, function(){
 addThem(follow, function(){
