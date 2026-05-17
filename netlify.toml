@@ -4,3 +4,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
+
+[[plugins]]
+  package = "./netlify/plugins/fix-mojibake"
