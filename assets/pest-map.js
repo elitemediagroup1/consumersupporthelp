@@ -107,6 +107,26 @@
         {name:'Fort Lauderdale', url:'/pest-control/florida/fort-lauderdale/'},
         {name:'West Palm Beach', url:'/pest-control/florida/west-palm-beach/'}
       ]
+    },
+    'Oregon': {
+      url: '/pest-control/oregon/',
+      cities: [
+        {name:'Portland', url:'/pest-control/oregon/portland/'}
+      ]
+    },
+    'Colorado': {
+      url: '/pest-control/colorado/',
+      cities: [
+        {name:'Denver', url:'/pest-control/colorado/denver/'},
+        {name:'Colorado Springs', url:'/pest-control/colorado/colorado-springs/'}
+      ]
+    },
+    'Utah': {
+      url: '/pest-control/utah/',
+      cities: [
+        {name:'Salt Lake City', url:'/pest-control/utah/salt-lake-city/'},
+        {name:'St George', url:'/pest-control/utah/st-george/'}
+      ]
     }
   };
   var nameMap = {
