@@ -76,36 +76,37 @@
   <section class="pc-identifier-section">
     <div class="pc-identifier-header">
       <h2>Not sure exactly what pest you're dealing with?</h2>
-      <p>Use our free AI pest identifier before you call anyone. Upload a photo or describe what you're seeing and get an instant answer — including urgency level and what to do next.</p>
+      <p>Use the quick identifier below — it asks a few questions about what you're seeing and recommends the right type of treatment.</p>
     </div>
     <div data-pest-advisor data-city="Philadelphia, Pennsylvania"></div>
   </section>
 
-  <section class="lead-form-wrap" id="lead-form">
-    <div class="container">
-      <h2>Ready to talk to a licensed Philadelphia exterminator?</h2>
-      <p>Getting quotes is free and takes about 2 minutes.</p>
-      <h3 style="text-align:center;">Get Free Pest Control Quotes in Philadelphia</h3>
-      <form class="lead-form" action="/thank-you.html" method="post" novalidate>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name" />
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-        <label for="zip">Philadelphia ZIP Code</label>
-        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" autocomplete="postal-code" />
-        <label for="pest">Pest Type</label>
-        <select id="pest" name="pest" required>
-          <option value="">Choose a pest</option><option>Bed Bugs</option><option>Termites</option><option>Rodents (Mice / Rats)</option><option>Cockroaches</option><option>Ants</option><option>General Pest Control</option><option>Other / Not Sure</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select id="urgency" name="urgency" required>
-          <option value="">Select urgency</option><option>Emergency — same day</option><option>Within a week</option><option>Just getting quotes</option>
-        </select>
-        <button type="submit">Get My Free Pest Control Quote</button>
-        <p class="form-privacy">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
-      </form>
-    </div>
-  </section>
+  <section class="section lead-form-wrap" id="lead-form">
+  <div class="container">
+    <h2>Connect with a licensed local exterminator</h2>
+    <p>Fill in your info below â then call directly. No waiting for a callback.</p>
+    <form id="pc-lead-form" novalidate>
+  <input type="text" id="field-name" name="name" placeholder="Your full name" required autocomplete="name" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <input type="tel" id="field-phone" name="phone" placeholder="Your phone number" required autocomplete="tel" style="width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box;display:block">
+  <div style="display:flex;gap:12px;margin-bottom:12px">
+    <input type="text" id="field-zip" name="zip" placeholder="ZIP code" required maxlength="5" pattern="[0-9]{5}" autocomplete="postal-code" style="flex:1;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;box-sizing:border-box">
+    <input type="text" id="field-state" name="state" placeholder="State (TX)" required maxlength="2" autocomplete="address-level1" style="width:90px;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;text-transform:uppercase;box-sizing:border-box">
+  </div>
+  <div id="form-error" style="display:none;color:#E24B4A;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#FFF5F5;border-radius:8px;border:1px solid #FFCCCC">Please fill in all fields before continuing.</div>
+  <button type="submit" id="pc-submit-btn" style="width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;touch-action:manipulation;-webkit-appearance:none">Get My Free Pest Control Quote â</button>
+</form>
+<div id="call-now-panel" style="display:none;margin-top:16px;background:#f0faf6;border-radius:12px;border:1.5px solid #1D9E75;padding:20px 24px;text-align:center">
+  <p style="font-size:16px;font-weight:600;color:#0F6E56;margin:0 0 6px">â You're all set â call now to speak with a licensed local specialist</p>
+  <p style="font-size:13px;color:#555;margin:0 0 16px;line-height:1.5">Real specialists available now. Tell them your pest problem and ZIP code and they will match you with a local licensed exterminator in your area.</p>
+  <a href="tel:+18882094812" id="call-now-btn" style="display:block;padding:18px;background:#1D9E75;color:#fff;border-radius:8px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.5px">ð Call Now: (888) 209-4812</a>
+  <p style="font-size:12px;color:#666;margin:14px 0 0;line-height:1.5">MonâFri 8amâ8pm Â· Sat 9amâ5pm local time</p>
+  <p style="font-size:11px;color:#999;margin:8px 0 0">Your information is never sold or shared. Elite Media Group LLC respects your privacy.</p>
+</div>
+<script>
+(function(){var f=document.getElementById('pc-lead-form');var p=document.getElementById('call-now-panel');var e=document.getElementById('form-error');var s=document.getElementById('field-state');var ph=document.getElementById('field-phone');if(s){s.addEventListener('input',function(){this.value=this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);});}if(ph){ph.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,10);if(d.length>=7){this.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}else if(d.length>=4){this.value='('+d.slice(0,3)+') '+d.slice(3);}else if(d.length>0){this.value='('+d;}});}if(f){f.addEventListener('submit',function(ev){ev.preventDefault();var n=document.getElementById('field-name').value.trim();var pn=document.getElementById('field-phone').value.replace(/\D/g,'');var z=document.getElementById('field-zip').value.trim();var st=document.getElementById('field-state').value.trim();if(!n||pn.length<10||z.length<5||st.length<2){e.style.display='block';e.textContent=!n?'Please enter your name.':pn.length<10?'Please enter a valid phone number.':z.length<5?'Please enter a valid ZIP code.':'Please enter your state code.';return;}e.style.display='none';f.style.display='none';p.style.display='block';p.scrollIntoView({behavior:'smooth',block:'center'});if(typeof gtag!=='undefined'){gtag('event','lead_form_complete',{event_category:'pest_control',event_label:st+'_'+z,event_value:1});fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{objectTypeId:'0-1',name:'firstname',value:n},{objectTypeId:'0-1',name:'phone',value:document.getElementById('field-phone').value},{objectTypeId:'0-1',name:'zip',value:z},{objectTypeId:'0-1',name:'state',value:st}],context:{pageUri:window.location.href,pageName:document.title}})}).catch(function(err){console.log('HubSpot submission error:',err);});}});}})();
+</script>
+  </div>
+</section>
 
   <section class="section intro">
     <div class="container">
@@ -125,48 +126,55 @@
   </section>
 
   <section class="section">
+  <div class="container">
+    <h2>Philadelphia Neighborhoods We Serve</h2>
+    <p>We connect homeowners to licensed exterminators across Philadelphia and the surrounding metro — including Fishtown, Northern Liberties, Kensington, South Philly, West Philly, Germantown, Mt Airy, Chestnut Hill, Brewerytown, Fairmount, Point Breeze, Passyunk Square, Upper Darby, Drexel Hill, Springfield, Havertown, Lansdowne, and Ardmore. Service typically extends across ZIP codes 19102–19154 and 19301–19399.</p>
+  </div>
+</section>
+
+<section class="section">
     <div class="container">
       <h2>Pests we cover in Philadelphia</h2>
       <p>Every pest has different treatment protocols and price points. Here's what licensed Philadelphia exterminators charge for the most common infestations:</p>
       <div class="pest-grid">
         <article class="pest-card">
           <h3>Bed Bugs</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $1,000-$2,800</p>
+          <p class="pest-cost">From $1,000-2,800</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>Heat treatment is the most thorough approach in row homes and student rentals where chemical alone often misses harborage in shared wall voids.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Termites</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $600-$2,500</p>
+          <p class="pest-cost">From $600-2,500</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>Subterranean termites are the main Pennsylvania threat — older brick foundations and party cellar construction are most exposed.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Rodents (Mice &amp; Rats)</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $200-$650</p>
+          <p class="pest-cost">From $200-650</p>
           <p class="pest-urgency"><strong>Urgency:</strong> High</p>
           <p>South Philly alley corridors and Center City utility infrastructure make exterior exclusion the most important deliverable.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Cockroaches</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $200-$500</p>
+          <p class="pest-cost">From $200-500</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
           <p>German roaches dominate older multi-unit buildings and travel between units through shared plumbing chases and party walls.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>Ants</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $150-$400</p>
+          <p class="pest-cost">From $150-400</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Medium</p>
           <p>Pavement ants along older row home sidewalks and odorous house ants in kitchens are the two most common local calls.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
         </article>
         <article class="pest-card">
           <h3>General Pest Control</h3>
-          <p class="pest-cost"><strong>Philadelphia cost range:</strong> $150-$400</p>
+          <p class="pest-cost">From $150-400</p>
           <p class="pest-urgency"><strong>Urgency:</strong> Routine</p>
           <p>Quarterly plans built around fall rodent exclusion and spring termite checks typically run $150-$400 per visit.</p>
           <a href="#lead-form" class="pest-cta">Get a Free Quote</a>
@@ -195,7 +203,15 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section differentiator">
+  <div class="container">
+    <h2>Why getting matched here is different</h2>
+    <p>We connect you with a small set of licensed local exterminators who actually want your business â no spam calls from a giant lead network, no marketing follow-up from companies that never serve your zip code. We pass your information to qualified pros, and that's it.</p>
+    <p>We never sell, share, or resell your contact information. The form above connects you to one licensed local provider â not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC operates this site as a privacy-respecting referral service for homeowners.</p>
+  </div>
+</section>
+
+<section class="section">
     <div class="container">
       <h2>How it works</h2>
       <div class="steps">
@@ -263,27 +279,32 @@
   </section>
 
   <section class="section">
-    <div class="container">
-      <h2>Common questions we hear</h2>
+  <div class="container">
+    <h2>Common questions we hear from Philadelphia homeowners</h2>
+        <div class="ai-q">
+          <h3>How common are bed bugs in Philadelphia rowhouse neighborhoods?</h3>
+          <p>Philadelphia consistently ranks among the highest U.S. cities for bed bug activity, and the dense rowhouse stock — especially in older neighborhoods like Kensington, Fishtown, Point Breeze, and West Philly — makes them spread fast between adjacent units. Shared walls, decades-old construction with travel paths through joist bays, and frequent rental turnover all contribute. If you see bites in lines or clusters, small brown stains on sheets, or pepper-like specks along mattress seams or behind the headboard, document everything and notify your landlord in writing immediately. Don't use over-the-counter sprays — bed bugs are widely resistant and DIY treatment usually pushes them deeper into wall voids and adjacent rowhouses. A licensed Philadelphia exterminator typically uses heat treatment or targeted application with follow-up inspections.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why does Philadelphia have such a serious rodent problem?</h3>
+          <p>Philadelphia's rodent pressure is driven by a combination of factors: dense rowhouse construction that gives Norway rats and house mice easy travel between properties, alley systems that provide cover and travel corridors, abundant food waste in commercial corridors, and decades-old housing with stone or block foundations that have settled and opened up entry points. Effective control means working at three levels: exclusion (sealing every gap larger than a quarter-inch around foundations, utility penetrations, and the rim joist), sanitation (sealed trash, no pet food outside, clearing fallen fruit and bird seed), and active control through tamper-resistant bait stations and trapping. Properties along alleys or in commercial corridors usually need ongoing quarterly service.</p>
+        </div>
+        <div class="ai-q">
+          <h3>Why are German cockroaches such a persistent problem in older Philly construction?</h3>
+          <p>German cockroaches dominate Philadelphia's multifamily and dense urban pest pressure because they breed extraordinarily fast, are widely resistant to over-the-counter sprays, and travel between rowhouses and apartment units through shared plumbing chases and wall voids. They hide behind appliances, inside cabinet hinges, and around plumbing penetrations. Older Philly construction with original plaster walls, knob-and-tube remnants, and decades-old plumbing offers ideal harborage. A licensed Philadelphia exterminator uses gel baits placed in harborage areas, insect growth regulators that disrupt reproduction, and exclusion around plumbing penetrations. Multifamily buildings and rowhouse blocks often need coordinated treatment across affected units.</p>
+        </div>
+  </div>
+</section>
 
-      <details class="faq-item">
-        <summary>My Philadelphia row home shares walls on both sides — if my neighbor has bed bugs what should I do?</summary>
-        <p>Inspect immediately and treat as elevated risk — bed bugs travel through party walls via outlets, baseboards, and wall voids. Install interceptor cups under each bed leg and encase mattress and box spring this week, photograph anything suspicious on mattress seams or headboards, and call a licensed local pro for an inspection. If your neighbor is being treated, ask your exterminator about coordinated timing — simultaneous treatment of attached units is significantly more effective than sequential.</p>
-      </details>
+  <section class="organic-close">
+  <div class="container">
+    <h2>Ready to get matched?</h2>
+    <p>When you're ready, getting a few quotes takes about 2 minutes and connects you with licensed local specialists who know Philadelphia's specific pest challenges — bed bug pressure in the dense rowhouse rental market, the rodent activity that defines older neighborhoods, and the German cockroach issues common across older urban construction.</p>
+    <p style="margin-top:18px;"><a href="#lead-form" class="pest-cta">Get My Free Philadelphia Pest Quote →</a></p>
+  </div>
+</section>
 
-      <details class="faq-item">
-        <summary>Why does Philadelphia have such a bad rat problem and what can I do about it near my home?</summary>
-        <p>South Philly alley corridors, Center City underground utility infrastructure, and the density of attached homes give rats reliable food, shelter, and travel routes — which is why the issue is more block-level than unit-level. On your property, seal foundation gaps larger than a pencil, secure trash containers with tight-fitting lids, and keep any compost or pet food off the alley side of the property. Coordinated block-level treatment and proper trash storage make far more difference than any one home can on its own.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>How do I find a licensed exterminator in Philadelphia and what questions should I ask?</summary>
-        <p>Start by asking for the PDA license number and verifying it on the Pennsylvania Department of Agriculture's online lookup. Then ask about specific row home and party-wall experience, whether they coordinate with attached neighbors, and what's included in the quote (exclusion work, follow-up visits, warranty). Get two or three written estimates before committing — pricing varies meaningfully by experience level and what's actually included.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="section" style="background:#faf7f1;">
+<section class="section" style="background:#faf7f1;">
     <div class="container">
       <h2>Cities &amp; Regions We Serve</h2>
       <p>Looking for pest control outside Philadelphia? We connect homeowners with licensed exterminators across Pennsylvania and the surrounding region.</p>
