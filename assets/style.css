@@ -329,7 +329,7 @@ p{margin:0 0 1em;}
 .btn-outline:hover{background:#fff;color:var(--ink);}
 .btn-ink{background:var(--teal-800);color:#fff;}
 .btn-ink:hover{background:var(--teal-700);color:#fff;}
-.btn::after{content:"âº";font-weight:700;}
+.btn::after{content:"\2192 ";font-weight:700;}
 
 /* =====================================================
    Card grids
