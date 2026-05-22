@@ -4,10 +4,10 @@
     var head=document.head||document.getElementsByTagName('head')[0];
     if(!head) return;
     if(!document.querySelector('link[rel="icon"]')){
-      var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/assets/logo.svg';head.appendChild(l);
+      var l=document.createElement('link');l.rel='icon';l.type='image/svg+xml';l.href='/assets/logo.png';head.appendChild(l);
     }
     if(!document.querySelector('link[rel="apple-touch-icon"]')){
-      var a=document.createElement('link');a.rel='apple-touch-icon';a.href='/assets/logo.svg';head.appendChild(a);
+      var a=document.createElement('link');a.rel='apple-touch-icon';a.href='/assets/logo.png';head.appendChild(a);
     }
     if(!document.querySelector('meta[name="theme-color"]')){
       var t=document.createElement('meta');t.name='theme-color';t.content='#1a6b3c';head.appendChild(t);
