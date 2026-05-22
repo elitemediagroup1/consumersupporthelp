@@ -140,3 +140,37 @@ document.addEventListener("DOMContentLoaded", function(){
   var yr = document.getElementById("yr");
   if(yr) yr.textContent = new Date().getFullYear();
 });
+
+/* =========================================================
+   Pest Control phone CTA - dynamic injection
+   Automatically adds the (888) 209-4812 click-to-call CTA
+   to any URL under /pest-control. No HTML edits required.
+   ========================================================= */
+function injectPestControlPhone(){
+  var isPestPage = window.location.pathname.indexOf('/pest-control') !== -1;
+  if(!isPestPage) return;
+
+  var phoneHTML = '<div class="pest-phone-cta" style="text-align:center;margin:24px 0;padding:0 16px">'
+    + '<a href="tel:+18882094812" style="display:inline-flex;align-items:center;gap:10px;background:#1a6b3c;color:white;font-family:\'Inter\',sans-serif;font-weight:700;font-size:1.3rem;padding:16px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.15)">'
+    + '&#128222; (888) 209-4812'
+    + '</a>'
+    + '<p style="font-size:0.8rem;color:#666;margin-top:8px;font-family:\'Inter\',sans-serif">'
+    + 'Free quotes &#8212; licensed local exterminators'
+    + '</p>'
+    + '</div>';
+
+  // Insert immediately after the first H1
+  var h1 = document.querySelector('h1');
+  if(h1 && !document.querySelector('.pest-phone-cta')){
+    h1.insertAdjacentHTML('afterend', phoneHTML);
+  }
+
+  // Insert before the site footer (or any footer element)
+  var footer = document.querySelector('#site-footer, footer, .site-footer, .footer');
+  if(footer){
+    footer.insertAdjacentHTML('beforebegin', phoneHTML);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', injectPestControlPhone);
+document.addEventListener('DOMContentLoaded', injectPestControlPhone);
