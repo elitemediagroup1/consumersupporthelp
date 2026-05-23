@@ -174,27 +174,3 @@ function injectPestControlPhone(){
 
 document.addEventListener('DOMContentLoaded', injectPestControlPhone);
 document.addEventListener('DOMContentLoaded', injectPestControlPhone);
-
-
-function injectHomeSecurityPhone() {
-  const isHSPage = window.location.pathname.includes('home-security');
-  if (!isHSPage) return;
-  const phoneHTML = `
-    <div class="home-security-phone-cta" style="text-align:center;margin:24px 0;padding:0 16px">
-      <a href="tel:+18667537189" style="display:inline-flex;align-items:center;gap:10px;background:#1a6b3c;color:white;font-family:'Inter',sans-serif;font-weight:700;font-size:1.3rem;padding:16px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.15)">
-        &#128222; (866) 753-7189
-      </a>
-      <p style="font-size:0.78rem;color:#4b5563;font-family:'Inter',sans-serif;margin-top:6px;text-align:center">
-        When prompted enter your ZIP code to be connected to a licensed specialist in your area.
-      </p>
-    </div>`;
-  const h1 = document.querySelector('h1');
-  if (h1 && !document.querySelector('.home-security-phone-cta')) {
-    h1.insertAdjacentHTML('afterend', phoneHTML);
-  }
-  const footer = document.querySelector('#site-footer, footer, .footer');
-  if (footer) {
-    footer.insertAdjacentHTML('beforebegin', phoneHTML);
-  }
-}
-document.addEventListener('DOMContentLoaded', injectHomeSecurityPhone);
