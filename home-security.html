@@ -63,6 +63,12 @@
 .chat-call-btn{display:inline-block;background:var(--green-700);color:#fff;padding:14px 28px;font-size:16px;font-weight:700;border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow-sm);}
 .chat-call-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
 .chat-call-num{display:block;font-size:13px;font-weight:600;opacity:.9;margin-top:2px;}
+.chat-input-row{display:flex;gap:8px;padding:12px 16px 18px;background:#fff;border-top:1px solid var(--line);}
+.chat-input{flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:15px;outline:none;background:#fff;color:var(--ink);transition:border-color .15s ease;}
+.chat-input:focus{border-color:var(--teal-700);}
+.chat-send{background:var(--teal-700);color:#fff;border:0;padding:10px 22px;border-radius:999px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s ease;}
+.chat-send:hover{background:var(--teal-800);}
+.chat-send:disabled{opacity:.5;cursor:not-allowed;}
 .fe-fallback-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px;background:var(--bg-soft);border-top:1px solid var(--line);}
 .fe-fallback-card{display:block;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:border-color .15s ease,transform .12s ease;}
 .fe-fallback-card:hover{border-color:var(--teal-700);transform:translateY(-1px);}
@@ -489,147 +495,112 @@
 <script src="/assets/script.js" defer></script>
 <script>
 (function(){
-var body = document.getElementById("chatBody");
-var actions = document.getElementById("chatActions");
+  var body=document.getElementById('chatBody');
+  var actions=document.getElementById('chatActions');
+  var wrap=document.getElementById('hsChat');
+  if(!body||!actions||!wrap)return;
 
-var INTRO = ["Hi &#128075;","I am Lucy from Consumer Support Help.","Let me help you find a home security setup that fits. Just a few quick questions."];
+  var ENDPOINT='/.netlify/functions/lucy-security-chat';
+  var PHONE='(866) 753-7189';
+  var TEL='tel:+18667537189';
+  var history=[];
+  var busy=false;
 
-var STEPS = [
-{ q: "What is most important to you in a system?", options: [
-{ label:"Cameras", value:"cam", qualifying:true },
-{ label:"Alarm + monitoring", value:"alarm", qualifying:true },
-{ label:"Smart locks / doorbell", value:"smart", qualifying:true },
-{ label:"Full package", value:"full", qualifying:true }
-]},
-{ q: "Do you own or rent your home?", options: [
-{ label:"Own", value:"own", qualifying:true },
-{ label:"Rent", value:"rent", qualifying:true }
-]},
-{ q: "Are you interested in 24/7 professional monitoring?", options: [
-{ label:"Yes", value:"yes", qualifying:true },
-{ label:"Self-monitoring only", value:"self", qualifying:true },
-{ label:"Not sure yet", value:"unsure", qualifying:true }
-]},
-{ q: "Do you currently have a security system?", options: [
-{ label:"No", value:"no", qualifying:true },
-{ label:"Yes, looking to upgrade", value:"upgrade", qualifying:true },
-{ label:"Yes, happy with it", value:"happy", qualifying:false, dqReason:"happy" }
-]}
-];
+  function el(tag,cls,html){var n=document.createElement(tag);if(cls)n.className=cls;if(html!==undefined)n.innerHTML=html;return n;}
+  function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 
-var state = { step: -1 };
+  function addBubble(role,html){
+    var row=el('div','chat-row '+(role==='user'?'you':'them'));
+    var b=el('div','chat-bubble',html);
+    row.appendChild(b);
+    body.appendChild(row);
+    body.scrollTop=body.scrollHeight;
+    return row;
+  }
 
-function addThem(text, cb){
-var typing = document.createElement("div");
-typing.className = "chat-row them";
-typing.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
-body.appendChild(typing);
-body.scrollTop = body.scrollHeight;
-setTimeout(function(){
-typing.querySelector(".chat-bubble").innerHTML = "";
-typing.querySelector(".chat-bubble").textContent = text;
-body.scrollTop = body.scrollHeight;
-if (cb) setTimeout(cb, 350);
-}, 700);
-}
+  function showTyping(){
+    var row=el('div','chat-row them');
+    row.id='lucyTypingRow';
+    var t=el('div','chat-bubble chat-typing','<span></span><span></span><span></span>');
+    row.appendChild(t);
+    body.appendChild(row);
+    body.scrollTop=body.scrollHeight;
+  }
+  function hideTyping(){var r=document.getElementById('lucyTypingRow');if(r)r.remove();}
 
-function addThemHTML(html, cb){
-var row = document.createElement("div");
-row.className = "chat-row them";
-row.innerHTML = '<div class="chat-avatar">L</div><div class="chat-bubble"></div>';
-row.querySelector(".chat-bubble").innerHTML = html;
-body.appendChild(row);
-body.scrollTop = body.scrollHeight;
-if (cb) setTimeout(cb, 350);
-}
+  function renderQuickReplies(items){
+    actions.innerHTML='';
+    items.forEach(function(it){
+      var btn=el('button','chat-opt',it.emoji+' '+escapeHtml(it.label));
+      btn.type='button';
+      btn.addEventListener('click',function(){sendMessage(it.label);});
+      actions.appendChild(btn);
+    });
+  }
 
-function addYou(text){
-var row = document.createElement("div");
-row.className = "chat-row you";
-row.innerHTML = '<div class="chat-avatar you">You</div>';
-var bubble = document.createElement("div");
-bubble.className = "chat-bubble";
-bubble.textContent = text;
-row.appendChild(bubble);
-body.appendChild(row);
-body.scrollTop = body.scrollHeight;
-}
+  function buildInputRow(){
+    var row=el('div','chat-input-row');
+    row.id='chatInputRow';
+    var inp=document.createElement('input');
+    inp.type='text';
+    inp.className='chat-input';
+    inp.id='chatInput';
+    inp.placeholder='Type your question or call '+PHONE;
+    inp.autocomplete='off';
+    inp.maxLength=500;
+    var send=el('button','chat-send','Send');
+    send.type='button';
+    send.id='chatSend';
+    send.addEventListener('click',function(){
+      var v=inp.value.trim();
+      if(!v)return;
+      inp.value='';
+      sendMessage(v);
+    });
+    inp.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();send.click();}
+    });
+    row.appendChild(inp);
+    row.appendChild(send);
+    wrap.appendChild(row);
+  }
 
-function clearActions(){ actions.innerHTML = ""; }
+  function setBusy(b){
+    busy=b;
+    var s=document.getElementById('chatSend');
+    var i=document.getElementById('chatInput');
+    if(s)s.disabled=b;
+    if(i)i.disabled=b;
+  }
 
-function showOptions(opts, onPick){
-clearActions();
-opts.forEach(function(o){
-var btn = document.createElement("button");
-btn.type = "button";
-btn.className = "chat-opt";
-btn.textContent = o.label;
-btn.addEventListener("click", function(){
-addYou(o.label);
-clearActions();
-onPick(o);
-});
-actions.appendChild(btn);
-});
-}
+  function sendMessage(text){
+    if(busy)return;
+    setBusy(true);
+    addBubble('user',escapeHtml(text));
+    history.push({role:'user',content:text});
+    showTyping();
+    fetch(ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:history,page:'home-security'})
+    }).then(function(r){return r.json();}).then(function(data){
+      hideTyping();
+      var reply=(data&&(data.reply||data.message||data.text))||"Thanks! For the fastest help, call "+PHONE+" and a licensed home security advisor will walk through your options.";
+      var safe=escapeHtml(reply).replace(/\n/g,'<br>');
+      addBubble('lucy',safe);
+      history.push({role:'assistant',content:reply});
+      setBusy(false);
+      var inp=document.getElementById('chatInput');if(inp)inp.focus();
+    }).catch(function(){
+      hideTyping();
+      addBubble('lucy','Sorry, I had trouble connecting. Please call <a href="'+TEL+'">'+PHONE+'</a> for immediate help.');
+      setBusy(false);
+    });
+  }
 
-function startQuiz(){ state.step = 0; askStep(); }
-
-function askStep(){
-var s = STEPS[state.step];
-addThem(s.q, function(){
-showOptions(s.options, function(picked){
-if (!picked.qualifying){ showDisqualified(picked.dqReason); return; }
-state.step++;
-if (state.step >= STEPS.length){ showQualified(); }
-else { askStep(); }
-});
-});
-}
-
-function showQualified(){
-addThem("Great &mdash; we can match you with a home security pro. &#128274;", function(){
-addThem("Tap below to speak with a security specialist for a free, no-obligation quote.", function(){
-actions.innerHTML = "";
-var ctaWrap = document.createElement("div");
-ctaWrap.className = "chat-cta-row";
-ctaWrap.innerHTML = '<a href="tel:+18000000000" class="chat-call-btn">&#128222; Call for a Free Quote<span class="chat-call-num">(800) 000-0000</span></a>';
-actions.parentNode.replaceChild(ctaWrap, actions);
-});
-});
-}
-
-function showDisqualified(reason){
-var msg, follow;
-if (reason === "happy"){ msg = "Glad to hear your current system is working well!"; follow = "Come back any time if you ever want to compare or upgrade."; }
-else { msg = "Thanks for the info."; follow = "Here are some other Consumer Support Help resources you might find useful."; }
-addThem(msg, function(){
-addThem(follow, function(){
-actions.innerHTML = "";
-var fbWrap = document.createElement("div");
-fbWrap.className = "fe-fallback-grid";
-fbWrap.innerHTML = '<a href="/home-services.html" class="fe-fallback-card"><strong>All Home Services</strong><span>Browse other home service categories.</span></a><a href="/pest-control.html" class="fe-fallback-card"><strong>Pest Control</strong><span>Bugs, rodents, and termites.</span></a><a href="/roofing.html" class="fe-fallback-card"><strong>Roofing</strong><span>Repairs and replacements.</span></a><a href="/water-damage.html" class="fe-fallback-card"><strong>Water Damage</strong><span>Cleanup &amp; restoration.</span></a>';
-actions.parentNode.replaceChild(fbWrap, actions);
-});
-});
-}
-
-var introIdx = 0;
-function nextIntro(){
-if (introIdx >= INTRO.length){ startQuiz(); return; }
-addThem(INTRO[introIdx++], nextIntro);
-}
-
-var startBtn = document.createElement("button");
-startBtn.type = "button";
-startBtn.className = "chat-opt";
-startBtn.textContent = "Let\u2019s go";
-startBtn.addEventListener("click", function(){ clearActions(); nextIntro(); });
-actions.appendChild(startBtn);
-
-addThemHTML('<strong>Lucy</strong> wants to chat with you &#128172;', function(){
-addThem("Tap below when you\u2019re ready to get started.");
-});
+  addBubble('lucy',"Hi! I am Lucy. I can help you find the right home security setup for your situation. Are you looking to protect a house, condo, or apartment?");
+  renderQuickReplies([{"emoji":"&#127968;","label":"House or Condo"},{"emoji":"&#127970;","label":"Apartment or Rental"},{"emoji":"&#128176;","label":"What Does It Cost?"},{"emoji":"&#128247;","label":"Cameras Only"},{"emoji":"&#128100;","label":"Safety for Seniors"},{"emoji":"&#128268;","label":"Smart Home Setup"}]);
+  buildInputRow();
 })();
 </script>
 <script>
