@@ -746,13 +746,74 @@ const HS_STATES = {
       ['Lowell', '/home-security/massachusetts/lowell/']
     ]
   },
-  'virginia': { name: 'Virginia', hub: '/home-security/virginia/', cities: [], coming: true },
-  'maryland': { name: 'Maryland', hub: '/home-security/maryland/', cities: [], coming: true },
-  'texas': { name: 'Texas', hub: '/home-security/texas/', cities: [], coming: true },
-  'florida': { name: 'Florida', hub: '/home-security/florida/', cities: [], coming: true },
-  'ohio': { name: 'Ohio', hub: '/home-security/ohio/', cities: [], coming: true },
-  'north-carolina': { name: 'North Carolina', hub: '/home-security/north-carolina/', cities: [], coming: true },
-  'washington-dc': { name: 'Washington DC', hub: '/home-security/washington-dc/', cities: [], coming: true }
+  'virginia': {
+    name: 'Virginia',
+    hub: '/home-security/virginia/',
+    cities: [
+      ['Virginia Beach', '/home-security/virginia/virginia-beach/'],
+      ['Norfolk', '/home-security/virginia/norfolk/'],
+      ['Richmond', '/home-security/virginia/richmond/'],
+      ['Arlington', '/home-security/virginia/arlington/'],
+      ['Alexandria', '/home-security/virginia/alexandria/']
+    ]
+  },
+  'maryland': {
+    name: 'Maryland',
+    hub: '/home-security/maryland/',
+    cities: [
+      ['Baltimore', '/home-security/maryland/baltimore/'],
+      ['Silver Spring', '/home-security/maryland/silver-spring/'],
+      ['Frederick', '/home-security/maryland/frederick/'],
+      ['Rockville', '/home-security/maryland/rockville/']
+    ]
+  },
+  'washington-dc': {
+    name: 'Washington DC',
+    hub: '/home-security/washington-dc/',
+    cities: []
+  },
+  'texas': {
+    name: 'Texas',
+    hub: '/home-security/texas/',
+    cities: [
+      ['Houston', '/home-security/texas/houston/'],
+      ['San Antonio', '/home-security/texas/san-antonio/'],
+      ['Dallas', '/home-security/texas/dallas/'],
+      ['Austin', '/home-security/texas/austin/'],
+      ['Fort Worth', '/home-security/texas/fort-worth/']
+    ]
+  },
+  'florida': {
+    name: 'Florida',
+    hub: '/home-security/florida/',
+    cities: [
+      ['Jacksonville', '/home-security/florida/jacksonville/'],
+      ['Miami', '/home-security/florida/miami/'],
+      ['Tampa', '/home-security/florida/tampa/'],
+      ['Orlando', '/home-security/florida/orlando/'],
+      ['St. Petersburg', '/home-security/florida/st-petersburg/']
+    ]
+  },
+  'ohio': {
+    name: 'Ohio',
+    hub: '/home-security/ohio/',
+    cities: [
+      ['Columbus', '/home-security/ohio/columbus/'],
+      ['Cleveland', '/home-security/ohio/cleveland/'],
+      ['Cincinnati', '/home-security/ohio/cincinnati/'],
+      ['Toledo', '/home-security/ohio/toledo/']
+    ]
+  },
+  'north-carolina': {
+    name: 'North Carolina',
+    hub: '/home-security/north-carolina/',
+    cities: [
+      ['Charlotte', '/home-security/north-carolina/charlotte/'],
+      ['Raleigh', '/home-security/north-carolina/raleigh/'],
+      ['Durham', '/home-security/north-carolina/durham/'],
+      ['Fayetteville', '/home-security/north-carolina/fayetteville/']
+    ]
+  }
 };
 
 let hsActiveState = null;
