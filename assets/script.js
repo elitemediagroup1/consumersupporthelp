@@ -186,11 +186,11 @@ function initLucyCSHWidget() {
   widget.id = 'lucy-csh-widget';
   widget.innerHTML = `
     <style>
-      #lucy-csh-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; font-family: 'Inter', sans-serif; }
+      #lucy-csh-widget { position: fixed; bottom: 80px; right: 24px; z-index: 999999 !important; font-family: 'Inter', sans-serif; }
       #lucy-csh-bubble { width: 64px; height: 64px; border-radius: 50%; cursor: pointer; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: 3px solid #1a6b3c; transition: transform 0.2s; background: #1a6b3c; }
       #lucy-csh-bubble:hover { transform: scale(1.08); }
       #lucy-csh-bubble img { width: 100%; height: 100%; object-fit: cover; }
-      #lucy-csh-panel { display: none; position: fixed; bottom: 100px; right: 24px; width: 340px; max-height: 520px; background: white; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.15); overflow: hidden; flex-direction: column; z-index: 9999; }
+      #lucy-csh-panel { display: none; position: fixed; bottom: 100px; right: 24px; width: 340px; max-height: 520px; background: white; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.15); overflow: hidden; flex-direction: column; z-index: 999999 !important; }
       #lucy-csh-panel.open { display: flex; }
       .lucy-csh-header { background: #1a6b3c; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
       .lucy-csh-header img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.3); }
