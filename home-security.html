@@ -176,6 +176,12 @@
 </div>
 </section>
 
+<div style="background:#f0faf4;border-bottom:1px solid #c6f6d5;padding:10px 24px;text-align:center">
+  <p style="font-family:'Inter',sans-serif;font-size:0.82rem;color:#1a6b3c;margin:0;font-weight:500">
+    &#128222; When you call enter your ZIP code at the prompt to be connected to a licensed specialist who serves your exact area.
+  </p>
+</div>
+
 <section style="padding:56px 24px;background:#f9fafb">
   <div class="container">
     <p style="font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1a6b3c;text-align:center;margin-bottom:8px">
@@ -232,70 +238,140 @@
     </style>
     <!-- SHIELD SVG -->
     <div style="max-width:520px;margin:0 auto 16px">
-      <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
-        <path d="M260,540 Q130,490 100,370 L88,110 Q174,88 260,52 Q346,88 432,110 L420,370 Q390,490 260,540 Z" fill="#f0faf4" stroke="#1a6b3c" stroke-width="2.5"/>
-        <path d="M260,518 Q144,472 116,360 L105,128 Q184,108 260,76 Q336,108 415,128 L404,360 Q376,472 260,518 Z" fill="none" stroke="#c6f6d5" stroke-width="1"/>
-        <circle cx="260" cy="290" r="44" fill="#1a6b3c"/>
-        <text x="260" y="283" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">HOME</text>
-        <text x="260" y="297" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">SECURITY</text>
-        <!-- ROW 1 -->
-        <g class="hs-pill-group" onclick="showHSCities('new-york')">
-          <rect x="182" y="64" width="70" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="217" y="75" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">New York</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('california')">
-          <rect x="264" y="64" width="70" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="299" y="75" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">California</text>
-        </g>
-        <!-- ROW 2 -->
-        <g class="hs-pill-group" onclick="showHSCities('pennsylvania')">
-          <rect x="108" y="96" width="88" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="152" y="107" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Pennsylvania</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('new-jersey')">
-          <rect x="204" y="96" width="72" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="240" y="107" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">New Jersey</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('massachusetts')">
-          <rect x="284" y="96" width="92" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="330" y="107" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Massachusetts</text>
-        </g>
-        <!-- ROW 3 -->
-        <g class="hs-pill-group" onclick="showHSCities('virginia')">
-          <rect x="104" y="128" width="64" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="136" y="139" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Virginia</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('maryland')">
-          <rect x="176" y="128" width="68" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="210" y="139" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Maryland</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('texas')">
-          <rect x="252" y="128" width="52" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="278" y="139" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Texas</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('florida')">
-          <rect x="312" y="128" width="52" height="22" rx="11" fill="#1a6b3c"/>
-          <text x="338" y="139" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Florida</text>
-        </g>
-        <!-- ROW 4 -->
-        <g class="hs-pill-group" onclick="showHSCities('ohio')">
-          <rect x="108" y="160" width="48" height="22" rx="11" fill="#0f5c33"/>
-          <text x="132" y="171" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Ohio</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('north-carolina')">
-          <rect x="164" y="160" width="80" height="22" rx="11" fill="#0f5c33"/>
-          <text x="204" y="171" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">N. Carolina</text>
-        </g>
-        <g class="hs-pill-group" onclick="showHSCities('washington-dc')">
-          <rect x="252" y="160" width="100" height="22" rx="11" fill="#0f5c33"/>
-          <text x="302" y="171" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="white" text-anchor="middle" dominant-baseline="central">Washington DC</text>
-        </g>
-        <line x1="160" y1="200" x2="360" y2="200" stroke="#c6f6d5" stroke-width="1"/>
-        <text x="260" y="232" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#6b7280" text-anchor="middle" letter-spacing="1.5">12 COVERED STATES</text>
-        <line x1="150" y1="352" x2="370" y2="352" stroke="#c6f6d5" stroke-width="1"/>
-        <text x="260" y="378" font-family="Inter,sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle" letter-spacing="1">LICENSED SPECIALISTS</text>
-        <text x="260" y="394" font-family="Inter,sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle" letter-spacing="1">AVAILABLE NOW</text>
-      </svg>
+      <svg width="100%" viewBox="0 0 680 650" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Home security coverage shield</title>
+<desc>Premium crest shield with 12 covered states</desc>
+<defs>
+  <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f5d87a"/>
+    <stop offset="25%" stop-color="#c9960a"/>
+    <stop offset="50%" stop-color="#f0c535"/>
+    <stop offset="75%" stop-color="#a07808"/>
+    <stop offset="100%" stop-color="#e8c030"/>
+  </linearGradient>
+  <linearGradient id="goldRim2" x1="100%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#f5d87a"/>
+    <stop offset="40%" stop-color="#b08800"/>
+    <stop offset="100%" stop-color="#f0c535"/>
+  </linearGradient>
+  <linearGradient id="shieldFace" x1="15%" y1="0%" x2="85%" y2="100%">
+    <stop offset="0%" stop-color="#1a5c35"/>
+    <stop offset="20%" stop-color="#0e3d22"/>
+    <stop offset="50%" stop-color="#0a2e18"/>
+    <stop offset="80%" stop-color="#0c3820"/>
+    <stop offset="100%" stop-color="#071e10"/>
+  </linearGradient>
+  <linearGradient id="metalShine" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
+    <stop offset="35%" stop-color="white" stop-opacity="0.06"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="centerGem" x1="20%" y1="10%" x2="80%" y2="90%">
+    <stop offset="0%" stop-color="#2a9458"/>
+    <stop offset="40%" stop-color="#0e3d22"/>
+    <stop offset="100%" stop-color="#071e10"/>
+  </linearGradient>
+  <filter id="deepShadow">
+    <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#020e06" flood-opacity="0.6"/>
+  </filter>
+</defs>
+<ellipse cx="342" cy="622" rx="170" ry="14" fill="#000" opacity="0.2"/>
+<path d="M340,590 C185,534 98,432 76,300 L64,78 C170,52 256,32 340,16 C424,32 510,52 616,78 L604,300 C582,432 495,534 340,590 Z" fill="url(#goldRim)" filter="url(#deepShadow)"/>
+<path d="M340,584 C188,529 102,429 80,299 L68,82 C172,56 258,36 340,20 C422,36 508,56 612,82 L600,299 C578,429 492,529 340,584 Z" fill="url(#goldRim2)" opacity="0.7"/>
+<path d="M340,570 C200,516 118,420 98,294 L87,92 C186,68 265,49 340,33 C415,49 494,68 593,92 L582,294 C562,420 480,516 340,570 Z" fill="#1a0a00" opacity="0.9"/>
+<path d="M340,558 C208,505 129,412 110,289 L100,102 C193,79 270,61 340,46 C410,61 487,79 580,102 L570,289 C551,412 472,505 340,558 Z" fill="url(#shieldFace)"/>
+<path d="M100,102 L110,289 C129,412 208,505 340,558 L340,46 C270,61 193,79 100,102 Z" fill="url(#metalShine)" opacity="0.5"/>
+<path d="M340,46 C410,61 487,79 580,102 L574,184 C487,162 410,149 340,146 C270,149 193,162 106,184 L100,102 C193,79 270,61 340,46 Z" fill="white" opacity="0.07"/>
+<path d="M340,546 C216,495 140,405 122,284 L113,114 C200,92 272,76 340,62 C408,76 480,92 567,114 L558,284 C540,405 464,495 340,546 Z" fill="none" stroke="url(#goldRim)" stroke-width="1.5" opacity="0.6"/>
+<line x1="155" y1="322" x2="525" y2="322" stroke="url(#goldRim)" stroke-width="1" opacity="0.5"/>
+<line x1="168" y1="326" x2="512" y2="326" stroke="url(#goldRim)" stroke-width="0.5" opacity="0.3"/>
+<g font-family="Inter,sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">
+  <g transform="translate(340,100)" class="hs-pill-group" onclick="showHSCities('new-york')" style="cursor:pointer">
+    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="#040f07"/>
+    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
+    <rect x="-53" y="-14" width="106" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">NEW YORK</text>
+  </g>
+  <g transform="translate(215,148)" class="hs-pill-group" onclick="showHSCities('pennsylvania')" style="cursor:pointer">
+    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="#040f07"/>
+    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
+    <rect x="-59" y="-14" width="118" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">PENNSYLVANIA</text>
+  </g>
+  <g transform="translate(450,148)" class="hs-pill-group" onclick="showHSCities('california')" style="cursor:pointer">
+    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="#040f07"/>
+    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
+    <rect x="-53" y="-14" width="106" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">CALIFORNIA</text>
+  </g>
+  <g transform="translate(185,196)" class="hs-pill-group" onclick="showHSCities('new-jersey')" style="cursor:pointer">
+    <rect x="-52" y="-15" width="104" height="30" rx="5" fill="#040f07"/>
+    <rect x="-52" y="-15" width="104" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-51" y="-14" width="102" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">NEW JERSEY</text>
+  </g>
+  <g transform="translate(340,196)" class="hs-pill-group" onclick="showHSCities('massachusetts')" style="cursor:pointer">
+    <rect x="-66" y="-15" width="132" height="30" rx="5" fill="#040f07"/>
+    <rect x="-66" y="-15" width="132" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-65" y="-14" width="130" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">MASSACHUSETTS</text>
+  </g>
+  <g transform="translate(478,196)" class="hs-pill-group" onclick="showHSCities('virginia')" style="cursor:pointer">
+    <rect x="-44" y="-15" width="88" height="30" rx="5" fill="#040f07"/>
+    <rect x="-44" y="-15" width="88" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-43" y="-14" width="86" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">VIRGINIA</text>
+  </g>
+  <g transform="translate(192,244)" class="hs-pill-group" onclick="showHSCities('maryland')" style="cursor:pointer">
+    <rect x="-48" y="-15" width="96" height="30" rx="5" fill="#040f07"/>
+    <rect x="-48" y="-15" width="96" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-47" y="-14" width="94" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">MARYLAND</text>
+  </g>
+  <g transform="translate(340,244)" class="hs-pill-group" onclick="showHSCities('texas')" style="cursor:pointer">
+    <rect x="-36" y="-15" width="72" height="30" rx="5" fill="#040f07"/>
+    <rect x="-36" y="-15" width="72" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-35" y="-14" width="70" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">TEXAS</text>
+  </g>
+  <g transform="translate(466,244)" class="hs-pill-group" onclick="showHSCities('florida')" style="cursor:pointer">
+    <rect x="-40" y="-15" width="80" height="30" rx="5" fill="#040f07"/>
+    <rect x="-40" y="-15" width="80" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
+    <rect x="-39" y="-14" width="78" height="8" rx="3" fill="white" opacity="0.04"/>
+    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">FLORIDA</text>
+  </g>
+  <g transform="translate(196,292)" class="hs-pill-group" onclick="showHSCities('ohio')" style="cursor:pointer">
+    <rect x="-34" y="-15" width="68" height="30" rx="5" fill="#040f07"/>
+    <rect x="-34" y="-15" width="68" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
+    <rect x="-33" y="-14" width="66" height="8" rx="3" fill="white" opacity="0.03"/>
+    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">OHIO</text>
+  </g>
+  <g transform="translate(340,292)" class="hs-pill-group" onclick="showHSCities('north-carolina')" style="cursor:pointer">
+    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="#040f07"/>
+    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
+    <rect x="-59" y="-14" width="118" height="8" rx="3" fill="white" opacity="0.03"/>
+    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">N. CAROLINA</text>
+  </g>
+  <g transform="translate(468,292)" class="hs-pill-group" onclick="showHSCities('washington-dc')" style="cursor:pointer">
+    <rect x="-64" y="-15" width="128" height="30" rx="5" fill="#040f07"/>
+    <rect x="-64" y="-15" width="128" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
+    <rect x="-63" y="-14" width="126" height="8" rx="3" fill="white" opacity="0.03"/>
+    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">WASHINGTON DC</text>
+  </g>
+</g>
+<circle cx="340" cy="418" r="62" fill="#8a6600" opacity="0.8"/>
+<circle cx="340" cy="418" r="58" fill="url(#centerGem)"/>
+<circle cx="340" cy="418" r="54" fill="none" stroke="#c9960a" stroke-width="1.5" opacity="0.6"/>
+<path d="M340,392 L316,400 L316,420 C316,433 327,442 340,446 C353,442 364,433 364,420 L364,400 Z" fill="none" stroke="#c9960a" stroke-width="1.5" opacity="0.7"/>
+<path d="M340,392 L316,400 L316,420 C316,433 327,442 340,446 C353,442 364,433 364,420 L364,400 Z" fill="#c9960a" opacity="0.12"/>
+<path d="M318,402 Q340,394 362,402 Q362,410 340,414 Q318,410 318,402 Z" fill="white" opacity="0.1"/>
+<text x="340" y="424" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="#d4a017" text-anchor="middle" letter-spacing="1.5" opacity="0.85">HOME SECURITY</text>
+<path d="M200,504 Q270,494 340,498 Q410,494 480,504 Q490,516 480,522 Q410,530 340,526 Q270,530 200,522 Q190,516 200,504 Z" fill="#8a6600" opacity="0.6"/>
+<path d="M204,505 Q271,496 340,500 Q409,496 476,505 Q485,516 476,521 Q409,528 340,524 Q271,528 204,521 Q195,516 204,505 Z" fill="url(#goldRim)" opacity="0.4"/>
+<text x="340" y="517" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#faeaa0" text-anchor="middle" letter-spacing="2" opacity="0.9">LICENSED SPECIALISTS</text>
+<path d="M100,102 L108,274" stroke="white" stroke-width="2" opacity="0.07" stroke-linecap="round"/>
+<path d="M580,102 L572,274" stroke="white" stroke-width="1" opacity="0.04" stroke-linecap="round"/>
+</svg>
     </div>
     <!-- STATE DROPDOWN -->
     <div id="hs-state-dropdown" style="max-width:520px;margin:0 auto 24px;display:none"></div>
