@@ -242,7 +242,7 @@
 
     var label = document.createElement('span');
     label.id = 'lucy-csh-label';
-    label.textContent = 'Ask Lucy \uD83D\uDD12';
+    label.textContent = 'Ask Lucy \uD83C\uDFA7';
 
     btn.appendChild(ring);
     btn.appendChild(label);
@@ -262,7 +262,7 @@
       '<div id="lucy-csh-messages"></div>' +
       '<div id="lucy-csh-quickreplies">' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83D\uDC1B Pest Control\')">\uD83D\uDC1B Pest Control</button>' +
-        '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83D\uDD12 Home Security\')">\uD83D\uDD12 Home Security</button>' +
+        '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83C\uDFA7 Home Security\')">\uD83C\uDFA7 Home Security</button>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83D\uDE97 Auto Insurance\')">\uD83D\uDE97 Auto Insurance</button>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83C\uDFE0 Home Insurance\')">\uD83C\uDFE0 Home Insurance</button>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'Health Insurance\')">\u2695 Health Insurance</button>' +
