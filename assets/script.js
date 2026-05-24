@@ -182,10 +182,11 @@ function initLucyCSHWidget() {
   // Skip if widget already exists
   if (document.getElementById('lucy-csh-widget')) return;
 
-  const widget = document.createElement('div');
-  widget.id = 'lucy-csh-widget';
-  widget.innerHTML = `
-    <style>
+  function injectLucyCSHStyles() {
+    if (document.getElementById('lucy-csh-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'lucy-csh-styles';
+    style.textContent = `
       #lucy-csh-widget { position: fixed; bottom: 80px; right: 24px; z-index: 999999 !important; font-family: 'Inter', sans-serif; }
       #lucy-csh-bubble { width: 64px; height: 64px; border-radius: 50%; cursor: pointer; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: 3px solid #1a6b3c; transition: transform 0.2s; background: #1a6b3c; }
       #lucy-csh-bubble:hover { transform: scale(1.08); }
@@ -215,7 +216,16 @@ function initLucyCSHWidget() {
       .lucy-csh-typing span:nth-child(3) { animation-delay: 0.4s; }
       @keyframes lucyDot { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
       @media (max-width: 768px) { #lucy-csh-panel { right: 0; bottom: 0; width: 100%; max-height: 70vh; border-radius: 16px 16px 0 0; } }
-    </style>
+    `;
+    document.head.appendChild(style);
+  }
+  injectLucyCSHStyles();
+
+  
+  const widget = document.createElement('div');
+  widget.id = 'lucy-csh-widget';
+  widget.innerHTML = `
+
     <div id="lucy-csh-bubble" onclick="toggleLucyCSH()">
       <img src="/assets/lucy-avatar.png" alt="Lucy - CSH Advisor"/>
     </div>
@@ -318,4 +328,11 @@ function initLucyCSHWidget() {
   };
 }
 
-document.addEventListener('DOMContentLoaded', initLucyCSHWidget);
+function bootLucyCSH() {
+  initLucyCSHWidget();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootLucyCSH);
+} else {
+  bootLucyCSH();
+}
