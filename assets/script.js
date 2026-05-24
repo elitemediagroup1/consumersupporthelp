@@ -187,9 +187,12 @@ function initLucyCSHWidget() {
     const style = document.createElement('style');
     style.id = 'lucy-csh-styles';
     style.textContent = `
-      #lucy-csh-widget { position: fixed; bottom: 80px; right: 24px; z-index: 999999 !important; font-family: 'Inter', sans-serif; }
-      #lucy-csh-bubble { width: 64px; height: 64px; border-radius: 50%; cursor: pointer; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: 3px solid #1a6b3c; transition: transform 0.2s; background: #1a6b3c; }
+      #lucy-csh-widget { position: fixed; bottom: 24px; right: 24px; z-index: 999999 !important; font-family: 'Inter', sans-serif; }
+      #lucy-csh-bubble { width: 72px; height: 72px; border-radius: 50%; cursor: pointer; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2); border: 3px solid #1a6b3c; transition: transform 0.2s; background: #1a6b3c; }
       #lucy-csh-bubble:hover { transform: scale(1.08); }
+      #lucy-csh-label { position: absolute; right: 88px; bottom: 18px; background: #1a6b3c; color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; font-family: 'Inter', sans-serif; }
+      #lucy-csh-label:hover { background: #155030; }
+      @media (max-width: 480px) { #lucy-csh-label { right: 84px; bottom: 22px; font-size: 12px; padding: 7px 12px; } }
       #lucy-csh-bubble img { width: 100%; height: 100%; object-fit: cover; }
       #lucy-csh-panel { display: none; position: fixed; bottom: 100px; right: 24px; width: 340px; max-height: 520px; background: white; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.15); overflow: hidden; flex-direction: column; z-index: 999999 !important; }
       #lucy-csh-panel.open { display: flex; }
@@ -229,6 +232,7 @@ function initLucyCSHWidget() {
     <div id="lucy-csh-bubble" onclick="toggleLucyCSH()">
       <img src="/assets/lucy-avatar.png" alt="Lucy - CSH Advisor"/>
     </div>
+    <div id="lucy-csh-label" onclick="toggleLucyCSH()">Ask Lucy</div>
     <div id="lucy-csh-panel">
       <div class="lucy-csh-header">
         <img src="/assets/lucy-avatar.png" alt="Lucy"/>
