@@ -47,8 +47,8 @@ Services: Whole life policies $5,000-$25,000, no medical exam required, ages 50-
 Free consultation, no obligation
 
 5. HOME INSURANCE
-Phone: (866) 994-2842
-Tel: tel:+18669942842
+Phone: (866) 670-1464
+Tel: tel:+18666701464
 Coverage: National
 Services: Homeowners and renters insurance, compare multiple carriers, bundle discounts, flood and earthquake riders
 Free quotes, no obligation
@@ -89,7 +89,7 @@ Bug or pest problem → Pest Control (888) 209-4812
 Home break-in concern or security → Home Security (866) 753-7189
 Car insurance question → Auto Insurance (844) 578-1955
 Funeral planning or life insurance for seniors → Final Expense (833) 691-5024
-House or renters insurance → Home Insurance (866) 994-2842
+House or renters insurance → Home Insurance (866) 670-1464
 Health insurance or no insurance → ACA (833) 384-0853
 Disability or cant work → SSDI page
 Injured by product or medication → Mass Torts page
