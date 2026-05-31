@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Insurance Quotes by State — Free Rates | Consumer Support Help</title>
+<title>Home Insurance Quotes by State â Free Rates | Consumer Support Help</title>
 <meta name="description" content="Compare home insurance quotes in your state. Licensed agents find the best rates from multiple carriers. Free, no obligation. Call (866) 670-1464.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://consumersupporthelp.com/home-insurance/">
@@ -11,8 +11,6 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M3FTEYNNQ0');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3248717193303671" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <style>
 :root{--navy:#1e4d8c;--navy2:#1e3a5f;--navy3:#1e5eb5;--red:#c8102e;--green:#1a6b3c;--bg:#f8f9fa;--line:#e5e7eb;}
 .hi-hero{background:linear-gradient(135deg,#1e3a5f,#1e5eb5);color:#fff;padding:64px 0;text-align:center;}
@@ -77,16 +75,149 @@
 <div class="container">
 <h1>Compare Home Insurance Quotes in Your State</h1>
 <p class="sub">Licensed agents compare rates from multiple carriers nationwide. Select your state below to find coverage options near you. Free quotes, no obligation, takes 5 minutes.</p>
-<a class="btn-primary-cta" href="tel:+18666701464">Call (866) 670-1464 — Get Free Quotes</a>
-<div class="trust-row"><span>✓ Licensed agents</span><span>✓ Multiple carriers compared</span><span>✓ Free service</span><span>✓ No obligation</span><span>✓ Mon–Sun 9am–9pm EST</span></div>
+<a class="btn-primary-cta" href="tel:+18666701464">Call (866) 670-1464 â Get Free Quotes</a>
+<div class="trust-row"><span>â Licensed agents</span><span>â Multiple carriers compared</span><span>â Free service</span><span>â No obligation</span><span>â MonâSun 9amâ9pm EST</span></div>
 </div>
 </section>
 <section class="hi-section gray">
 <div class="container">
 <div class="kicker">Find Local Coverage</div>
 <h2>Home Insurance Quotes by State</h2>
-<p class="map-hint">Click your state to find home insurance quotes</p>
-<div id="map-wrap"><svg id="us-map" viewBox="0 0 975 610" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Interactive map of the United States"></svg></div>
+<style>
+.map-section{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin:32px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.map-hint{text-align:center;font-size:0.78rem;color:#6b7280;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;}
+#us-map{width:100%;height:auto;display:block}
+.st{fill:#1e4d8c;stroke:#fff;stroke-width:1;cursor:pointer;transition:fill 0.15s;}
+.st:hover{fill:#c8102e}
+.st.active{fill:#1a6b3c}
+.sl{font-size:5px;fill:#fff;text-anchor:middle;dominant-baseline:middle;pointer-events:none;font-weight:700;font-family:Arial,sans-serif;}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:9000;align-items:center;justify-content:center;backdrop-filter:blur(5px);}
+.modal-bg.on{display:flex}
+.flip-wrap{width:300px;perspective:1200px}
+.flip-box{border-radius:16px;background:linear-gradient(145deg,#1a3d6b,#1e5eb5);box-shadow:0 24px 60px rgba(0,0,0,0.5);padding:28px 22px 22px;position:relative;animation:flipIn 0.55s cubic-bezier(0.4,0,0.2,1) forwards;}
+@keyframes flipIn{0%{transform:rotateY(-90deg) scale(0.85);opacity:0}55%{transform:rotateY(5deg) scale(1.02)}100%{transform:rotateY(0deg) scale(1);opacity:1}}
+.fc-close{position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);cursor:pointer;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;}
+.fc-abbr{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:900;color:#fff;line-height:1;text-align:center;margin-bottom:2px;}
+.fc-name{font-family:'Oswald',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-align:center;margin-bottom:14px;}
+.fc-line{width:32px;height:2px;background:rgba(255,255,255,0.2);margin:0 auto 14px;}
+.fc-cities{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.fc-city{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);border-radius:7px;padding:9px 13px;text-decoration:none;color:#fff;font-family:'Oswald',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:background 0.15s;}
+.fc-city:hover{background:rgba(255,255,255,0.2)}
+.fc-call{display:flex;align-items:center;justify-content:center;gap:8px;background:#1a6b3c;color:#fff;font-family:'Oswald',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:11px 18px;border-radius:8px;text-decoration:none;width:100%;box-shadow:0 4px 14px rgba(26,107,60,0.4);}
+.fc-call:hover{background:#22a855}
+</style>
+<div class="map-section">
+  <p class="map-hint">Click your state to get free home insurance quotes</p>
+  <svg id="us-map" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <path class="st" id="WA" onclick="openState('WA','Washington',['Seattle','Spokane','Tacoma','Bellevue'],'/home-insurance/washington/')" d="M96,66 L182,56 L190,72 L186,100 L176,118 L160,124 L96,132 L88,108 L86,86 Z"/>
+  <text class="sl" x="136" y="96">WA</text>
+  <path class="st" id="OR" onclick="openState('OR','Oregon',['Portland','Salem','Eugene','Bend'],'/home-insurance/oregon/')" d="M86,136 L176,120 L184,138 L186,178 L100,190 L84,168 Z"/>
+  <text class="sl" x="133" y="158">OR</text>
+  <path class="st" id="CA" onclick="openState('CA','California',['Los Angeles','San Diego','San Francisco','San Jose'],'/home-insurance/california/')" d="M72,192 L100,192 L130,180 L162,172 L168,210 L160,255 L146,290 L126,322 L104,338 L80,326 L66,296 L62,252 L68,218 Z"/>
+  <text class="sl" x="110" y="258">CA</text>
+  <path class="st" id="NV" onclick="openState('NV','Nevada',['Las Vegas','Henderson','Reno','North Las Vegas'],'/home-insurance/nevada/')" d="M164,174 L208,160 L218,222 L206,282 L162,270 L158,232 L162,200 Z"/>
+  <text class="sl" x="186" y="222">NV</text>
+  <path class="st" id="ID" onclick="openState('ID','Idaho',['Boise','Meridian','Nampa','Idaho Falls'],'/home-insurance/idaho/')" d="M186,58 L250,52 L260,90 L264,140 L248,178 L218,184 L200,164 L188,128 Z"/>
+  <text class="sl" x="224" y="120">ID</text>
+  <path class="st" id="MT" onclick="openState('MT','Montana',['Billings','Missoula','Great Falls','Bozeman'],'/home-insurance/montana/')" d="M254,54 L400,44 L406,68 L402,132 L264,140 L258,108 L252,78 Z"/>
+  <text class="sl" x="330" y="92">MT</text>
+  <path class="st" id="WY" onclick="openState('WY','Wyoming',['Cheyenne','Casper','Laramie','Gillette'],'/home-insurance/wyoming/')" d="M266,142 L402,134 L406,196 L268,202 Z"/>
+  <text class="sl" x="334" y="168">WY</text>
+  <path class="st" id="UT" onclick="openState('UT','Utah',['Salt Lake City','West Valley City','Provo','West Jordan'],'/home-insurance/utah/')" d="M210,186 L266,180 L270,288 L210,292 Z"/>
+  <text class="sl" x="238" y="236">UT</text>
+  <path class="st" id="AZ" onclick="openState('AZ','Arizona',['Phoenix','Tucson','Mesa','Chandler'],'/home-insurance/arizona/')" d="M168,274 L210,268 L210,294 L272,290 L280,352 L234,388 L182,386 L164,358 L162,320 Z"/>
+  <text class="sl" x="218" y="332">AZ</text>
+  <path class="st" id="CO" onclick="openState('CO','Colorado',['Denver','Colorado Springs','Aurora','Fort Collins'],'/home-insurance/colorado/')" d="M270,204 L406,198 L410,262 L272,266 Z"/>
+  <text class="sl" x="338" y="232">CO</text>
+  <path class="st" id="NM" onclick="openState('NM','New Mexico',['Albuquerque','Las Cruces','Rio Rancho','Santa Fe'],'/home-insurance/new-mexico/')" d="M274,268 L410,264 L416,354 L282,358 Z"/>
+  <text class="sl" x="344" y="310">NM</text>
+  <path class="st" id="ND" onclick="openState('ND','North Dakota',['Fargo','Bismarck','Grand Forks','Minot'],'/home-insurance/north-dakota/')" d="M406,68 L496,60 L498,114 L406,118 Z"/>
+  <text class="sl" x="450" y="90">ND</text>
+  <path class="st" id="SD" onclick="openState('SD','South Dakota',['Sioux Falls','Rapid City','Aberdeen','Brookings'],'/home-insurance/south-dakota/')" d="M406,120 L498,116 L500,168 L406,172 Z"/>
+  <text class="sl" x="452" y="144">SD</text>
+  <path class="st" id="NE" onclick="openState('NE','Nebraska',['Omaha','Lincoln','Bellevue','Grand Island'],'/home-insurance/nebraska/')" d="M406,174 L500,170 L502,214 L422,220 L406,214 Z"/>
+  <text class="sl" x="452" y="194">NE</text>
+  <path class="st" id="KS" onclick="openState('KS','Kansas',['Wichita','Overland Park','Kansas City','Topeka'],'/home-insurance/kansas/')" d="M406,216 L502,212 L506,264 L406,266 Z"/>
+  <text class="sl" x="454" y="240">KS</text>
+  <path class="st" id="OK" onclick="openState('OK','Oklahoma',['Oklahoma City','Tulsa','Norman','Broken Arrow'],'/home-insurance/oklahoma/')" d="M406,268 L506,266 L512,308 L470,310 L470,328 L406,328 Z"/>
+  <text class="sl" x="454" y="294">OK</text>
+  <path class="st" id="TX" onclick="openState('TX','Texas',['Houston','Dallas','San Antonio','Austin'],'/home-insurance/texas/')" d="M406,330 L470,330 L470,310 L514,310 L524,364 L506,412 L476,444 L434,460 L390,440 L368,400 L362,360 Z"/>
+  <text class="sl" x="440" y="390">TX</text>
+  <path class="st" id="MN" onclick="openState('MN','Minnesota',['Minneapolis','Saint Paul','Rochester','Duluth'],'/home-insurance/minnesota/')" d="M498,62 L574,56 L578,86 L580,148 L538,154 L498,148 L496,114 Z"/>
+  <text class="sl" x="536" y="108">MN</text>
+  <path class="st" id="IA" onclick="openState('IA','Iowa',['Des Moines','Cedar Rapids','Davenport','Sioux City'],'/home-insurance/iowa/')" d="M502,172 L580,166 L584,212 L504,218 Z"/>
+  <text class="sl" x="542" y="192">IA</text>
+  <path class="st" id="MO" onclick="openState('MO','Missouri',['Kansas City','Saint Louis','Springfield','Columbia'],'/home-insurance/missouri/')" d="M506,220 L584,214 L590,290 L564,296 L564,312 L506,312 Z"/>
+  <text class="sl" x="546" y="262">MO</text>
+  <path class="st" id="AR" onclick="openState('AR','Arkansas',['Little Rock','Fort Smith','Fayetteville','Springdale'],'/home-insurance/arkansas/')" d="M508,314 L564,314 L568,362 L508,364 Z"/>
+  <text class="sl" x="537" y="338">AR</text>
+  <path class="st" id="LA" onclick="openState('LA','Louisiana',['New Orleans','Baton Rouge','Shreveport','Lafayette'],'/home-insurance/louisiana/')" d="M508,366 L568,364 L574,404 L552,426 L516,430 L502,414 Z"/>
+  <text class="sl" x="535" y="396">LA</text>
+  <path class="st" id="WI" onclick="openState('WI','Wisconsin',['Milwaukee','Madison','Green Bay','Kenosha'],'/home-insurance/wisconsin/')" d="M582,90 L624,82 L636,98 L638,158 L582,164 L580,150 Z"/>
+  <text class="sl" x="608" y="126">WI</text>
+  <path class="st" id="IL" onclick="openState('IL','Illinois',['Chicago','Aurora','Joliet','Naperville'],'/home-insurance/illinois/')" d="M624,160 L656,156 L662,240 L632,252 L620,234 L622,198 Z"/>
+  <text class="sl" x="640" y="202">IL</text>
+  <path class="st" id="MI" onclick="openState('MI','Michigan',['Detroit','Grand Rapids','Warren','Sterling Heights'],'/home-insurance/michigan/')" d="M638,102 L684,92 L700,108 L702,140 L694,158 L672,166 L640,162 L638,138 Z"/>
+  <text class="sl" x="672" y="132">MI</text>
+  <path class="st" id="IN" onclick="openState('IN','Indiana',['Indianapolis','Fort Wayne','Evansville','South Bend'],'/home-insurance/indiana/')" d="M660,160 L696,156 L700,238 L662,244 Z"/>
+  <text class="sl" x="680" y="200">IN</text>
+  <path class="st" id="OH" onclick="openState('OH','Ohio',['Columbus','Cleveland','Cincinnati','Toledo'],'/home-insurance/ohio/')" d="M700,140 L744,132 L752,206 L702,212 Z"/>
+  <text class="sl" x="724" y="172">OH</text>
+  <path class="st" id="KY" onclick="openState('KY','Kentucky',['Louisville','Lexington','Bowling Green','Owensboro'],'/home-insurance/kentucky/')" d="M664,246 L752,208 L760,244 L722,256 L666,266 Z"/>
+  <text class="sl" x="710" y="238">KY</text>
+  <path class="st" id="TN" onclick="openState('TN','Tennessee',['Nashville','Memphis','Knoxville','Chattanooga'],'/home-insurance/tennessee/')" d="M608,320 L726,302 L732,330 L610,348 Z"/>
+  <text class="sl" x="668" y="330">TN</text>
+  <path class="st" id="MS" onclick="openState('MS','Mississippi',['Jackson','Gulfport','Southaven','Hattiesburg'],'/home-insurance/mississippi/')" d="M616,352 L658,346 L662,426 L630,430 L622,404 Z"/>
+  <text class="sl" x="640" y="388">MS</text>
+  <path class="st" id="AL" onclick="openState('AL','Alabama',['Birmingham','Montgomery','Huntsville','Mobile'],'/home-insurance/alabama/')" d="M660,348 L702,342 L706,414 L680,434 L664,430 L660,404 Z"/>
+  <text class="sl" x="682" y="388">AL</text>
+  <path class="st" id="GA" onclick="openState('GA','Georgia',['Atlanta','Augusta','Savannah','Columbus'],'/home-insurance/georgia/')" d="M706,344 L756,334 L764,376 L752,410 L722,432 L708,416 Z"/>
+  <text class="sl" x="732" y="380">GA</text>
+  <path class="st" id="FL" onclick="openState('FL','Florida',['Miami','Orlando','Tampa','Jacksonville'],'/home-insurance/florida/')" d="M710,418 L756,412 L768,432 L786,462 L786,494 L766,514 L742,520 L716,506 L700,482 L694,452 Z"/>
+  <text class="sl" x="740" y="468">FL</text>
+  <path class="st" id="SC" onclick="openState('SC','South Carolina',['Columbia','Charleston','North Charleston','Mount Pleasant'],'/home-insurance/south-carolina/')" d="M758,336 L826,320 L832,352 L792,370 L762,358 Z"/>
+  <text class="sl" x="793" y="345">SC</text>
+  <path class="st" id="NC" onclick="openState('NC','North Carolina',['Charlotte','Raleigh','Greensboro','Durham'],'/home-insurance/north-carolina/')" d="M726,304 L838,286 L848,314 L760,332 L728,322 Z"/>
+  <text class="sl" x="784" y="308">NC</text>
+  <path class="st" id="VA" onclick="openState('VA','Virginia',['Virginia Beach','Norfolk','Chesapeake','Richmond'],'/home-insurance/virginia/')" d="M756,248 L860,228 L868,258 L836,270 L764,282 L754,266 Z"/>
+  <text class="sl" x="810" y="254">VA</text>
+  <path class="st" id="WV" onclick="openState('WV','West Virginia',['Charleston','Huntington','Morgantown','Parkersburg'],'/home-insurance/west-virginia/')" d="M752,210 L800,200 L808,238 L768,252 L754,240 Z"/>
+  <text class="sl" x="778" y="228">WV</text>
+  <path class="st" id="MD" onclick="openState('MD','Maryland',['Baltimore','Columbia','Silver Spring','Waldorf'],'/home-insurance/maryland/')" d="M802,202 L858,192 L862,214 L808,224 Z"/>
+  <text class="sl" x="830" y="210">MD</text>
+  <path class="st" id="DE" onclick="openState('DE','Delaware',['Wilmington','Dover','Newark','Middletown'],'/home-insurance/delaware/')" d="M862,194 L876,190 L880,214 L863,218 Z"/>
+  <text class="sl" x="870" y="204">DE</text>
+  <path class="st" id="PA" onclick="openState('PA','Pennsylvania',['Philadelphia','Pittsburgh','Allentown','Erie'],'/home-insurance/pennsylvania/')" d="M754,162 L860,146 L866,182 L804,196 L756,204 Z"/>
+  <text class="sl" x="808" y="174">PA</text>
+  <path class="st" id="NY" onclick="openState('NY','New York',['New York City','Buffalo','Rochester','Yonkers'],'/home-insurance/new-york/')" d="M804,110 L868,98 L878,130 L870,148 L862,148 L808,160 L800,140 Z"/>
+  <text class="sl" x="836" y="128">NY</text>
+  <path class="st" id="NJ" onclick="openState('NJ','New Jersey',['Newark','Jersey City','Paterson','Elizabeth'],'/home-insurance/new-jersey/')" d="M866,148 L884,142 L888,178 L868,184 Z"/>
+  <text class="sl" x="876" y="164">NJ</text>
+  <path class="st" id="CT" onclick="openState('CT','Connecticut',['Bridgeport','New Haven','Hartford','Stamford'],'/home-insurance/connecticut/')" d="M876,130 L904,124 L908,148 L878,154 Z"/>
+  <text class="sl" x="890" y="140">CT</text>
+  <path class="st" id="RI" onclick="openState('RI','Rhode Island',['Providence','Cranston','Warwick','Pawtucket'],'/home-insurance/rhode-island/')" d="M906,124 L920,120 L922,142 L906,146 Z"/>
+  <text class="sl" x="913" y="133">RI</text>
+  <path class="st" id="MA" onclick="openState('MA','Massachusetts',['Boston','Worcester','Springfield','Cambridge'],'/home-insurance/massachusetts/')" d="M868,100 L920,90 L928,118 L906,124 L876,130 L868,118 Z"/>
+  <text class="sl" x="897" y="110">MA</text>
+  <path class="st" id="NH" onclick="openState('NH','New Hampshire',['Manchester','Nashua','Concord','Derry'],'/home-insurance/new-hampshire/')" d="M908,74 L926,70 L932,104 L910,108 Z"/>
+  <text class="sl" x="919" y="90">NH</text>
+  <path class="st" id="VT" onclick="openState('VT','Vermont',['Burlington','Essex','South Burlington','Colchester'],'/home-insurance/vermont/')" d="M876,74 L906,68 L910,102 L878,108 Z"/>
+  <text class="sl" x="892" y="88">VT</text>
+  <path class="st" id="ME" onclick="openState('ME','Maine',['Portland','Lewiston','Bangor','South Portland'],'/home-insurance/maine/')" d="M910,44 L948,36 L954,82 L932,104 L910,108 L908,76 Z"/>
+  <text class="sl" x="928" y="74">ME</text>
+  <rect x="50" y="480" width="180" height="90" rx="4" fill="#1a2a3a" stroke="#2d3d4d" stroke-width="1"/>
+  <path class="st" id="AK" onclick="openState('AK','Alaska',['Anchorage','Fairbanks','Juneau','Sitka'],'/home-insurance/alaska/')" d="M62,492 L140,482 L158,496 L152,526 L120,540 L68,536 Z"/>
+  <text class="sl" x="108" y="512">AK</text>
+  <rect x="240" y="530" width="120" height="50" rx="4" fill="#1a2a3a" stroke="#2d3d4d" stroke-width="1"/>
+  <ellipse class="st" cx="262" cy="555" rx="16" ry="10" onclick="openState('HI','Hawaii',['Honolulu','Pearl City','Hilo','Kailua'],'/home-insurance/hawaii/')"/>
+  <ellipse class="st" cx="290" cy="558" rx="12" ry="8" onclick="openState('HI','Hawaii',['Honolulu','Pearl City','Hilo','Kailua'],'/home-insurance/hawaii/')"/>
+  <ellipse class="st" cx="312" cy="556" rx="8" ry="6" onclick="openState('HI','Hawaii',['Honolulu','Pearl City','Hilo','Kailua'],'/home-insurance/hawaii/')"/>
+  <ellipse class="st" cx="332" cy="554" rx="6" ry="5" onclick="openState('HI','Hawaii',['Honolulu','Pearl City','Hilo','Kailua'],'/home-insurance/hawaii/')"/>
+  <text class="sl" x="290" y="556">HI</text>
+  <text x="54" y="576" font-family="Arial" font-size="7" fill="#4a5568" letter-spacing="1">ALASKA</text>
+  <text x="244" y="576" font-family="Arial" font-size="7" fill="#4a5568" letter-spacing="1">HAWAII</text>
+  </svg>
+</div>
 </div>
 </section>
 <section class="hi-section cream">
@@ -128,53 +259,65 @@
 <section class="final-cta">
 <div class="container">
 <h2>Ready to compare rates?</h2>
-<p>Licensed agents available Mon–Sun 9am–9pm EST. Free quotes, no obligation.</p>
+<p>Licensed agents available MonâSun 9amâ9pm EST. Free quotes, no obligation.</p>
 <span class="bignum">(866) 670-1464</span>
-<a class="btn-final" href="tel:+18666701464">☎ Call Now</a>
+<a class="btn-final" href="tel:+18666701464">â Call Now</a>
 </div>
 </section>
-<div id="state-modal" aria-hidden="true"><div class="flip-card" id="flip-card" role="dialog" aria-modal="true"></div></div>
-<div id="sticky-cta"><a href="tel:+18666701464">Call (866) 670-1464 — Free Home Insurance Quote</a></div>
+<div id="sticky-cta"><a href="tel:+18666701464">Call (866) 670-1464 â Free Home Insurance Quote</a></div>
 <div id="site-footer"></div>
 <script src="/assets/script.js" defer></script>
 <script src="/assets/lucy-csh.js" defer></script>
 <script defer>document.addEventListener('DOMContentLoaded',function(){if(typeof includeHTML==='function'){includeHTML('site-header','/partials/header.html');includeHTML('site-footer','/partials/footer.html');}});</script>
+<div class="modal-bg" id="modal-bg" onclick="closeState(event)">
+  <div class="flip-wrap">
+    <div class="flip-box" id="flip-box">
+      <button class="fc-close" onclick="closeState()">&#10005;</button>
+      <div class="fc-abbr" id="fc-abbr"></div>
+      <div class="fc-name" id="fc-name"></div>
+      <div class="fc-line"></div>
+      <div class="fc-cities" id="fc-cities"></div>
+      <a href="tel:+18666701464" class="fc-call">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+        Call (866) 670-1464 &#8212; Free Quote
+      </a>
+    </div>
+  </div>
+</div>
 <script>
-var HI_STATES={"10":{"n":"Delaware","a":"DE","s":"delaware","c":[{"name":"Wilmington","slug":"wilmington"},{"name":"Dover","slug":"dover"},{"name":"Newark","slug":"newark"},{"name":"Middletown","slug":"middletown"}]},"12":{"n":"Florida","a":"FL","s":"florida","c":[{"name":"Miami","slug":"miami"},{"name":"Orlando","slug":"orlando"},{"name":"Tampa","slug":"tampa"},{"name":"Jacksonville","slug":"jacksonville"}]},"13":{"n":"Georgia","a":"GA","s":"georgia","c":[{"name":"Atlanta","slug":"atlanta"},{"name":"Augusta","slug":"augusta"},{"name":"Savannah","slug":"savannah"},{"name":"Columbus","slug":"columbus"}]},"15":{"n":"Hawaii","a":"HI","s":"hawaii","c":[{"name":"Honolulu","slug":"honolulu"},{"name":"Pearl City","slug":"pearl-city"},{"name":"Hilo","slug":"hilo"},{"name":"Kailua","slug":"kailua"}]},"16":{"n":"Idaho","a":"ID","s":"idaho","c":[{"name":"Boise","slug":"boise"},{"name":"Meridian","slug":"meridian"},{"name":"Nampa","slug":"nampa"},{"name":"Idaho Falls","slug":"idaho-falls"}]},"17":{"n":"Illinois","a":"IL","s":"illinois","c":[{"name":"Chicago","slug":"chicago"},{"name":"Aurora","slug":"aurora"},{"name":"Joliet","slug":"joliet"},{"name":"Naperville","slug":"naperville"}]},"18":{"n":"Indiana","a":"IN","s":"indiana","c":[{"name":"Indianapolis","slug":"indianapolis"},{"name":"Fort Wayne","slug":"fort-wayne"},{"name":"Evansville","slug":"evansville"},{"name":"South Bend","slug":"south-bend"}]},"19":{"n":"Iowa","a":"IA","s":"iowa","c":[{"name":"Des Moines","slug":"des-moines"},{"name":"Cedar Rapids","slug":"cedar-rapids"},{"name":"Davenport","slug":"davenport"},{"name":"Sioux City","slug":"sioux-city"}]},"20":{"n":"Kansas","a":"KS","s":"kansas","c":[{"name":"Wichita","slug":"wichita"},{"name":"Overland Park","slug":"overland-park"},{"name":"Kansas City","slug":"kansas-city"},{"name":"Topeka","slug":"topeka"}]},"21":{"n":"Kentucky","a":"KY","s":"kentucky","c":[{"name":"Louisville","slug":"louisville"},{"name":"Lexington","slug":"lexington"},{"name":"Bowling Green","slug":"bowling-green"},{"name":"Owensboro","slug":"owensboro"}]},"22":{"n":"Louisiana","a":"LA","s":"louisiana","c":[{"name":"New Orleans","slug":"new-orleans"},{"name":"Baton Rouge","slug":"baton-rouge"},{"name":"Shreveport","slug":"shreveport"},{"name":"Lafayette","slug":"lafayette"}]},"23":{"n":"Maine","a":"ME","s":"maine","c":[{"name":"Portland","slug":"portland"},{"name":"Lewiston","slug":"lewiston"},{"name":"Bangor","slug":"bangor"},{"name":"South Portland","slug":"south-portland"}]},"24":{"n":"Maryland","a":"MD","s":"maryland","c":[{"name":"Baltimore","slug":"baltimore"},{"name":"Columbia","slug":"columbia"},{"name":"Silver Spring","slug":"silver-spring"},{"name":"Waldorf","slug":"waldorf"}]},"25":{"n":"Massachusetts","a":"MA","s":"massachusetts","c":[{"name":"Boston","slug":"boston"},{"name":"Worcester","slug":"worcester"},{"name":"Springfield","slug":"springfield"},{"name":"Cambridge","slug":"cambridge"}]},"26":{"n":"Michigan","a":"MI","s":"michigan","c":[{"name":"Detroit","slug":"detroit"},{"name":"Grand Rapids","slug":"grand-rapids"},{"name":"Warren","slug":"warren"},{"name":"Sterling Heights","slug":"sterling-heights"}]},"27":{"n":"Minnesota","a":"MN","s":"minnesota","c":[{"name":"Minneapolis","slug":"minneapolis"},{"name":"Saint Paul","slug":"saint-paul"},{"name":"Rochester","slug":"rochester"},{"name":"Duluth","slug":"duluth"}]},"28":{"n":"Mississippi","a":"MS","s":"mississippi","c":[{"name":"Jackson","slug":"jackson"},{"name":"Gulfport","slug":"gulfport"},{"name":"Southaven","slug":"southaven"},{"name":"Hattiesburg","slug":"hattiesburg"}]},"29":{"n":"Missouri","a":"MO","s":"missouri","c":[{"name":"Kansas City","slug":"kansas-city"},{"name":"Saint Louis","slug":"saint-louis"},{"name":"Springfield","slug":"springfield"},{"name":"Columbia","slug":"columbia"}]},"30":{"n":"Montana","a":"MT","s":"montana","c":[{"name":"Billings","slug":"billings"},{"name":"Missoula","slug":"missoula"},{"name":"Great Falls","slug":"great-falls"},{"name":"Bozeman","slug":"bozeman"}]},"31":{"n":"Nebraska","a":"NE","s":"nebraska","c":[{"name":"Omaha","slug":"omaha"},{"name":"Lincoln","slug":"lincoln"},{"name":"Bellevue","slug":"bellevue"},{"name":"Grand Island","slug":"grand-island"}]},"32":{"n":"Nevada","a":"NV","s":"nevada","c":[{"name":"Las Vegas","slug":"las-vegas"},{"name":"Henderson","slug":"henderson"},{"name":"Reno","slug":"reno"},{"name":"North Las Vegas","slug":"north-las-vegas"}]},"33":{"n":"New Hampshire","a":"NH","s":"new-hampshire","c":[{"name":"Manchester","slug":"manchester"},{"name":"Nashua","slug":"nashua"},{"name":"Concord","slug":"concord"},{"name":"Derry","slug":"derry"}]},"34":{"n":"New Jersey","a":"NJ","s":"new-jersey","c":[{"name":"Newark","slug":"newark"},{"name":"Jersey City","slug":"jersey-city"},{"name":"Paterson","slug":"paterson"},{"name":"Elizabeth","slug":"elizabeth"}]},"35":{"n":"New Mexico","a":"NM","s":"new-mexico","c":[{"name":"Albuquerque","slug":"albuquerque"},{"name":"Las Cruces","slug":"las-cruces"},{"name":"Rio Rancho","slug":"rio-rancho"},{"name":"Santa Fe","slug":"santa-fe"}]},"36":{"n":"New York","a":"NY","s":"new-york","c":[{"name":"New York City","slug":"new-york-city"},{"name":"Buffalo","slug":"buffalo"},{"name":"Rochester","slug":"rochester"},{"name":"Yonkers","slug":"yonkers"}]},"37":{"n":"North Carolina","a":"NC","s":"north-carolina","c":[{"name":"Charlotte","slug":"charlotte"},{"name":"Raleigh","slug":"raleigh"},{"name":"Greensboro","slug":"greensboro"},{"name":"Durham","slug":"durham"}]},"38":{"n":"North Dakota","a":"ND","s":"north-dakota","c":[{"name":"Fargo","slug":"fargo"},{"name":"Bismarck","slug":"bismarck"},{"name":"Grand Forks","slug":"grand-forks"},{"name":"Minot","slug":"minot"}]},"39":{"n":"Ohio","a":"OH","s":"ohio","c":[{"name":"Columbus","slug":"columbus"},{"name":"Cleveland","slug":"cleveland"},{"name":"Cincinnati","slug":"cincinnati"},{"name":"Toledo","slug":"toledo"}]},"40":{"n":"Oklahoma","a":"OK","s":"oklahoma","c":[{"name":"Oklahoma City","slug":"oklahoma-city"},{"name":"Tulsa","slug":"tulsa"},{"name":"Norman","slug":"norman"},{"name":"Broken Arrow","slug":"broken-arrow"}]},"41":{"n":"Oregon","a":"OR","s":"oregon","c":[{"name":"Portland","slug":"portland"},{"name":"Salem","slug":"salem"},{"name":"Eugene","slug":"eugene"},{"name":"Bend","slug":"bend"}]},"42":{"n":"Pennsylvania","a":"PA","s":"pennsylvania","c":[{"name":"Philadelphia","slug":"philadelphia"},{"name":"Pittsburgh","slug":"pittsburgh"},{"name":"Allentown","slug":"allentown"},{"name":"Erie","slug":"erie"}]},"44":{"n":"Rhode Island","a":"RI","s":"rhode-island","c":[{"name":"Providence","slug":"providence"},{"name":"Cranston","slug":"cranston"},{"name":"Warwick","slug":"warwick"},{"name":"Pawtucket","slug":"pawtucket"}]},"45":{"n":"South Carolina","a":"SC","s":"south-carolina","c":[{"name":"Columbia","slug":"columbia"},{"name":"Charleston","slug":"charleston"},{"name":"North Charleston","slug":"north-charleston"},{"name":"Mount Pleasant","slug":"mount-pleasant"}]},"46":{"n":"South Dakota","a":"SD","s":"south-dakota","c":[{"name":"Sioux Falls","slug":"sioux-falls"},{"name":"Rapid City","slug":"rapid-city"},{"name":"Aberdeen","slug":"aberdeen"},{"name":"Brookings","slug":"brookings"}]},"47":{"n":"Tennessee","a":"TN","s":"tennessee","c":[{"name":"Nashville","slug":"nashville"},{"name":"Memphis","slug":"memphis"},{"name":"Knoxville","slug":"knoxville"},{"name":"Chattanooga","slug":"chattanooga"}]},"48":{"n":"Texas","a":"TX","s":"texas","c":[{"name":"Houston","slug":"houston"},{"name":"Dallas","slug":"dallas"},{"name":"San Antonio","slug":"san-antonio"},{"name":"Austin","slug":"austin"}]},"49":{"n":"Utah","a":"UT","s":"utah","c":[{"name":"Salt Lake City","slug":"salt-lake-city"},{"name":"West Valley City","slug":"west-valley-city"},{"name":"Provo","slug":"provo"},{"name":"West Jordan","slug":"west-jordan"}]},"50":{"n":"Vermont","a":"VT","s":"vermont","c":[{"name":"Burlington","slug":"burlington"},{"name":"Essex","slug":"essex"},{"name":"South Burlington","slug":"south-burlington"},{"name":"Colchester","slug":"colchester"}]},"51":{"n":"Virginia","a":"VA","s":"virginia","c":[{"name":"Virginia Beach","slug":"virginia-beach"},{"name":"Norfolk","slug":"norfolk"},{"name":"Chesapeake","slug":"chesapeake"},{"name":"Richmond","slug":"richmond"}]},"53":{"n":"Washington","a":"WA","s":"washington","c":[{"name":"Seattle","slug":"seattle"},{"name":"Spokane","slug":"spokane"},{"name":"Tacoma","slug":"tacoma"},{"name":"Bellevue","slug":"bellevue"}]},"54":{"n":"West Virginia","a":"WV","s":"west-virginia","c":[{"name":"Charleston","slug":"charleston"},{"name":"Huntington","slug":"huntington"},{"name":"Morgantown","slug":"morgantown"},{"name":"Parkersburg","slug":"parkersburg"}]},"55":{"n":"Wisconsin","a":"WI","s":"wisconsin","c":[{"name":"Milwaukee","slug":"milwaukee"},{"name":"Madison","slug":"madison"},{"name":"Green Bay","slug":"green-bay"},{"name":"Kenosha","slug":"kenosha"}]},"56":{"n":"Wyoming","a":"WY","s":"wyoming","c":[{"name":"Cheyenne","slug":"cheyenne"},{"name":"Casper","slug":"casper"},{"name":"Laramie","slug":"laramie"},{"name":"Gillette","slug":"gillette"}]},"01":{"n":"Alabama","a":"AL","s":"alabama","c":[{"name":"Birmingham","slug":"birmingham"},{"name":"Montgomery","slug":"montgomery"},{"name":"Huntsville","slug":"huntsville"},{"name":"Mobile","slug":"mobile"}]},"02":{"n":"Alaska","a":"AK","s":"alaska","c":[{"name":"Anchorage","slug":"anchorage"},{"name":"Fairbanks","slug":"fairbanks"},{"name":"Juneau","slug":"juneau"},{"name":"Sitka","slug":"sitka"}]},"04":{"n":"Arizona","a":"AZ","s":"arizona","c":[{"name":"Phoenix","slug":"phoenix"},{"name":"Tucson","slug":"tucson"},{"name":"Mesa","slug":"mesa"},{"name":"Chandler","slug":"chandler"}]},"05":{"n":"Arkansas","a":"AR","s":"arkansas","c":[{"name":"Little Rock","slug":"little-rock"},{"name":"Fort Smith","slug":"fort-smith"},{"name":"Fayetteville","slug":"fayetteville"},{"name":"Springdale","slug":"springdale"}]},"06":{"n":"California","a":"CA","s":"california","c":[{"name":"Los Angeles","slug":"los-angeles"},{"name":"San Diego","slug":"san-diego"},{"name":"San Francisco","slug":"san-francisco"},{"name":"San Jose","slug":"san-jose"}]},"08":{"n":"Colorado","a":"CO","s":"colorado","c":[{"name":"Denver","slug":"denver"},{"name":"Colorado Springs","slug":"colorado-springs"},{"name":"Aurora","slug":"aurora"},{"name":"Fort Collins","slug":"fort-collins"}]},"09":{"n":"Connecticut","a":"CT","s":"connecticut","c":[{"name":"Bridgeport","slug":"bridgeport"},{"name":"New Haven","slug":"new-haven"},{"name":"Hartford","slug":"hartford"},{"name":"Stamford","slug":"stamford"}]}};
-(function(){
-  var svg=d3.select("#us-map");
-  var path=d3.geoPath();
-  var modal=document.getElementById("state-modal");
-  var card=document.getElementById("flip-card");
-  function openState(fips){
-    var s=HI_STATES[fips]; if(!s) return;
-    var links=s.c.map(function(c){return '<a href="/home-insurance/'+s.s+'/'+c.slug+'/">'+c.name+'</a>';}).join("");
-    card.innerHTML='<button class="closeb" aria-label="Close">&times;</button>'+
-      '<div class="abbr">'+s.a+'</div><div class="stname">'+s.n+'</div><hr>'+
-      '<div class="clabel">Top cities</div><div class="clinks">'+links+'</div>'+
-      '<a class="statelink" href="/home-insurance/'+s.s+'/">View all '+s.n+' →</a>'+
-      '<a class="callbtn" href="tel:+18666701464">☎ Call (866) 670-1464</a>';
-    modal.classList.add("open"); modal.setAttribute("aria-hidden","false");
-    card.querySelector(".closeb").addEventListener("click",closeState);
+function openState(abbr,name,cities,url){
+  document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
+  var el=document.getElementById(abbr);
+  if(el)el.classList.add('active');
+  document.getElementById('fc-abbr').textContent=abbr;
+  document.getElementById('fc-name').textContent=name;
+  var c=document.getElementById('fc-cities');
+  c.innerHTML='';
+  cities.forEach(function(city){
+    var slug=city.toLowerCase().replace(/[\s,]+/g,'-').replace(/[^a-z0-9-]/g,'');
+    var a=document.createElement('a');
+    a.href=url+slug+'/';
+    a.className='fc-city';
+    a.innerHTML=city+'<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    c.appendChild(a);
+  });
+  var box=document.getElementById('flip-box');
+  box.style.animation='none';
+  void box.offsetWidth;
+  box.style.animation='flipIn 0.55s cubic-bezier(0.4,0,0.2,1) forwards';
+  document.getElementById('modal-bg').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeState(e){
+  if(!e||e.target===document.getElementById('modal-bg')){
+    document.getElementById('modal-bg').classList.remove('on');
+    document.body.style.overflow='';
+    document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
   }
-  function closeState(){ modal.classList.remove("open"); modal.setAttribute("aria-hidden","true");
-    svg.selectAll("path.state").classed("active",false); }
-  modal.addEventListener("click",function(e){ if(e.target===modal) closeState(); });
-  document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeState(); });
-  d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(function(us){
-    var states=topojson.feature(us,us.objects.states).features;
-    states=states.filter(function(d){ return HI_STATES[String(d.id).padStart(2,"0")]; });
-    var g=svg.append("g");
-    g.selectAll("path").data(states).enter().append("path")
-      .attr("class","state").attr("d",path)
-      .attr("data-fips",function(d){return String(d.id).padStart(2,"0");})
-      .on("click",function(e,d){ var f=String(d.id).padStart(2,"0"); svg.selectAll("path.state").classed("active",false); d3.select(this).classed("active",true); openState(f); })
-      .append("title").text(function(d){ var s=HI_STATES[String(d.id).padStart(2,"0")]; return s?s.n:""; });
-    g.selectAll("text").data(states).enter().append("text").attr("class","lbl")
-      .attr("x",function(d){return path.centroid(d)[0];}).attr("y",function(d){return path.centroid(d)[1];})
-      .text(function(d){ var s=HI_STATES[String(d.id).padStart(2,"0")]; return s?s.a:""; });
-  }).catch(function(err){ console.error("map load",err); document.getElementById("map-wrap").innerHTML='<p style="text-align:center;padding:30px;color:#6b7280">Map could not load. <a href="tel:+18666701464">Call (866) 670-1464</a> to compare home insurance quotes in your state.</p>'; });
-})();
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeState();});
 </script>
 </body>
 </html>
