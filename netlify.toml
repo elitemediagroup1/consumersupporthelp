@@ -26,3 +26,15 @@
   to = "https://consumersupporthelp.com/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/home-insurance"
+  to = "/home-insurance/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/home-insurance.html"
+  to = "/home-insurance/"
+  status = 301
+  force = false
