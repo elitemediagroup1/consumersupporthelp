@@ -17,7 +17,7 @@
 .hi-hero p{max-width:680px;margin:0 auto 28px;font-size:1.05rem;opacity:.93;}
 .btn-cta{display:inline-block;background:#1a6b3c;color:#fff;font-weight:700;padding:16px 32px;border-radius:8px;text-decoration:none;font-size:1.1rem;}
 .trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:24px;font-size:.95rem;}
-.map-section{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px 16px;margin:32px auto;max-width:1100px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.map-wrap{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px 16px;margin:32px auto;max-width:1100px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .map-hint{text-align:center;font-size:.78rem;color:#6b7280;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase;}
 #us-map{width:100%;height:auto;display:block;}
 .st{fill:#1e4d8c;stroke:#fff;stroke-width:1;cursor:pointer;transition:fill .15s;}
@@ -57,23 +57,61 @@
 </style>
 </head>
 <body>
-<div id="site-header"></div>
+<header class="site-header" role="banner">
+<div class="bar">
+<a href="/" class="brand" aria-label="Consumer Support Help &#8212; back to homepage" style="display:flex;align-items:center;text-decoration:none">
+<img src="/assets/logo.png" alt="Consumer Support Help" width="300" height="200" style="height:200px;width:300px;display:block" fetchpriority="low" loading="eager">
+</a>
+<button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+<ul class="nav" id="primary-nav" role="menubar" aria-label="Primary">
+<li role="none"><button type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Insurances <span class="caret"></span></button>
+<ul class="dropdown" role="menu" aria-label="Insurance options">
+<li><a href="/auto-insurance.html">Auto Insurance</a></li>
+<li><a href="/aca.html">ACA Health Insurance</a></li>
+<li><a href="/medicare.html">Medicare Coverage</a></li>
+<li><a href="/home-insurance/">Home Insurance</a></li>
+<li><a href="/final-expense.html">Final Expense Insurance</a></li>
+</ul></li>
+<li role="none" class="nav-dropdown"><a href="/home-services.html" class="nav-link" role="menuitem">Home Services <span class="caret"></span></a>
+<ul class="nav-dropdown-menu" role="menu" aria-label="Home services options">
+<li><a href="/pest-control/">Pest Control</a></li>
+<li><a href="/roofing.html">Roofing</a></li>
+<li><a href="/gutters.html">Gutters</a></li>
+<li><a href="/windows.html">Windows</a></li>
+<li><a href="/bathroom-remodeling.html">Bathroom Remodeling</a></li>
+<li><a href="/water-damage.html">Water Damage</a></li>
+<li><a href="/home-security.html">Home Security</a></li>
+</ul></li>
+<li role="none"><a href="/ssdi.html" class="nav-link" role="menuitem">SSDI Benefits</a></li>
+<li role="none"><button type="button" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">Mass Torts <span class="caret"></span></button>
+<ul class="dropdown" role="menu" aria-label="Mass tort claims">
+<li><a href="/talcum.html">Talcum Powder Claims</a></li>
+<li><a href="/depo-provera.html">Depo-Provera Claims</a></li>
+<li><a href="/dupixent.html">Dupixent Claims</a></li>
+<li><a href="/semaglutide.html">Semaglutide Claims</a></li>
+<li><a href="/roblox.html">Roblox Claims</a></li>
+<li><a href="/rideshare.html">Rideshare Claims</a></li>
+</ul></li>
+<li role="none"><a href="/debt-settlement.html" class="nav-link" role="menuitem">Debt Settlement</a></li>
+</ul>
+</div>
+</header>
 <section class="hi-hero">
 <h1>Compare Home Insurance Quotes in Your State</h1>
 <p>Licensed agents compare rates from multiple carriers nationwide. Select your state on the map below. Free quotes, no obligation, takes 5 minutes.</p>
-<a href="tel:+18666701464" class="btn-cta">&#128222; Call (866) 670-1464 &mdash; Get Free Quotes</a>
+<a href="tel:+18666701464" class="btn-cta">&#128222; Call (866) 670-1464 &#8212; Get Free Quotes</a>
 <div class="trust-row">
 <span>&#10003; Licensed Agents</span>
 <span>&#10003; Multiple Carriers</span>
 <span>&#10003; Free Service</span>
 <span>&#10003; No Obligation</span>
-<span>&#10003; Mon&ndash;Sun 9am&ndash;9pm EST</span>
+<span>&#10003; Mon&#8211;Sun 9am&#8211;9pm EST</span>
 </div>
 </section>
 <div style="background:#f8f9fa;padding:32px 20px;">
 <h2 style="font-family:Oswald,Arial,sans-serif;font-size:1.9rem;text-align:center;margin:0 0 8px;">Find Home Insurance in Your State</h2>
 <p style="text-align:center;color:#555;margin:0 0 24px;">Click your state on the map. Free quotes from licensed agents.</p>
-<div class="map-section">
+<div class="map-wrap">
 <p class="map-hint">Click any state to get free home insurance quotes</p>
 <svg id="us-map" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
 <path class="st" id="WA" onclick="openState('WA','Washington',['Seattle','Spokane','Tacoma','Bellevue'],'/home-insurance/washington/')" d="M96,66 L182,56 L190,72 L186,100 L176,118 L160,124 L96,132 L88,108 L86,86 Z"/><text class="sl" x="136" y="96">WA</text>
@@ -150,10 +188,68 @@
 </section>
 <section class="cta-band">
 <h2>Ready to Compare Rates?</h2>
-<p>Licensed agents available Mon&ndash;Sun 9am&ndash;9pm EST. Free, no obligation.</p>
+<p>Licensed agents available Mon&#8211;Sun 9am&#8211;9pm EST. Free, no obligation.</p>
 <a href="tel:+18666701464" class="btn-white">&#128222; Call (866) 670-1464</a>
 </section>
-<div id="site-footer"></div>
+<footer class="site-footer" role="contentinfo">
+<div class="footer-main">
+<div class="footer-col footer-brand">
+<div class="brand-mark"><strong>Consumer</strong><em>Support</em></div>
+<p class="footer-tag">Real help with insurance, government benefits, home services, and major claims &#8212; all in plain English.</p>
+<p class="footer-contact">Questions? Email <a href="mailto:help@elitemediagroup.io">help@elitemediagroup.io</a></p>
+</div>
+<div class="footer-col">
+<h4>Insurance</h4>
+<ul>
+<li><a href="/auto-insurance.html">Auto Insurance Quotes</a></li>
+<li><a href="/aca.html">ACA Health Plans</a></li>
+<li><a href="/medicare.html">Medicare Coverage</a></li>
+<li><a href="/home-insurance/">Home Insurance</a></li>
+<li><a href="/final-expense.html">Final Expense Insurance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Home Services</h4>
+<ul>
+<li><a href="/home-services.html">All Home Services</a></li>
+<li><a href="/pest-control/">Pest Control</a></li>
+<li><a href="/home-security.html">Home Security</a></li>
+<li><a href="/roofing.html">Roofing</a></li>
+<li><a href="/bathroom-remodeling.html">Bathroom Remodeling</a></li>
+<li><a href="/water-damage.html">Water Damage Restoration</a></li>
+<li><a href="/windows.html">Replacement Windows</a></li>
+<li><a href="/gutters.html">Gutters</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Benefits &amp; Claims</h4>
+<ul>
+<li><a href="/ssdi.html">SSDI Disability Benefits</a></li>
+<li><a href="/debt-settlement.html">Debt Settlement</a></li>
+<li><a href="/talcum.html">Talcum Powder Claims</a></li>
+<li><a href="/depo-provera.html">Depo-Provera Claims</a></li>
+<li><a href="/dupixent.html">Dupixent Claims</a></li>
+<li><a href="/semaglutide.html">Semaglutide Claims</a></li>
+<li><a href="/roblox.html">Roblox Claims</a></li>
+<li><a href="/rideshare.html">Rideshare Claims</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/privacy.html">Privacy Policy</a></li>
+<li><a href="/terms.html">Terms of Service</a></li>
+<li><a href="/ccpa.html">Your Privacy Choices (CCPA)</a></li>
+<li><a href="/cookies.html">Cookie Notice</a></li>
+<li><a href="/no-legal-advice.html">No Legal Advice Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>&copy; 2026 Elite Media Group LLC. All rights reserved. | <a href="mailto:help@elitemediagroup.io">help@elitemediagroup.io</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+<p>Owned and operated by Elite Media Group LLC. Consumer Support Help is an informational and lead-referral service and does not provide legal, medical, tax, or financial advice.</p>
+</div>
+</footer>
 <div class="modal-bg" id="modal-bg" onclick="closeState(event)">
 <div class="flip-box" id="flip-box">
 <button class="fc-close" onclick="closeState()">&#10005;</button>
@@ -161,52 +257,52 @@
 <div class="fc-name" id="fc-name"></div>
 <div class="fc-line"></div>
 <div class="fc-cities" id="fc-cities"></div>
-<a href="tel:+18666701464" class="fc-call">&#128222; Call (866) 670-1464 &mdash; Free Quote</a>
+<a href="tel:+18666701464" class="fc-call">&#128222; Call (866) 670-1464 &#8212; Free Quote</a>
 </div>
 </div>
 <div id="sticky-cta">
-<a href="tel:+18666701464">&#128222; Call (866) 670-1464 &mdash; Free Home Insurance Quote</a>
+<a href="tel:+18666701464">&#128222; Call (866) 670-1464 &#8212; Free Home Insurance Quote</a>
 </div>
 <script src="/assets/lucy-csh.js" defer></script>
 <script src="/assets/script.js" defer></script>
 <script>
 var liveStates=['OH','KS','TN','PA','IL','IN','MD','VA'];
 function openState(abbr,name,cities,url){
-  document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
-  var el=document.getElementById(abbr);
-  if(el)el.classList.add('active');
-  document.getElementById('fc-abbr').textContent=abbr;
-  document.getElementById('fc-name').textContent=name;
-  var c=document.getElementById('fc-cities');
-  c.innerHTML='';
-  if(liveStates.includes(abbr)){
-    cities.forEach(function(city){
-      var slug=city.toLowerCase().replace(/[\s,]+/g,'-').replace(/[^a-z0-9-]/g,'');
-      var a=document.createElement('a');
-      a.href=url+slug+'/';
-      a.className='fc-city';
-      a.innerHTML=city+' &rarr;';
-      c.appendChild(a);
-    });
-  } else {
-    var msg=document.createElement('div');
-    msg.style.cssText='text-align:center;padding:12px;color:rgba(255,255,255,.75);font-size:.85rem;line-height:1.6;';
-    msg.textContent='Coverage available in '+name+'. Call now for a free quote.';
-    c.appendChild(msg);
-  }
-  var box=document.getElementById('flip-box');
-  box.style.animation='none';
-  void box.offsetWidth;
-  box.style.animation='flipIn .55s cubic-bezier(.4,0,.2,1) forwards';
-  document.getElementById('modal-bg').classList.add('on');
-  document.body.style.overflow='hidden';
+document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
+var el=document.getElementById(abbr);
+if(el)el.classList.add('active');
+document.getElementById('fc-abbr').textContent=abbr;
+document.getElementById('fc-name').textContent=name;
+var c=document.getElementById('fc-cities');
+c.innerHTML='';
+if(liveStates.includes(abbr)){
+cities.forEach(function(city){
+var slug=city.toLowerCase().replace(/[\s,]+/g,'-').replace(/[^a-z0-9-]/g,'');
+var a=document.createElement('a');
+a.href=url+slug+'/';
+a.className='fc-city';
+a.innerHTML=city+' &rarr;';
+c.appendChild(a);
+});
+}else{
+var msg=document.createElement('div');
+msg.style.cssText='text-align:center;padding:12px;color:rgba(255,255,255,.75);font-size:.85rem;line-height:1.6;';
+msg.textContent='Coverage available in '+name+'. Call now for a free quote.';
+c.appendChild(msg);
+}
+var box=document.getElementById('flip-box');
+box.style.animation='none';
+void box.offsetWidth;
+box.style.animation='flipIn .55s cubic-bezier(.4,0,.2,1) forwards';
+document.getElementById('modal-bg').classList.add('on');
+document.body.style.overflow='hidden';
 }
 function closeState(e){
-  if(!e||e.target===document.getElementById('modal-bg')){
-    document.getElementById('modal-bg').classList.remove('on');
-    document.body.style.overflow='';
-    document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
-  }
+if(!e||e.target===document.getElementById('modal-bg')){
+document.getElementById('modal-bg').classList.remove('on');
+document.body.style.overflow='';
+document.querySelectorAll('.st').forEach(function(s){s.classList.remove('active');});
+}
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeState();});
 </script>
