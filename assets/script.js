@@ -193,3 +193,32 @@ if (document.readyState === 'loading') {
 } else {
   loadLucyCSH();
 }
+
+
+// ===== Microsoft Clarity (EMG analytics standard) =====
+// Loads on every page that includes script.js. Idempotent: guards against
+// duplicate initialization so it is safe alongside any inline Clarity snippet
+// (e.g. on standalone paid landing pages). Async load; no render-blocking, no CLS.
+(function loadClarity(){
+  var CLARITY_ID = "x80jgx4xmv";
+  if (window.__cshClarityLoaded) return;       // prevent double init across includes
+  window.__cshClarityLoaded = true;
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r); t.async=1; t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", CLARITY_ID);
+
+  // Privacy: Clarity masks form inputs automatically. Keep balanced masking so
+  // heatmaps/CTA analysis stay useful while inputs and sensitive fields are masked.
+  try { window.clarity("set", "masking", "balanced"); } catch (e) {}
+
+  // Correlate Clarity <-> GA4: store GA client id as a Clarity custom tag.
+  try {
+    if (typeof gtag === "function") {
+      gtag("get", "G-M3FTEYNNQ0", "client_id", function(id){
+        if (id && window.clarity) window.clarity("set", "ga_client_id", String(id));
+      });
+    }
+  } catch (e) {}
+})();
