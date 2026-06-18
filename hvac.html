@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>HVAC Help Center | Heating &amp; Cooling Guides for Homeowners</title>
-<meta name="description" content="An independent HVAC Help Center for homeowners: how heating and cooling systems work, signs of trouble, repair vs. replace, maintenance, efficiency, costs, and a free interactive diagnostic.">
+<meta name="description" content="An independent HVAC Help Center for homeowners: how heating and cooling systems work, signs of trouble, repair vs. replace, maintenance, efficiency, costs, and an interactive diagnostic.">
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://consumersupporthelp.com/hvac" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Consumer Support Help">
 <meta property="og:url" content="https://consumersupporthelp.com/hvac">
 <meta property="og:title" content="HVAC Help Center | Heating & Cooling Guides for Homeowners">
-<meta property="og:description" content="How heating and cooling systems work, signs of trouble, repair vs. replace, maintenance, efficiency, costs, and a free interactive HVAC diagnostic.">
+<meta property="og:description" content="How heating and cooling systems work, signs of trouble, repair vs. replace, maintenance, efficiency, costs, and an interactive HVAC diagnostic.">
 <meta property="og:image" content="https://consumersupporthelp.com/images/hvac-technician-inspecting-outdoor-condenser.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@consumersupporthelp">
 <meta name="twitter:title" content="HVAC Help Center | Heating & Cooling Guides for Homeowners">
-<meta name="twitter:description" content="An independent HVAC Help Center for homeowners: how systems work, maintenance, efficiency, costs, and a free interactive diagnostic.">
+<meta name="twitter:description" content="An independent HVAC Help Center for homeowners: how systems work, maintenance, efficiency, costs, and an interactive diagnostic.">
 <meta name="twitter:image" content="https://consumersupporthelp.com/images/hvac-technician-inspecting-outdoor-condenser.webp">
 <style>
 /* ===== HVAC Help Center page-specific styles (reuses global design system) ===== */
@@ -437,12 +437,18 @@
      HVAC PHONE NUMBER CONFIGURATION
      Single source of truth for every click-to-call on this page.
      Replace the placeholder below with the approved number before production.
-     Format example: tel:+18885551234  /  display: (888) 555-1234
+     Format example: tel:+1XXXXXXXXXX  /  display: (XXX) XXX-XXXX
      ========================================================= -->
-<script>
+<!-- DEVELOPER NOTE: This is the ONLY place the HVAC phone number is defined.
+       EVERY click-to-call element on this page (and in assets/hvac-diagnostic.js)
+       MUST read from window.HVAC_PHONE_NUMBER via the [data-call] hook below.
+       Do NOT hardcode a phone number anywhere else. To launch, set tel + display
+       here once and all CTAs update globally. While the placeholder is in place,
+       all [data-call] buttons safely fall back to the on-page diagnostic. -->
+  <script>
   window.HVAC_PHONE_NUMBER = {
-    tel: "REPLACE_WITH_APPROVED_NUMBER",   // e.g. "+18885551234"
-    display: "REPLACE_WITH_APPROVED_NUMBER" // e.g. "(888) 555-1234"
+    tel: "REPLACE_WITH_APPROVED_NUMBER",   // e.g. "+1XXXXXXXXXX"
+    display: "REPLACE_WITH_APPROVED_NUMBER" // e.g. "(XXX) XXX-XXXX"
   };
   (function(){
     var cfg = window.HVAC_PHONE_NUMBER || {};
