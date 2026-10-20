@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>HVAC Service | ARS/Rescue Rooter &amp; Consumer Support Help</title>
-<meta name="description" content="Explore new home HVAC systems, central air installation, furnace replacement and heat pumps. Request an estimate or call 1-855-448-4993.">
+<meta name="description" content="Get help with home heating and cooling repairs, replacement systems and installation. Request service or call 1-855-448-4993.">
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://consumersupporthelp.com/ars-hvac" />
 
@@ -488,11 +488,11 @@ a{color:var(--csh-teal-dark);}
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>
-        <span>New Home</span>
+        <span>Home</span>
         <span class="teal">Heating &amp; Cooling</span>
-        <span>Systems</span>
+        <span>Repair &amp; Replacement</span>
       </h1>
-      <p class="hero-lede">Ready to replace your home HVAC? Explore central air, furnace and heat pump installation for year-round comfort.</p>
+      <p class="hero-lede">Need a repair or ready for a new system? Get help with home air conditioning, heating and heat pumps, from repairs to replacement and installation.</p>
     </div>
 
   <!-- Approved family lifestyle photography. Framing is CSS object-fit only; file is unmodified. -->
@@ -527,11 +527,11 @@ a{color:var(--csh-teal-dark);}
     <!-- ---------- Lead form ---------- -->
     <div class="hero-form" id="request">
       <div class="form-card">
-        <h2>Request a New System Estimate</h2>
-        <p class="form-sub">Residential HVAC Installation</p>
+        <h2>Request HVAC Service</h2>
+        <p class="form-sub">Repair, Replacement &amp; Installation</p>
 
         <p style="text-align:center;margin:0 0 18px"><a href="tel:+18554484993" data-call style="display:block;background:var(--ars-red);color:white;text-decoration:none;padding:14px 12px;border-radius:6px;font-weight:700">Call 1-855-448-4993</a><small style="color:#C6D8E7">Phone lines open 24/7 · Service availability varies by location</small></p>
-        <p class="form-status">Call now or request your new system estimate below.</p>
+        <p class="form-status">Call now or tell us what service your home needs below.</p>
         <form id="ars-lead-form" novalidate>
           <div hidden aria-hidden="true"><label>Leave empty<input name="website" id="f-website" tabindex="-1" autocomplete="off"></label></div>
           <div class="field-row">
@@ -565,6 +565,9 @@ a{color:var(--csh-teal-dark);}
             <label class="sr-only" for="f-service">Service Needed</label>
             <select id="f-service" name="service" required>
               <option value="" selected disabled>Service Needed</option>
+              <option>Air Conditioning Repair</option>
+              <option>Heating Repair</option>
+              <option>Heat Pump Repair</option>
               <option>Air Conditioning Replacement</option>
               <option>Heating Replacement</option>
               <option>New HVAC System Installation</option>
@@ -578,7 +581,7 @@ a{color:var(--csh-teal-dark);}
             <input type="text" id="f-zip" name="zip" placeholder="Zip Code" autocomplete="postal-code" inputmode="numeric" maxlength="5" required>
           </div>
 
-          <button type="submit" class="btn-submit" id="ars-submit">Get My Free Estimate</button>
+          <button type="submit" class="btn-submit" id="ars-submit">Request My HVAC Service</button>
 
           <p class="consent">By clicking above, you acknowledge you have reviewed ARS&rsquo; <a href="https://www.ars.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and consent to ARS and its affiliates contacting you at the number above via automatic telephone dialing system, artificial/prerecorded voice messages and text messages for marketing purposes. Message/data rates may apply. Consent not required for purchase.</p>
           <p class="form-status" id="ars-status" role="status" aria-live="polite"></p>
@@ -843,12 +846,12 @@ a{color:var(--csh-teal-dark);}
         }
       } catch (error) {
         btn.disabled = false;
-        btn.textContent = 'Get My Free Estimate';
+        btn.textContent = 'Request My HVAC Service';
         return fail(zip, 'We could not check service coverage. Please try again.');
       }
       if (!approvedZips.has(zip.value)) {
         btn.disabled = false;
-        btn.textContent = 'Get My Free Estimate';
+        btn.textContent = 'Request My HVAC Service';
         return fail(zip, 'This ZIP is outside the participating ARS residential HVAC service area.');
       }
       if(status){ status.textContent = ''; status.className = 'form-status'; }
@@ -886,7 +889,7 @@ a{color:var(--csh-teal-dark);}
         if(status){ status.textContent = 'We could not confirm your request. Please call 1-855-448-4993.'; status.className = 'form-status err'; }
       } finally {
         btn.disabled = false;
-        btn.textContent = 'Get My Free Estimate';
+        btn.textContent = 'Request My HVAC Service';
       }
 
     });
