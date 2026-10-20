@@ -17,7 +17,8 @@ export default async function handler(req) {
   } catch { return respond(400, { ok: false, error: 'Invalid request.' }); }
   if (p.website) return respond(400, { ok: false });
   const value = key => String(p[key] || '').trim().slice(0, 2000);
-  const phone = value('phone').replace(/\D/g, '');
+  const rawPhone = value('phone').replace(/\D/g, '');
+  const phone = rawPhone.length === 11 && rawPhone.startsWith('1') ? rawPhone.slice(1) : rawPhone;
   if (!value('first') || !value('last') || !/^\d{10}$/.test(phone) || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value('email')) || !coverage.has(value('zip')) || !services.has(value('service')) || p.consent !== true) {
     return respond(400, { ok: false, error: 'Please check your contact details, service and ZIP code.' });
   }
