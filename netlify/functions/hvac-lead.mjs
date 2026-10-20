@@ -2,7 +2,7 @@ import approvedZips from '../../assets/ars-hvac-zips.json' with { type: 'json' }
 
 const endpoint = 'https://script.google.com/macros/s/AKfycbyN5SgqHuF9_65yPzSaggW5IU8cZlcZLxLyHaH_KNUCStbfYgupG5130N1uu-ohILI/exec';
 const coverage = new Set(approvedZips);
-const services = new Set(['Air Conditioning Repair', 'Heating Repair', 'Heat Pump Repair', 'Air Conditioning Replacement', 'Heating Replacement', 'New HVAC System Installation', 'Heat Pump Installation / Replacement']);
+const services = new Set(['Maintenance / Tune-Up', 'Air Conditioning Repair', 'Heating Repair', 'Heat Pump Repair', 'Air Conditioning Replacement', 'Heating Replacement', 'New HVAC System Installation', 'Heat Pump Installation / Replacement']);
 const respond = (status, body) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 
 export default async function handler(req) {
