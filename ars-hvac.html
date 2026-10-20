@@ -531,8 +531,9 @@ a{color:var(--csh-teal-dark);}
         <p class="form-sub">Residential HVAC Installation</p>
 
         <p style="text-align:center;margin:0 0 18px"><a href="tel:+18554484993" data-call style="display:block;background:var(--ars-red);color:white;text-decoration:none;padding:14px 12px;border-radius:6px;font-weight:700">Call 1-855-448-4993</a><small style="color:#C6D8E7">Phone lines open 24/7 · Service availability varies by location</small></p>
-        <p class="form-status">Call us to discuss a new home HVAC system and request your estimate.</p>
-        <form id="ars-lead-form" hidden novalidate>
+        <p class="form-status">Call now or request your new system estimate below.</p>
+        <form id="ars-lead-form" novalidate>
+          <div hidden aria-hidden="true"><label>Leave empty<input name="website" id="f-website" tabindex="-1" autocomplete="off"></label></div>
           <div class="field-row">
             <div class="field">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
@@ -864,10 +865,29 @@ a{color:var(--csh-teal-dark);}
       Object.keys(attribution).forEach(function(k){ eventParams[k] = attribution[k]; });
 
 
-      // Collection is paused until the direct Google Sheets destination is ready.
-      btn.disabled = false;
-      btn.textContent = 'Call for Your Free Estimate';
-      if(status){ status.textContent = 'Please call 1-855-448-4993 to request your estimate.'; status.className = 'form-status'; }
+      try {
+        var leadPayload = {
+          first:first.value.trim(), last:last.value.trim(), phone:phoneDigits,
+          email:email.value.trim(), service:select.value, zip:zip.value,
+          consent:true, website:document.getElementById('f-website').value
+        };
+        ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+          if(attribution[k]) leadPayload[k] = attribution[k];
+        });
+        var response = await fetch('/.netlify/functions/hvac-lead', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(leadPayload)
+        });
+        var result = await response.json();
+        if(!response.ok || !result.ok) throw new Error('Request not saved');
+        form.hidden = true;
+        done.hidden = false;
+        if(typeof gtag === 'function') gtag('event','generate_lead',eventParams);
+      } catch(error) {
+        if(status){ status.textContent = 'We could not confirm your request. Please call 1-855-448-4993.'; status.className = 'form-status err'; }
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Get My Free Estimate';
+      }
 
     });
   }
