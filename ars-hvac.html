@@ -532,7 +532,8 @@ a{color:var(--csh-teal-dark);}
         <p class="form-sub">Fast, Reliable, Worry-Free</p>
 
         <p style="text-align:center;margin:0 0 18px"><a href="tel:+18554484993" data-call style="display:block;background:var(--ars-red);color:white;text-decoration:none;padding:14px 12px;border-radius:6px;font-weight:700">Call 1-855-448-4993</a><small style="color:#C6D8E7">Phone lines open 24/7 · Service availability varies by location</small></p>
-        <form id="ars-lead-form" novalidate>
+        <p class="form-status">Call us to discuss a new home HVAC system and request your estimate.</p>
+        <form id="ars-lead-form" hidden novalidate>
           <div class="field-row">
             <div class="field">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
@@ -804,11 +805,6 @@ a{color:var(--csh-teal-dark);}
   }
   var attribution = readAttribution();
 
-  function getCookie(name){
-    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-    return m ? m.pop() : '';
-  }
-
   /* ---- Lead form ---- */
   var form   = document.getElementById('ars-lead-form');
   var status = document.getElementById('ars-status');
@@ -893,42 +889,11 @@ a{color:var(--csh-teal-dark);}
       Object.keys(attribution).forEach(function(k){ eventParams[k] = attribution[k]; });
 
 
-      /* Existing Consumer Support Help lead destination (HubSpot Forms API).
-         Only standard HubSpot contact properties are sent. "Service Needed" and the
-         attribution parameters are reported to GA4 above; to land them in HubSpot,
-         create the matching properties on the form and add them to SUBMIT_FIELDS. */
-      var SUBMIT_FIELDS = [
-        {objectTypeId:'0-1', name:'firstname', value:first.value.trim()},
-        {objectTypeId:'0-1', name:'lastname',  value:last.value.trim()},
-        {objectTypeId:'0-1', name:'phone',     value:phone.value},
-        {objectTypeId:'0-1', name:'email',     value:email.value.trim()},
-        {objectTypeId:'0-1', name:'zip',       value:zip.value}
-      ];
-      var context = {pageUri:window.location.href, pageName:document.title};
-      var hutk = getCookie('hubspotutk');
-      if(hutk){ context.hutk = hutk; }
+      // Collection is paused until the direct Google Sheets destination is ready.
+      btn.disabled = false;
+      btn.textContent = 'Call for Your Free Estimate';
+      if(status){ status.textContent = 'Please call 1-855-448-4993 to request your estimate.'; status.className = 'form-status'; }
 
-      function finish(){
-        track('lead_form_complete', eventParams);
-        form.hidden = true;
-        done.hidden = false;
-        done.scrollIntoView({behavior:'smooth', block:'center'});
-      }
-
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/243957727/243d8ca3-2c2d-484f-bf44-264f02ad446c', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({fields:SUBMIT_FIELDS, context:context})
-      })
-      .then(function(response){
-        if (!response.ok) throw new Error('Lead submission failed');
-        finish();
-      })
-      .catch(function(){
-        btn.disabled = false;
-        btn.textContent = 'Get My Free Estimate';
-        if(status){ status.textContent = 'Your request could not be sent. Please try again or call 1-855-448-4993.'; status.className = 'form-status err'; }
-      });
     });
   }
 })();
