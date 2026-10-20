@@ -249,7 +249,7 @@ a{color:var(--csh-teal-dark);}
 }
 .offer-grid{
   max-width:var(--container);margin:0 auto;padding:0 32px;
-  display:grid;grid-template-columns:minmax(0,680px);justify-content:center;gap:32px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;
 }
 .offer{
   display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
@@ -568,6 +568,7 @@ a{color:var(--csh-teal-dark);}
               <option>Air Conditioning Repair</option>
               <option>Heating Repair</option>
               <option>Heat Pump Repair</option>
+              <option>Maintenance / Tune-Up</option>
               <option>Air Conditioning Replacement</option>
               <option>Heating Replacement</option>
               <option>New HVAC System Installation</option>
@@ -636,7 +637,28 @@ a{color:var(--csh-teal-dark);}
   <div class="offers-head"><h2>Limited Time Special Offers</h2></div>
 
   <div class="offer-grid">
-    <!-- NEW SYSTEM SAVINGS -->
+    <!-- $49 TUNE-UP -->
+    <div class="offer offer-blue">
+      <!-- Approved HVAC equipment photo, unbranded and unmodified. Full-frame, CSS framing only. -->
+      <div class="offer-band">
+        <picture>
+          <source type="image/webp" srcset="/images/ars/approved/optimized/hvac-equipment-700.webp 700w, /images/ars/approved/optimized/hvac-equipment-1000.webp 1000w" sizes="(max-width:860px) 100vw, 720px">
+          <img src="/images/ars/approved/optimized/hvac-equipment-700.jpg" width="700" height="516" alt="Residential outdoor air conditioning condenser units" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="offer-body">
+        <p class="offer-amt"><sup>$</sup>49</p>
+        <h3 class="offer-name">HVAC Tune-Up</h3>
+        <hr class="offer-rule">
+        <p class="fine">
+          Price valid for one working unit. For gas or heat pump systems only. Excludes oil fired systems. Not valid with any other offers, discounts, or on prior sales. Valid only for residential customers. Any other use may constitute fraud. Cash value $0.01.
+          <!-- Expiration date intentionally omitted: the date shown in the mockup is stale
+               and no replacement date has been approved by ARS. -->
+        </p>
+      </div>
+    </div>
+
+    <!-- SAVE UP TO $2000 -->
     <div class="offer offer-red">
       <div class="offer-band offer-band-red"><span>Save Up To</span></div>
       <div class="offer-body">
