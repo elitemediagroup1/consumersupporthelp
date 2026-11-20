@@ -262,7 +262,7 @@
       '<div id="lucy-csh-messages"></div>' +
       '<div id="lucy-csh-quickreplies">' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83D\uDC1B Pest Control\')">\uD83D\uDC1B Pest Control</button>' +
-        '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83C\uDFA7 Home Security\')">\uD83C\uDFA7 Home Security</button>' +
+        '<a class="lucy-csh-qr" href="/home-security">Home Security</a>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83D\uDE97 Auto Insurance\')">\uD83D\uDE97 Auto Insurance</button>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'\uD83C\uDFE0 Home Insurance\')">\uD83C\uDFE0 Home Insurance</button>' +
         '<button class="lucy-csh-qr" onclick="sendLucyCSH(\'Health Insurance\')">\u2695 Health Insurance</button>' +
@@ -306,7 +306,7 @@
     var div = document.createElement('div');
     div.className = 'lucy-csh-msg ' + sender;
     div.innerHTML = text.replace(
-      /\[([^\]]+)\]\((tel:[^)]+)\)/g,
+      /\[([^\]]+)\]\((tel:[^)]+|\/home-security)\)/g,
       '<a href="$2" style="color:' + (sender === 'user' ? 'white' : '#1a6b3c') + ';font-weight:700">$1</a>'
     );
     msgs.appendChild(div);
