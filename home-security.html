@@ -101,9 +101,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://consumersupporthelp.com/"},{"@type":"ListItem","position":2,"name":"Home Security","item":"https://consumersupporthelp.com/home-security"}]}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Home Security System Help","description":"Home security planning guidance and a partner callback form for homeowners","areaServed":"United States","provider":{"@type":"Organization","name":"Consumer Support Help"}}
-</script>
+<!-- home-security-schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Home Security System Help","description":"Home security planning guidance and homeowner callback options.","areaServed":[{"@type":"AdministrativeArea","name":"Alabama"},{"@type":"AdministrativeArea","name":"Arizona"},{"@type":"AdministrativeArea","name":"Arkansas"},{"@type":"AdministrativeArea","name":"California"},{"@type":"AdministrativeArea","name":"Colorado"},{"@type":"AdministrativeArea","name":"Connecticut"},{"@type":"AdministrativeArea","name":"Delaware"},{"@type":"AdministrativeArea","name":"Florida"},{"@type":"AdministrativeArea","name":"Georgia"},{"@type":"AdministrativeArea","name":"Idaho"},{"@type":"AdministrativeArea","name":"Illinois"},{"@type":"AdministrativeArea","name":"Indiana"},{"@type":"AdministrativeArea","name":"Iowa"},{"@type":"AdministrativeArea","name":"Kansas"},{"@type":"AdministrativeArea","name":"Kentucky"},{"@type":"AdministrativeArea","name":"Louisiana"},{"@type":"AdministrativeArea","name":"Maryland"},{"@type":"AdministrativeArea","name":"Massachusetts"},{"@type":"AdministrativeArea","name":"Michigan"},{"@type":"AdministrativeArea","name":"Minnesota"},{"@type":"AdministrativeArea","name":"Mississippi"},{"@type":"AdministrativeArea","name":"Missouri"},{"@type":"AdministrativeArea","name":"Nebraska"},{"@type":"AdministrativeArea","name":"Nevada"},{"@type":"AdministrativeArea","name":"New Hampshire"},{"@type":"AdministrativeArea","name":"New Jersey"},{"@type":"AdministrativeArea","name":"New Mexico"},{"@type":"AdministrativeArea","name":"New York"},{"@type":"AdministrativeArea","name":"North Carolina"},{"@type":"AdministrativeArea","name":"Ohio"},{"@type":"AdministrativeArea","name":"Oklahoma"},{"@type":"AdministrativeArea","name":"Oregon"},{"@type":"AdministrativeArea","name":"Pennsylvania"},{"@type":"AdministrativeArea","name":"Rhode Island"},{"@type":"AdministrativeArea","name":"South Carolina"},{"@type":"AdministrativeArea","name":"Tennessee"},{"@type":"AdministrativeArea","name":"Texas"},{"@type":"AdministrativeArea","name":"Utah"},{"@type":"AdministrativeArea","name":"Virginia"},{"@type":"AdministrativeArea","name":"Washington"},{"@type":"AdministrativeArea","name":"West Virginia"},{"@type":"AdministrativeArea","name":"Wisconsin"},{"@type":"AdministrativeArea","name":"Washington, DC"}],"provider":{"@type":"Organization","name":"Consumer Support Help"}}</script>
+<!-- /home-security-schema -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does home security cost per month?","acceptedAnswer":{"@type":"Answer","text":"Monthly costs depend on whether you choose professional monitoring and which provider you select. Basic self-monitoring systems have no monthly fee beyond equipment cost. Professional monitoring typically runs $10-60 per month depending on the provider and plan features. Many providers offer free equipment when you sign a 2-3 year monitoring agreement which can significantly reduce upfront costs."}},{"@type":"Question","name":"Can renters install a security system?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most modern wireless security systems are designed for renters - they use adhesive mounts instead of screws, require no permanent wiring, and are fully portable when you move. Many renters install complete systems including door sensors, motion detectors, and cameras without any modifications to the property."}},{"@type":"Question","name":"Is a contract required for home security?","acceptedAnswer":{"@type":"Answer","text":"Not always. Many providers offer month-to-month monitoring with no long-term commitment, though the monthly rate is typically higher than contract pricing. Providers that offer free equipment usually require a 2-3 year contract to offset equipment costs."}},{"@type":"Question","name":"What is the difference between a camera system and a full security system?","acceptedAnswer":{"@type":"Answer","text":"A camera system provides video surveillance and recording but does not typically include door and window sensors, motion detectors, or professional monitoring. A full security system combines cameras with sensors throughout the home and connects to a monitoring center that can dispatch emergency responders."}},{"@type":"Question","name":"How quickly do security systems alert police after an alarm?","acceptedAnswer":{"@type":"Answer","text":"With professional monitoring, the monitoring center is typically notified within seconds of an alarm trigger. After attempting to contact the homeowner (usually 30-60 seconds), they dispatch emergency services if they cannot confirm it is a false alarm."}},{"@type":"Question","name":"Does home security work during a power outage?","acceptedAnswer":{"@type":"Answer","text":"Most professional security systems include battery backup that keeps the system running for several hours during a power outage. Systems with cellular communication continue to work even if your internet is down. Wi-Fi-only cameras and doorbells stop working during internet or power outages."}},{"@type":"Question","name":"What is a smart home security system?","acceptedAnswer":{"@type":"Answer","text":"Smart home security systems integrate with voice assistants, smart locks, thermostats, and other connected devices. They can be controlled through a single app and automated based on your schedule."}},{"@type":"Question","name":"How do I choose between professional and DIY installation?","acceptedAnswer":{"@type":"Answer","text":"Professional installation makes sense for larger homes, complex layouts, older properties where placement optimization matters, or buyers who want the setup handled entirely by someone else. DIY installation works well for renters, budget-conscious buyers, and tech-comfortable homeowners with smaller spaces."}},{"@type":"Question","name":"Does home security reduce the chance of a break-in?","acceptedAnswer":{"@type":"Answer","text":"Research consistently shows that visible security systems deter burglars. Studies indicate homes without security systems are significantly more likely to be targeted than homes with visible cameras and monitoring signs."}},{"@type":"Question","name":"What should I ask when getting a home security quote?","acceptedAnswer":{"@type":"Answer","text":"Key questions include: What equipment is included and what costs extra? Is professional installation included or additional? What is the contract length and early termination fee? Does the system use cellular or Wi-Fi communication? What is the monthly monitoring fee and what does it include?"}}]}
 </script>
@@ -119,6 +119,7 @@
 <p class="lede">A video doorbell shows who’s at the front door. An outdoor security camera can cover a driveway or side entrance. Compare the two and see what to ask about professional alarm monitoring.</p>
 <div class="ctarow">
 <a href="/go/home-security" class="btn-call" rel="sponsored">Open the callback form</a>
+<a href="#coverage" class="btn-secondary">Check state coverage</a>
 <a href="#security-guide" class="btn-secondary">Help me choose</a>
 </div>
 <p class="fineprint">Homeowners can request a call on our partner’s website. After you submit the form, the provider may call or text you about home security.</p>
@@ -141,222 +142,68 @@
 <details name="security-priority"><summary>Monitoring while I’m away</summary>
 <p>Ask who receives an alarm first, what happens if you miss the call, and whether the system stays connected during an internet or power outage.</p>
 <a href="/go/home-security" rel="sponsored">Continue to the partner’s callback form</a></details>
-    <h3>What does the monitored camera offer include?</h3>
-    <p>The partner offer pairs professional alarm monitoring with a choice of one video doorbell or one outdoor camera per eligible household. It is for homeowners starting a new service. An installation charge and a monitoring agreement apply.</p>
+    <h3 id="offers">Homeowner promotions</h3>
+    <p>Ask about $1,200 in free security equipment, free installation and a free video doorbell camera. The linked offer currently lists a $99 installation charge and requires paid monitoring. Ask the provider which promotion applies to your address before you order.</p>
+    <p>There are no Black Friday or Cyber Monday offers.</p>
     <p>If you already own a camera, have its model number handy. Ask whether that model can connect to the proposed system, which alerts go to your phone and which alarm events reach the monitoring center.</p>
   </div>
 </section>
 
-<section style="padding:56px 24px;background:#f9fafb">
+<section class="hs-section" id="coverage" aria-labelledby="coverage-title">
   <div class="container">
-    <p style="font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1a6b3c;text-align:center;margin-bottom:8px">
-      LOCAL GUIDES
-    </p>
-    <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.8rem;color:#0f1e14;text-align:center;margin-bottom:6px">
-      Browse home security guides by state
-    </h2>
-    <p style="color:#6b7280;text-align:center;font-family:'Inter',sans-serif;font-size:0.9rem;margin-bottom:36px">
-      Choose a state to explore local information about equipment and installation. The provider confirms service availability for your address.
-    </p>
-    <style>
-    .hs-pill-group { cursor:pointer; }
-    .hs-pill-group:hover rect { opacity:0.85; }
-    .hs-state-card {
-      background:white;
-      border:1.5px solid #c6f6d5;
-      border-radius:14px;
-      padding:18px 20px;
-      margin-bottom:8px;
-      animation:hsFadeIn 0.2s ease;
-    }
-    @keyframes hsFadeIn {
-      from{opacity:0;transform:translateY(-6px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    .hs-city-link {
-      display:inline-block;
-      background:#f0faf4;
-      color:#1a6b3c;
-      font-family:Inter,sans-serif;
-      font-size:0.85rem;
-      font-weight:600;
-      padding:6px 14px;
-      border-radius:999px;
-      text-decoration:none;
-      margin:4px;
-      border:1px solid #c6f6d5;
-      transition:background 0.15s,color 0.15s;
-    }
-    .hs-city-link:hover { background:#1a6b3c;color:white; }
-    .hs-state-hub-link {
-      font-family:Inter,sans-serif;
-      font-size:0.95rem;
-      font-weight:700;
-      color:#1a6b3c;
-      text-decoration:none;
-      display:block;
-      margin-bottom:12px;
-      padding-bottom:12px;
-      border-bottom:1px solid #c6f6d5;
-    }
-    .hs-state-hub-link:hover { text-decoration:underline; }
-    </style>
-    <!-- SHIELD SVG -->
-    <div style="max-width:520px;margin:0 auto 16px">
-      <svg width="100%" viewBox="0 0 680 650" role="img" xmlns="http://www.w3.org/2000/svg">
-<title>Local home security guides</title>
-<desc>Choose a state or Washington, DC to explore local guides</desc>
-<defs>
-  <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#f5d87a"/>
-    <stop offset="25%" stop-color="#c9960a"/>
-    <stop offset="50%" stop-color="#f0c535"/>
-    <stop offset="75%" stop-color="#a07808"/>
-    <stop offset="100%" stop-color="#e8c030"/>
-  </linearGradient>
-  <linearGradient id="goldRim2" x1="100%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="#f5d87a"/>
-    <stop offset="40%" stop-color="#b08800"/>
-    <stop offset="100%" stop-color="#f0c535"/>
-  </linearGradient>
-  <linearGradient id="shieldFace" x1="15%" y1="0%" x2="85%" y2="100%">
-    <stop offset="0%" stop-color="#1a5c35"/>
-    <stop offset="20%" stop-color="#0e3d22"/>
-    <stop offset="50%" stop-color="#0a2e18"/>
-    <stop offset="80%" stop-color="#0c3820"/>
-    <stop offset="100%" stop-color="#071e10"/>
-  </linearGradient>
-  <linearGradient id="metalShine" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
-    <stop offset="35%" stop-color="white" stop-opacity="0.06"/>
-    <stop offset="100%" stop-color="white" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="centerGem" x1="20%" y1="10%" x2="80%" y2="90%">
-    <stop offset="0%" stop-color="#2a9458"/>
-    <stop offset="40%" stop-color="#0e3d22"/>
-    <stop offset="100%" stop-color="#071e10"/>
-  </linearGradient>
-  <filter id="deepShadow">
-    <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#020e06" flood-opacity="0.6"/>
-  </filter>
-</defs>
-<ellipse cx="342" cy="622" rx="170" ry="14" fill="#000" opacity="0.2"/>
-<path d="M340,590 C185,534 98,432 76,300 L64,78 C170,52 256,32 340,16 C424,32 510,52 616,78 L604,300 C582,432 495,534 340,590 Z" fill="url(#goldRim)" filter="url(#deepShadow)"/>
-<path d="M340,584 C188,529 102,429 80,299 L68,82 C172,56 258,36 340,20 C422,36 508,56 612,82 L600,299 C578,429 492,529 340,584 Z" fill="url(#goldRim2)" opacity="0.7"/>
-<path d="M340,570 C200,516 118,420 98,294 L87,92 C186,68 265,49 340,33 C415,49 494,68 593,92 L582,294 C562,420 480,516 340,570 Z" fill="#1a0a00" opacity="0.9"/>
-<path d="M340,558 C208,505 129,412 110,289 L100,102 C193,79 270,61 340,46 C410,61 487,79 580,102 L570,289 C551,412 472,505 340,558 Z" fill="url(#shieldFace)"/>
-<path d="M100,102 L110,289 C129,412 208,505 340,558 L340,46 C270,61 193,79 100,102 Z" fill="url(#metalShine)" opacity="0.5"/>
-<path d="M340,46 C410,61 487,79 580,102 L574,184 C487,162 410,149 340,146 C270,149 193,162 106,184 L100,102 C193,79 270,61 340,46 Z" fill="white" opacity="0.07"/>
-<path d="M340,546 C216,495 140,405 122,284 L113,114 C200,92 272,76 340,62 C408,76 480,92 567,114 L558,284 C540,405 464,495 340,546 Z" fill="none" stroke="url(#goldRim)" stroke-width="1.5" opacity="0.6"/>
-<line x1="155" y1="322" x2="525" y2="322" stroke="url(#goldRim)" stroke-width="1" opacity="0.5"/>
-<line x1="168" y1="326" x2="512" y2="326" stroke="url(#goldRim)" stroke-width="0.5" opacity="0.3"/>
-<g font-family="Inter,sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">
-  <g transform="translate(340,100)" class="hs-pill-group" onclick="showHSCities('new-york')" style="cursor:pointer">
-    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="#040f07"/>
-    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
-    <rect x="-53" y="-14" width="106" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">NEW YORK</text>
-  </g>
-  <g transform="translate(215,148)" class="hs-pill-group" onclick="showHSCities('pennsylvania')" style="cursor:pointer">
-    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="#040f07"/>
-    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
-    <rect x="-59" y="-14" width="118" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">PENNSYLVANIA</text>
-  </g>
-  <g transform="translate(450,148)" class="hs-pill-group" onclick="showHSCities('california')" style="cursor:pointer">
-    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="#040f07"/>
-    <rect x="-54" y="-15" width="108" height="30" rx="5" fill="none" stroke="#c9960a" stroke-width="1"/>
-    <rect x="-53" y="-14" width="106" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#d4a017" opacity="0.9" letter-spacing="0.5">CALIFORNIA</text>
-  </g>
-  <g transform="translate(185,196)" class="hs-pill-group" onclick="showHSCities('new-jersey')" style="cursor:pointer">
-    <rect x="-52" y="-15" width="104" height="30" rx="5" fill="#040f07"/>
-    <rect x="-52" y="-15" width="104" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-51" y="-14" width="102" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">NEW JERSEY</text>
-  </g>
-  <g transform="translate(340,196)" class="hs-pill-group" onclick="showHSCities('massachusetts')" style="cursor:pointer">
-    <rect x="-66" y="-15" width="132" height="30" rx="5" fill="#040f07"/>
-    <rect x="-66" y="-15" width="132" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-65" y="-14" width="130" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">MASSACHUSETTS</text>
-  </g>
-  <g transform="translate(478,196)" class="hs-pill-group" onclick="showHSCities('virginia')" style="cursor:pointer">
-    <rect x="-44" y="-15" width="88" height="30" rx="5" fill="#040f07"/>
-    <rect x="-44" y="-15" width="88" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-43" y="-14" width="86" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">VIRGINIA</text>
-  </g>
-  <g transform="translate(192,244)" class="hs-pill-group" onclick="showHSCities('maryland')" style="cursor:pointer">
-    <rect x="-48" y="-15" width="96" height="30" rx="5" fill="#040f07"/>
-    <rect x="-48" y="-15" width="96" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-47" y="-14" width="94" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">MARYLAND</text>
-  </g>
-  <g transform="translate(340,244)" class="hs-pill-group" onclick="showHSCities('texas')" style="cursor:pointer">
-    <rect x="-36" y="-15" width="72" height="30" rx="5" fill="#040f07"/>
-    <rect x="-36" y="-15" width="72" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-35" y="-14" width="70" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">TEXAS</text>
-  </g>
-  <g transform="translate(466,244)" class="hs-pill-group" onclick="showHSCities('florida')" style="cursor:pointer">
-    <rect x="-40" y="-15" width="80" height="30" rx="5" fill="#040f07"/>
-    <rect x="-40" y="-15" width="80" height="30" rx="5" fill="none" stroke="#a07808" stroke-width="1"/>
-    <rect x="-39" y="-14" width="78" height="8" rx="3" fill="white" opacity="0.04"/>
-    <text y="6" fill="#c9960a" opacity="0.9" letter-spacing="0.5">FLORIDA</text>
-  </g>
-  <g transform="translate(196,292)" class="hs-pill-group" onclick="showHSCities('ohio')" style="cursor:pointer">
-    <rect x="-34" y="-15" width="68" height="30" rx="5" fill="#040f07"/>
-    <rect x="-34" y="-15" width="68" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
-    <rect x="-33" y="-14" width="66" height="8" rx="3" fill="white" opacity="0.03"/>
-    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">OHIO</text>
-  </g>
-  <g transform="translate(340,292)" class="hs-pill-group" onclick="showHSCities('north-carolina')" style="cursor:pointer">
-    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="#040f07"/>
-    <rect x="-60" y="-15" width="120" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
-    <rect x="-59" y="-14" width="118" height="8" rx="3" fill="white" opacity="0.03"/>
-    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">N. CAROLINA</text>
-  </g>
-  <g transform="translate(468,292)" class="hs-pill-group" onclick="showHSCities('washington-dc')" style="cursor:pointer">
-    <rect x="-64" y="-15" width="128" height="30" rx="5" fill="#040f07"/>
-    <rect x="-64" y="-15" width="128" height="30" rx="5" fill="none" stroke="#8a6600" stroke-width="1"/>
-    <rect x="-63" y="-14" width="126" height="8" rx="3" fill="white" opacity="0.03"/>
-    <text y="6" fill="#b08800" opacity="0.9" letter-spacing="0.5">WASHINGTON DC</text>
-  </g>
-</g>
-<circle cx="340" cy="418" r="62" fill="#8a6600" opacity="0.8"/>
-<circle cx="340" cy="418" r="58" fill="url(#centerGem)"/>
-<circle cx="340" cy="418" r="54" fill="none" stroke="#c9960a" stroke-width="1.5" opacity="0.6"/>
-<path d="M340,392 L316,400 L316,420 C316,433 327,442 340,446 C353,442 364,433 364,420 L364,400 Z" fill="none" stroke="#c9960a" stroke-width="1.5" opacity="0.7"/>
-<path d="M340,392 L316,400 L316,420 C316,433 327,442 340,446 C353,442 364,433 364,420 L364,400 Z" fill="#c9960a" opacity="0.12"/>
-<path d="M318,402 Q340,394 362,402 Q362,410 340,414 Q318,410 318,402 Z" fill="white" opacity="0.1"/>
-<text x="340" y="424" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="#d4a017" text-anchor="middle" letter-spacing="1.5" opacity="0.85">HOME SECURITY</text>
-<path d="M200,504 Q270,494 340,498 Q410,494 480,504 Q490,516 480,522 Q410,530 340,526 Q270,530 200,522 Q190,516 200,504 Z" fill="#8a6600" opacity="0.6"/>
-<path d="M204,505 Q271,496 340,500 Q409,496 476,505 Q485,516 476,521 Q409,528 340,524 Q271,528 204,521 Q195,516 204,505 Z" fill="url(#goldRim)" opacity="0.4"/>
-<text x="340" y="517" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#faeaa0" text-anchor="middle" letter-spacing="2" opacity="0.9">LOCAL SECURITY GUIDES</text>
-<path d="M100,102 L108,274" stroke="white" stroke-width="2" opacity="0.07" stroke-linecap="round"/>
-<path d="M580,102 L572,274" stroke="white" stroke-width="1" opacity="0.04" stroke-linecap="round"/>
-</svg>
-    </div>
-    <!-- STATE DROPDOWN -->
-    <div id="hs-state-dropdown" style="max-width:520px;margin:0 auto 24px;display:none"></div>
-    <details style="max-width:680px;margin:auto">
-      <summary style="cursor:pointer;font-weight:700">Browse all state and district guides</summary>
-      <nav aria-label="Local home security guides" class="hs-states" style="margin-top:16px">
-          <a class="pill pill-link" href="/home-security/california/">California</a>
-          <a class="pill pill-link" href="/home-security/florida/">Florida</a>
-          <a class="pill pill-link" href="/home-security/maryland/">Maryland</a>
-          <a class="pill pill-link" href="/home-security/massachusetts/">Massachusetts</a>
-          <a class="pill pill-link" href="/home-security/new-jersey/">New Jersey</a>
-          <a class="pill pill-link" href="/home-security/new-york/">New York</a>
-          <a class="pill pill-link" href="/home-security/north-carolina/">North Carolina</a>
-          <a class="pill pill-link" href="/home-security/ohio/">Ohio</a>
-          <a class="pill pill-link" href="/home-security/pennsylvania/">Pennsylvania</a>
-          <a class="pill pill-link" href="/home-security/texas/">Texas</a>
-          <a class="pill pill-link" href="/home-security/virginia/">Virginia</a>
-          <a class="pill pill-link" href="/home-security/washington-dc/">Washington, DC</a>
-      </nav>
-    </details>
+    <h2 id="coverage-title">Home security coverage by state</h2>
+    <p class="lede2">Our program covers 42 states and Washington, DC. Choose the state where the system will be installed. The provider confirms service at your address.</p>
+    <p><strong>Outside our service area</strong><br><!-- home-security-exclusions -->
+Alaska, Hawaii, Maine, Montana, North Dakota, South Dakota, Vermont, Wyoming.
+<!-- /home-security-exclusions --></p>
+    <p>Idaho is in our program area, but the current partner form excludes Idaho addresses.</p>
+    <nav class="hs-states" aria-label="State and district home security guides">
+<!-- home-security-directory -->
+<a class="pill pill-link" href="/home-security/alabama/">Alabama</a>
+<a class="pill pill-link" href="/home-security/arizona/">Arizona</a>
+<a class="pill pill-link" href="/home-security/arkansas/">Arkansas</a>
+<a class="pill pill-link" href="/home-security/california/">California</a>
+<a class="pill pill-link" href="/home-security/colorado/">Colorado</a>
+<a class="pill pill-link" href="/home-security/connecticut/">Connecticut</a>
+<a class="pill pill-link" href="/home-security/delaware/">Delaware</a>
+<a class="pill pill-link" href="/home-security/florida/">Florida</a>
+<a class="pill pill-link" href="/home-security/georgia/">Georgia</a>
+<a class="pill pill-link" href="/home-security/idaho/">Idaho</a>
+<a class="pill pill-link" href="/home-security/illinois/">Illinois</a>
+<a class="pill pill-link" href="/home-security/indiana/">Indiana</a>
+<a class="pill pill-link" href="/home-security/iowa/">Iowa</a>
+<a class="pill pill-link" href="/home-security/kansas/">Kansas</a>
+<a class="pill pill-link" href="/home-security/kentucky/">Kentucky</a>
+<a class="pill pill-link" href="/home-security/louisiana/">Louisiana</a>
+<a class="pill pill-link" href="/home-security/maryland/">Maryland</a>
+<a class="pill pill-link" href="/home-security/massachusetts/">Massachusetts</a>
+<a class="pill pill-link" href="/home-security/michigan/">Michigan</a>
+<a class="pill pill-link" href="/home-security/minnesota/">Minnesota</a>
+<a class="pill pill-link" href="/home-security/mississippi/">Mississippi</a>
+<a class="pill pill-link" href="/home-security/missouri/">Missouri</a>
+<a class="pill pill-link" href="/home-security/nebraska/">Nebraska</a>
+<a class="pill pill-link" href="/home-security/nevada/">Nevada</a>
+<a class="pill pill-link" href="/home-security/new-hampshire/">New Hampshire</a>
+<a class="pill pill-link" href="/home-security/new-jersey/">New Jersey</a>
+<a class="pill pill-link" href="/home-security/new-mexico/">New Mexico</a>
+<a class="pill pill-link" href="/home-security/new-york/">New York</a>
+<a class="pill pill-link" href="/home-security/north-carolina/">North Carolina</a>
+<a class="pill pill-link" href="/home-security/ohio/">Ohio</a>
+<a class="pill pill-link" href="/home-security/oklahoma/">Oklahoma</a>
+<a class="pill pill-link" href="/home-security/oregon/">Oregon</a>
+<a class="pill pill-link" href="/home-security/pennsylvania/">Pennsylvania</a>
+<a class="pill pill-link" href="/home-security/rhode-island/">Rhode Island</a>
+<a class="pill pill-link" href="/home-security/south-carolina/">South Carolina</a>
+<a class="pill pill-link" href="/home-security/tennessee/">Tennessee</a>
+<a class="pill pill-link" href="/home-security/texas/">Texas</a>
+<a class="pill pill-link" href="/home-security/utah/">Utah</a>
+<a class="pill pill-link" href="/home-security/virginia/">Virginia</a>
+<a class="pill pill-link" href="/home-security/washington/">Washington</a>
+<a class="pill pill-link" href="/home-security/west-virginia/">West Virginia</a>
+<a class="pill pill-link" href="/home-security/wisconsin/">Wisconsin</a>
+<a class="pill pill-link" href="/home-security/washington-dc/">Washington, DC</a>
+<!-- /home-security-directory -->
+    </nav>
   </div>
 </section>
 
@@ -536,161 +383,7 @@ gtag('js', new Date());
 gtag('config', 'G-M3FTEYNNQ0');
 </script>
 
-<script>
-const HS_STATES = {
-  'new-york': {
-    name: 'New York',
-    hub: '/home-security/new-york/',
-    cities: [
-      ['New York City', '/home-security/new-york/new-york-city/'],
-      ['Buffalo', '/home-security/new-york/buffalo/'],
-      ['Yonkers', '/home-security/new-york/yonkers/'],
-      ['Rochester', '/home-security/new-york/rochester/'],
-      ['Syracuse', '/home-security/new-york/syracuse/'],
-      ['Albany', '/home-security/new-york/albany/']
-    ]
-  },
-  'california': {
-    name: 'California',
-    hub: '/home-security/california/',
-    cities: [
-      ['Los Angeles', '/home-security/california/los-angeles/'],
-      ['San Diego', '/home-security/california/san-diego/'],
-      ['San Jose', '/home-security/california/san-jose/'],
-      ['San Francisco', '/home-security/california/san-francisco/'],
-      ['Fresno', '/home-security/california/fresno/'],
-      ['Sacramento', '/home-security/california/sacramento/']
-    ]
-  },
-  'pennsylvania': {
-    name: 'Pennsylvania',
-    hub: '/home-security/pennsylvania/',
-    cities: [
-      ['Philadelphia', '/home-security/pennsylvania/philadelphia/'],
-      ['Pittsburgh', '/home-security/pennsylvania/pittsburgh/'],
-      ['Allentown', '/home-security/pennsylvania/allentown/'],
-      ['Erie', '/home-security/pennsylvania/erie/'],
-      ['Reading', '/home-security/pennsylvania/reading/']
-    ]
-  },
-  'new-jersey': {
-    name: 'New Jersey',
-    hub: '/home-security/new-jersey/',
-    cities: [
-      ['Newark', '/home-security/new-jersey/newark/'],
-      ['Jersey City', '/home-security/new-jersey/jersey-city/'],
-      ['Trenton', '/home-security/new-jersey/trenton/'],
-      ['Camden', '/home-security/new-jersey/camden/'],
-      ['Paterson', '/home-security/new-jersey/paterson/'],
-      ['Elizabeth', '/home-security/new-jersey/elizabeth/']
-    ]
-  },
-  'massachusetts': {
-    name: 'Massachusetts',
-    hub: '/home-security/massachusetts/',
-    cities: [
-      ['Boston', '/home-security/massachusetts/boston/'],
-      ['Worcester', '/home-security/massachusetts/worcester/'],
-      ['Springfield', '/home-security/massachusetts/springfield/'],
-      ['Cambridge', '/home-security/massachusetts/cambridge/'],
-      ['Lowell', '/home-security/massachusetts/lowell/']
-    ]
-  },
-  'virginia': {
-    name: 'Virginia',
-    hub: '/home-security/virginia/',
-    cities: [
-      ['Virginia Beach', '/home-security/virginia/virginia-beach/'],
-      ['Norfolk', '/home-security/virginia/norfolk/'],
-      ['Richmond', '/home-security/virginia/richmond/'],
-      ['Arlington', '/home-security/virginia/arlington/'],
-      ['Alexandria', '/home-security/virginia/alexandria/']
-    ]
-  },
-  'maryland': {
-    name: 'Maryland',
-    hub: '/home-security/maryland/',
-    cities: [
-      ['Baltimore', '/home-security/maryland/baltimore/'],
-      ['Silver Spring', '/home-security/maryland/silver-spring/'],
-      ['Annapolis', '/home-security/maryland/annapolis/'],
-      ['Rockville', '/home-security/maryland/rockville/']
-    ]
-  },
-  'washington-dc': {
-    name: 'Washington DC',
-    hub: '/home-security/washington-dc/',
-    cities: []
-  },
-  'texas': {
-    name: 'Texas',
-    hub: '/home-security/texas/',
-    cities: [
-      ['Houston', '/home-security/texas/houston/'],
-      ['San Antonio', '/home-security/texas/san-antonio/'],
-      ['Dallas', '/home-security/texas/dallas/'],
-      ['Austin', '/home-security/texas/austin/'],
-      ['Fort Worth', '/home-security/texas/fort-worth/']
-    ]
-  },
-  'florida': {
-    name: 'Florida',
-    hub: '/home-security/florida/',
-    cities: [
-      ['Jacksonville', '/home-security/florida/jacksonville/'],
-      ['Miami', '/home-security/florida/miami/'],
-      ['Tampa', '/home-security/florida/tampa/'],
-      ['Orlando', '/home-security/florida/orlando/'],
-      ['Fort Lauderdale', '/home-security/florida/fort-lauderdale/']
-    ]
-  },
-  'ohio': {
-    name: 'Ohio',
-    hub: '/home-security/ohio/',
-    cities: [
-      ['Columbus', '/home-security/ohio/columbus/'],
-      ['Cleveland', '/home-security/ohio/cleveland/'],
-      ['Cincinnati', '/home-security/ohio/cincinnati/'],
-      ['Toledo', '/home-security/ohio/toledo/']
-    ]
-  },
-  'north-carolina': {
-    name: 'North Carolina',
-    hub: '/home-security/north-carolina/',
-    cities: [
-      ['Charlotte', '/home-security/north-carolina/charlotte/'],
-      ['Raleigh', '/home-security/north-carolina/raleigh/'],
-      ['Durham', '/home-security/north-carolina/durham/'],
-      ['Fayetteville', '/home-security/north-carolina/fayetteville/']
-    ]
-  }
-};
 
-let hsActiveState = null;
-function showHSCities(slug) {
-  const dropdown = document.getElementById('hs-state-dropdown');
-  const state = HS_STATES[slug];
-  if (!state) return;
-  if (hsActiveState === slug) {
-    dropdown.style.display = 'none';
-    dropdown.innerHTML = '';
-    hsActiveState = null;
-    return;
-  }
-  hsActiveState = slug;
-  const citiesHTML = state.cities.map(function(c) {
-    return '<a href="' + c[1] + '" class="hs-city-link">' + c[0] + '</a>';
-  }).join('');
-  dropdown.innerHTML =
-    '<div class="hs-state-card">' +
-    '<a href="' + state.hub + '" class="hs-state-hub-link">&#8594; All ' + state.name + ' home security</a>' +
-    '<div style="display:flex;flex-wrap:wrap;gap:2px">' + citiesHTML + '</div></div>';
-  dropdown.style.display = 'block';
-  setTimeout(function() {
-    dropdown.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }, 50);
-}
-</script>
 
 </body>
 </html>
