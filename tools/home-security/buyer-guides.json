@@ -1,0 +1,164 @@
+{
+  "AL": {
+    "heading": "Doorbell camera costs",
+    "advice": "Ask for separate prices for the doorbell, chime adapter and video history. A camera included with a system can still have a monthly recording fee.",
+    "office": "https://www.alabamaag.gov/consumer-complaint/"
+  },
+  "AZ": {
+    "heading": "Warranties for outdoor cameras",
+    "advice": "If the proposed camera will sit in direct sun, ask which heat-related failures the warranty covers and who pays for a replacement visit.",
+    "office": "https://www.azag.gov/consumer"
+  },
+  "AR": {
+    "heading": "Adding a detached garage",
+    "advice": "Get a separate line item for the garage camera, power connection and any network equipment. Compare that total with a sensor on the garage entry door.",
+    "office": "https://arkansasag.gov/divisions/public-protection/consumer-protection/"
+  },
+  "CO": {
+    "heading": "Battery replacement and service visits",
+    "advice": "For a battery-powered camera, ask whether replacement batteries, charger and service visits are included. An included camera may still cost money to maintain.",
+    "office": "https://coag.gov/office-sections/consumer-protection/"
+  },
+  "CT": {
+    "heading": "Doorbell wiring estimates",
+    "advice": "If you want to keep the existing indoor chime, ask whether the installation price includes a transformer replacement and a chime adapter if needed.",
+    "office": "https://portal.ct.gov/dcp",
+    "searchDescription": "Considering a Google Nest Doorbell for a Connecticut home? Ask how the installer will test the existing chime and what a transformer upgrade would cost."
+  },
+  "DE": {
+    "heading": "Monitoring a second home",
+    "advice": "Ask who can authorize service while you are away. Find out whether adding a local contact or changing the monitoring call list has a fee.",
+    "office": "https://attorneygeneral.delaware.gov/fraud/cpu/",
+    "searchDescription": "Comparing ADT monitoring for a second home in Delaware? Ask about remote alerts, adding a local contact and service visits while you’re away."
+  },
+  "GA": {
+    "heading": "Doorbell views and recording fees",
+    "advice": "If you want to check a delivery after it happens, compare event history with live view. Ask how long clips remain available at the quoted monthly price.",
+    "office": "https://consumer.georgia.gov/",
+    "searchDescription": "Looking at a Google Nest Doorbell in Georgia? Check the package view, video history and monthly recording cost before choosing home security equipment."
+  },
+  "ID": {
+    "heading": "Installation availability and travel fees",
+    "advice": "Confirm the first available installation date for your address. For a home outside town, ask whether the written quote includes a travel charge or a return visit.",
+    "office": "https://www.ag.idaho.gov/consumer-protection/"
+  },
+  "IL": {
+    "heading": "Condo installation quotes",
+    "advice": "If your association limits drilling in a shared hallway, ask for an alternative quote that meets its rules. Find out who covers removal and patching later.",
+    "office": "https://illinoisattorneygeneral.gov/consumer-protection/"
+  },
+  "IN": {
+    "heading": "Garage entry sensors",
+    "advice": "Ask how many entry sensors the package includes. Price the door between the house and garage separately if it would otherwise use the sensor intended for the front door.",
+    "office": "https://www.in.gov/attorneygeneral/consumer-protection-division/"
+  },
+  "IA": {
+    "heading": "Driveway camera quotes",
+    "advice": "Ask to see what the camera can show at the far end of your driveway before paying for a second unit. Get the cost of wiring or a signal extender in writing.",
+    "office": "https://www.iowaattorneygeneral.gov/what-we-do/divisions/consumer-protection",
+    "searchDescription": "Comparing outdoor Google Nest cameras for an Iowa driveway? Ask to see the view at the distance you need before pricing a mount, wiring or second camera."
+  },
+  "KS": {
+    "heading": "Backup power and monitoring fees",
+    "advice": "Ask which parts of the alarm have battery backup and whether cellular communication changes the monthly price. Request the expected backup time for the quoted system.",
+    "office": "https://www.usa.gov/state-consumer#KS",
+    "searchDescription": "Considering ADT monitoring in Kansas? Ask what battery and cellular backup cover, whether cameras still record and how backup changes the monthly cost."
+  },
+  "KY": {
+    "heading": "Camera placement on a slope",
+    "advice": "Before accepting a second-camera charge, ask to see the approach from two possible mounting heights. Make sure the quote covers any bracket needed for the better view.",
+    "office": "https://www.usa.gov/state-consumer#KY"
+  },
+  "LA": {
+    "heading": "Outdoor installation and sealing",
+    "advice": "Ask whether the installation charge covers sealing exterior cable openings and replacing a damaged mount. Keep the written scope with the warranty.",
+    "office": "https://www.ag.state.la.us/Division/PublicProtection#consumer-protection"
+  },
+  "MI": {
+    "heading": "Cold-weather battery costs",
+    "advice": "For a wireless outdoor camera, compare the price of a spare battery with the cost of a wired installation. Ask whether the mount lets you change the battery yourself.",
+    "office": "https://www.michigan.gov/consumerprotection"
+  },
+  "MN": {
+    "heading": "Winter doorbell maintenance",
+    "advice": "Ask how a wired doorbell and a battery model differ in winter maintenance. Get separate prices for the power upgrade and any routine service visits.",
+    "office": "https://www.ag.state.mn.us/default.asp"
+  },
+  "MS": {
+    "heading": "Porch lighting and night video",
+    "advice": "Ask for a nighttime demonstration before paying for extra lighting or an upgraded camera. Verify whether recorded clips use the same night view shown in the live app.",
+    "office": "https://www.usa.gov/state-consumer#MS"
+  },
+  "MO": {
+    "heading": "Walkout basement coverage",
+    "advice": "Ask whether the basement door and nearby windows are included in the standard sensor count. Get the installed price for extra contacts before the appointment.",
+    "office": "https://ago.mo.gov/divisions/consumer/"
+  },
+  "NE": {
+    "heading": "Connecting an outbuilding",
+    "advice": "Ask whether a detached building needs an extender, a cable run or a separate power supply. Request a quote that includes those parts and the labor to fit them.",
+    "office": "https://protectthegoodlife.nebraska.gov/"
+  },
+  "NV": {
+    "heading": "Camera heat ratings and warranties",
+    "advice": "Ask for the model number and operating temperature range in writing. Compare warranty coverage for the proposed sunny location with an installation under an eave.",
+    "office": "https://ag.nv.gov/About/Consumer_Protection/Bureau_of_Consumer_Protection/"
+  },
+  "NH": {
+    "heading": "Seasonal monitoring agreements",
+    "advice": "Ask whether the plan can be paused when a property is vacant and how a pause affects equipment credits. Compare the written total with year-round monitoring.",
+    "office": "https://www.usa.gov/state-consumer#NH",
+    "searchDescription": "Considering ADT monitoring for a seasonal home in New Hampshire? Check the price to pause, restart or keep service active year-round."
+  },
+  "NM": {
+    "heading": "Installation on stucco or masonry",
+    "advice": "Ask whether the quote includes specialty anchors, cable routing and patching around the mounting point. Confirm who repairs the finish if the first location changes.",
+    "office": "https://nmdoj.gov/about-the-office/consumer-affairs/#consumer-protection"
+  },
+  "OK": {
+    "heading": "Cellular alarm backup costs",
+    "advice": "Ask whether cellular alarm signaling is part of the monitoring price. Have the provider separate alarm communication, camera recording and remote video access on the quote.",
+    "office": "https://oklahoma.gov/oag/about/divisions/cpu.html",
+    "searchDescription": "Compare ADT monitoring options in Oklahoma. Learn what to ask about cellular backup, video access and the monthly price during an internet outage."
+  },
+  "OR": {
+    "heading": "Doorbells under a deep eave",
+    "advice": "Before upgrading a camera, ask to compare its view on the shaded porch with the brighter area beyond it. Check whether an angled mounting bracket is included.",
+    "office": "https://www.doj.state.or.us/consumer-protection/"
+  },
+  "RI": {
+    "heading": "Maintaining a coastal camera",
+    "advice": "If the home is close to salt water, ask about the camera, bracket and connectors separately. Check which parts the warranty covers and what routine care the owner must do.",
+    "office": "https://riag.ri.gov/consumerprotection"
+  },
+  "SC": {
+    "heading": "Doorbells for screened porches",
+    "advice": "Ask for a quote at the screen door and another at the house door. Compare wiring cost and what each position shows before buying an extra camera.",
+    "office": "https://www.usa.gov/state-consumer#SC"
+  },
+  "TN": {
+    "heading": "Alarms for split-level entrances",
+    "advice": "Ask which doors can share the same arming routine and how additional entry sensors affect the price. Check that the quote includes the entrance on each occupied level.",
+    "office": "https://www.usa.gov/state-consumer#TN"
+  },
+  "UT": {
+    "heading": "Exterior basement door sensors",
+    "advice": "Ask whether a basement entrance uses one of the package’s included contacts. Price any additional keypad separately if you want to disarm the system from that level.",
+    "office": "https://commerce.utah.gov/dcp/"
+  },
+  "WA": {
+    "heading": "Servicing an outdoor camera",
+    "advice": "If the proposed mount is exposed to rain, ask who handles resealing or moving it if the view is repeatedly obscured. Get the service-call price with the original quote.",
+    "office": "https://www.atg.wa.gov/consumer-protection"
+  },
+  "WV": {
+    "heading": "Camera coverage on a hillside",
+    "advice": "Ask for a test at the proposed mounting height before adding extra cameras. Compare the cost of adjusting the first mount with covering a second approach.",
+    "office": "https://www.usa.gov/state-consumer#WV"
+  },
+  "WI": {
+    "heading": "Doorbell installation with a storm door",
+    "advice": "Ask whether the storm door changes the mounting hardware or wiring price. Confirm that the proposed position stays clear when both doors are in use.",
+    "office": "https://datcp.wi.gov/Pages/Programs_Services/ConsumerProtection.aspx"
+  }
+}

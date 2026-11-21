@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const buyerGuides = require('./buyer-guides.json');
 const { areas, excluded } = require('./coverage.json');
 
 const root = path.resolve(__dirname, '../..');
@@ -35,11 +36,22 @@ for (const area of areas) {
   // Retain established state hubs with local articles and city navigation.
   if (fs.existsSync(dest) && !fs.readFileSync(dest, 'utf8').includes(marker)) continue;
   const template = fs.readFileSync(path.join(__dirname, 'state.template'), 'utf8');
+  const guide = buyerGuides[area.code];
+  const canonical = origin + url(area.slug);
+  const title = area.name + ' Home Security | ' + guide.heading;
+  const description = area.name + ' home security quotes. ' + guide.advice.split(/(?<=\.) /)[0];
+  const breadcrumb = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [['Home', origin + '/'], ['Home security', origin + '/home-security'], [area.name, canonical]]
+      .map(([name, item], index) => ({ '@type': 'ListItem', position: index + 1, name, item }))
+  };
   const values = {
-    marker, name: escape(area.name), topic: escape(area.topic), tip: escape(area.tip),
-    canonical: origin + url(area.slug),
+    title: escape(title), description: escape(guide.searchDescription || description),
+    socialDescription: escape(description), heading: escape(guide.heading), advice: escape(guide.advice),
+    office: escape(guide.office), breadcrumb: JSON.stringify(breadcrumb).replaceAll('<', '\\u003c'),
+    marker, name: escape(area.name), canonical,
     intro: 'Homeowners can request information about monitored alarms, camera installation and current offers. The provider confirms availability for your address.',
-    action: '<a class="btn btn-primary" href="/home-security-quote/?state=' + area.code + '">Get my free quote</a><p>After you submit your contact details, the provider may call or text about home security.</p>'
+    action: '<a class="btn btn-primary" href="/home-security-quote/?state=' + area.code + '">Get my free quote</a><p>After you submit your contact details, a specialist can call about home security pricing.</p>'
   };
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, template.replace(/\{\{(\w+)\}\}/g, (_, key) => {

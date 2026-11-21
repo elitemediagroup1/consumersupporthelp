@@ -4,8 +4,12 @@
   {{marker}}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home security in {{name}} | Consumer Support Help</title>
-  <meta name="description" content="Home security coverage in {{name}}. Explore camera installation, alarm monitoring and homeowner offers.">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{socialDescription}}">
+  <meta property="og:url" content="{{canonical}}">
+  <script type="application/ld+json">{{breadcrumb}}</script>
   <link rel="canonical" href="{{canonical}}">
   <link rel="stylesheet" href="/assets/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
@@ -24,10 +28,11 @@
   <div id="site-header"></div>
   <main class="state-guide">
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/home-security#coverage">Home security coverage</a> / {{name}}</nav>
-    <h1>Home security in {{name}}</h1>
+    <h1>Home security quotes in {{name}}</h1>
     <p>{{intro}}</p>
-    <h2>{{topic}}</h2>
-    <p>{{tip}}</p>
+    <h2>{{heading}}</h2>
+    <p>{{advice}}</p>
+    <p><a href="{{office}}">Consumer protection resources for {{name}}</a></p>
     <section class="offer">
       <h2>Homeowner promotions</h2>
       <p>Ask about $1,200 in free security equipment, free installation and a free video doorbell camera. These offers require paid monitoring. A specialist will confirm eligibility, installation charges and monthly pricing for your address.</p>
