@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { areas, excluded, formExclusions } = require('./coverage.json');
+const { areas, excluded } = require('./coverage.json');
 
 const root = path.resolve(__dirname, '../..');
 const folder = path.join(root, 'home-security');
@@ -35,12 +35,11 @@ for (const area of areas) {
   // Retain established state hubs with local articles and city navigation.
   if (fs.existsSync(dest) && !fs.readFileSync(dest, 'utf8').includes(marker)) continue;
   const template = fs.readFileSync(path.join(__dirname, 'state.template'), 'utf8');
-  const showForm = !formExclusions.includes(area.slug);
   const values = {
     marker, name: escape(area.name), topic: escape(area.topic), tip: escape(area.tip),
     canonical: origin + url(area.slug),
-    intro: showForm ? 'Homeowners can request information about monitored alarms, camera installation and current offers. The provider confirms availability for your address.' : 'Idaho is in our program area. The provider’s current web form excludes Idaho addresses.',
-    action: showForm ? '<a class="btn btn-primary" href="/go/home-security" rel="sponsored">Open the partner’s callback form</a><p>After you submit your contact details, the provider may call or text about home security.</p>' : '<a href="/home-security#coverage">View the coverage directory</a>'
+    intro: 'Homeowners can request information about monitored alarms, camera installation and current offers. The provider confirms availability for your address.',
+    action: '<a class="btn btn-primary" href="/home-security-quote/?state=' + area.code + '">Get my free quote</a><p>After you submit your contact details, the provider may call or text about home security.</p>'
   };
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
@@ -48,6 +47,8 @@ for (const area of areas) {
     return values[key];
   }));
 }
+const quotePage = path.join(root, 'home-security-quote/index.html');
+replaceRegion(quotePage, 'home-security-state-options', areas.map(a => '          <option value="' + a.code + '">' + escape(a.name) + '</option>').join('\n'));
 const locations = [];
 for (const area of areas) {
   const statePath = url(area.slug);

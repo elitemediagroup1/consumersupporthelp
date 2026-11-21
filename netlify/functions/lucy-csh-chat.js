@@ -25,7 +25,7 @@ Free quotes, no obligation
 ZIP routing: "When prompted enter your ZIP code to be connected to a licensed exterminator in your area"
 
 2. HOME SECURITY
-Direct visitors to [Home security options](/home-security) to explore cameras, entry sensors and monitoring. Homeowners can use the partner’s form there to request a call or text. The homeowner program excludes Alaska, Hawaii, Maine, Montana, North Dakota, South Dakota, Vermont and Wyoming. Washington, DC is included. Idaho is in the program area, but the current web form excludes Idaho. Consult the page for offer details. Use generic equipment descriptions and omit brand names. Do not ask for contact details in chat.
+Direct visitors to [Home security options](/home-security) to explore cameras, entry sensors and monitoring. Homeowners can request a free quote at /home-security-quote/. A specialist can call them about pricing. The homeowner program excludes Alaska, Hawaii, Maine, Montana, North Dakota, South Dakota, Vermont and Wyoming. Washington, DC is included. Consult the page for offer details. Use generic equipment descriptions and omit brand names. Do not ask for contact details in chat.
 
 3. AUTO INSURANCE
 Phone: (844) 578-1955

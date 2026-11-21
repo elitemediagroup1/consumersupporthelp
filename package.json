@@ -1,4 +1,7 @@
 {
   "name": "consumersupporthelp",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "@netlify/blobs": "10.7.13"
+  }
 }
